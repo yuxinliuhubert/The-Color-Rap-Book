@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Morgan_bold-Regular.otf">
+            <string>Morgan_bold-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Developer Controller-->
+        <scene sceneID="ViQ-gH-8uh">
+            <objects>
+                <viewController id="aGD-y1-2iz" customClass="DeveloperController" customModule="The_Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ZH-QP-ilp">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2GK-dV-Tdi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zgo-eX-X77"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71a-Db-1EV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359" y="-593"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="The_Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FrontCover" translatesAutoresizingMaskIntoConstraints="NO" id="6N7-av-TB7">
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4xQ-1C-6WT" appends="YES" id="md5-qb-YsC"/>
+                                    <outletCollection property="gestureRecognizers" destination="mpw-5P-tbb" appends="YES" id="j6g-bK-a8o"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfU-xd-qaw">
+                                <rect key="frame" x="68" y="307" width="1231" height="351"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Morgan_bold-Regular" family="Morgan_bold" pointSize="100"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-TH-gBP">
+                                <rect key="frame" x="668" y="138" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="readTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9oS-eD-uel"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IfC-9B-7AN">
+                                <rect key="frame" x="294" y="199" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="tableOfContentTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c0j-6G-Wp5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjH-xh-F2D">
+                                <rect key="frame" x="63" y="62" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <segue destination="aGD-y1-2iz" kind="presentation" identifier="ToDeveloperPage" id="xsr-0X-VM9">
+                                        <segue key="commit" inheritsFrom="parent" id="6vm-ap-2aD"/>
+                                        <segue key="preview" inheritsFrom="commit" id="8tk-80-Mqr"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6N7-av-TB7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="0Pg-Rn-aYJ"/>
+                            <constraint firstItem="6N7-av-TB7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8ve-0s-Pme"/>
+                            <constraint firstItem="6N7-av-TB7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ay7-Hf-ynj"/>
+                            <constraint firstItem="6N7-av-TB7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zo9-Ac-Ay8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4xQ-1C-6WT" appends="YES" id="kIR-TI-onF"/>
+                            <outletCollection property="gestureRecognizers" destination="mpw-5P-tbb" appends="YES" id="lub-Md-lfl"/>
+                            <outletCollection property="gestureRecognizers" destination="4uI-qf-ybr" appends="YES" id="gZu-OX-iv3"/>
+                            <outletCollection property="gestureRecognizers" destination="GFL-HV-jlX" appends="YES" id="OAo-oR-jeT"/>
+                            <outletCollection property="gestureRecognizers" destination="y4K-hB-Vz0" appends="YES" id="IkF-DF-k8y"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="developerButton" destination="DjH-xh-F2D" id="cHa-hn-2Cc"/>
+                        <outlet property="frontCoverView" destination="6N7-av-TB7" id="p2S-7e-Qkw"/>
+                        <outlet property="introLabel" destination="VfU-xd-qaw" id="VJO-kO-Sr1"/>
+                        <outlet property="readButton" destination="gK8-TH-gBP" id="Iwd-tW-nwd"/>
+                        <outlet property="singleTap" destination="y4K-hB-Vz0" id="K7l-ul-7pS"/>
+                        <outlet property="tableOfContentButton" destination="IfC-9B-7AN" id="RKd-49-gk6"/>
+                        <segue destination="R4J-m2-hmf" kind="custom" identifier="ToTableOfContent" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" id="F68-xR-Fn9"/>
+                        <segue destination="GCB-e3-WIT" kind="custom" identifier="ToDetailSegue" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" id="T9U-gD-Oyj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="4xQ-1C-6WT" userLabel="Right Swipe Gesture">
+                    <connections>
+                        <action selector="rightSwipeHandler:" destination="BYZ-38-t0r" id="9CU-CF-tTH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="4uI-qf-ybr" userLabel="Dlwn Swipe Gesture">
+                    <connections>
+                        <action selector="rightSwipeHandler:" destination="BYZ-38-t0r" id="fJT-Wb-9Pi"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="mpw-5P-tbb" userLabel="Left Swipe Gesture">
+                    <connections>
+                        <action selector="leftSwipeHandler:" destination="BYZ-38-t0r" id="0PN-qe-fK1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="GFL-HV-jlX" userLabel="Up Swipe Gesture">
+                    <connections>
+                        <action selector="leftSwipeHandler:" destination="BYZ-38-t0r" id="txz-U3-2DJ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="y4K-hB-Vz0"/>
+            </objects>
+            <point key="canvasLocation" x="348.75549048316248" y="126.56249999999999"/>
+        </scene>
+        <!--Detail Page Controller-->
+        <scene sceneID="MNX-nN-y6z">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="GCB-e3-WIT" customClass="DetailPageController" customModule="The_Color_Rap_Book" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uoT-F0-xUz">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ep-KY-FMy">
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Giz-MN-OoP">
+                                <rect key="frame" x="138" y="121" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHU-qR-NYI">
+                                <rect key="frame" x="600" y="121" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Y00-oU-hxL" appends="YES" id="Kyh-kD-6c0"/>
+                                    <outletCollection property="gestureRecognizers" destination="Qhr-dV-jqe" appends="YES" id="JLS-Wf-jFm"/>
+                                    <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="KsC-mw-PQi"/>
+                                    <outletCollection property="gestureRecognizers" destination="2oc-z3-bxd" appends="YES" id="ih8-8V-B16"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="heq-BM-1ay">
+                                <rect key="frame" x="600" y="449" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7UB-uK-XLm">
+                                <rect key="frame" x="138" y="449" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9N-GT-uyF">
+                                <rect key="frame" x="138" y="271" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="HaA-ck-s1U"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xL-es-oqc">
+                                <rect key="frame" x="600" y="271" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9U-G9-nVw">
+                                <rect key="frame" x="352" y="543" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOq-gA-8nN">
+                                <rect key="frame" x="105" y="21" width="103" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lastPage:" destination="GCB-e3-WIT" eventType="touchUpInside" id="5Px-vv-rX1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUg-ho-Bcz">
+                                <rect key="frame" x="235" y="21" width="143" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPage:" destination="GCB-e3-WIT" eventType="touchUpInside" id="upx-bY-2Vx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYE-SS-bCq">
+                                <rect key="frame" x="645" y="497" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="show More"/>
+                                <connections>
+                                    <action selector="showMoreButtonTapped:" destination="GCB-e3-WIT" eventType="touchUpInside" id="0Xa-mo-ZnT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wko-Zk-kCR">
+                                <rect key="frame" x="138" y="96" width="792" height="575"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY4-M6-6UU">
+                                <rect key="frame" x="491" y="67" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-hj-NUU">
+                                <rect key="frame" x="792" y="936" width="230" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-3C-dz7">
+                                <rect key="frame" x="583" y="457" width="100" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEO-Gd-GMV">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="34"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="homeButtonTapped:" destination="GCB-e3-WIT" eventType="touchUpInside" id="cMu-ya-Siy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-VU-xVA">
+                                        <rect key="frame" x="54" y="0.0" width="46" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8Ep-KY-FMy" firstAttribute="top" secondItem="e3O-pA-3Ve" secondAttribute="top" id="N0k-cp-WhM"/>
+                            <constraint firstItem="8Ep-KY-FMy" firstAttribute="leading" secondItem="e3O-pA-3Ve" secondAttribute="leading" id="Uxu-d7-DhX"/>
+                            <constraint firstItem="8Ep-KY-FMy" firstAttribute="bottom" secondItem="e3O-pA-3Ve" secondAttribute="bottom" constant="20" id="ejk-S0-0E4"/>
+                            <constraint firstItem="8Ep-KY-FMy" firstAttribute="centerX" secondItem="uoT-F0-xUz" secondAttribute="centerX" id="xhM-wc-4c4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e3O-pA-3Ve"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Qhr-dV-jqe" appends="YES" id="xAu-YQ-ztS"/>
+                            <outletCollection property="gestureRecognizers" destination="2oc-z3-bxd" appends="YES" id="gkt-gG-ZYh"/>
+                            <outletCollection property="gestureRecognizers" destination="Y00-oU-hxL" appends="YES" id="O01-5a-60r"/>
+                            <outletCollection property="gestureRecognizers" destination="MQT-7w-Qsn" appends="YES" id="5fv-31-ipo"/>
+                            <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="iUq-Uj-Ktc"/>
+                        </connections>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="8Ep-KY-FMy" id="CJ7-D2-aSh"/>
+                        <outlet property="continueButton" destination="3yG-VU-xVA" id="PaU-F2-FaP"/>
+                        <outlet property="downSwipeGesture" destination="Y00-oU-hxL" id="0v3-yI-SqP"/>
+                        <outlet property="homeButton" destination="QEO-Gd-GMV" id="VuJ-WD-jxm"/>
+                        <outlet property="image1" destination="Giz-MN-OoP" id="zun-ye-wF1"/>
+                        <outlet property="image2" destination="LHU-qR-NYI" id="Qmf-e6-QOr"/>
+                        <outlet property="image3" destination="7UB-uK-XLm" id="q7d-hT-Ci4"/>
+                        <outlet property="image4" destination="heq-BM-1ay" id="6jn-ws-zCn"/>
+                        <outlet property="image5" destination="t9N-GT-uyF" id="yJr-WT-zyb"/>
+                        <outlet property="image6" destination="0xL-es-oqc" id="RPy-mR-DQp"/>
+                        <outlet property="image7" destination="b9U-G9-nVw" id="QbW-Js-BU9"/>
+                        <outlet property="label" destination="wko-Zk-kCR" id="Tt0-OP-jEn"/>
+                        <outlet property="label1" destination="RY4-M6-6UU" id="qzC-n2-ecK"/>
+                        <outlet property="leftSwipeGesture" destination="3NM-h4-lAb" id="hVX-vg-WG3"/>
+                        <outlet property="nextButton" destination="SUg-ho-Bcz" id="kHG-Cj-yZf"/>
+                        <outlet property="previousButton" destination="hOq-gA-8nN" id="ntV-9U-u8F"/>
+                        <outlet property="rightSwipeGesture" destination="Qhr-dV-jqe" id="dEo-3C-aoD"/>
+                        <outlet property="showMoreButton" destination="KYE-SS-bCq" id="rNU-yb-7KO"/>
+                        <outlet property="showMoreStack" destination="Owh-3C-dz7" id="zCi-YK-05M"/>
+                        <outlet property="singleTap" destination="MQT-7w-Qsn" id="ut9-4z-f2q"/>
+                        <outlet property="testingTextfield" destination="b3i-hj-NUU" id="EmQ-Ze-1FK"/>
+                        <outlet property="upSwipeGesture" destination="2oc-z3-bxd" id="gAW-tm-FkE"/>
+                        <segue destination="pyE-cE-vpm" kind="unwind" identifier="BackToViewController" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="iBb-Ma-PAd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGH-UC-hAU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="3NM-h4-lAb">
+                    <connections>
+                        <action selector="leftSwipe:" destination="GCB-e3-WIT" id="Qt8-SR-gHE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Qhr-dV-jqe">
+                    <connections>
+                        <action selector="rightSwipe:" destination="GCB-e3-WIT" id="qqG-NQ-JIR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="Y00-oU-hxL">
+                    <connections>
+                        <action selector="downSwipe:" destination="GCB-e3-WIT" id="1fL-zs-aH1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="2oc-z3-bxd">
+                    <connections>
+                        <action selector="upSwipe:" destination="GCB-e3-WIT" id="EvJ-Jn-MGN"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="MQT-7w-Qsn"/>
+                <exit id="pyE-cE-vpm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="335.57833089311856" y="1028.90625"/>
+        </scene>
+        <!--Table Of Content Controller-->
+        <scene sceneID="xFz-LH-se8">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="R4J-m2-hmf" customClass="TableOfContentController" customModule="The_Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k7p-I5-L2s">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZ2-Dv-dLJ">
+                                <rect key="frame" x="0.0" y="0.0" width="943" height="680"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsG-4D-dOn">
+                                <rect key="frame" x="668" y="495" width="30" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackTap:" destination="R4J-m2-hmf" eventType="touchUpInside" id="8xA-YE-RHx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJU-83-djb">
+                                <rect key="frame" x="662" y="501" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="FyS-sa-WwO"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="oZ2-Dv-dLJ" id="p5X-YS-YPF"/>
+                        <outlet property="goBackButton" destination="PsG-4D-dOn" id="3Vz-Nk-pOE"/>
+                        <outlet property="tableLabel" destination="bJU-83-djb" id="vhm-sT-cbb"/>
+                        <segue destination="dca-RP-c3o" kind="unwind" identifier="returnToMainController" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="P5P-3h-VZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ln-K1-dcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dca-RP-c3o" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1181.9912152269399" y="126.56249999999999"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FrontCover" width="974" height="727"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xsr-0X-VM9"/>
+    </inferredMetricsTieBreakers>
+</document>

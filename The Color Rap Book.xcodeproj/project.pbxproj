@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04079E6B8BA15B1D512E9343 /* Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681F04C753960FDC9EC0B0 /* Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework */; };
+		530062742411E837004FFE29 /* Morgan_bold-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 530062722411E5AF004FFE29 /* Morgan_bold-Regular.otf */; };
+		53038BE924043D0900F36DB7 /* MorgansPrint-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53038BE824043D0900F36DB7 /* MorgansPrint-Regular.otf */; };
+		53038BEB24043E4100F36DB7 /* labelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53038BEA24043E4100F36DB7 /* labelControl.swift */; };
+		530414DF23FECE2200E268C3 /* BackGroundDisplay.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */; };
+		530414E123FED09800E268C3 /* ImageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530414E023FED09800E268C3 /* ImageControl.swift */; };
+		530414E523FED22C00E268C3 /* backgroundControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530414E423FED22C00E268C3 /* backgroundControl.swift */; };
+		53100FEA24018AA900F3BFAC /* customImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53100FE924018AA900F3BFAC /* customImage.swift */; };
 		533CC20323ECC01A00871876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20223ECC01A00871876 /* AppDelegate.swift */; };
 		533CC20523ECC01A00871876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20423ECC01A00871876 /* SceneDelegate.swift */; };
 		533CC20723ECC01A00871876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20623ECC01A00871876 /* ViewController.swift */; };
@@ -16,6 +24,18 @@
 		533CC21223ECC01C00871876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533CC21023ECC01C00871876 /* LaunchScreen.storyboard */; };
 		533CC21D23ECC01C00871876 /* The_Color_Rap_BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC21C23ECC01C00871876 /* The_Color_Rap_BookTests.swift */; };
 		533CC22823ECC01C00871876 /* The_Color_Rap_BookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC22723ECC01C00871876 /* The_Color_Rap_BookUITests.swift */; };
+		536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC29F2412B9DD000AB196 /* DeveloperController.swift */; };
+		536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */; };
+		5396251023FEE8B30044C468 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5396250F23FEE8B30044C468 /* AnimationController.swift */; };
+		539F9134240DCAF9000BAA76 /* BlueSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539F9133240DCAF9000BAA76 /* BlueSectionController.swift */; };
+		53AA0CB72410322100C2F036 /* OHCircleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0CB62410322100C2F036 /* OHCircleSegue.swift */; };
+		53AA0CB92410A02400C2F036 /* TableOfContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0CB82410A02400C2F036 /* TableOfContentController.swift */; };
+		53C7E30E23FB90E100866321 /* Data.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 53C7E30D23FB90E100866321 /* Data.rtf */; };
+		53DEF52423EF4057002AEB13 /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEF52323EF4057002AEB13 /* DetailPage.swift */; };
+		53DEF52623EF4416002AEB13 /* ViewControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEF52523EF4416002AEB13 /* ViewControllerSegue.swift */; };
+		53DEF52823EF4436002AEB13 /* ViewControllerSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEF52723EF4436002AEB13 /* ViewControllerSegueUnwind.swift */; };
+		712E19FB2FDDFB23B7BE7E63 /* Pods_The_Color_Rap_BookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999DAB1CDC3F806E13D93E76 /* Pods_The_Color_Rap_BookTests.framework */; };
+		A8E07EF0A3E330FDBE9296B8 /* Pods_The_Color_Rap_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B70FBB5F1301A22E34B1CC /* Pods_The_Color_Rap_Book.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +56,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07676FA4E971579E8076D6E4 /* Pods-The Color Rap Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book.release.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book.release.xcconfig"; sourceTree = "<group>"; };
+		077D78C2C5750E3FCFAA9463 /* Pods-The Color Rap BookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap BookTests.release.xcconfig"; path = "Target Support Files/Pods-The Color Rap BookTests/Pods-The Color Rap BookTests.release.xcconfig"; sourceTree = "<group>"; };
+		2FFC629788FD618D36A9B11B /* Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book-The Color Rap BookUITests/Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		530062722411E5AF004FFE29 /* Morgan_bold-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Morgan_bold-Regular.otf"; sourceTree = "<group>"; };
+		53038BE824043D0900F36DB7 /* MorgansPrint-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MorgansPrint-Regular.otf"; sourceTree = "<group>"; };
+		53038BEA24043E4100F36DB7 /* labelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = labelControl.swift; sourceTree = "<group>"; };
+		530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BackGroundDisplay.rtf; sourceTree = "<group>"; };
+		530414E023FED09800E268C3 /* ImageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControl.swift; sourceTree = "<group>"; };
+		530414E423FED22C00E268C3 /* backgroundControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundControl.swift; sourceTree = "<group>"; };
+		53100FE924018AA900F3BFAC /* customImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customImage.swift; sourceTree = "<group>"; };
 		533CC1FF23ECC01A00871876 /* The Color Rap Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Color Rap Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		533CC20223ECC01A00871876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		533CC20423ECC01A00871876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +81,23 @@
 		533CC22323ECC01C00871876 /* The Color Rap BookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Color Rap BookUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		533CC22723ECC01C00871876 /* The_Color_Rap_BookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Color_Rap_BookUITests.swift; sourceTree = "<group>"; };
 		533CC22923ECC01C00871876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		536BC29F2412B9DD000AB196 /* DeveloperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperController.swift; sourceTree = "<group>"; };
+		536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
+		5396250F23FEE8B30044C468 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		539F9133240DCAF9000BAA76 /* BlueSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueSectionController.swift; sourceTree = "<group>"; };
+		53AA0CB62410322100C2F036 /* OHCircleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHCircleSegue.swift; sourceTree = "<group>"; };
+		53AA0CB82410A02400C2F036 /* TableOfContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentController.swift; sourceTree = "<group>"; };
+		53BB482A23F0807E00D71E02 /* MorgansPrint-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MorgansPrint-Regular.otf"; path = "../../../MorgansPrint-Regular.otf"; sourceTree = "<group>"; };
+		53C7E30D23FB90E100866321 /* Data.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Data.rtf; sourceTree = "<group>"; };
+		53DEF52323EF4057002AEB13 /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
+		53DEF52523EF4416002AEB13 /* ViewControllerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSegue.swift; sourceTree = "<group>"; };
+		53DEF52723EF4436002AEB13 /* ViewControllerSegueUnwind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSegueUnwind.swift; sourceTree = "<group>"; };
+		5DA0B9D326F5820F2429CAEB /* Pods-The Color Rap Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book.debug.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book.debug.xcconfig"; sourceTree = "<group>"; };
+		7BF0A9A4EE338E812D0DCA68 /* Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book-The Color Rap BookUITests/Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		905654F0A4217DD7DE35972E /* Pods-The Color Rap BookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap BookTests.debug.xcconfig"; path = "Target Support Files/Pods-The Color Rap BookTests/Pods-The Color Rap BookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		999DAB1CDC3F806E13D93E76 /* Pods_The_Color_Rap_BookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Color_Rap_BookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6681F04C753960FDC9EC0B0 /* Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B70FBB5F1301A22E34B1CC /* Pods_The_Color_Rap_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Color_Rap_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E07EF0A3E330FDBE9296B8 /* Pods_The_Color_Rap_Book.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712E19FB2FDDFB23B7BE7E63 /* Pods_The_Color_Rap_BookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +121,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04079E6B8BA15B1D512E9343 /* Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06FF92BA023ADE15029C927F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DA0B9D326F5820F2429CAEB /* Pods-The Color Rap Book.debug.xcconfig */,
+				07676FA4E971579E8076D6E4 /* Pods-The Color Rap Book.release.xcconfig */,
+				7BF0A9A4EE338E812D0DCA68 /* Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig */,
+				2FFC629788FD618D36A9B11B /* Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig */,
+				905654F0A4217DD7DE35972E /* Pods-The Color Rap BookTests.debug.xcconfig */,
+				077D78C2C5750E3FCFAA9463 /* Pods-The Color Rap BookTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		533CC1F623ECC01A00871876 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +148,9 @@
 				533CC21B23ECC01C00871876 /* The Color Rap BookTests */,
 				533CC22623ECC01C00871876 /* The Color Rap BookUITests */,
 				533CC20023ECC01A00871876 /* Products */,
+				06FF92BA023ADE15029C927F /* Pods */,
+				533CF98423F8E9E60015FDCC /* Recovered References */,
+				ADD2F53FEDFF2831618ED710 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +167,16 @@
 		533CC20123ECC01A00871876 /* The Color Rap Book */ = {
 			isa = PBXGroup;
 			children = (
-				533CC20223ECC01A00871876 /* AppDelegate.swift */,
-				533CC20423ECC01A00871876 /* SceneDelegate.swift */,
-				533CC20623ECC01A00871876 /* ViewController.swift */,
-				533CC20823ECC01A00871876 /* Main.storyboard */,
+				539F9132240DC88E000BAA76 /* BlueSection */,
+				533CF96523F89BDC0015FDCC /* OtherFiles */,
+				533CF96423F89BB30015FDCC /* Delegates */,
+				533CF96323F89B910015FDCC /* Storyboard */,
+				533CF96223F89B740015FDCC /* MainControllers */,
+				533CF96123F89B630015FDCC /* Segues */,
+				53BB482A23F0807E00D71E02 /* MorgansPrint-Regular.otf */,
 				533CC20E23ECC01C00871876 /* Assets.xcassets */,
-				533CC21023ECC01C00871876 /* LaunchScreen.storyboard */,
-				533CC21323ECC01C00871876 /* Info.plist */,
 				533CC20B23ECC01A00871876 /* The_Color_Rap_Book.xcdatamodeld */,
+				533CC21323ECC01C00871876 /* Info.plist */,
 			);
 			path = "The Color Rap Book";
 			sourceTree = "<group>";
@@ -131,6 +199,87 @@
 			path = "The Color Rap BookUITests";
 			sourceTree = "<group>";
 		};
+		533CF96123F89B630015FDCC /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				53AA0CB62410322100C2F036 /* OHCircleSegue.swift */,
+				53DEF52523EF4416002AEB13 /* ViewControllerSegue.swift */,
+				53DEF52723EF4436002AEB13 /* ViewControllerSegueUnwind.swift */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
+		533CF96223F89B740015FDCC /* MainControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53038BEA24043E4100F36DB7 /* labelControl.swift */,
+				533CC20623ECC01A00871876 /* ViewController.swift */,
+				53DEF52323EF4057002AEB13 /* DetailPage.swift */,
+				530414E023FED09800E268C3 /* ImageControl.swift */,
+				530414E423FED22C00E268C3 /* backgroundControl.swift */,
+				53AA0CB82410A02400C2F036 /* TableOfContentController.swift */,
+				536BC29F2412B9DD000AB196 /* DeveloperController.swift */,
+			);
+			path = MainControllers;
+			sourceTree = "<group>";
+		};
+		533CF96323F89B910015FDCC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				533CC20823ECC01A00871876 /* Main.storyboard */,
+				533CC21023ECC01C00871876 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		533CF96423F89BB30015FDCC /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				533CC20223ECC01A00871876 /* AppDelegate.swift */,
+				533CC20423ECC01A00871876 /* SceneDelegate.swift */,
+				5396250F23FEE8B30044C468 /* AnimationController.swift */,
+				53100FE924018AA900F3BFAC /* customImage.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		533CF96523F89BDC0015FDCC /* OtherFiles */ = {
+			isa = PBXGroup;
+			children = (
+				536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */,
+				53038BE824043D0900F36DB7 /* MorgansPrint-Regular.otf */,
+				530062722411E5AF004FFE29 /* Morgan_bold-Regular.otf */,
+				530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */,
+				53C7E30D23FB90E100866321 /* Data.rtf */,
+			);
+			path = OtherFiles;
+			sourceTree = "<group>";
+		};
+		533CF98423F8E9E60015FDCC /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		539F9132240DC88E000BAA76 /* BlueSection */ = {
+			isa = PBXGroup;
+			children = (
+				539F9133240DCAF9000BAA76 /* BlueSectionController.swift */,
+			);
+			path = BlueSection;
+			sourceTree = "<group>";
+		};
+		ADD2F53FEDFF2831618ED710 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9B70FBB5F1301A22E34B1CC /* Pods_The_Color_Rap_Book.framework */,
+				B6681F04C753960FDC9EC0B0 /* Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework */,
+				999DAB1CDC3F806E13D93E76 /* Pods_The_Color_Rap_BookTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +287,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 533CC22C23ECC01C00871876 /* Build configuration list for PBXNativeTarget "The Color Rap Book" */;
 			buildPhases = (
+				503236633949ECB9343EC24C /* [CP] Check Pods Manifest.lock */,
 				533CC1FB23ECC01A00871876 /* Sources */,
 				533CC1FC23ECC01A00871876 /* Frameworks */,
 				533CC1FD23ECC01A00871876 /* Resources */,
+				14B3238E913E955C7B7C430B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +306,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 533CC22F23ECC01C00871876 /* Build configuration list for PBXNativeTarget "The Color Rap BookTests" */;
 			buildPhases = (
+				6399EECB3CE2B75C5C734920 /* [CP] Check Pods Manifest.lock */,
 				533CC21423ECC01C00871876 /* Sources */,
 				533CC21523ECC01C00871876 /* Frameworks */,
 				533CC21623ECC01C00871876 /* Resources */,
@@ -173,9 +325,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 533CC23223ECC01C00871876 /* Build configuration list for PBXNativeTarget "The Color Rap BookUITests" */;
 			buildPhases = (
+				5F95E49AD33AEB96F2A518CB /* [CP] Check Pods Manifest.lock */,
 				533CC21F23ECC01C00871876 /* Sources */,
 				533CC22023ECC01C00871876 /* Frameworks */,
 				533CC22123ECC01C00871876 /* Resources */,
+				BE9728B8CAF23E8136DC2247 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,9 +389,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530062742411E837004FFE29 /* Morgan_bold-Regular.otf in Resources */,
+				53C7E30E23FB90E100866321 /* Data.rtf in Resources */,
 				533CC21223ECC01C00871876 /* LaunchScreen.storyboard in Resources */,
+				53038BE924043D0900F36DB7 /* MorgansPrint-Regular.otf in Resources */,
 				533CC20F23ECC01C00871876 /* Assets.xcassets in Resources */,
 				533CC20A23ECC01A00871876 /* Main.storyboard in Resources */,
+				530414DF23FECE2200E268C3 /* BackGroundDisplay.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,15 +415,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14B3238E913E955C7B7C430B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		503236633949ECB9343EC24C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The Color Rap Book-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F95E49AD33AEB96F2A518CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The Color Rap Book-The Color Rap BookUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6399EECB3CE2B75C5C734920 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The Color Rap BookTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE9728B8CAF23E8136DC2247 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Color Rap Book-The Color Rap BookUITests/Pods-The Color Rap Book-The Color Rap BookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Color Rap Book-The Color Rap BookUITests/Pods-The Color Rap Book-The Color Rap BookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-The Color Rap Book-The Color Rap BookUITests/Pods-The Color Rap Book-The Color Rap BookUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		533CC1FB23ECC01A00871876 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DEF52623EF4416002AEB13 /* ViewControllerSegue.swift in Sources */,
+				539F9134240DCAF9000BAA76 /* BlueSectionController.swift in Sources */,
+				536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */,
+				53100FEA24018AA900F3BFAC /* customImage.swift in Sources */,
+				530414E123FED09800E268C3 /* ImageControl.swift in Sources */,
 				533CC20723ECC01A00871876 /* ViewController.swift in Sources */,
 				533CC20323ECC01A00871876 /* AppDelegate.swift in Sources */,
+				53AA0CB72410322100C2F036 /* OHCircleSegue.swift in Sources */,
+				53AA0CB92410A02400C2F036 /* TableOfContentController.swift in Sources */,
 				533CC20D23ECC01A00871876 /* The_Color_Rap_Book.xcdatamodeld in Sources */,
+				53038BEB24043E4100F36DB7 /* labelControl.swift in Sources */,
+				53DEF52823EF4436002AEB13 /* ViewControllerSegueUnwind.swift in Sources */,
+				53DEF52423EF4057002AEB13 /* DetailPage.swift in Sources */,
 				533CC20523ECC01A00871876 /* SceneDelegate.swift in Sources */,
+				530414E523FED22C00E268C3 /* backgroundControl.swift in Sources */,
+				536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */,
+				5396251023FEE8B30044C468 /* AnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +644,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -436,6 +710,7 @@
 		};
 		533CC22D23ECC01C00871876 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA0B9D326F5820F2429CAEB /* Pods-The Color Rap Book.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +729,7 @@
 		};
 		533CC22E23ECC01C00871876 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07676FA4E971579E8076D6E4 /* Pods-The Color Rap Book.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +748,7 @@
 		};
 		533CC23023ECC01C00871876 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905654F0A4217DD7DE35972E /* Pods-The Color Rap BookTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +771,7 @@
 		};
 		533CC23123ECC01C00871876 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 077D78C2C5750E3FCFAA9463 /* Pods-The Color Rap BookTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +794,7 @@
 		};
 		533CC23323ECC01C00871876 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BF0A9A4EE338E812D0DCA68 /* Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +815,7 @@
 		};
 		533CC23423ECC01C00871876 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FFC629788FD618D36A9B11B /* Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
