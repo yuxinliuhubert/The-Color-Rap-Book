@@ -11,12 +11,13 @@ import UIKit
 import SwiftUI
 import simd
 import CoreMotion
-
+import CoreData
 
 struct myVariable {
     static var state = 0
     static var center: CGPoint?
     static var comingFromTableOfContent = false
+    static var page = 3
 }
 
 class DetailPageController : UIViewController, UITextFieldDelegate {
@@ -157,15 +158,34 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
                 self.showMoreStack.distribution = .fillEqually
                 showMoreStack.spacing = screenWidth * 0.05
                 homeButton.setImage(UIImage(named: "home"), for: .normal)
+                continueButton.setImage(UIImage(named: "continue"), for: .normal)
             
 //                showMoreStack.addBackground(color: .red)
                 defineStackPosition()
+                print("pagenumberSaved ",myVariable.page)
             }
+            
         })
         
         // Listen for orientation changes
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "SavedData", in: context)
+            let newEntity = NSManagedObject(entity: entity!, insertInto: context)
+        
+        newEntity.setValue(myVariable.page, forKey: "page")
+        
+        
+        do{
+            try context.save()
+            print("saved")
+        } catch {
+            print("failed saving")
+        }
+    }
 
     
     override open var shouldAutorotate: Bool {
@@ -185,7 +205,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
@@ -213,7 +232,11 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func homeButtonTapped(_ sender: Any) {
-        myVariable.state = 2
+        firstLabelTask(state: 1, completion: { (success) in
+            if success == true {
+            myVariable.state = 2
+            }
+        })
         self.performSegue(withIdentifier: "BackToViewController", sender: sender)
     }
     
@@ -265,6 +288,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
                 backgroundChangeBackward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
             }
     }
+    
 
     
     func buttonsEnabled(Bool: Bool) {
@@ -330,6 +354,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
             }
             print("backgroundArray ", backgroundAtray)
         }
+        
+        getSavedData()
     }
     
     
@@ -422,7 +448,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         if state == 0 {
             readAllData()
             self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
-        }else{
+        }else if state == 1{
+            myVariable.page = myVariable.state
+        } else{
         pageNumberLabelDisplay(label: label, pageNum: state)
         // Call completion, when finished, success or faliure
         }
@@ -565,6 +593,22 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
        
     
     
+    
+    
+    func getSavedData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject]
+            {
+                myVariable.page = data.value(forKey: "page") as! Int
+            }
+        } catch {
+            print("failed to read")
+        }
+    }
     
     
     

@@ -238,7 +238,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-3C-dz7">
-                                <rect key="frame" x="583" y="457" width="100" height="34"/>
+                                <rect key="frame" x="583" y="457" width="84" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEO-Gd-GMV">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="34"/>
@@ -249,9 +249,11 @@
                                             <action selector="homeButtonTapped:" destination="GCB-e3-WIT" eventType="touchUpInside" id="cMu-ya-Siy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-VU-xVA">
-                                        <rect key="frame" x="54" y="0.0" width="46" height="34"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-VU-xVA">
+                                        <rect key="frame" x="54" y="0.0" width="30" height="34"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>

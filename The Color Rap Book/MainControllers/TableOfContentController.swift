@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import VegaScrollFlowLayout
+import CoreData
 
 struct CustomData {
     var title: String
@@ -26,6 +27,7 @@ class TableOfContentController: UIViewController {
     
     @IBOutlet var goBackButton: UIButton!
     let data = [
+        CustomData(title: "keepReading", image: #imageLiteral(resourceName: "keep reading"), pageNum: myVariable.page),
         CustomData(title: "red", image: #imageLiteral(resourceName: "2_red is red"), pageNum: 4),
         CustomData(title: "blue", image: #imageLiteral(resourceName: "11_blue is blue"), pageNum: 9),
         CustomData(title: "yellow", image: #imageLiteral(resourceName: "16_yellow is yellow 061319"), pageNum: 18),
@@ -59,6 +61,8 @@ class TableOfContentController: UIViewController {
     }
     
     override func viewDidLoad() {
+        getSavedData()
+        print("page", myVariable.page)
         
         tableLabel.frame = CGRect(x: width * 0.165235, y: 30, width: width * 0.80, height: width * 0.11267)
         tableLabel.text = "Table Of Content"
@@ -101,7 +105,8 @@ class TableOfContentController: UIViewController {
 //        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.1267 + 60).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: width * 0.078125).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -width * 0.078125).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.05208).isActive = true
+//        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.05208).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.01208).isActive = true
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -126,7 +131,22 @@ class TableOfContentController: UIViewController {
             (segue as! OHCircleSegue).circleOrigin = cell.center
             
         }
-         }
+    }
+    
+    func getSavedData() {
+           let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+           let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
+           request.returnsObjectsAsFaults = false
+           do {
+               let result = try context.fetch(request)
+               for data in result as! [NSManagedObject]
+               {
+                   myVariable.page = data.value(forKey: "page") as! Int
+               }
+           } catch {
+               print("failed to read")
+           }
+       }
 }
 
 extension TableOfContentController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -136,7 +156,7 @@ extension TableOfContentController: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

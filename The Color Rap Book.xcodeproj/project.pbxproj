@@ -28,6 +28,9 @@
 		536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */; };
 		5396251023FEE8B30044C468 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5396250F23FEE8B30044C468 /* AnimationController.swift */; };
 		539F9134240DCAF9000BAA76 /* BlueSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539F9133240DCAF9000BAA76 /* BlueSectionController.swift */; };
+		53A09BE924182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53A09BE724182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld */; };
+		53A09BF024182D1500077EEB /* SavedData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */; };
+		53A09BF124182D1500077EEB /* SavedData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A09BEE24182D1500077EEB /* SavedData+CoreDataClass.swift */; };
 		53AA0CB72410322100C2F036 /* OHCircleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0CB62410322100C2F036 /* OHCircleSegue.swift */; };
 		53AA0CB92410A02400C2F036 /* TableOfContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0CB82410A02400C2F036 /* TableOfContentController.swift */; };
 		53C7E30E23FB90E100866321 /* Data.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 53C7E30D23FB90E100866321 /* Data.rtf */; };
@@ -85,6 +88,9 @@
 		536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		5396250F23FEE8B30044C468 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		539F9133240DCAF9000BAA76 /* BlueSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueSectionController.swift; sourceTree = "<group>"; };
+		53A09BE824182C0C00077EEB /* The_Color_Rap_Book.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Color_Rap_Book.xcdatamodel; sourceTree = "<group>"; };
+		53A09BEE24182D1500077EEB /* SavedData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataClass.swift"; path = "/Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The Color Rap Book/The Color Rap Book/OtherFiles/SavedData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataProperties.swift"; path = "/Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The Color Rap Book/The Color Rap Book/OtherFiles/SavedData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		53AA0CB62410322100C2F036 /* OHCircleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHCircleSegue.swift; sourceTree = "<group>"; };
 		53AA0CB82410A02400C2F036 /* TableOfContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentController.swift; sourceTree = "<group>"; };
 		53BB482A23F0807E00D71E02 /* MorgansPrint-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MorgansPrint-Regular.otf"; path = "../../../MorgansPrint-Regular.otf"; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 		533CC20123ECC01A00871876 /* The Color Rap Book */ = {
 			isa = PBXGroup;
 			children = (
+				53A09BE724182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld */,
 				539F9132240DC88E000BAA76 /* BlueSection */,
 				533CF96523F89BDC0015FDCC /* OtherFiles */,
 				533CF96423F89BB30015FDCC /* Delegates */,
@@ -246,6 +253,8 @@
 		533CF96523F89BDC0015FDCC /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				53A09BEE24182D1500077EEB /* SavedData+CoreDataClass.swift */,
+				53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */,
 				536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */,
 				53038BE824043D0900F36DB7 /* MorgansPrint-Regular.otf */,
 				530062722411E5AF004FFE29 /* Morgan_bold-Regular.otf */,
@@ -524,11 +533,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53DEF52623EF4416002AEB13 /* ViewControllerSegue.swift in Sources */,
+				53A09BF024182D1500077EEB /* SavedData+CoreDataProperties.swift in Sources */,
 				539F9134240DCAF9000BAA76 /* BlueSectionController.swift in Sources */,
 				536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */,
 				53100FEA24018AA900F3BFAC /* customImage.swift in Sources */,
 				530414E123FED09800E268C3 /* ImageControl.swift in Sources */,
 				533CC20723ECC01A00871876 /* ViewController.swift in Sources */,
+				53A09BE924182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld in Sources */,
 				533CC20323ECC01A00871876 /* AppDelegate.swift in Sources */,
 				53AA0CB72410322100C2F036 /* OHCircleSegue.swift in Sources */,
 				53AA0CB92410A02400C2F036 /* TableOfContentController.swift in Sources */,
@@ -538,6 +549,7 @@
 				53DEF52423EF4057002AEB13 /* DetailPage.swift in Sources */,
 				533CC20523ECC01A00871876 /* SceneDelegate.swift in Sources */,
 				530414E523FED22C00E268C3 /* backgroundControl.swift in Sources */,
+				53A09BF124182D1500077EEB /* SavedData+CoreDataClass.swift in Sources */,
 				536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */,
 				5396251023FEE8B30044C468 /* AnimationController.swift in Sources */,
 			);
@@ -882,6 +894,16 @@
 				533CC20C23ECC01A00871876 /* The_Color_Rap_Book.xcdatamodel */,
 			);
 			currentVersion = 533CC20C23ECC01A00871876 /* The_Color_Rap_Book.xcdatamodel */;
+			path = The_Color_Rap_Book.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		53A09BE724182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				53A09BE824182C0C00077EEB /* The_Color_Rap_Book.xcdatamodel */,
+			);
+			currentVersion = 53A09BE824182C0C00077EEB /* The_Color_Rap_Book.xcdatamodel */;
 			path = The_Color_Rap_Book.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
