@@ -254,6 +254,9 @@
                                         <state key="normal">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="GCB-e3-WIT" eventType="touchUpInside" id="Ys0-1W-ia2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

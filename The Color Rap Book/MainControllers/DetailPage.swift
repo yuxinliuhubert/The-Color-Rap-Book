@@ -17,7 +17,7 @@ struct myVariable {
     static var state = 0
     static var center: CGPoint?
     static var comingFromTableOfContent = false
-    static var page = 3
+    static var page = Int()
 }
 
 class DetailPageController : UIViewController, UITextFieldDelegate {
@@ -121,7 +121,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         
     
     
-    
+//    Override Functions
     
     
     override func viewDidLoad() {
@@ -132,7 +132,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
                 imageBackInPlace()
                 label.isHighlighted = false
                 label.alpha = 1
-                grestureRecognizerSwitch(Bool: true)
+                grestureRecognizerSwitch(Bool: false)
                 testingTextfield.backgroundColor = .white
                 testingTextfield.textAlignment = .center
                 testingTextfield.attributedPlaceholder = NSAttributedString(string: "Currently on page \(myVariable.state)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray.withAlphaComponent(0.8)])
@@ -172,19 +172,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
     
     override func viewWillDisappear(_ animated: Bool) {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let entity = NSEntityDescription.entity(forEntityName: "SavedData", in: context)
-            let newEntity = NSManagedObject(entity: entity!, insertInto: context)
-        
-        newEntity.setValue(myVariable.page, forKey: "page")
-        
-        
-        do{
-            try context.save()
-            print("saved")
-        } catch {
-            print("failed saving")
-        }
+           saveData()
     }
 
     
@@ -196,14 +184,10 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         }
       }
     
+    
+    
     override func didMove(toParent parent: UIViewController?) {
         motionManager.startAccelerometerUpdates()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -216,6 +200,48 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
             self.showMoreButton.alpha = 1
         })
     }
+    
+    override var prefersStatusBarHidden: Bool { return true }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .landscape }
+
+    
+    
+    
+//    Read Data
+    
+    func readAllData() {
+            if let url = Bundle.main.url(forResource:"Data", withExtension: "rtf") {
+                do {
+                    let data = try Data(contentsOf:url)
+                    let attibutedString = try NSAttributedString(data: data, documentAttributes: nil)
+                    let fullText = attibutedString.string
+                    labelArray = fullText.components(separatedBy: CharacterSet.newlines)
+                } catch {
+                    print(error)
+                }
+                print("labelArray ", labelArray)
+            }
+            
+            if let url = Bundle.main.url(forResource:"BackGroundDisplay", withExtension: "rtf") {
+                do {
+                    let data = try Data(contentsOf:url)
+                    let attibutedString = try NSAttributedString(data: data, documentAttributes: nil)
+                    let fullText = attibutedString.string
+                    backgroundAtray = fullText.components(separatedBy: CharacterSet.newlines)
+                } catch {
+                    print(error)
+                }
+                print("backgroundArray ", backgroundAtray)
+            }
+            
+            getSavedData()
+        }
+    
+    
+    
+    
+    
+//    IBAction functions
     
     @IBAction func showMoreButtonTapped(_ sender: Any) {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveEaseInOut], animations: {
@@ -241,6 +267,10 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        myVariable.state = myVariable.page
+        backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
+    }
     
     
     
@@ -250,9 +280,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     @IBAction func nextPage(_ sender: Any) {
         orientationDetectorSwwitch(Bool: false)
         buttonsEnabled(Bool: false)
-        
-
         myVariable.state += 1
+        myVariable.page = myVariable.state
+        saveData()
         print("on page ", myVariable.state)
         switch myVariable.state{
         case 5:
@@ -269,8 +299,11 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         
     }
     
+    
     @IBAction func lastPage(_ sender: Any) {
         myVariable.state -= 1
+        myVariable.page = myVariable.state
+        saveData()
         orientationDetectorSwwitch(Bool: false)
         buttonsEnabled(Bool: false)
 
@@ -291,151 +324,20 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
 
     
-    func buttonsEnabled(Bool: Bool) {
-        switch Bool {
-        case true:
-            previousButton.isEnabled = true
-            nextButton.isEnabled = true
-            showMoreButton.isEnabled = true
-            UIView.animate(withDuration: 1.0, animations: {
-                self.previousButton.alpha = 1
-                self.nextButton.alpha = 1
-                self.showMoreButton.alpha = 1
-            })
-
-            
-        default:
-            previousButton.isEnabled = false
-            nextButton.isEnabled = false
-            showMoreButton.isEnabled = false
-            previousButton.alpha = 0.4
-            nextButton.alpha = 0.4
-            showMoreButton.alpha = 0.4
-            
-        }
-    }
-
 
 
     
-    func orientationDetectorSwwitch(Bool: Bool) {
-        switch Bool {
-        case false:
-            NotificationCenter.default.removeObserver(self)
-        default:
-            print("orientation recognizer enabled")
-            NotificationCenter.default.addObserver(self, selector:#selector(orientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
-        }
-        
-    }
-    
-    
-    func readAllData() {
-        if let url = Bundle.main.url(forResource:"Data", withExtension: "rtf") {
-            do {
-                let data = try Data(contentsOf:url)
-                let attibutedString = try NSAttributedString(data: data, documentAttributes: nil)
-                let fullText = attibutedString.string
-                labelArray = fullText.components(separatedBy: CharacterSet.newlines)
-            } catch {
-                print(error)
-            }
-            print("labelArray ", labelArray)
-        }
-        
-        if let url = Bundle.main.url(forResource:"BackGroundDisplay", withExtension: "rtf") {
-            do {
-                let data = try Data(contentsOf:url)
-                let attibutedString = try NSAttributedString(data: data, documentAttributes: nil)
-                let fullText = attibutedString.string
-                backgroundAtray = fullText.components(separatedBy: CharacterSet.newlines)
-            } catch {
-                print(error)
-            }
-            print("backgroundArray ", backgroundAtray)
-        }
-        
-        getSavedData()
-    }
-    
-    
-    func grestureRecognizerSwitch(Bool: Bool) {
-            if (Bool == true) {
-                leftSwipeGesture.isEnabled = true
-                rightSwipeGesture.isEnabled = true
-                upSwipeGesture.isEnabled = true
-                downSwipeGesture.isEnabled = true
-                singleTap.isEnabled = true
-            }else if (Bool == false) {
-                leftSwipeGesture.isEnabled = false
-                rightSwipeGesture.isEnabled = false
-                upSwipeGesture.isEnabled = false
-                downSwipeGesture.isEnabled = false
-                singleTap.isEnabled = false
-            }
-        }
-    
-    
-    
-    
-    
-    
-    //orientation secion
-    
-    @objc func orientationChanged(notification: NSNotification) {
-        if let device = notification.object as? UIDevice {
-            switch device.orientation {
-            case .portrait:
-                portraitOrientationChange()
-                print("right")
-            case .portraitUpsideDown:
-                portraitUpsideDownOrientationChange()
-                print("left")
-            case .landscapeRight:
-                print("up")
-                landscapeRightOrientationChange()
-            case .landscapeLeft:
-                landscapeLeftOrientationChange()
-                print("down")
-            default:
-                flatOrientation()
-                print("ha stop")
-                return
-            }
-        }
-    }
-    
-    func portraitOrientationChange() {
-        // Change gravity direction
-       timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.regularGravityVectorCanceller})
-        timer.invalidate()
-        gravityBehavior?.gravityDirection = regularGravityVector
-    }
     
 
-    func portraitUpsideDownOrientationChange() {
-        // Flip our gravity
-        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.invertedGravityVectorCanceller})
-        timer.invalidate()
-        gravityBehavior?.gravityDirection = invertedGravityVector
-    }
     
-    func landscapeRightOrientationChange() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalInvertGravityVectorCanceller})
-        timer.invalidate()
-        gravityBehavior?.gravityDirection = normalInvertGravityVector
-    }
     
-    func landscapeLeftOrientationChange() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalRegularGravityVectorCanceller})
-        timer.invalidate()
-        gravityBehavior?.gravityDirection = normalRegularGravityVector
-    }
     
-    func flatOrientation() {
-        gravityBehavior?.gravityDirection = zeroGravityVector
+    
+    
+    
+    
 
-    }
+  
     
     
     
@@ -463,27 +365,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         completion(true)
     }
     
-    func textFieldShouldReturn(_ testingTextfield: UITextField) -> Bool {
-        testingTextfield.resignFirstResponder()
-        guard let compareNum = Int(testingTextfield.text ?? "3") else { return true}
-        testingTextfield.text = nil
-        if compareNum >= 3 && compareNum <= 50 {
-            if myVariable.state < compareNum {
-                myVariable.state = compareNum
-            backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
-            } else if myVariable.state > compareNum {
-                myVariable.state = compareNum
-            backgroundChangeBackward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
-        }
-            print("state; ", myVariable.state)
-        }
-        
-        return true
-    }
-    
-    
-    override var prefersStatusBarHidden: Bool { return true }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .landscape }
 //    override var prefersHomeIndicatorAutoHidden: Bool { return true }
     
     
@@ -494,82 +375,12 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func leftSwipe(_ sender: Any) {
-        print("leftswiperecognize")
-    
-        if myVariable.state == 20 {
-            self.grestureRecognizerSwitch(Bool: false)
-            self.label1.alpha = 0
-            
-//            self.image5.backgroundColor = .red
-            
-            UIView.animateKeyframes(withDuration: 2.65, delay: 0, options: [], animations: {
-                
-                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
-                    self.image5.transform = self.image5.transform.translatedBy(x: self.screenWidth * 0.1, y: 0)
-                    
-                })
+//        print("leftswiperecognize")
+        leftSwipeHandler(state: myVariable.state)
 
-                UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.4, animations: {
-                    self.image5.transform = CGAffineTransform(rotationAngle: .pi/16)
-                    self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.2, y: -self.screenHeight * 0.2)
-                })
-
-                
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.2, animations: {
-                    self.image5.transform = CGAffineTransform(rotationAngle: -.pi/16)
-                    self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.2, y: 0)
-  
-                })
-
-
-                UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 1.8, animations: {
-                    self.image5.transform = CGAffineTransform(rotationAngle: -.pi/2.3)
-                    self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.8, y: 0)
-                })
-                
-                UIView.addKeyframe(withRelativeStartTime: 2.05, relativeDuration: 0.6, animations: {
-                    self.image1.image = UIImage(named: "page20Splash")
-                    let universalWidth = self.screenWidth * 0.72991  //cherryImage.size.width / 3.3
-                    let universalHeight = self.screenHeight * 0.61070 //cherryImage.size.height / 3.3
-                    self.view.bringSubviewToFront(self.image1)
-                    //            print("width ", cherryImage.size.width)
-                    //            print("height ",cherryImage.size.height)
-                    UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut], animations: {
-                        self.image1.alpha = 1
-                        self.image1.frame = CGRect(x: -self.screenWidth * 0.019, y: self.screenHeight * (1 - 0.5070), width: universalWidth ,height: universalHeight)
-                        self.image1.addShadow()
-                    })
-                    UIView.animate(withDuration: 0.2, delay: 2.05, options: [.curveEaseOut], animations: {
-                        self.label1.frame = CGRect(x: self.screenWidth * 0.08, y: self.screenHeight * 0.24, width: self.screenWidth * 0.6, height: self.screenHeight * 0.27)
-                        self.label1.transform = CGAffineTransform(rotationAngle: -.pi/6)
-                        self.label1.adjustsFontSizeToFitWidth = true
-                        self.label1.text = "Plop!"
-                        self.label1.alpha = 1
-                    })
-                
-            })
-            }, completion: {(completed) in
-                UIView.animateKeyframes(withDuration: 0.8, delay: 1.0, options: [], animations: {
-                    self.image1.alpha = 0
-                    self.label1.alpha = 0
-                },completion: {_ in
-                    self.grestureRecognizerSwitch(Bool: true)
-                    self.image1.frame = CGRect(x: 0, y: self.screenHeight * 2, width: self.screenWidth, height: self.screenHeight)
-                })
-                
-                }
-//            }
-        )}
     }
             
-            
-            
     @IBAction func upSwipe(_ sender: Any) {
-        if myVariable.state == 20 {
-        UIImageView.animate(withDuration: 2.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
-            self.image2.frame.origin.y -= self.screenHeight
-        }, completion: nil)
-        }
     }
     
     
@@ -593,22 +404,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
        
     
     
-    
-    
-    func getSavedData() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject]
-            {
-                myVariable.page = data.value(forKey: "page") as! Int
-            }
-        } catch {
-            print("failed to read")
-        }
-    }
+   
     
     
     
@@ -629,6 +425,18 @@ extension UIImageView {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 10
         clipsToBounds = false
+    }
+    
+    func addCustomImagePopShadow(radius: CGFloat) {
+        layer.shadowColor = UIColor.white.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOpacity = 1.0
+        layer.shadowRadius = radius
+        clipsToBounds = false
+    }
+    
+    func removeShadow() {
+        layer.shadowOpacity = 0
     }
 }
 

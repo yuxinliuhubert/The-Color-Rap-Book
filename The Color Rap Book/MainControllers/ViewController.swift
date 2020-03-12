@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 
 class ViewController: UIViewController {
@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getSavedData()
         screenWidth = UIScreen.main.bounds.width
         screenHeight = UIScreen.main.bounds.height
         introLabel.center = CGPoint(x: self.introLabel.center.x, y: self.screenHeight * 0.30)
@@ -151,6 +152,20 @@ class ViewController: UIViewController {
     func viewcontrollerANimate() {
         
     }
+//    func getSavedData() {
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
+//        request.returnsObjectsAsFaults = false
+//        do {
+//            let result = try context.fetch(request)
+//            for data in result as! [NSManagedObject]
+//            {
+//                myVariable.page = data.value(forKey: "page") as! Int
+//            }
+//        } catch {
+//            print("failed to read")
+//        }
+//    }
 
   
     

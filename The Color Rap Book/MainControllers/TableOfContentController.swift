@@ -39,7 +39,7 @@ class TableOfContentController: UIViewController {
         CustomData(title: "white", image: #imageLiteral(resourceName: "39_white is white new"), pageNum: 41)
     
     ]
-    var pageNum1: Int?
+    var pageNum1 = Int()
     
 
     fileprivate let collectionView: UICollectionView = {
@@ -60,9 +60,13 @@ class TableOfContentController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
     override func viewDidLoad() {
-        getSavedData()
+        self.getSavedData()
         print("page", myVariable.page)
+        print("customdata for book mark" , data)
         
         tableLabel.frame = CGRect(x: width * 0.165235, y: 30, width: width * 0.80, height: width * 0.11267)
         tableLabel.text = "Table Of Content"
@@ -133,20 +137,6 @@ class TableOfContentController: UIViewController {
         }
     }
     
-    func getSavedData() {
-           let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-           let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
-           request.returnsObjectsAsFaults = false
-           do {
-               let result = try context.fetch(request)
-               for data in result as! [NSManagedObject]
-               {
-                   myVariable.page = data.value(forKey: "page") as! Int
-               }
-           } catch {
-               print("failed to read")
-           }
-       }
 }
 
 extension TableOfContentController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

@@ -175,9 +175,14 @@ extension(DetailPageController) {
         image1.addShadow()
         let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture))
         panGesture.object = self.image1
+        panGesture.page = 22
         image1.addGestureRecognizer(panGesture)
         self.view.bringSubviewToFront(image1)
         
+        image2.image = UIImage(named: "page22LeftGrass")
+        image2.frame = CGRect(x: screenWidth * 0.323, y: screenHeight * 0.79, width: screenWidth * 0.06, height: screenHeight * 0.08)
+        image2.backgroundColor = .red
+        image2.addCustomImagePopShadow(radius: 50)
         
         
         
@@ -301,6 +306,9 @@ extension(DetailPageController) {
         image6.transform = .identity
         image7.transform = .identity
         image1.alpha = 1
+        image2.alpha = 1
+        image2.image = nil
+        image2.removeShadow()
         label1.transform = .identity
         itemsAnimator?.removeAllBehaviors()
         timer.invalidate()
@@ -413,30 +421,8 @@ extension(DetailPageController) {
         // Your action
     }
     
-    @objc func handlePanGesture(gesture: CustomPanGestureRecognizer) {
-        if (gesture.state == .began) {
-//            print("before drag: ", gesture.object!.center)
-        } else if (gesture.state == .changed) {
-//            measure the finger movement
-            gesture.translation = gesture.translation(in: self.view)
-//            transform the object in accordance to the movement
-            gesture.object?.transform = CGAffineTransform(translationX: gesture.translation?.x ?? 0, y: gesture.translation?.y ?? 0)
-//                set the final location
-             gesture.finalPoint = CGPoint(x: (gesture.object?.center.x)! + gesture.translation!.x, y: (gesture.object?.center.y)! + gesture.translation!.y)
-        } else if (gesture.state == .ended) {
-//            reset the coordinate system back to original place
-            gesture.object?.transform = .identity
-//            let the object center equal to the final point
-            gesture.object!.center = gesture.finalPoint!
-           
-//            print("after drag: ", gesture.object!.center)
-        }
-    }
+   
 }
 
 
-class CustomPanGestureRecognizer: UIPanGestureRecognizer {
-    var object: UIView?
-    var translation: CGPoint?
-    var finalPoint: CGPoint?
-}
+
