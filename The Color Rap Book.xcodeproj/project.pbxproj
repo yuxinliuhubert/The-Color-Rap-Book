@@ -28,7 +28,6 @@
 		539B083C2419A29E006A33D8 /* GestureHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B083B2419A29E006A33D8 /* GestureHandling.swift */; };
 		539B083E2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B083D2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift */; };
 		539B08402419A619006A33D8 /* FileProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B083F2419A619006A33D8 /* FileProcessing.swift */; };
-		539F9134240DCAF9000BAA76 /* BlueSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539F9133240DCAF9000BAA76 /* BlueSectionController.swift */; };
 		53A09BE924182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53A09BE724182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld */; };
 		53A09BF024182D1500077EEB /* SavedData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */; };
 		53A09BF124182D1500077EEB /* SavedData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A09BEE24182D1500077EEB /* SavedData+CoreDataClass.swift */; };
@@ -89,7 +88,6 @@
 		539B083B2419A29E006A33D8 /* GestureHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureHandling.swift; sourceTree = "<group>"; };
 		539B083D2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesAndOrientationControl.swift; sourceTree = "<group>"; };
 		539B083F2419A619006A33D8 /* FileProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProcessing.swift; sourceTree = "<group>"; };
-		539F9133240DCAF9000BAA76 /* BlueSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueSectionController.swift; sourceTree = "<group>"; };
 		53A09BE824182C0C00077EEB /* The_Color_Rap_Book.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = The_Color_Rap_Book.xcdatamodel; sourceTree = "<group>"; };
 		53A09BEE24182D1500077EEB /* SavedData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataClass.swift"; path = "/Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The Color Rap Book/The Color Rap Book/OtherFiles/SavedData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataProperties.swift"; path = "/Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The Color Rap Book/The Color Rap Book/OtherFiles/SavedData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
@@ -176,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				53A09BE724182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld */,
-				539F9132240DC88E000BAA76 /* BlueSection */,
 				533CF96523F89BDC0015FDCC /* OtherFiles */,
 				533CF96423F89BB30015FDCC /* Delegates */,
 				533CF96323F89B910015FDCC /* Storyboard */,
@@ -272,14 +269,6 @@
 			children = (
 			);
 			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		539F9132240DC88E000BAA76 /* BlueSection */ = {
-			isa = PBXGroup;
-			children = (
-				539F9133240DCAF9000BAA76 /* BlueSectionController.swift */,
-			);
-			path = BlueSection;
 			sourceTree = "<group>";
 		};
 		ADD2F53FEDFF2831618ED710 /* Frameworks */ = {
@@ -537,7 +526,6 @@
 				539B08402419A619006A33D8 /* FileProcessing.swift in Sources */,
 				53DEF52623EF4416002AEB13 /* ViewControllerSegue.swift in Sources */,
 				53A09BF024182D1500077EEB /* SavedData+CoreDataProperties.swift in Sources */,
-				539F9134240DCAF9000BAA76 /* BlueSectionController.swift in Sources */,
 				536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */,
 				539B083C2419A29E006A33D8 /* GestureHandling.swift in Sources */,
 				530414E123FED09800E268C3 /* ImageControl.swift in Sources */,

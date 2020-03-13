@@ -159,6 +159,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
                 showMoreStack.spacing = screenWidth * 0.05
                 homeButton.setImage(UIImage(named: "home"), for: .normal)
                 continueButton.setImage(UIImage(named: "continue"), for: .normal)
+                showMoreButton.setImage(UIImage(named: "showMoreHouse"), for: .normal)
             
 //                showMoreStack.addBackground(color: .red)
                 defineStackPosition()
@@ -177,7 +178,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
 
     
     override open var shouldAutorotate: Bool {
-        if myVariable.state == 5{
+        if myVariable.state == 5 {
           return false
         } else {
             return true
@@ -289,9 +290,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
             orientationDetectorSwwitch(Bool: true)
             backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
             
-        case 7:
-            orientationDetectorSwwitch(Bool: true)
-            backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
+//        case 7:
+//            orientationDetectorSwwitch(Bool: true)
+//            backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
             
         default:
             backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
