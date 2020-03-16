@@ -34,6 +34,9 @@ extension (DetailPageController) {
                     self.pageNumberLabelDisplay(label: label, pageNum: state)
                     
                 case 5:
+                    self.showMoreButton.layer.removeAllAnimations()
+                    self.previousButton.layer.removeAllAnimations()
+                    self.nextButton.layer.removeAllAnimations()
                     self.orientationDetectorSwwitch(Bool: true)
                     UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
                         self.elementsEnteringStorage(state: state)
@@ -58,6 +61,17 @@ extension (DetailPageController) {
                 case 12:
                     UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
                         self.elementsEnteringStorage(state: state)
+                    }, completion: {(finished) in
+                        self.pageNumberLabelDisplay(label: label, pageNum: state)
+                    })
+                    
+                    case 22:
+                    self.imageSpecialCase22()
+                    UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
+                        self.elementsEnteringStorage(state: state)
+                        print("animation processed")
+                        
+                        
                     }, completion: {(finished) in
                         self.pageNumberLabelDisplay(label: label, pageNum: state)
                     })
@@ -113,6 +127,9 @@ extension (DetailPageController) {
                 self.pageNumberLabelDisplay(label: label, pageNum: state)
                 
             case 5:
+                self.showMoreButton.layer.removeAllAnimations()
+                self.previousButton.layer.removeAllAnimations()
+                self.nextButton.layer.removeAllAnimations()
                 self.orientationDetectorSwwitch(Bool: true)
                 UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
                     self.elementsEnteringStorage(state: state)
@@ -163,6 +180,16 @@ extension (DetailPageController) {
                         
                 })
                 
+            case 22:
+                self.imageSpecialCase22()
+                UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
+                    self.elementsEnteringStorage(state: state)
+                    print("animation processed")
+                    
+                    
+                }, completion: {(finished) in
+                    self.pageNumberLabelDisplay(label: label, pageNum: state)
+                })
                 
             default:
                 UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {

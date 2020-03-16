@@ -108,6 +108,8 @@ extension (DetailPageController) {
                         }, completion: nil)
                     }
                     
+                    
+                    
                 default:
                     break;
                 }

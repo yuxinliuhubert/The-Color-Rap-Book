@@ -24,7 +24,9 @@ extension (DetailPageController) {
            
        }
     
-    @objc func orientationChanged(notification: NSNotification) {
+    
+      @objc func orientationChanged(notification: NSNotification) {
+        self.label1.alpha = 0
           if let device = notification.object as? UIDevice {
               switch device.orientation {
               case .portrait:
@@ -46,31 +48,30 @@ extension (DetailPageController) {
               }
           }
       }
-      
       func portraitOrientationChange() {
           // Change gravity direction
-         timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.regularGravityVectorCanceller})
-          timer.invalidate()
+        myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.regularGravityVectorCanceller})
+        myVariable.timer.invalidate()
           gravityBehavior?.gravityDirection = regularGravityVector
       }
       
 
       func portraitUpsideDownOrientationChange() {
           // Flip our gravity
-          timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.invertedGravityVectorCanceller})
-          timer.invalidate()
+          myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.invertedGravityVectorCanceller})
+          myVariable.timer.invalidate()
           gravityBehavior?.gravityDirection = invertedGravityVector
       }
       
       func landscapeRightOrientationChange() {
-          timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalInvertGravityVectorCanceller})
-          timer.invalidate()
+          myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalInvertGravityVectorCanceller})
+          myVariable.timer.invalidate()
           gravityBehavior?.gravityDirection = normalInvertGravityVector
       }
       
       func landscapeLeftOrientationChange() {
-          timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalRegularGravityVectorCanceller})
-          timer.invalidate()
+          myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalRegularGravityVectorCanceller})
+          myVariable.timer.invalidate()
           gravityBehavior?.gravityDirection = normalRegularGravityVector
       }
       

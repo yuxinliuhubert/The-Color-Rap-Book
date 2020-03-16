@@ -16,7 +16,7 @@ extension(DetailPageController) {
 //Functions that stores the animation
    
    func elementsEnteringStorage(state: Int) {
-       imageBackInPlace()
+//       imageBackInPlace()
 
        switch state {
        case 5:
@@ -56,7 +56,7 @@ extension(DetailPageController) {
             // Get node of object to move
 
             self.imageFreeFall(imageView: self.image5, elasticity: 0.6)
-               self.imageFloatingEffect(image1: self.image1, image2: self.image2, image3: self.image3, image4: self.image4, state: state)
+//            self.imageFloatingEffect(image1: nil, image2: self.image2, image3: self.image3, image4: self.image4, state: state)
            })
         
        case 6:
@@ -172,6 +172,7 @@ extension(DetailPageController) {
         image1.image = UIImage(named: "page22Mower")
         image1.frame = CGRect(x: 0, y: screenHeight * 0.55, width: screenWidth * 0.25, height: screenWidth * 0.185)
         image1.isUserInteractionEnabled = true
+        view.bringSubviewToFront(image1)
         image1.addShadow()
         let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture))
         panGesture.object = self.image1
@@ -179,16 +180,33 @@ extension(DetailPageController) {
         image1.addGestureRecognizer(panGesture)
         self.view.bringSubviewToFront(image1)
         
-        image2.image = UIImage(named: "page22LeftGrass")
+        
+        image2.image = UIImage(named: "page22Grass3")
         image2.frame = CGRect(x: screenWidth * 0.323, y: screenHeight * 0.79, width: screenWidth * 0.06, height: screenHeight * 0.08)
-        image2.backgroundColor = .red
         image2.addCustomImagePopShadow(radius: 50)
         
+        image3.image = UIImage(named: "page22Grass1")
+        let grassWidth = screenWidth * 0.06
+        image3.frame = CGRect(x: screenWidth * 0.0525, y: screenHeight * 0.868, width: grassWidth, height: grassWidth * 1.089)
+
+
+        image4.image = UIImage(named: "page22Grass2")
+        image4.frame = CGRect(x: screenWidth * 0.155, y: screenHeight * 0.70, width: grassWidth, height: grassWidth * 0.79255)
+
+        
+    
+        image5.image = UIImage(named: "page22Grass4")
+        image5.frame = CGRect(x: screenWidth * 0.49, y: screenHeight * 0.88, width: grassWidth, height: grassWidth * 0.941799)
+
         
         
+        image6.image = UIImage(named: "page22Grass5")
+        image6.frame = CGRect(x: screenWidth * 0.72, y: screenHeight * 0.865, width: grassWidth, height: grassWidth * 1.3054)
+
         
-        
-        
+        image7.image = UIImage(named: "page22Grass6")
+        image7.frame = CGRect(x: screenWidth * 0.84, y: screenHeight * 0.80, width: grassWidth, height: grassWidth * 1.203)
+
         
         
         
@@ -236,59 +254,20 @@ extension(DetailPageController) {
     
       func imageDisappearing() {
             UIImageView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut], animations: {
+                //        The grass images needs to be back in place nicely
+                if myVariable.state == 23 || myVariable.state == 21 || myVariable.state == 22 {
+                    self.imageSpecialCase22()
+                } else {
                 self.imageBackInPlace()
+                }
                 self.previousButton.alpha = 0
                 self.nextButton.alpha = 0
                 self.showMoreButton.alpha = 0
             }, completion: nil)
-            timer.invalidate()
+        myVariable.timer.invalidate()
 
         }
         
-        func imageFloatingEffect(image1: UIView, image2: UIView, image3: UIView, image4: UIView, state: Int){
-
-            switch state {
-            case 7:
-                imageRotate(imageview: image1 as! UIImageView, x: 0.76276, y: 1 - 0.1435, state: state)
-            case 10:
-                imageRotate(imageview: image1 as! UIImageView, x: 0.32276, y: 1 - 0.4435, state: state)
-
-            default:
-                UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-                    image1.frame.origin.y -= 20
-                    image1.isUserInteractionEnabled = true
-                    }){_ in
-                        UIView.animateKeyframes(withDuration: 1.0, delay: 0.25, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
-                        image1.frame.origin.y += 20
-                    })}
-            }
-            UIView.animate(withDuration: 1.0, delay: 0.15, options: [.curveEaseInOut,.allowUserInteraction], animations: {
-                    image2.frame.origin.y -= 20
-                image2.isUserInteractionEnabled = true
-                        }){_ in
-                            UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.4, options: [.autoreverse, .repeat,.allowUserInteraction], animations: {
-                                              image2.frame.origin.y += 20
-                        })}
-                    
-            UIView.animate(withDuration: 1.0, delay: 0.25, options: [.curveEaseInOut], animations: {
-                    image3.frame.origin.y -= 20
-                        }){_ in
-                            UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.5, options: [.autoreverse, .repeat], animations: {
-                                              image3.frame.origin.y += 20
-                            })}
-            
-            
-            UIView.animate(withDuration: 1.0, delay: 0.45, options: [.curveEaseInOut], animations: {
-                               image4.frame.origin.y -= 20
-                               }){_ in
-                                UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.7, options: [.autoreverse, .repeat], animations: {
-                                              image4.frame.origin.y += 20
-                                          })
-                           }
-
-
-        }
-    
     
     func imageBackInPlace() {
         image1.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
@@ -307,43 +286,31 @@ extension(DetailPageController) {
         image7.transform = .identity
         image1.alpha = 1
         image2.alpha = 1
-        image2.image = nil
+//        image2.image = nil
         image2.removeShadow()
         label1.transform = .identity
         itemsAnimator?.removeAllBehaviors()
-        timer.invalidate()
+        myVariable.timer.invalidate()
     }
     
-    func imageRotate(imageview: UIImageView, x: CGFloat, y: CGFloat, state: Int) {
-            let anchorPoint = CGPoint(x: x, y: y)
-            let oldAnchorPoint = imageview.layer.anchorPoint
-            imageview.layer.anchorPoint = anchorPoint
-//            print("old anchor point ", oldAnchorPoint)
-//            print("anchorPoint ", anchorPoint)
-            let offsetFromMovingAnchorPointsX = anchorPoint.x - oldAnchorPoint.x
-            let offsetFromMovingAnchorPointsY = anchorPoint.y - oldAnchorPoint.y
-//            print("CGRect ", imageview.frame)
-            imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * screenWidth, y: offsetFromMovingAnchorPointsY * screenHeight)
-//            print("CGRect ", imageview.frame)
-        switch state {
-            case 7:
-                UIImageView.animateKeyframes(withDuration: 1.5, delay: 0.25, options: [.autoreverse, .repeat], animations: {
-                    imageview.transform = imageview.transform.rotated(by: .pi / 16)})
-            case 10:
-                timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: {_ in
-                imageview.transform = imageview.transform.rotated(by: .pi / 12)})
-        case 11:
-            timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: {_ in
-            imageview.transform = imageview.transform.rotated(by: .pi / 12)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            imageview.transform = imageview.transform.rotated(by: -.pi / 12)
-                }
-                
-            })
-            default:
-                break;
-            }
+    
+    func imageSpecialCase22() {
+        image1.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        image2.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        image3.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        image4.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        image6.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        image7.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        image1.alpha = 1
+        image2.alpha = 1
+        image3.alpha = 1
+        image4.alpha = 1
+        image5.alpha = 1
+        image6.alpha = 1
+        image7.alpha = 1
     }
+    
     
     @objc func imagePop(longPress: UILongPressGestureRecognizer) {
         if longPress.state == .began {
@@ -422,6 +389,89 @@ extension(DetailPageController) {
     }
     
    
+}
+
+
+extension (UIViewController) {
+    
+    
+    
+    func imageRotate(imageview: UIImageView, x: CGFloat, y: CGFloat, state: Int) {
+                let anchorPoint = CGPoint(x: x, y: y)
+                let oldAnchorPoint = imageview.layer.anchorPoint
+                imageview.layer.anchorPoint = anchorPoint
+    //            print("old anchor point ", oldAnchorPoint)
+    //            print("anchorPoint ", anchorPoint)
+                let offsetFromMovingAnchorPointsX = anchorPoint.x - oldAnchorPoint.x
+                let offsetFromMovingAnchorPointsY = anchorPoint.y - oldAnchorPoint.y
+    //            print("CGRect ", imageview.frame)
+        imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * UIScreen.main.bounds.width, y: offsetFromMovingAnchorPointsY * UIScreen.main.bounds.height)
+    //            print("CGRect ", imageview.frame)
+            switch state {
+                case 7:
+                    UIImageView.animateKeyframes(withDuration: 1.5, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+                        imageview.transform = imageview.transform.rotated(by: .pi / 16)})
+                case 10:
+                    myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: {_ in
+                    imageview.transform = imageview.transform.rotated(by: .pi / 12)})
+            case 11:
+                myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: {_ in
+                imageview.transform = imageview.transform.rotated(by: .pi / 12)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                imageview.transform = imageview.transform.rotated(by: -.pi / 12)
+                    }
+                    
+                })
+                default:
+                    break;
+                }
+        }
+    
+    
+    func imageFloatingEffect(image1: UIView?, image2: UIView?, image3: UIView?, image4: UIView?, state: Int){
+        self.view.isUserInteractionEnabled = true
+            switch state {
+            case 7:
+                imageRotate(imageview: image1 as! UIImageView, x: 0.76276, y: 1 - 0.1435, state: state)
+            case 10:
+                imageRotate(imageview: image1 as! UIImageView, x: 0.32276, y: 1 - 0.4435, state: state)
+
+            default:
+                UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+                    image1?.frame.origin.y -= 20
+                    image1?.isUserInteractionEnabled = true
+                    }){_ in
+                        UIView.animateKeyframes(withDuration: 1.0, delay: 0.25, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
+                        image1?.frame.origin.y += 20
+                    })}
+            }
+            UIView.animate(withDuration: 1.0, delay: 0.15, options: [.curveEaseInOut,.allowUserInteraction], animations: {
+                    image2?.frame.origin.y -= 20
+                image2?.isUserInteractionEnabled = true
+                        }){_ in
+                            UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.4, options: [.autoreverse, .repeat,.allowUserInteraction], animations: {
+                                              image2?.frame.origin.y += 20
+                        })}
+                    
+            UIView.animate(withDuration: 1.0, delay: 0.25, options: [.curveEaseInOut], animations: {
+                    image3?.frame.origin.y -= 20
+                        }){_ in
+                            UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.5, options: [.autoreverse, .repeat], animations: {
+                                              image3?.frame.origin.y += 20
+                            })}
+            
+            
+            UIView.animate(withDuration: 1.0, delay: 0.45, options: [.curveEaseInOut], animations: {
+                               image4?.frame.origin.y -= 20
+                               }){_ in
+                                UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.7, options: [.autoreverse, .repeat], animations: {
+                                              image4?.frame.origin.y += 20
+                                          })
+                           }
+
+
+        }
+    
 }
 
 

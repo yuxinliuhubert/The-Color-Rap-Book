@@ -28,12 +28,14 @@ class ViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if myVariable.state >= 3 {
             performSegue(withIdentifier: "ToDetailSegue", sender: self)
         }
+        imageFloatingEffect(image1: introLabel, image2: nil, image3: nil, image4: nil, state: 0)
     }
     
     
@@ -74,6 +76,9 @@ class ViewController: UIViewController {
         developerButton.titleLabel?.font = UIFont(name: "Morgan_bold-Regular", size: 32)
         developerButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
+//        imageFloatingEffect(image1: introLabel, image2: nil, image3: nil, image4: nil, state: 0)
+        
+        
     }
 
 //Commands to pop up the Title
@@ -103,9 +108,10 @@ class ViewController: UIViewController {
     @IBAction func leftSwipeHandler(_ sender: Any) {
         switch introLabel.alpha {
                 case 0:
+
                     labelFadeIn(label: introLabel, delay: TimeInterval())
         //            state = 1;
-                    
+                    imageFloatingEffect(image1: introLabel, image2: nil, image3: nil, image4: nil, state: 0)
                 default:
                     break;
                 }

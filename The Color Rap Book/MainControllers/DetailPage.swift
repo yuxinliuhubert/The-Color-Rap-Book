@@ -18,6 +18,7 @@ struct myVariable {
     static var center: CGPoint?
     static var comingFromTableOfContent = false
     static var page = Int()
+    static var timer = Timer()
 }
 
 class DetailPageController : UIViewController, UITextFieldDelegate {
@@ -115,7 +116,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
-    var timer = Timer()
+
     
     
         
@@ -126,9 +127,10 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         print(myVariable.state)
+    
         firstLabelTask(state: 0, completion: {(success) in
             if success == true {
-                imageFloatingEffect(image1: self.nextButton, image2: self.previousButton, image3: self.image3, image4: self.image6, state: 1)
+                imageFloatingEffect(image1: self.nextButton, image2: self.previousButton, image3: nil, image4: nil, state: 1)
                 imageBackInPlace()
                 label.isHighlighted = false
                 label.alpha = 1
@@ -151,7 +153,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
                 self.nextButton.backgroundColor = .clear
                 self.nextButton.setImage(UIImage(named: "nextPage"), for: .normal)
                 
-                self.showMoreButton.frame = CGRect(x: screenWidth * 0.48, y: screenHeight * 0.02, width: screenWidth * 0.03, height: screenWidth * 0.009)
+                self.showMoreButton.frame = CGRect(x: screenWidth * 0.48, y: screenHeight * 0.02, width: screenWidth * 0.0283, height: screenWidth * 0.03)
                 
                 
                 self.testingTextfield.frame = CGRect(x: screenWidth * 0.78, y: screenHeight * 0.9, width: screenWidth * 0.2, height: 34)
@@ -284,21 +286,14 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         myVariable.state += 1
         myVariable.page = myVariable.state
         saveData()
-        print("on page ", myVariable.state)
-        switch myVariable.state{
-        case 5:
-            orientationDetectorSwwitch(Bool: true)
-            backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
-            
-//        case 7:
-//            orientationDetectorSwwitch(Bool: true)
-//            backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
-            
-        default:
-            backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
+        if myVariable.state != 5 {
+             imageFloatingEffect(image1: self.nextButton, image2: self.previousButton, image3: nil, image4: nil, state: 1)
         }
-        
+        print("on page ", myVariable.state)
+        backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
     }
+    
+    
     
     
     @IBAction func lastPage(_ sender: Any) {
@@ -307,16 +302,14 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         saveData()
         orientationDetectorSwwitch(Bool: false)
         buttonsEnabled(Bool: false)
+        if myVariable.state != 5 {
+             imageFloatingEffect(image1: self.nextButton, image2: self.previousButton, image3: nil, image4: nil, state: 1)
+        }
 
         print("on page ", myVariable.state)
             switch myVariable.state{
             case 2:
                 self.performSegue(withIdentifier: "BackToViewController", sender: sender)
-                
-                
-            case 5:
-                orientationDetectorSwwitch(Bool: true)
-                backgroundChangeBackward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
 
             default:
                 backgroundChangeBackward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
@@ -325,7 +318,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
 
     
-
+    
 
     
     
