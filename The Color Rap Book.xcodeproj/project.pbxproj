@@ -67,7 +67,7 @@
 		530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BackGroundDisplay.rtf; sourceTree = "<group>"; };
 		530414E023FED09800E268C3 /* ImageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControl.swift; sourceTree = "<group>"; };
 		530414E423FED22C00E268C3 /* backgroundControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundControl.swift; sourceTree = "<group>"; };
-		533CC1FF23ECC01A00871876 /* The Color Rap Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Color Rap Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		533CC1FF23ECC01A00871876 /* Color Rap Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Rap Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		533CC20223ECC01A00871876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		533CC20423ECC01A00871876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		533CC20623ECC01A00871876 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		533CC20023ECC01A00871876 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				533CC1FF23ECC01A00871876 /* The Color Rap Book.app */,
+				533CC1FF23ECC01A00871876 /* Color Rap Book.app */,
 				533CC21823ECC01C00871876 /* The Color Rap BookTests.xctest */,
 				533CC22323ECC01C00871876 /* The Color Rap BookUITests.xctest */,
 			);
@@ -300,7 +300,7 @@
 			);
 			name = "The Color Rap Book";
 			productName = "The Color Rap Book";
-			productReference = 533CC1FF23ECC01A00871876 /* The Color Rap Book.app */;
+			productReference = 533CC1FF23ECC01A00871876 /* Color Rap Book.app */;
 			productType = "com.apple.product-type.application";
 		};
 		533CC21723ECC01C00871876 /* The Color Rap BookTests */ = {
@@ -725,7 +725,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "yuxinliu.The-Color-Rap-Book";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Rap Book";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -744,7 +744,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "yuxinliu.The-Color-Rap-Book";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Rap Book";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

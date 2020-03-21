@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension (DetailPageController) {
+    
     func backgroundChangeBackward(imageView: UIImageView, delay: TimeInterval, state: Int, label: UILabel) {
         grestureRecognizerSwitch(Bool: false)
         UIView.animate(withDuration: 0.5, animations: {

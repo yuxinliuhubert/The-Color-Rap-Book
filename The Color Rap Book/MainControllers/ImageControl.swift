@@ -149,9 +149,10 @@ extension(DetailPageController) {
         
         
         
-        
-        
-        
+       case 15:
+        self.image1.image = UIImage(named: "page15UnPeeledBanana")
+        self.image1.frame = CGRect(x: screenWidth * 0.55, y: screenHeight * 0.2, width: screenHeight * 0.5324, height: screenHeight * 0.6)
+
         
        case 20:
         image3.image = UIImage(named: "page20Leaf")
@@ -164,23 +165,26 @@ extension(DetailPageController) {
         }, completion: {(finished) in
 //            self.view.isUserInteractionEnabled = true
 //            self.image5.isUserInteractionEnabled = true
-//                   self.imageFloatingEffect(image1: self.label1, image2: self.image3, image3: self.image4, image4: self.image7, state: state)
+            self.imageFloatingEffect(image1: self.label1, image2: self.image5, image3: nil, image4: self.image3, state: state)
             
                })
+        
+        
+        
         
        case 22:
         image1.image = UIImage(named: "page22Mower")
         image1.frame = CGRect(x: 0, y: screenHeight * 0.55, width: screenWidth * 0.25, height: screenWidth * 0.185)
         image1.isUserInteractionEnabled = true
-        view.bringSubviewToFront(image1)
+        image1.layer.zPosition = 7
         image1.addShadow()
-        let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture))
+        let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
         panGesture.object = self.image1
         panGesture.page = 22
         image1.addGestureRecognizer(panGesture)
-        self.view.bringSubviewToFront(image1)
+    
         
-        
+    
         image2.image = UIImage(named: "page22Grass3")
         image2.frame = CGRect(x: screenWidth * 0.323, y: screenHeight * 0.79, width: screenWidth * 0.06, height: screenHeight * 0.08)
         image2.addCustomImagePopShadow(radius: 50)
@@ -188,7 +192,6 @@ extension(DetailPageController) {
         image3.image = UIImage(named: "page22Grass1")
         let grassWidth = screenWidth * 0.06
         image3.frame = CGRect(x: screenWidth * 0.0525, y: screenHeight * 0.868, width: grassWidth, height: grassWidth * 1.089)
-
 
         image4.image = UIImage(named: "page22Grass2")
         image4.frame = CGRect(x: screenWidth * 0.155, y: screenHeight * 0.70, width: grassWidth, height: grassWidth * 0.79255)
@@ -199,14 +202,14 @@ extension(DetailPageController) {
         image5.frame = CGRect(x: screenWidth * 0.49, y: screenHeight * 0.88, width: grassWidth, height: grassWidth * 0.941799)
 
         
-        
+
         image6.image = UIImage(named: "page22Grass5")
-        image6.frame = CGRect(x: screenWidth * 0.72, y: screenHeight * 0.865, width: grassWidth, height: grassWidth * 1.3054)
+        image6.frame = CGRect(x: screenWidth * 0.65, y: screenHeight * 0.865, width: grassWidth, height: grassWidth * 1.3054)
 
-        
         image7.image = UIImage(named: "page22Grass6")
-        image7.frame = CGRect(x: screenWidth * 0.84, y: screenHeight * 0.80, width: grassWidth, height: grassWidth * 1.203)
+        image7.frame = CGRect(x: screenWidth * 0.82, y: screenHeight * 0.78, width: grassWidth, height: grassWidth * 1.203)
 
+        panGesture.page22ImageFrameArray = [self.image2.frame, self.image3.frame, self.image4.frame, self.image5.frame, self.image6.frame, self.image7.frame]
         
         
         
@@ -216,6 +219,27 @@ extension(DetailPageController) {
         image2.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
         image3.image = UIImage(named: "page25LeafOnFloor")
         image3.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
+        
+        
+        
+       case 26:
+        let pumpkinProportion = screenWidth * 0.50
+        image1.image = UIImage(named: "page26Pumpkin")
+        image1.frame = CGRect(x: screenWidth * 0.08, y: screenHeight * 0.30, width: pumpkinProportion, height: pumpkinProportion * 1.042)
+        image5.image = UIImage(named: "page26Face")
+        image5.frame = CGRect(x: screenWidth * 0.08, y: screenHeight * 0.30, width: pumpkinProportion, height: pumpkinProportion * 1.042)
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut], animations: {
+            self.image5.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        }){_ in
+            UIView.animateKeyframes(withDuration: 1.0, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+                self.image5.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            })}
+        
+        
+        
+        
+        
+        
         
        case 35:
         self.image1.image = UIImage(named: "page35Chocolate")
@@ -252,21 +276,30 @@ extension(DetailPageController) {
     
     
     
-      func imageDisappearing() {
-            UIImageView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut], animations: {
-                //        The grass images needs to be back in place nicely
-                if myVariable.state == 23 || myVariable.state == 21 || myVariable.state == 22 {
-                    self.imageSpecialCase22()
-                } else {
+    func imageDisappearing() {
+        UIImageView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut], animations: {
+            //        The grass images needs to be back in place nicely
+            if myVariable.state == 23 || myVariable.state == 21 || myVariable.state == 22 {
+                self.imageSpecialCase22()
+                
+            } else {
                 self.imageBackInPlace()
-                }
-                self.previousButton.alpha = 0
-                self.nextButton.alpha = 0
-                self.showMoreButton.alpha = 0
-            }, completion: nil)
+            }
+            self.previousButton.alpha = 0
+            self.nextButton.alpha = 0
+            self.showMoreButton.alpha = 0
+        }, completion: { (finished) in
+            self.image1.image = nil
+            self.image2.image = nil
+            self.image3.image = nil
+            self.image4.image = nil
+            self.image5.image = nil
+            self.image6.image = nil
+            self.image7.image = nil
+        })
         myVariable.timer.invalidate()
-
-        }
+        
+    }
         
     
     func imageBackInPlace() {
@@ -284,9 +317,15 @@ extension(DetailPageController) {
         image5.transform = .identity
         image6.transform = .identity
         image7.transform = .identity
+        image1.layer.zPosition = 0
+        if let recognizers = image1.gestureRecognizers {
+            for recognizer in recognizers {
+              image1.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+           }
+        }
         image1.alpha = 1
         image2.alpha = 1
-//        image2.image = nil
+        image5.alpha = 1
         image2.removeShadow()
         label1.transform = .identity
         itemsAnimator?.removeAllBehaviors()
@@ -309,6 +348,21 @@ extension(DetailPageController) {
         image5.alpha = 1
         image6.alpha = 1
         image7.alpha = 1
+        image1.layer.zPosition = 0
+        image1.transform = .identity
+        image2.transform = .identity
+        image3.transform = .identity
+        image4.transform = .identity
+        image5.transform = .identity
+        image6.transform = .identity
+        image7.transform = .identity
+        label1.transform = .identity
+        if let recognizers = image1.gestureRecognizers {
+            for recognizer in recognizers {
+              image1.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+           }
+        }
+        
     }
     
     

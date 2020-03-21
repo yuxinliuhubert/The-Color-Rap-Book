@@ -16,7 +16,7 @@
         <!--Developer Controller-->
         <scene sceneID="ViQ-gH-8uh">
             <objects>
-                <viewController id="aGD-y1-2iz" customClass="DeveloperController" customModule="The_Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aGD-y1-2iz" customClass="DeveloperController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ZH-QP-ilp">
                         <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="The_Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,8 +109,8 @@
                         <outlet property="readButton" destination="gK8-TH-gBP" id="Iwd-tW-nwd"/>
                         <outlet property="singleTap" destination="y4K-hB-Vz0" id="K7l-ul-7pS"/>
                         <outlet property="tableOfContentButton" destination="IfC-9B-7AN" id="RKd-49-gk6"/>
-                        <segue destination="R4J-m2-hmf" kind="custom" identifier="ToTableOfContent" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" id="F68-xR-Fn9"/>
-                        <segue destination="GCB-e3-WIT" kind="custom" identifier="ToDetailSegue" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" id="T9U-gD-Oyj"/>
+                        <segue destination="R4J-m2-hmf" kind="custom" identifier="ToTableOfContent" customClass="OHCircleSegue" customModule="Color_Rap_Book" customModuleProvider="target" id="F68-xR-Fn9"/>
+                        <segue destination="GCB-e3-WIT" kind="custom" identifier="ToDetailSegue" customClass="OHCircleSegue" customModule="Color_Rap_Book" customModuleProvider="target" id="T9U-gD-Oyj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,7 +141,7 @@
         <!--Detail Page Controller-->
         <scene sceneID="MNX-nN-y6z">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="GCB-e3-WIT" customClass="DetailPageController" customModule="The_Color_Rap_Book" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="GCB-e3-WIT" customClass="DetailPageController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uoT-F0-xUz">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +155,9 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MQT-7w-Qsn" appends="YES" id="ofN-ob-SRw"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHU-qR-NYI">
                                 <rect key="frame" x="600" y="121" width="240" height="128"/>
@@ -274,8 +277,8 @@
                             <outletCollection property="gestureRecognizers" destination="Qhr-dV-jqe" appends="YES" id="xAu-YQ-ztS"/>
                             <outletCollection property="gestureRecognizers" destination="2oc-z3-bxd" appends="YES" id="gkt-gG-ZYh"/>
                             <outletCollection property="gestureRecognizers" destination="Y00-oU-hxL" appends="YES" id="O01-5a-60r"/>
-                            <outletCollection property="gestureRecognizers" destination="MQT-7w-Qsn" appends="YES" id="5fv-31-ipo"/>
                             <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="iUq-Uj-Ktc"/>
+                            <outletCollection property="gestureRecognizers" destination="MQT-7w-Qsn" appends="YES" id="CCe-lZ-Cpg"/>
                         </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -302,7 +305,7 @@
                         <outlet property="singleTap" destination="MQT-7w-Qsn" id="ut9-4z-f2q"/>
                         <outlet property="testingTextfield" destination="b3i-hj-NUU" id="EmQ-Ze-1FK"/>
                         <outlet property="upSwipeGesture" destination="2oc-z3-bxd" id="gAW-tm-FkE"/>
-                        <segue destination="pyE-cE-vpm" kind="unwind" identifier="BackToViewController" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="iBb-Ma-PAd"/>
+                        <segue destination="pyE-cE-vpm" kind="unwind" identifier="BackToViewController" customClass="OHCircleSegue" customModule="Color_Rap_Book" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="iBb-Ma-PAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGH-UC-hAU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -326,7 +329,11 @@
                         <action selector="upSwipe:" destination="GCB-e3-WIT" id="EvJ-Jn-MGN"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <tapGestureRecognizer id="MQT-7w-Qsn"/>
+                <tapGestureRecognizer id="MQT-7w-Qsn">
+                    <connections>
+                        <action selector="singleTapped:" destination="GCB-e3-WIT" id="WAm-Tf-4HH"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <exit id="pyE-cE-vpm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="335.57833089311856" y="1028.90625"/>
@@ -334,7 +341,7 @@
         <!--Table Of Content Controller-->
         <scene sceneID="xFz-LH-se8">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="R4J-m2-hmf" customClass="TableOfContentController" customModule="The_Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="R4J-m2-hmf" customClass="TableOfContentController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k7p-I5-L2s">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,7 +375,7 @@
                         <outlet property="backgroundImageView" destination="oZ2-Dv-dLJ" id="p5X-YS-YPF"/>
                         <outlet property="goBackButton" destination="PsG-4D-dOn" id="3Vz-Nk-pOE"/>
                         <outlet property="tableLabel" destination="bJU-83-djb" id="vhm-sT-cbb"/>
-                        <segue destination="dca-RP-c3o" kind="unwind" identifier="returnToMainController" customClass="OHCircleSegue" customModule="The_Color_Rap_Book" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="P5P-3h-VZK"/>
+                        <segue destination="dca-RP-c3o" kind="unwind" identifier="returnToMainController" customClass="OHCircleSegue" customModule="Color_Rap_Book" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="P5P-3h-VZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ln-K1-dcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -98,6 +98,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     @IBOutlet var rightSwipeGesture: UISwipeGestureRecognizer!
     @IBOutlet var downSwipeGesture: UISwipeGestureRecognizer!
     @IBOutlet var singleTap: UITapGestureRecognizer!
+//    @IBOutlet var panGesture: CustomPanGestureRecognizer!
     
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -116,6 +117,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
+    
 
     
     
@@ -126,6 +128,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        print("image1 z position", image1.layer.zPosition)
         print(myVariable.state)
     
         firstLabelTask(state: 0, completion: {(success) in
@@ -140,16 +143,15 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
                 testingTextfield.attributedPlaceholder = NSAttributedString(string: "Currently on page \(myVariable.state)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray.withAlphaComponent(0.8)])
                 self.testingTextfield.delegate = self
                 testingTextfield.textColor = .black
-                self.previousButton.frame = CGRect(x: screenWidth * 0.02, y: screenHeight * 0.02, width: screenWidth * 0.1, height: screenWidth * 0.0724)
                 self.previousButton.backgroundColor = .clear
                 self.labelTextDisappearing(label: label)
                 
-                self.previousButton.frame = CGRect(x: screenWidth * 0.02, y: screenHeight * 0.02, width: screenWidth * 0.1, height: screenWidth * 0.0724)
+                self.previousButton.frame = CGRect(x: screenWidth * 0.02, y: screenHeight * 0.02, width: screenWidth * 0.07, height: (screenWidth * 0.0724) * 0.7)
                 self.previousButton.backgroundColor = .clear
                 
                 self.previousButton.setImage(UIImage(named: "goBack"), for: .normal)
                 
-                self.nextButton.frame = CGRect(x: screenWidth * 0.88, y: screenHeight * 0.02, width: screenWidth * 0.1, height: screenWidth * 0.0724)
+                self.nextButton.frame = CGRect(x: screenWidth * 0.91, y: screenHeight * 0.02, width: screenWidth * 0.07, height: (screenWidth * 0.0724) * 0.7)
                 self.nextButton.backgroundColor = .clear
                 self.nextButton.setImage(UIImage(named: "nextPage"), for: .normal)
                 
@@ -277,6 +279,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
     
     
+    @IBAction func singleTapped(_ sender: Any) {
+        singleTapHandler(state: myVariable.state)
+    }
     
     
     
@@ -291,6 +296,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
         }
         print("on page ", myVariable.state)
         backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
+        print("image 1 z position", image1.layer.zPosition)
     }
     
     
@@ -318,8 +324,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate {
     
 
     
-    
 
+    
     
     
 
