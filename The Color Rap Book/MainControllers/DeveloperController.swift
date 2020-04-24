@@ -1,3 +1,4 @@
+
 //
 //  DeveloperController.swift
 //  The Color Rap Book
@@ -12,6 +13,9 @@ import UIKit
 class DeveloperController: UIViewController {
     
     
+    override func viewDidLoad() {
+        self.modalPresentationStyle = .popover
+    }
     
     
     

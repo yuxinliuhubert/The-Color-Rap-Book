@@ -24,6 +24,9 @@
 		533CC22823ECC01C00871876 /* The_Color_Rap_BookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC22723ECC01C00871876 /* The_Color_Rap_BookUITests.swift */; };
 		536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC29F2412B9DD000AB196 /* DeveloperController.swift */; };
 		536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */; };
+		536D7B302448E1CD00B9B122 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D7B2F2448E1CD00B9B122 /* MenuController.swift */; };
+		536D7B322448E61000B9B122 /* ViewControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D7B312448E61000B9B122 /* ViewControllerSegue.swift */; };
+		53855A2E2450CA5700EEF64C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53855A2D2450CA5700EEF64C /* CanvasView.swift */; };
 		5396251023FEE8B30044C468 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5396250F23FEE8B30044C468 /* AnimationController.swift */; };
 		539B083C2419A29E006A33D8 /* GestureHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B083B2419A29E006A33D8 /* GestureHandling.swift */; };
 		539B083E2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B083D2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift */; };
@@ -84,6 +87,9 @@
 		533CC22923ECC01C00871876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		536BC29F2412B9DD000AB196 /* DeveloperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperController.swift; sourceTree = "<group>"; };
 		536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
+		536D7B2F2448E1CD00B9B122 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		536D7B312448E61000B9B122 /* ViewControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSegue.swift; path = Segues/ViewControllerSegue.swift; sourceTree = "<group>"; };
+		53855A2D2450CA5700EEF64C /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		5396250F23FEE8B30044C468 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		539B083B2419A29E006A33D8 /* GestureHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureHandling.swift; sourceTree = "<group>"; };
 		539B083D2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesAndOrientationControl.swift; sourceTree = "<group>"; };
@@ -93,7 +99,6 @@
 		53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataProperties.swift"; path = "/Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The Color Rap Book/The Color Rap Book/OtherFiles/SavedData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		53AA0CB62410322100C2F036 /* OHCircleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHCircleSegue.swift; sourceTree = "<group>"; };
 		53AA0CB82410A02400C2F036 /* TableOfContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentController.swift; sourceTree = "<group>"; };
-		53BB482A23F0807E00D71E02 /* MorgansPrint-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MorgansPrint-Regular.otf"; path = "../../../MorgansPrint-Regular.otf"; sourceTree = "<group>"; };
 		53C7E30D23FB90E100866321 /* Data.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Data.rtf; sourceTree = "<group>"; };
 		53DEF52323EF4057002AEB13 /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		53DEF52523EF4416002AEB13 /* ViewControllerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSegue.swift; sourceTree = "<group>"; };
@@ -179,7 +184,7 @@
 				533CF96323F89B910015FDCC /* Storyboard */,
 				533CF96223F89B740015FDCC /* MainControllers */,
 				533CF96123F89B630015FDCC /* Segues */,
-				53BB482A23F0807E00D71E02 /* MorgansPrint-Regular.otf */,
+				536D7B312448E61000B9B122 /* ViewControllerSegue.swift */,
 				533CC20E23ECC01C00871876 /* Assets.xcassets */,
 				533CC20B23ECC01A00871876 /* The_Color_Rap_Book.xcdatamodeld */,
 				533CC21323ECC01C00871876 /* Info.plist */,
@@ -223,11 +228,13 @@
 				53DEF52323EF4057002AEB13 /* DetailPage.swift */,
 				530414E423FED22C00E268C3 /* backgroundControl.swift */,
 				539B083B2419A29E006A33D8 /* GestureHandling.swift */,
-				539B083F2419A619006A33D8 /* FileProcessing.swift */,
 				530414E023FED09800E268C3 /* ImageControl.swift */,
 				53038BEA24043E4100F36DB7 /* labelControl.swift */,
+				539B083F2419A619006A33D8 /* FileProcessing.swift */,
 				539B083D2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift */,
 				536BC29F2412B9DD000AB196 /* DeveloperController.swift */,
+				536D7B2F2448E1CD00B9B122 /* MenuController.swift */,
+				53855A2D2450CA5700EEF64C /* CanvasView.swift */,
 			);
 			path = MainControllers;
 			sourceTree = "<group>";
@@ -525,6 +532,7 @@
 			files = (
 				539B08402419A619006A33D8 /* FileProcessing.swift in Sources */,
 				53DEF52623EF4416002AEB13 /* ViewControllerSegue.swift in Sources */,
+				53855A2E2450CA5700EEF64C /* CanvasView.swift in Sources */,
 				53A09BF024182D1500077EEB /* SavedData+CoreDataProperties.swift in Sources */,
 				536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */,
 				539B083C2419A29E006A33D8 /* GestureHandling.swift in Sources */,
@@ -539,9 +547,11 @@
 				53DEF52823EF4436002AEB13 /* ViewControllerSegueUnwind.swift in Sources */,
 				53DEF52423EF4057002AEB13 /* DetailPage.swift in Sources */,
 				533CC20523ECC01A00871876 /* SceneDelegate.swift in Sources */,
+				536D7B302448E1CD00B9B122 /* MenuController.swift in Sources */,
 				530414E523FED22C00E268C3 /* backgroundControl.swift in Sources */,
 				53A09BF124182D1500077EEB /* SavedData+CoreDataClass.swift in Sources */,
 				536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */,
+				536D7B322448E61000B9B122 /* ViewControllerSegue.swift in Sources */,
 				5396251023FEE8B30044C468 /* AnimationController.swift in Sources */,
 				539B083E2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift in Sources */,
 			);

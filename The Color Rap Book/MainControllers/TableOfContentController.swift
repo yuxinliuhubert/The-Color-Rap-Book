@@ -30,7 +30,7 @@ class TableOfContentController: UIViewController {
         CustomData(title: "keepReading", image: #imageLiteral(resourceName: "keep reading"), pageNum: myVariable.page),
         CustomData(title: "red", image: #imageLiteral(resourceName: "2_red is red"), pageNum: 4),
         CustomData(title: "blue", image: #imageLiteral(resourceName: "11_blue is blue"), pageNum: 9),
-        CustomData(title: "yellow", image: #imageLiteral(resourceName: "16_yellow is yellow 061319"), pageNum: 18),
+        CustomData(title: "yellow", image: #imageLiteral(resourceName: "16_yellow is yellow 061319"), pageNum: 14),
         CustomData(title: "green", image: #imageLiteral(resourceName: "17_green is green new"), pageNum: 19),
         CustomData(title: "orange", image: #imageLiteral(resourceName: "22_orange is orange"), pageNum: 24),
         CustomData(title: "purple", image: #imageLiteral(resourceName: "26_purple is purple not spelled out new"), pageNum: 28),
@@ -53,6 +53,9 @@ class TableOfContentController: UIViewController {
     }()
     
     
+    
+    
+//    override functions
     
     override var prefersStatusBarHidden: Bool { return true }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -84,21 +87,7 @@ class TableOfContentController: UIViewController {
         backgroundImageView.image = UIImage(named: "page20Back")
         backgroundImageView.frame = CGRect(x: 0, y: 0, width: width, height: UIScreen.main.bounds.height)
         
-        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-            self.goBackButton.frame.origin.y -= 20
-            self.goBackButton.isUserInteractionEnabled = true
-        }){_ in
-            UIView.animateKeyframes(withDuration: 1.0, delay: 0.25, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
-                self.goBackButton.frame.origin.y += 20
-        })}
-        
-        UIView.animate(withDuration: 1.0, delay: 0.5, options: [.curveEaseInOut,.allowUserInteraction], animations: {
-            self.tableLabel.frame.origin.y -= 10
-            self.tableLabel.isUserInteractionEnabled = true
-                }){_ in
-                    UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.4, options: [.autoreverse, .repeat,.allowUserInteraction], animations: {
-                        self.tableLabel.frame.origin.y += 10
-                })}
+        tableOfContentFloating()
     
         
         view.addSubview(collectionView)
@@ -137,12 +126,47 @@ class TableOfContentController: UIViewController {
         }
     }
     
+    
+    private func setupNotificationObservers() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(viewReappearFloating), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    
+    @objc private func viewReappearFloating() {
+//        view.layer.removeAllAnimations()
+         tableOfContentFloating()
+    }
+    
+    func tableOfContentFloating() {
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.goBackButton.frame.origin.y -= 20
+            self.goBackButton.isUserInteractionEnabled = true
+        }){_ in
+            UIView.animateKeyframes(withDuration: 1.0, delay: 0.25, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
+                self.goBackButton.frame.origin.y += 20
+        })}
+        
+        UIView.animate(withDuration: 1.0, delay: 0.5, options: [.curveEaseInOut,.allowUserInteraction], animations: {
+            self.tableLabel.frame.origin.y -= 10
+            self.tableLabel.isUserInteractionEnabled = true
+                }){_ in
+                    UIImageView.animateKeyframes(withDuration: 1.0, delay: 0.4, options: [.autoreverse, .repeat,.allowUserInteraction], animations: {
+                        self.tableLabel.frame.origin.y += 10
+                })}
+    }
+    
 }
+
+
+
+
+
 
 extension TableOfContentController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: width/2.5, height: height/2.5)
+        return CGSize(width: width/2.5, height: width/3.4)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -172,6 +196,9 @@ extension TableOfContentController: UICollectionViewDelegateFlowLayout, UICollec
     
     
 }
+
+
+
 
 
 class CustomCell: UICollectionViewCell {

@@ -13,7 +13,7 @@ import CoreData
 class ViewController: UIViewController {
     
     var imageInitialState: CGAffineTransform.Type?
-
+    
     var timeControl = 2.0;
     var position = CGPoint()
     @IBOutlet weak var introLabel: UILabel!
@@ -25,17 +25,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var tableOfContentButton: UIButton!
     @IBOutlet weak var developerButton: UIButton!
+    @IBOutlet weak var treeButton: UIButton!
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
+    
+    
+    
+//    override fucntions
     
     override func viewDidAppear(_ animated: Bool) {
+        
         if myVariable.state >= 3 {
-            performSegue(withIdentifier: "ToDetailSegue", sender: self)
+            if #available(iOS 13.0, *) {
+                self.performSegue(withIdentifier: "ToDetailSegue", sender: self)
+            } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.performSegue(withIdentifier: "ToDetailSegue", sender: self)
+            })
+            }
+            
         }
-        imageFloatingEffect(image1: introLabel, image2: nil, image3: nil, image4: nil, state: 0)
+        UIView.transition(with: self.treeButton, duration: 1.5, options:[.transitionFlipFromTop], animations: {
+            self.elementEntering()
+            print("animation processed")
+        }, completion: {(finished) in
+            self.imageFloatingEffect(image1: self.introLabel, image2: self.readButton, image3: self.tableOfContentButton, image4: self.treeButton, image5: self.developerButton, state: 0)
+            self.setupNotificationObservers()
+        })
     }
     
     
@@ -44,56 +60,95 @@ class ViewController: UIViewController {
         self.getSavedData()
         screenWidth = UIScreen.main.bounds.width
         screenHeight = UIScreen.main.bounds.height
-        introLabel.center = CGPoint(x: self.introLabel.center.x, y: self.screenHeight * 0.30)
+        introLabel.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.3, width: screenWidth * 0.8, height: screenHeight * 0.19)
         introLabel.text = "The Color Rap Book"
         introLabel.textColor = .red
-        introLabel.font = UIFont(name: "Morgan_bold", size: 100)
-        labelFadeIn(label: introLabel, delay: 0)
-//        tableOfContentButton.backgroundColor = .red
-        tableOfContentButton.alpha = 0.5
-//        developerButton.backgroundColor = .red
-
-        readButton.frame = CGRect(x: screenWidth * 0.4, y: screenHeight * 0.05, width: screenWidth * 0.19, height: screenHeight * 0.24)
-        readButton.setTitle("Read", for: .normal)
-        readButton.setTitleColor(.systemPink, for: .normal)
-    
-        readButton.titleLabel?.font = UIFont(name: "Morgan_bold-Regular", size: 50)
-        readButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        introLabel.font = UIFont(name: "Morgan_bold", size: 80)
+        introLabel.adjustsFontSizeToFitWidth = true
         
-        tableOfContentButton.frame = CGRect(x: screenWidth * 0.13, y: screenHeight * 0.10, width: screenWidth * 0.19, height: screenHeight * 0.24)
-        tableOfContentButton.setTitle("Table\nof\nContent", for: .normal)
-        tableOfContentButton.setTitleColor(.blue, for: .normal)
-        tableOfContentButton.titleLabel?.numberOfLines = 0
-        tableOfContentButton.titleLabel?.textAlignment = .center
-        tableOfContentButton.titleLabel?.font = UIFont(name: "Morgan_bold-Regular", size: 32)
-        tableOfContentButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        frontCoverView.image = UIImage(named: "page5Back")
+        //        frontCoverView.image = UIImage(named: "FrontCover")
+        frontCoverView.alpha = 1
         
-        developerButton.frame = CGRect(x: 0, y: 0, width: screenWidth * 0.135, height: screenHeight * 0.22)
-        developerButton.setTitle("Beautiful\npeople\n\n", for: .normal)
-        developerButton.setTitleColor(.white, for: .normal)
-        developerButton.titleLabel?.numberOfLines = 0
-        developerButton.titleLabel?.textAlignment = .center
-        developerButton.titleLabel?.font = UIFont(name: "Morgan_bold-Regular", size: 32)
-        developerButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        let readBHeight = screenHeight * 0.20
+        let readBWidth = readBHeight * 1.380723
+        readButton.frame = CGRect(x: screenWidth * 0.42, y: -screenHeight * 0.40, width: readBWidth, height: readBHeight)
+        readButton.setImage(UIImage(named: "readCloud"), for: .normal)
         
-//        imageFloatingEffect(image1: introLabel, image2: nil, image3: nil, image4: nil, state: 0)
+        let tOCHeight = screenHeight * 0.20
+        let tOCWidth = tOCHeight * 1.32477
+        tableOfContentButton.frame = CGRect(x: screenWidth * 0.15, y: -screenHeight * 0.40, width: tOCWidth, height: tOCHeight)
+        tableOfContentButton.setImage(UIImage(named: "tableOfContentCloud"), for: .normal)
+        
+        let sunHeight = screenHeight * 0.24
+        let sunWidth = sunHeight * 0.9022
+        developerButton.frame = CGRect(x: 0, y: -screenHeight * 0.40, width: sunWidth, height: sunHeight)
+        developerButton.setImage(UIImage(named: "viewControllerSun"), for: .normal)
+        
+        
+        let treeHeight = screenHeight * 0.90
+        let treeWidth = treeHeight * 0.56936
+        var deviceTreePosition = screenWidth * 0.60
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            deviceTreePosition = screenWidth * 0.67
+        } else if UIDevice.current.userInterfaceIdiom == .pad {
+            deviceTreePosition = screenWidth * 0.60
+        }
+        treeButton.frame = CGRect(x: deviceTreePosition, y: screenHeight, width: treeWidth, height: treeHeight)
+        treeButton.setImage((UIImage(named: "tree")), for: .normal)
         
         
     }
 
-//Commands to pop up the Title
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             position = touch.location(in: view)
-//            print(position)
+            //            print(position)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
+        
+        if (sender is UIButton) {
+            if (segue.destination is DeveloperController) {
+            } else {
+                // No problem to force unwrap in this case, since we know sender is an instance of UIButton
+                let button = sender as! UIButton
+                
+                // Set the circleOrigin property of the segue to the center of the button
+                (segue as! OHCircleSegue).circleOrigin = button.center
+                myVariable.center = button.center
+            }
+        }
+        else if (sender is ViewController) {
+            let view = sender as! ViewController
+            (segue as! OHCircleSegue).circleOrigin = view.readButton.center
+            myVariable.center = readButton.center
+        }
+        
+        labelFadeOut(label: introLabel, delay: 0)
+    }
+    
+    override var prefersStatusBarHidden: Bool { return true }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     
     
+    
+    
+//    IBAction functions
+    
+    
     @IBAction func readTap(_ sender: Any) {
-         myVariable.state = 3
+        myVariable.state = 3
         self.performSegue(withIdentifier: "ToDetailSegue", sender: sender)
     }
     
@@ -107,14 +162,14 @@ class ViewController: UIViewController {
     
     @IBAction func leftSwipeHandler(_ sender: Any) {
         switch introLabel.alpha {
-                case 0:
-
-                    labelFadeIn(label: introLabel, delay: TimeInterval())
-        //            state = 1;
-                    imageFloatingEffect(image1: introLabel, image2: nil, image3: nil, image4: nil, state: 0)
-                default:
-                    break;
-                }
+        case 0:
+            
+            labelFadeIn(label: introLabel, delay: TimeInterval())
+            //            state = 1;
+        //                    imageFloatingEffect(image1: introLabel, image2: readButton, image3: tableOfContentButton, image4: treeButton, image5: developerButton, state: 0)
+        default:
+            break;
+        }
         
     }
     
@@ -125,97 +180,99 @@ class ViewController: UIViewController {
         }
     }
     
- 
     
-
+    
+    
     @IBAction func returnFromSegueActions(sender: UIStoryboardSegue) {
-    
+        
         self.labelFadeIn(label: self.introLabel, delay: 0)
         
     }
     
     
+    
+    
+    
+    
+    
+    
+//    functions for animation in View Controller
+    
     func labelFadeIn(label : UILabel, delay: TimeInterval) {
-
+        introLabel.adjustsFontSizeToFitWidth = true
+        
         UIView.animate(withDuration: timeControl, delay: 0.25, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
             
             self.introLabel.alpha = 1
-            self.introLabel.center = CGPoint(x: self.introLabel.center.x, y: self.screenHeight * 0.78)
-        }, completion: nil)
- 
+            self.introLabel.frame = CGRect(x: self.screenWidth * 0.05, y: self.screenHeight * 0.8, width: self.screenWidth * 0.8, height: self.screenHeight * 0.19)
+        }, completion: {(finished) in
+        })
+        
     }
     
     func labelFadeOut(label : UILabel, delay : TimeInterval) {
+        introLabel.adjustsFontSizeToFitWidth = true
         
-        
-        UILabel.animate(withDuration: timeControl - 0.3, delay: delay, options: .curveEaseInOut, animations: {                 label.alpha = 0
-               self.introLabel.center = CGPoint(x: self.introLabel.center.x, y: self.screenHeight * 0.30)
+        UILabel.animate(withDuration: timeControl - 0.3, delay: delay, options: .curveEaseInOut, animations: {
+            label.alpha = 0
+            self.introLabel.frame = CGRect(x: self.screenWidth * 0.05, y: self.screenHeight * 0.3, width: self.screenWidth * 0.8, height: self.screenHeight * 0.19)
         },
-        completion: nil)
+                        completion: nil)
         
     }
     
-    func viewcontrollerANimate() {
+    func elementEntering() {
+        let treeHeight = screenHeight * 0.90
+        let treeWidth = treeHeight * 0.56936
+        var deviceTreePosition = screenWidth * 0.60
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            deviceTreePosition = screenWidth * 0.67
+        } else if UIDevice.current.userInterfaceIdiom == .pad {
+            deviceTreePosition = screenWidth * 0.60
+        }
+        treeButton.frame = CGRect(x: deviceTreePosition, y: screenHeight * 0.08, width: treeWidth, height: treeHeight)
+        
+        
+        let tOCHeight = screenHeight * 0.20
+        let tOCWidth = tOCHeight * 1.32477
+        UIView.animate(withDuration: 0.2, delay: 0.6, options: .curveEaseIn, animations: {
+            self.tableOfContentButton.frame = CGRect(x: self.screenWidth * 0.15, y: self.screenHeight * 0.10, width: tOCWidth, height: tOCHeight)
+        }, completion: nil)
+        
+        let readBHeight = screenHeight * 0.20
+        let readBWidth = readBHeight * 1.380723
+        UIView.animate(withDuration: 0.2, delay: 0.9, options: .curveEaseIn, animations: {
+            self.readButton.frame = CGRect(x: self.screenWidth * 0.42, y: self.screenHeight * 0.05, width: readBWidth, height: readBHeight)
+        }, completion:nil)
+        
+        
+        let sunHeight = screenHeight * 0.24
+        let sunWidth = sunHeight * 0.9022
+        UIView.animate(withDuration: 0.2, delay: 1.2, options: .curveEaseIn, animations: {
+            self.developerButton.frame = CGRect(x: 0, y: 0, width: sunWidth, height: sunHeight)
+        }, completion: {(finished) in
+            self.labelFadeIn(label: self.introLabel, delay: 0)
+        })
+    }
+    
+    
+    private func setupNotificationObservers() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(viewReappearFloating), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         
     }
-//    func getSavedData() {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedData")
-//        request.returnsObjectsAsFaults = false
-//        do {
-//            let result = try context.fetch(request)
-//            for data in result as! [NSManagedObject]
-//            {
-//                myVariable.page = data.value(forKey: "page") as! Int
-//            }
-//        } catch {
-//            print("failed to read")
-//        }
-//    }
+    
+    
+    @objc func viewReappearFloating() {
+        view.layer.removeAllAnimations()
+         self.imageFloatingEffect(image1: self.introLabel, image2: self.readButton, image3: self.tableOfContentButton, image4: self.treeButton, image5: self.developerButton, state: 0)
+    }
+    
 
-  
-    
-//    override func segueForUnwinding(to toController: UIViewController, from fromController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-//            if let id = identifier{
-//                if id == "BackToViewController" {
-//                    let unwindSegue = ViewControllerSegueUnwind(identifier: id, source: fromController, destination: toController, performHandler: { () -> Void in
-//
-//                    })
-//                    return unwindSegue
-//                }
-//            }
+}
 
-//        return super.segueForUnwinding(to: toController, from: fromController, identifier: identifier)!
-//        }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
-        
-        if (sender is UIButton) {
-            if (segue.destination is DeveloperController) {
-            } else {
-                // No problem to force unwrap in this case, since we know sender is an instance of UIButton
-                let button = sender as! UIButton
-            
-                // Set the circleOrigin property of the segue to the center of the button
-                (segue as! OHCircleSegue).circleOrigin = button.center
-                myVariable.center = button.center
-        }
-        }
-        else if (sender is ViewController) {
-            let view = sender as! ViewController
-            (segue as! OHCircleSegue).circleOrigin = view.readButton.center
-            myVariable.center = readButton.center
-        }
-    }
-    
-    override var prefersStatusBarHidden: Bool { return true }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscape
-        
-    }
-    }
-    
- 
+
 
 
 
