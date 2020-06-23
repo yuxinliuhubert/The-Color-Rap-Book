@@ -14,6 +14,7 @@ class DeveloperController: UIViewController {
     
     
     override func viewDidLoad() {
+        view.isExclusiveTouch = true
         self.modalPresentationStyle = .popover
     }
     

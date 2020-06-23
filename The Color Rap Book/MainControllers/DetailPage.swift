@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
-import SwiftUI
 import simd
 import CoreMotion
 import CoreData
 import QuartzCore
+import ColorSlider
+import SpriteKit
+import GameplayKit
 
 
 struct myVariable {
@@ -21,6 +23,7 @@ struct myVariable {
     static var comingFromTableOfContent = false
     static var page = Int()
     static var timer = Timer()
+    static var orientation = 4
 }
 
 protocol exitProtocol {
@@ -28,66 +31,14 @@ protocol exitProtocol {
     func updatePage()
 }
 
-class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol {
-    
-    
-    // MARK: - Dynamics properties
-    // Animator for all of the components
-    var itemsAnimator: UIDynamicAnimator?
-    
-    // Gravity for the system
-    var gravityBehavior: UIGravityBehavior?
-    
-    lazy var regularGravityVector: CGVector = {
-        CGVector(dx: 1, dy: 0)
-    }()
-    
-    lazy var regularGravityVectorCanceller: CGVector = {
-        CGVector(dx: 1000, dy: 0)
-    }()
-    
-    lazy var invertedGravityVector: CGVector = {
-        CGVector(dx: -1, dy: 0)
-    }()
-    
-    lazy var invertedGravityVectorCanceller: CGVector = {
-        CGVector(dx: -1000, dy: 0)
-    }()
-    
-    lazy var normalRegularGravityVector: CGVector = {
-        CGVector(dx: 0, dy: 1)
-    }()
-    
-    lazy var normalRegularGravityVectorCanceller: CGVector = {
-        CGVector(dx: 0, dy: 1000)
-    }()
-    
-    
-    lazy var normalInvertGravityVector: CGVector = {
-        CGVector(dx: 0, dy: -1)
-    }()
-    
-    lazy var normalInvertGravityVectorCanceller: CGVector = {
-        CGVector(dx: 0, dy: -1000)
-    }()
-    
-    lazy var zeroGravityVector: CGVector = {
-        CGVector(dx: 0, dy: 0)
-    }()
-    // Collisions
-    var boundaryCollisionBehavior: UICollisionBehavior?
-    
-    // Elasticity
-    var elasticityBehavior: UIDynamicItemBehavior?
-    
-    
-    
-    let motionManager: CMMotionManager = CMMotionManager()
+class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate,exitProtocol, ImagePickerDelegate {
+
     
     
     var printingTimeControl = 0.12
     
     var position = CGPoint()
+    weak var page5Delegate: page5SceneProtocol?
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -112,6 +63,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var showMoreButton: UIButton!
     
+    var scene: Page5Scene?
+    
     var labelArray = [String]() // do not use NSMutableArray in Swift
     var backgroundAtray = [String]()
     //    var dictClients = [String]()
@@ -123,80 +76,159 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
     let screenHeight = UIScreen.main.bounds.height
     
     let edgePan = UIScreenEdgePanGestureRecognizer()
-    let startButton = UIButton()
-    let undoButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Undo", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
-        button.addTarget(self, action: #selector(handleUndo), for: .touchUpInside)
+    let startButton: UIButton = {
+        let button = UIButton()
+        button.isExclusiveTouch = true
         return button
     }()
     
-    @objc fileprivate func handleUndo() {
-        print("undo the line drawn")
-        canvas.undo()
-        
-    }
+    lazy var noPictureButton: UIButton = {
+        let button = UIButton()
+        button.isExclusiveTouch = true
+        return button
+    }()
     
-    let clearButton: UIButton = {
+    lazy var SpriteView: SKView = {
+        let view = SKView()
+        view.allowsTransparency  = true
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    lazy var undoButton: UIButton = {
+        let button = UIButton(type: .system)
+//        button.setTitle("Undo", for: .normal)
+        button.setImage(UIImage(named: "undo"), for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
+        button.addTarget(self, action: #selector(handleUndo), for: .touchUpInside)
+//        button.frame.size.width = UIScreen.main.bounds.width * 0.1
+        return button
+    }()
+    
+    lazy var redoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "redo"), for: .normal)
+        button.addTarget(self, action: #selector(handleRedo), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    lazy var clearButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Clear", for: .normal)
         button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
         button.addTarget(self, action: #selector(handleClear), for: .touchUpInside)
+        button.isExclusiveTouch = true
+//        button.frame.size.width = UIScreen.main.bounds.width * 0.1
         return button
     }()
     
-//
-//    let yellowButton: UIButton = {
-//
-//        let button = UIButton
-//    }
-//
-    @objc func handleClear() {
-        canvas.clear()
-    }
+    lazy var completeButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setTitle("Complete", for: .normal)
+         button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
+        button.setTitleColor(.red, for: .normal)
+        button.addTarget(self, action: #selector(handleComplete), for: .touchUpInside)
+        button.isExclusiveTouch = true
+        return button
+    }()
+    
+    lazy var backgroundChangeButton: UIButton = {
+           let button = UIButton(type: .system)
+           button.setTitle("change\nbackground", for: .normal)
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
+        button.titleLabel?.textAlignment = .center
+        button.addTarget(self, action: #selector(handleChangeBackground), for: .touchUpInside)
+        return button
+       }()
     
     
-    
-    
-    let stackView = UIStackView()
-    
-    
+    lazy var colorSlider: ColorSlider = {
+        let slider = ColorSlider(orientation: .horizontal, previewSide: .top)
+        slider.addTarget(self, action: #selector(changedColor), for: .valueChanged)
+        
+        slider.addTarget(self, action: #selector(touchUpFinished), for: [.touchUpInside, .touchUpOutside])
 
-    var backgroundColors = [UIColor()]
+        slider.isExclusiveTouch = true
+        return slider
+    }()
     
+   
+    
+    lazy var widthSlider: UISlider = {
+        let slider = UISlider()
+        slider.minimumValue = 1
+        slider.maximumValue = 20
+        slider.setValue(10, animated: false)
+        slider.isExclusiveTouch = true
+        slider.addTarget(self, action: #selector(handleWidthSlider), for: .valueChanged)
+        
+//        slider.frame.size.width = UIScreen.main.bounds.width * 0.25
+        return slider
+    }()
+    
+    let drawingToolViewBackground: UIView = {
+           let background = UIView()
+        background.layer.cornerRadius = UIScreen.main.bounds.height * 0.06
+        background.backgroundColor = .white
+        background.layer.shadowColor = UIColor.black.cgColor
+        background.layer.shadowOpacity = 0.3
+        background.layer.shadowOffset = .zero
+        background.layer.shadowRadius = 50
+
+           return background
+       }()
+    
+//    let stackBackPanGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
+//    let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
+    lazy var backgroundColors = [UIColor()]
+//    var alertStyle: UIAlertController.Style = .actionSheet
+    var imagePicker: ImagePicker!
+   
+    var page47Phase = 0
+//    0 represents the setup if the user visit page 47 for the first time
+//    1 represents when the user chooses and image and starts drawing
+//    2 represents when the user hits "complete" button and enters in to the last phase of page 47
+
+    var drawingPageBackgroundImage: UIImage?
     //    Override Functions
     
+    var isObserving = Bool()
+
+    lazy var panGesture: CustomPanGestureRecognizer! = {
+        let gesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
+        return gesture
+    }()
+            
+//    let alert = UIAlertController( title: "Title", message: "Message", preferredStyle: .alert)
     
-    
-    fileprivate func setUpStackView() {
-        view.addSubview(stackView)
-        stackView.distribution = .fillEqually
-        stackView.addArrangedSubview(undoButton)
-        stackView.addArrangedSubview(clearButton)
-        stackView.frame = CGRect(x: self.screenWidth * 0.2, y: self.screenHeight * 0.87, width: self.screenWidth * 0.6 , height: self.screenHeight * 0.1)
-        //        stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        //        stackView.widthAnchor.constraint(equalToConstant: self.screenWidth * 0.6).isActive = true
-        //        stackView.heightAnchor.constraint(equalToConstant: self.screenHeight * 0.3).isActive = true
-        //        stackView.center.x = self.screenWidth / 2
-//        stackView.addBackground(color: .red)
-        stackView.alpha = 0
-        print("stackLeadAnchor", stackView.leadingAnchor)
-        print("stacktrailanchor", stackView.trailingAnchor)
-    }
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        if UIDevice.current.userInterfaceIdiom == .pad
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+
+        nextButton.isExclusiveTouch = true
+        previousButton.isExclusiveTouch = true
+        showMoreButton.isExclusiveTouch = true
+       
+          NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEnteringForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        //if UIDevice.current.userInterfaceIdiom == .pad
         print(myVariable.state)
-          NotificationCenter.default.addObserver(self, selector: #selector(handleEnteringForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         setUpStackView()
 
         
+        
         firstLabelTask(state: 0, completion: {(success) in
             if success == true {
+                
+
+    
     
                 edgePan.addTarget(self, action: #selector(screenEdgeSwiped))
                 edgePan.edges = .left
@@ -206,6 +238,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
                 label.isHighlighted = false
                 label.alpha = 0
                 startButton.alpha = 0
+                noPictureButton.alpha = 0
                 grestureRecognizerSwitch(Bool: false)
                 testingTextfield.backgroundColor = .white
                 testingTextfield.textAlignment = .center
@@ -228,11 +261,15 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
                 self.showMoreButton.frame = CGRect(x: screenWidth * 0.48, y: screenHeight * 0.02, width: screenWidth * 0.0283, height: screenWidth * 0.03)
                 showMoreButton.setImage(UIImage(named: "showMoreHouse"), for: .normal)
                 print("pagenumberSaved ",myVariable.page)
+                
+                
+        
+            
             }
             
         })
         
-        // Listen for orientation changes
+    
     }
     override func viewDidAppear(_ animated: Bool) {
         
@@ -241,6 +278,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+        removeOrientationObserver()
         saveData()
     }
     
@@ -254,9 +292,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
     
     
     
-    override func didMove(toParent parent: UIViewController?) {
-        motionManager.startAccelerometerUpdates()
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
@@ -291,7 +326,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
     override var prefersStatusBarHidden: Bool { return true }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .landscape }
     
-    
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+         return [.top]
+    }
     
     
     //    Read Data
@@ -318,7 +355,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
             } catch {
                 print(error)
             }
-            print("backgroundArray ", backgroundAtray)
+//            print("backgroundArray ", backgroundAtray)
         }
         
         getSavedData()
@@ -334,6 +371,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
         print("exiting!!!!!")
         myVariable.page = myVariable.state
         saveData()
+        self.SpriteView.scene?.isPaused = true
+        self.SpriteView.scene?.removeFromParent()
         
         performSegue(withIdentifier: "BackToViewController", sender: self)
     }
@@ -379,7 +418,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
     
     
     @IBAction func nextPage(_ sender: Any) {
-        orientationDetectorSwwitch(Bool: false)
         buttonsEnabled(Bool: false)
         myVariable.state += 1
         myVariable.page = myVariable.state
@@ -398,7 +436,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
         myVariable.state -= 1
         myVariable.page = myVariable.state
         saveData()
-        orientationDetectorSwwitch(Bool: false)
         buttonsEnabled(Bool: false)
         if myVariable.state != 5 {
 //            cloudsFloatingEffect(leftCloud: previousButton, rightCloud: nextButton)
@@ -413,14 +450,25 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
         default:
             backgroundChangeBackward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
         }
+        
+        
     }
+    
+    
     
     
     @IBAction func rightSwipe(_ sender: Any) {
     }
     
+    
+    
+    
+    
     @IBAction func downSwipe(_ sender: Any) {
     }
+    
+    
+    
     
     @IBAction func leftSwipe(_ sender: Any) {
         //        print("leftswiperecognize")
@@ -448,6 +496,12 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
             self.canvas.frame = self.view.frame
             canvas.isHidden = true
             self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
+            self.SpriteView.isHidden = true
+            self.SpriteView.alpha = 0
+            self.SpriteView.backgroundColor =  .clear
+            self.SpriteView.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+            
+        
         
         }else if state == 1{
             myVariable.page = myVariable.state
@@ -463,6 +517,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
         // Call completion, when finished, success or faliure
         completion(true)
     }
+    
+    
     
 
     
@@ -486,6 +542,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate,exitProtocol 
         
     }
     
+ 
+      
     
     
     
@@ -534,6 +592,25 @@ extension UIStackView {
     }
 }
 
+extension UIView {
+
+    func addShadow(size: CGFloat) {
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOffset = CGSize(width: 50, height: 50)
+    layer.shadowOpacity = 0.8
+    layer.shadowRadius = size
+    clipsToBounds = false
+}
+    
+    func addButtonShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 4, height: 4)
+        layer.shadowOpacity = 0.8
+        layer.shadowRadius = 5
+        clipsToBounds = false
+    }
+
+}
 
 
 

@@ -54,6 +54,15 @@ final class MenuController: UIViewController {
     var isPresenting = false
     var exitDelegate: exitProtocol?
     var shapeLayer: CAShapeLayer!
+    var shapeLayer1: CAShapeLayer!
+    var shapeLayer2: CAShapeLayer!
+    var shapeLayer3: CAShapeLayer!
+    var shapeLayer4: CAShapeLayer!
+    var shapeLayer5: CAShapeLayer!
+    var shapeLayer6: CAShapeLayer!
+    var shapeLayer7: CAShapeLayer!
+    var shapeLayer8: CAShapeLayer!
+    var shapeLayer9: CAShapeLayer!
     var trackLayer: CAShapeLayer!
     var pulsatingLayer: CAShapeLayer!
     let percentageLabel: UILabel = {
@@ -86,7 +95,10 @@ final class MenuController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.isExclusiveTouch = true
+        homeButton.isExclusiveTouch = true
+        collectionView.isExclusiveTouch = true
+
         setupNotificationObservers()
         view.addSubview(backdropView)
         
@@ -101,9 +113,63 @@ final class MenuController: UIViewController {
         view.layer.addSublayer(trackLayer)
         
         shapeLayer = createShapeLayer(strokeColor: .red, fillColor: .clear, lineWidth: height * 0.04)
-        shapeLayer.strokeEnd = 0
-        shapeLayer.strokeColor = setupStrokeColor()
-        view.layer.addSublayer(shapeLayer)
+              shapeLayer.strokeEnd = 0
+              shapeLayer.strokeColor = setupStrokeColor()
+              view.layer.addSublayer(shapeLayer)
+//        set up rainbow pulsating layer
+        if myVariable.state == 3 || myVariable.state == 47 {
+            print("rainbow stroke code section")
+            shapeLayer1 = createShapeLayer(strokeColor: .red, fillColor: .clear, lineWidth: height * 0.04)
+            shapeLayer1.strokeEnd = 0
+//            shapeLayer1.strokeColor = setupRainbowStrokeColor(color: "red")
+            
+//            shapeLayer2 = createShapeLayer(strokeColor: .blue, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer2.strokeEnd = 0
+////            shapeLayer2.strokeColor = setupRainbowStrokeColor(color: "blue")
+//
+//            shapeLayer3 = createShapeLayer(strokeColor: .yellow, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer3.strokeEnd = 0
+////            shapeLayer3.strokeColor = setupRainbowStrokeColor(color: "yellow")
+//
+//            shapeLayer4 = createShapeLayer(strokeColor: .green, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer4.strokeEnd = 0
+////            shapeLayer4.strokeColor = setupRainbowStrokeColor(color: "green")
+//
+//            shapeLayer5 = createShapeLayer(strokeColor: .orange, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer5.strokeEnd = 0
+////            shapeLayer5.strokeColor = setupRainbowStrokeColor(color: "orange")
+//
+//            shapeLayer6 = createShapeLayer(strokeColor: .purple, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer6.strokeEnd = 0
+////            shapeLayer6.strokeColor = setupRainbowStrokeColor(color: "purple")
+//
+//            shapeLayer7 = createShapeLayer(strokeColor: .brown, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer7.strokeEnd = 0
+////            shapeLayer7.strokeColor = setupRainbowStrokeColor(color: "brown")
+//
+//            shapeLayer8 = createShapeLayer(strokeColor: .black, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer8.strokeEnd = 0
+////            shapeLayer8.strokeColor = setupRainbowStrokeColor(color: "black")
+//
+//            shapeLayer9 = createShapeLayer(strokeColor: .white, fillColor: .clear, lineWidth: height * 0.04)
+//            shapeLayer9.strokeEnd = 0
+////            shapeLayer9.strokeColor = setupRainbowStrokeColor(color: "white")
+//
+//
+////
+//            view.layer.addSublayer(shapeLayer9)
+//            view.layer.addSublayer(shapeLayer8)
+//            view.layer.addSublayer(shapeLayer7)
+//            view.layer.addSublayer(shapeLayer6)
+//            view.layer.addSublayer(shapeLayer5)
+//            view.layer.addSublayer(shapeLayer4)
+//            view.layer.addSublayer(shapeLayer3)
+//            view.layer.addSublayer(shapeLayer2)
+            view.layer.addSublayer(shapeLayer1)
+        }
+//        else {
+      
+//        }
         
         
         view.backgroundColor = .clear
@@ -136,7 +202,7 @@ final class MenuController: UIViewController {
         backdropView.addGestureRecognizer(tapGesture)
         
         view.addSubview(collectionView)
-               collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .clear
         
         
         collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.10 + 30).isActive = true
@@ -160,10 +226,10 @@ final class MenuController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-//        let displayIndexPathInInt = Int()
-//        let displayIndexPath = displayIndexPathInInt.setCollectionViewDisplayCell()
-//        print("displayIndexPath:", displayIndexPath)
-//        collectionView.scrollToItem(at: IndexPath(row: 0, section: displayIndexPath), at: [], animated: false)
+        //        let displayIndexPathInInt = Int()
+        //        let displayIndexPath = displayIndexPathInInt.setCollectionViewDisplayCell()
+        //        print("displayIndexPath:", displayIndexPath)
+        //        collectionView.scrollToItem(at: IndexPath(row: 0, section: displayIndexPath), at: [], animated: false)
     }
     
     
@@ -176,7 +242,7 @@ final class MenuController: UIViewController {
     
     
     
-//    func
+    //    func
     
     private func createShapeLayer(strokeColor:UIColor, fillColor: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
         let layer = CAShapeLayer()
@@ -193,19 +259,101 @@ final class MenuController: UIViewController {
     }
     
     
+    
+    
     private func animateStroke() {
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        let percentage = Float(myVariable.state)/Float(45.0)
-        print("percentage", percentage)
-//        shapeLayer.strokeEnd = CGFloat(percentage)
-        basicAnimation.toValue = CGFloat(percentage)
-        basicAnimation.duration = 1
-        basicAnimation.fillMode = .forwards
-        basicAnimation.isRemovedOnCompletion = false
-        let percentage100 = percentage.roundToTenth()
-        percentageLabel.text = "\(percentage100)%\nread"
-        shapeLayer.add(basicAnimation, forKey: "basic")
+        
+        switch myVariable.state {
+        case 3:
+            //            rainbow bar set up
+            
+              let basicAnimation1 = setUpRainbowStrokeAnimation(percentage: Float(9.00/9.00))
+            
+//            let basicAnimation1 = setUpRainbowStrokeAnimation(percentage: Float(1.00/9.00))
+//            let basicAnimation2 = setUpRainbowStrokeAnimation(percentage: Float(2.00/9.00))
+//            let basicAnimation3 = setUpRainbowStrokeAnimation(percentage: Float(3.00/9.00))
+//            let basicAnimation4 = setUpRainbowStrokeAnimation(percentage: Float(4.00/9.00))
+//            let basicAnimation5 = setUpRainbowStrokeAnimation(percentage: Float(5.00/9.00))
+//            let basicAnimation6 = setUpRainbowStrokeAnimation(percentage: Float(6.00/9.00))
+//            let basicAnimation7 = setUpRainbowStrokeAnimation(percentage: Float(7.00/9.00))
+//            let basicAnimation8 = setUpRainbowStrokeAnimation(percentage: Float(8.00/9.00))
+//            let basicAnimation9 = setUpRainbowStrokeAnimation(percentage: Float(9.00/9.00))
+            //            let percentage = Float(myVariable.state)/Float(47.0)
+            
+            percentageLabel.adjustsFontSizeToFitWidth = true
+            //            let percentage100 = percentage.roundToTenth()
+            //            percentageLabel.text = "\(percentage100)%\nread"
+            shapeLayer1.add(basicAnimation1, forKey: "basic1")
+            
+            animateStrokeColor()
+              
+              
+//            shapeLayer2.add(basicAnimation2, forKey: "basic2")
+//            shapeLayer3.add(basicAnimation3, forKey: "basic3")
+//            shapeLayer4.add(basicAnimation4, forKey: "basic4")
+//            shapeLayer5.add(basicAnimation5, forKey: "basic5")
+//            shapeLayer6.add(basicAnimation6, forKey: "basic6")
+//            shapeLayer7.add(basicAnimation7, forKey: "basic7")
+//            shapeLayer8.add(basicAnimation8, forKey: "basic8")
+//            shapeLayer9.add(basicAnimation9, forKey: "basic9")
+            
+            
+            
+            percentageLabel.text = "Ready to start?"
+//        case 47:
+//            let basicAnimation1 = setUpRainbowStrokeAnimation(percentage: Float(1.00/9.00))
+//            let basicAnimation2 = setUpRainbowStrokeAnimation(percentage: Float(2.00/9.00))
+//            let basicAnimation3 = setUpRainbowStrokeAnimation(percentage: Float(3.00/9.00))
+//            let basicAnimation4 = setUpRainbowStrokeAnimation(percentage: Float(4.00/9.00))
+//            let basicAnimation5 = setUpRainbowStrokeAnimation(percentage: Float(5.00/9.00))
+//            let basicAnimation6 = setUpRainbowStrokeAnimation(percentage: Float(6.00/9.00))
+//            let basicAnimation7 = setUpRainbowStrokeAnimation(percentage: Float(7.00/9.00))
+//            let basicAnimation8 = setUpRainbowStrokeAnimation(percentage: Float(8.00/9.00))
+//            let basicAnimation9 = setUpRainbowStrokeAnimation(percentage: Float(9.00/9.00))
+//            //            let percentage = Float(myVariable.state)/Float(47.0)
+//
+//            percentageLabel.adjustsFontSizeToFitWidth = true
+//            //            let percentage100 = percentage.roundToTenth()
+//            //            percentageLabel.text = "\(percentage100)%\nread"
+//            shapeLayer1.add(basicAnimation1, forKey: "basic1")
+//            shapeLayer2.add(basicAnimation2, forKey: "basic2")
+//            shapeLayer3.add(basicAnimation3, forKey: "basic3")
+//            shapeLayer4.add(basicAnimation4, forKey: "basic4")
+//            shapeLayer5.add(basicAnimation5, forKey: "basic5")
+//            shapeLayer6.add(basicAnimation6, forKey: "basic6")
+//            shapeLayer7.add(basicAnimation7, forKey: "basic7")
+//            shapeLayer8.add(basicAnimation8, forKey: "basic8")
+//            shapeLayer9.add(basicAnimation9, forKey: "basic9")
+//            percentageLabel.text = "Your page looks awesome!"
+        default:
+            
+            let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+            let percentage = Float(myVariable.state)/Float(47.0)
+            print("percentage", percentage)
+            //        shapeLayer.strokeEnd = CGFloat(percentage)
+            basicAnimation.toValue = CGFloat(percentage)
+            basicAnimation.duration = 1
+            basicAnimation.fillMode = .forwards
+            basicAnimation.isRemovedOnCompletion = false
+            percentageLabel.adjustsFontSizeToFitWidth = true
+            let percentage100 = percentage.roundToTenth()
+            percentageLabel.text = "\(percentage100)%\nread"
+            shapeLayer.add(basicAnimation, forKey: "basic")
+           
+        }
     }
+ 
+    private func setUpRainbowStrokeAnimation(percentage: Float) -> CABasicAnimation {
+        print("didcreantemultiplelayers")
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+          //            print("percentage", percentage)
+          //        shapeLayer.strokeEnd = CGFloat(percentage)
+          basicAnimation.toValue = CGFloat(percentage)
+          basicAnimation.duration = 1
+          basicAnimation.fillMode = .forwards
+          basicAnimation.isRemovedOnCompletion = false
+        return basicAnimation
+      }
     
     private func animatePulsatinglayer(){
         let animation = CABasicAnimation(keyPath: "transform.scale")
@@ -246,8 +394,56 @@ final class MenuController: UIViewController {
             return UIColor.red.cgColor
         }
     }
+    
+//    private func setupRainbowStrokeColor(color: String) -> CGColor {
+//           switch color {
+//           case "red":
+//               return UIColor.red.cgColor
+//           case "blue":
+//               return UIColor.blue.cgColor
+//           case "yellow":
+//               return UIColor.yellow.cgColor
+//           case "green":
+//               return UIColor.green.cgColor
+//           case "orange":
+//               return UIColor.orange.cgColor
+//           case "purple":
+//               return UIColor.purple.cgColor
+//           case "brown":
+//               return UIColor.brown.cgColor
+//           case "black":
+//               return UIColor.black.cgColor
+//           case "white":
+//               return UIColor.white.cgColor
+//           default:
+//               return UIColor.red.cgColor
+//           }
+//       }
 
     
+    func animateStrokeColor () {
+        let backgroundColors = [UIColor.red.cgColor, UIColor.blue.cgColor, UIColor.yellow.cgColor, UIColor.green.cgColor, UIColor.orange.cgColor, UIColor.purple.cgColor, UIColor.brown.cgColor, UIColor.black.cgColor, UIColor.white.cgColor]
+        let randomNum = Int.random(in: 0...8)
+        self.shapeLayer1.strokeColor =  backgroundColors[randomNum];
+        
+        myVariable.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {_ in
+           
+            UIView.animate(withDuration: 1.5, delay: 0, options: [.curveEaseInOut, .repeat], animations: { () -> Void in
+                 let randomNum = Int.random(in: 0...8)
+                self.shapeLayer1.strokeColor =  backgroundColors[randomNum];
+                
+            })
+        })
+        
+// 
+              
+    
+            
+            
+            
+
+           
+       }
     
     
 //    @objc functions
@@ -255,10 +451,14 @@ final class MenuController: UIViewController {
     
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        myVariable.timer.invalidate()
+//        self.view.layer.removeAllAnimations()
         dismiss(animated: true, completion: nil)
     }
     
     @objc func handleHome(_ sender: UIButton) {
+         myVariable.timer.invalidate()
+//        self.view.layer.removeAllAnimations()
         dismiss(animated: true, completion: {
             self.exitDelegate?.exitFromDetailPage()
         })
@@ -348,6 +548,20 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
             menuLabel.frame.origin.x -= menuWidth
             homeButton.frame.origin.x -= menuWidth
             shapeLayer.opacity = 0
+            
+             if myVariable.state == 3 || myVariable.state == 47 {
+            shapeLayer1.opacity = 0
+//                self.animateStrokeColor()
+//            shapeLayer2.opacity = 0
+//            shapeLayer3.opacity = 0
+//            shapeLayer4.opacity = 0
+//            shapeLayer5.opacity = 0
+//            shapeLayer6.opacity = 0
+//            shapeLayer7.opacity = 0
+//            shapeLayer8.opacity = 0
+//            shapeLayer9.opacity = 0
+            }
+            
             backdropView.alpha = 0
             percentageLabel.alpha = 0
             trackLayer.opacity = 0
@@ -359,6 +573,20 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
                 self.menuLabel.frame.origin.x += self.menuWidth
                 self.homeButton.frame.origin.x += self.menuWidth
                 self.shapeLayer.opacity = 1
+                
+                 if myVariable.state == 3 || myVariable.state == 47 {
+                self.shapeLayer1.opacity = 1
+//                    self.animateStrokeColor()
+//                self.shapeLayer2.opacity = 1
+//                self.shapeLayer3.opacity = 1
+//                self.shapeLayer4.opacity = 1
+//                self.shapeLayer5.opacity = 1
+//                self.shapeLayer6.opacity = 1
+//                self.shapeLayer7.opacity = 1
+//                self.shapeLayer8.opacity = 1
+//                self.shapeLayer9.opacity = 1
+                }
+                
                 self.backdropView.alpha = 1
                 self.percentageLabel.alpha = 1
                 
@@ -378,6 +606,18 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
                 self.menuLabel.frame.origin.x -= self.menuWidth
                 self.homeButton.frame.origin.x -= self.menuWidth
                 self.shapeLayer.opacity = 0
+                if myVariable.state == 3 || myVariable.state == 47 {
+                    self.shapeLayer1.opacity = 0
+//                    self.shapeLayer2.opacity = 0
+//                    self.shapeLayer3.opacity = 0
+//                    self.shapeLayer4.opacity = 0
+//                    self.shapeLayer5.opacity = 0
+//                    self.shapeLayer6.opacity = 0
+//                    self.shapeLayer7.opacity = 0
+//                    self.shapeLayer8.opacity = 0
+//                    self.shapeLayer9.opacity = 0
+                
+                }
                 self.backdropView.alpha = 0
                 self.percentageLabel.alpha = 0
                 self.trackLayer.opacity = 0

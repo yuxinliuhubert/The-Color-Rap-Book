@@ -67,6 +67,10 @@ class TableOfContentController: UIViewController {
     }
     
     override func viewDidLoad() {
+        view.isExclusiveTouch = true
+        collectionView.isExclusiveTouch = true
+        goBackButton.isExclusiveTouch = true
+
         self.getSavedData()
         print("page", myVariable.page)
         print("customdata for book mark" , data)

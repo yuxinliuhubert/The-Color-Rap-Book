@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
-
+import SpriteKit
+import GameplayKit
+import CoreMotion
+import QuartzCore
 
 extension(DetailPageController) {
     
@@ -22,16 +25,19 @@ extension(DetailPageController) {
             
         case 5:
             
+            
+            self.SpriteView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//            view.addSubview(SpriteView)
+            view.insertSubview(SpriteView, aboveSubview: image7)
             let treeHeight = screenHeight * 0.9
             let treeWidth = treeHeight * 0.568656
             self.image1.image = UIImage(named: "page5Tree")
             self.image1.frame = CGRect(x: screenWidth * 0.60, y: screenHeight * 0.03, width: treeWidth , height: treeHeight)
             self.image1.addShadow()
-            self.image5.image = UIImage(named: "page5CherrySmall")
-            let cherryHeight = treeHeight * 0.25
-            self.image5.frame = CGRect(x: screenWidth * 0.610, y: screenHeight * 0.313, width: cherryHeight * 0.82210 , height: cherryHeight)
-            self.image5.addShadow()
             
+            
+            
+    
             
             
             let cloudHeight = screenHeight * 0.2
@@ -58,7 +64,34 @@ extension(DetailPageController) {
                 self.image6.addShadow()
             }, completion: {(finished) in
                 // Get node of object to move
+            
+                let scene = GKScene(fileNamed: "Page5Scene")
+                                      
+                                      // Get the SKScene from the loaded GKScene
+                if let sceneNode = scene!.rootNode as! Page5Scene? {
+                                          
+                    // Copy gameplay related content over to the scene
+//                    sceneNode.entities = scene!.entities
+//                    sceneNode.graphs = scene!.graphs
+                    
+                    // Set the scale mode to scale to fit the window
+                    sceneNode.scaleMode = .resizeFill
+                    
+                    // Present the scene
+                    if let view = self.SpriteView as SKView? {
+                            view.isHidden = false
+                            view.alpha = 1
+                            view.presentScene(sceneNode)
+                            view.ignoresSiblingOrder = true
+    
+                        
+                        //                                              view.showsFPS = true
+                        //                                              view.showsNodeCount = true
+                    }
+                }
                 
+                           
+
                 self.imageFreeFall(imageView: self.image5, elasticity: 0.6)
                 //            self.imageFloatingEffect(image1: nil, image2: self.image2, image3: self.image3, image4: self.image4, state: state)
             })
@@ -159,8 +192,9 @@ extension(DetailPageController) {
         case 15:
             self.image1.image = UIImage(named: "page15UnPeeledBanana")
             self.image1.frame = CGRect(x: screenWidth * 0.55, y: screenHeight * 0.2, width: screenHeight * 0.5324, height: screenHeight * 0.6)
+            self.image1.addShadow()
             
-            
+        
             
         case 17:
             let cageHeight = screenHeight * 0.79
@@ -168,7 +202,8 @@ extension(DetailPageController) {
             image2.image = UIImage(named: "page17Cage")
             //        image2.backgroundColor = .blue
             image2.frame = CGRect(x: screenWidth * 0.10, y: screenHeight * 0.21, width: cageWidth, height: cageHeight)
-            image2.removeShadow()
+//            image2.removeShadow()
+            image2.addShadow()
             
             let birdHeight = screenHeight * 0.36
             let birdWidth = birdHeight * 0.5922
@@ -203,9 +238,16 @@ extension(DetailPageController) {
                 }
                 
                 
-                self.image1.removeShadow()
+//                self.image1.removeShadow()
                 self.image3.removeShadow()
-                self.image4.removeShadow()
+//                self.image4.removeShadow()
+                self.image6.removeShadow()
+                
+                self.image1.addShadow()
+//                self.image3.addShadow()
+//                self.image4.addShadow()
+                
+
                 
             }, completion: {(finished) in
                 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
@@ -345,6 +387,8 @@ extension(DetailPageController) {
     
     func imageDisappearing() {
         myVariable.timer.invalidate()
+//        print("MyVariable.timer, ", myVariable.timer)
+//        myVariable.timer = nil
         UIImageView.animate(withDuration:  1.0, delay: 0, options: [.curveEaseInOut], animations: {
             //                    The grass images needs to be back in place without going to the top of the screen
             
@@ -358,17 +402,28 @@ extension(DetailPageController) {
             default:
                 self.imageBackInPlace()
             }
+//            self.backgroundImageView.layer.removeAllAnimations()
+            self.view.layer.removeAllAnimations()
+
+            self.page5Delegate?.dismissPage5Scene()
+            self.scene?.dismissPage5Scene()
             self.previousButton.alpha = 0
             self.nextButton.alpha = 0
             self.showMoreButton.alpha = 0
             self.startButton.alpha = 0
-                           self.startButton.isEnabled = false
-            self.canvas.alpha = 0
-            self.canvas.isHidden = true
-            self.stackView.alpha = 0
+            self.noPictureButton.alpha = 0
+
+                self.canvas.alpha = 0
+                self.canvas.isHidden = true
             
-            
+            self.startButton.isEnabled = false
+           
+            self.colorSlider.alpha = 0
+            self.drawingToolViewBackground.alpha = 0
+            self.SpriteView.alpha = 0
+    
         }, completion: { (finished) in
+            self.startButton.removeTarget(self, action: #selector(self.startButtonTap), for: .touchUpInside)
             self.image1.image = nil
             self.image2.image = nil
             self.image3.image = nil
@@ -386,7 +441,21 @@ extension(DetailPageController) {
             self.image4.contentMode = .scaleAspectFit
             self.image5.contentMode = .scaleAspectFit
             self.image6.contentMode = .scaleAspectFit
+            self.SpriteView.isHidden = true
+//            self.SpriteView.frame = CGRect(x: 0, y: self.screenHeight * 2, width: self.screenWidth, height: self.screenHeight)
     
+            
+            self.SpriteView.scene?.isPaused = true
+            self.SpriteView.scene?.removeFromParent()
+            self.SpriteView.removeFromSuperview()
+            Motion.instance.motionManager.stopAccelerometerUpdates()
+           
+//                if !self.isObserving {
+//                self.addOrientationObserver()
+//            }
+
+                
+
 
         })
         
@@ -425,7 +494,6 @@ extension(DetailPageController) {
         image5.alpha = 1
         image2.removeShadow()
         label1.transform = .identity
-        itemsAnimator?.removeAllBehaviors()
         myVariable.timer.invalidate()
         
     }
@@ -465,7 +533,6 @@ extension(DetailPageController) {
         image5.alpha = 1
         image2.removeShadow()
         label1.transform = .identity
-        itemsAnimator?.removeAllBehaviors()
         myVariable.timer.invalidate()
     }
     
@@ -499,7 +566,7 @@ extension(DetailPageController) {
                 image1.removeGestureRecognizer(recognizer as UIGestureRecognizer)
             }
         }
-        itemsAnimator?.removeAllBehaviors()
+  
         myVariable.timer.invalidate()
     }
     
@@ -523,25 +590,7 @@ extension(DetailPageController) {
     
     
     func imageFreeFall(imageView: UIImageView, elasticity: CGFloat) {
-        itemsAnimator = UIDynamicAnimator(referenceView: self.view)
-        
-        let item = [imageView]
-        // The gravity for our system
-        gravityBehavior = UIGravityBehavior(items: item as [UIDynamicItem])
-        
-        // The collision between our items, and with the boundary of the containing view
-        boundaryCollisionBehavior = UICollisionBehavior(items: item as [UIDynamicItem])
-        boundaryCollisionBehavior?.translatesReferenceBoundsIntoBoundary = true
-        
-        // The elasticity for the blocks
-        elasticityBehavior = UIDynamicItemBehavior(items: item as [UIDynamicItem])
-        elasticityBehavior?.elasticity = elasticity
-        
-        // Add everything
-        itemsAnimator?.addBehavior(self.gravityBehavior!)
-        itemsAnimator?.addBehavior(self.boundaryCollisionBehavior!)
-        itemsAnimator?.addBehavior(self.elasticityBehavior!)
-        print("imageFreeFallProceed")
+        self.SpriteView.isHidden = false
     }
     
     
@@ -571,6 +620,7 @@ extension(DetailPageController) {
             let notes = ["♩♪♫♩♫♪♫♬", "♬♫♩♩♪♫♬♬", "♫♪♩♬♫♩♯♩♫"]
             label1.text = notes.randomElement()
             label1.numberOfLines = 1
+
         case 35:
 //                    let testImage = UIImageView(frame: CGRect(x: screenWidth * 0.07, y: screenHeight * 0.54, width: screenWidth * 0.46, height: screenHeight * 0.29))
             //        testImage.backgroundColor = .red

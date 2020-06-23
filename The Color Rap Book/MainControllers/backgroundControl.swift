@@ -31,6 +31,8 @@ extension (DetailPageController) {
                     self.pageNumberLabelDisplay(label: label, pageNum: state)
                     
                 case 5:
+//                    self.removeOrientationObserver()
+//                     print("Device orientation, ", UIDevice.current.orientation)
                     self.image1.contentMode = .scaleToFill
                     self.image2.contentMode = .scaleToFill
                     self.image3.contentMode = .scaleToFill
@@ -39,7 +41,7 @@ extension (DetailPageController) {
                     self.showMoreButton.layer.removeAllAnimations()
                     self.previousButton.layer.removeAllAnimations()
                     self.nextButton.layer.removeAllAnimations()
-                    self.orientationDetectorSwwitch(Bool: true)
+    
                     let cloudHeight = self.screenHeight * 0.2
                     let leftCloudWidth = cloudHeight * 1.14
                     let rightCloudWidth = cloudHeight * 1.0952
@@ -122,6 +124,7 @@ extension (DetailPageController) {
     
     
     func backgroundChangeForward(imageView: UIImageView, delay: TimeInterval, state: Int, label: UILabel) {
+//        print("Notification Center observers, ", NotificationCenter.default.observationInfo)
         grestureRecognizerSwitch(Bool: false)
         UIView.animate(withDuration: 0.5, animations: {
             //            self.showMoreStack.transform = .identity
@@ -144,6 +147,8 @@ extension (DetailPageController) {
                 self.pageNumberLabelDisplay(label: label, pageNum: state)
                 
             case 5:
+//                print("Device orientation, ", UIDevice.current.orientation.rawValue)
+//                self.removeOrientationObserver()
                 self.image1.contentMode = .scaleToFill
                 self.image2.contentMode = .scaleToFill
                 self.image3.contentMode = .scaleToFill
@@ -152,7 +157,6 @@ extension (DetailPageController) {
                 self.showMoreButton.layer.removeAllAnimations()
                 self.previousButton.layer.removeAllAnimations()
                 self.nextButton.layer.removeAllAnimations()
-                self.orientationDetectorSwwitch(Bool: true)
                 let cloudHeight = self.screenHeight * 0.2
                 let leftCloudWidth = cloudHeight * 1.14
                 let rightCloudWidth = cloudHeight * 1.0952
@@ -225,38 +229,36 @@ extension (DetailPageController) {
                 })
                 
                 
-            case 45:
+            case 47:
                 UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
-                    self.elementsEnteringStorage(state: state)
-                    self.canvas.alpha = 1
-                                        self.canvas.isHidden = false
-                    //                    self.view.addSubview(self.canvas)
-                    //                    self.canvas.frame = self.view.frame
-                                        self.canvas.backgroundColor = .clear
-                    self.stackView.alpha = 1
-                    print("stackposition, ",self.stackView.frame)
-                    print("animation processed")
-                    
+//                    self.backgroundImageView.contentMode = .scaleAspectFit
+
+                    self.backgroundImageView.backgroundColor = .white
+                    switch self.page47Phase {
+                    case 0:
+                        self.drawingPageFirstSceneSetup()
+                    case 1:
+                        self.drawingSceneAfterImageSelected()
+                    case 2:
+                        self.canvas.alpha = 1
+                        self.canvas.isHidden = false
+//                        self.pageNumberLabelDisplay(label: label, pageNum: state)
+                    default:
+                        self.drawingPageFirstSceneSetup()
+                    }
+                
+
+
                     
                 }, completion: {(finished) in
+                    if self.page47Phase == 2 {
                     self.pageNumberLabelDisplay(label: label, pageNum: state)
+                    }
                     self.grestureRecognizerSwitch(Bool: false)
                     self.edgePan.isEnabled = true
+                    
                 })
-//                UIView.animate(withDuration: 1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
-//                    self.canvas.alpha = 1
-//                    self.canvas.isHidden = false
-////                    self.view.addSubview(self.canvas)
-////                    self.canvas.frame = self.view.frame
-//                    self.canvas.backgroundColor = .white
-//                    self.buttonsEnabled(Bool: true)
-//                    self.edgePan.isEnabled = true
-////                    self.grestureRecognizerSwitch(Bool: true)
-//                    
-//                    
-//                    
-//                    })
-                
+
                 
             default:
                 UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
@@ -278,7 +280,7 @@ extension (DetailPageController) {
     
     
     
-    func animateBackgroundColor () {
+    func animateBackgroundColor() {
         if #available(iOS 13.0, *) {
             backgroundColors = [UIColor.yellow, UIColor.green, UIColor.red, UIColor.orange, UIColor.blue, UIColor.systemIndigo, UIColor.purple]
         } else {
@@ -292,35 +294,53 @@ extension (DetailPageController) {
                 self.backgroundImageView.backgroundColor =  self.backgroundColors[randomNum];
                
             })
-            UIView.transition(with: self.label, duration: 2, options: .transitionCrossDissolve, animations: {
-                if randomNum <= 1 {
-                                   self.label.textColor = .black
-                               } else {
-                                   self.label.textColor = .white
-                               }
-            }, completion: nil)
+//            UIView.transition(with: self.label, duration: 2, options: .transitionCrossDissolve, animations: {
+//                if randomNum <= 1 {
+//                                   self.label.textColor = .black
+//                               } else {
+//                                   self.label.textColor = .white
+//                               }
+//            }, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 let randomNum = Int.random(in: 0...6)
                 UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseInOut], animations: { () -> Void in
                     self.backgroundImageView.backgroundColor =  self.backgroundColors[randomNum];
                 })
-                UIView.transition(with: self.label, duration: 2, options: .transitionCrossDissolve, animations: {
-                               if randomNum <= 1 {
-                                                  self.label.textColor = .black
-                                              } else {
-                                                  self.label.textColor = .white
-                                              }
-                           }, completion: nil)
+//                UIView.transition(with: self.label, duration: 2, options: .transitionCrossDissolve, animations: {
+//                               if randomNum <= 1 {
+//                                                  self.label.textColor = .black
+//                                              } else {
+//                                                  self.label.textColor = .white
+//                                              }
+//                           }, completion: nil)
             }})
         
     }
     func pageNumberBackgroundDisplay (imageView: UIImageView, pageNum: Int) {
         if myVariable.state == 41 {
-                backgroundImageView.backgroundColor = .clear
+            backgroundImageView.backgroundColor = .clear
         }
         
-        imageView.image = UIImage(named: backgroundAtray[pageNum - 1])
+        if myVariable.state != 47 {
+            imageView.image = UIImage(named: backgroundAtray[pageNum - 1])
+        } else {
+            
+            
+            
+            if self.page47Phase == 0 {
+                imageView.backgroundColor = .white
+                imageView.image = nil
+            } else {
+                imageView.image = self.drawingPageBackgroundImage
+                imageView.backgroundColor = .clear
+                
+            }
+        }
+        
+        
     }
     
     
+    
+   
 }

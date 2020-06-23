@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		04079E6B8BA15B1D512E9343 /* Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681F04C753960FDC9EC0B0 /* Pods_The_Color_Rap_Book_The_Color_Rap_BookUITests.framework */; };
-		530062742411E837004FFE29 /* Morgan_bold-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 530062722411E5AF004FFE29 /* Morgan_bold-Regular.otf */; };
 		53038BEB24043E4100F36DB7 /* labelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53038BEA24043E4100F36DB7 /* labelControl.swift */; };
 		530414DF23FECE2200E268C3 /* BackGroundDisplay.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */; };
 		530414E123FED09800E268C3 /* ImageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530414E023FED09800E268C3 /* ImageControl.swift */; };
@@ -25,7 +24,7 @@
 		536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC29F2412B9DD000AB196 /* DeveloperController.swift */; };
 		536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */; };
 		536D7B302448E1CD00B9B122 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D7B2F2448E1CD00B9B122 /* MenuController.swift */; };
-		536D7B322448E61000B9B122 /* ViewControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D7B312448E61000B9B122 /* ViewControllerSegue.swift */; };
+		537C6E2624527D39004954DA /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C6E2524527D39004954DA /* Line.swift */; };
 		53855A2E2450CA5700EEF64C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53855A2D2450CA5700EEF64C /* CanvasView.swift */; };
 		5396251023FEE8B30044C468 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5396250F23FEE8B30044C468 /* AnimationController.swift */; };
 		539B083C2419A29E006A33D8 /* GestureHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539B083B2419A29E006A33D8 /* GestureHandling.swift */; };
@@ -36,10 +35,16 @@
 		53A09BF124182D1500077EEB /* SavedData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A09BEE24182D1500077EEB /* SavedData+CoreDataClass.swift */; };
 		53AA0CB72410322100C2F036 /* OHCircleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0CB62410322100C2F036 /* OHCircleSegue.swift */; };
 		53AA0CB92410A02400C2F036 /* TableOfContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0CB82410A02400C2F036 /* TableOfContentController.swift */; };
+		53AF63F12453521A00BABEC1 /* Page47DrawingTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AF63F02453521A00BABEC1 /* Page47DrawingTools.swift */; };
 		53C7E30E23FB90E100866321 /* Data.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 53C7E30D23FB90E100866321 /* Data.rtf */; };
+		53CA27DE2454A855008A9731 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CA27DD2454A855008A9731 /* Alert.storyboard */; };
+		53CA28BF2454BE03008A9731 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CA28BE2454BE03008A9731 /* ImagePicker.swift */; };
+		53DC3EA3248F41400084D89A /* Page5Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC3EA1248F41400084D89A /* Page5Scene.swift */; };
+		53DC3EA4248F41400084D89A /* Page5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 53DC3EA2248F41400084D89A /* Page5Scene.sks */; };
 		53DEF52423EF4057002AEB13 /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEF52323EF4057002AEB13 /* DetailPage.swift */; };
 		53DEF52623EF4416002AEB13 /* ViewControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEF52523EF4416002AEB13 /* ViewControllerSegue.swift */; };
 		53DEF52823EF4436002AEB13 /* ViewControllerSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEF52723EF4436002AEB13 /* ViewControllerSegueUnwind.swift */; };
+		53F4D94624A1607F0018D924 /* Morgan_bold-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53F4D94524A1607F0018D924 /* Morgan_bold-Regular.otf */; };
 		712E19FB2FDDFB23B7BE7E63 /* Pods_The_Color_Rap_BookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999DAB1CDC3F806E13D93E76 /* Pods_The_Color_Rap_BookTests.framework */; };
 		A8E07EF0A3E330FDBE9296B8 /* Pods_The_Color_Rap_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B70FBB5F1301A22E34B1CC /* Pods_The_Color_Rap_Book.framework */; };
 /* End PBXBuildFile section */
@@ -65,7 +70,6 @@
 		07676FA4E971579E8076D6E4 /* Pods-The Color Rap Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book.release.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book.release.xcconfig"; sourceTree = "<group>"; };
 		077D78C2C5750E3FCFAA9463 /* Pods-The Color Rap BookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap BookTests.release.xcconfig"; path = "Target Support Files/Pods-The Color Rap BookTests/Pods-The Color Rap BookTests.release.xcconfig"; sourceTree = "<group>"; };
 		2FFC629788FD618D36A9B11B /* Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book-The Color Rap BookUITests/Pods-The Color Rap Book-The Color Rap BookUITests.release.xcconfig"; sourceTree = "<group>"; };
-		530062722411E5AF004FFE29 /* Morgan_bold-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Morgan_bold-Regular.otf"; sourceTree = "<group>"; };
 		53038BEA24043E4100F36DB7 /* labelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = labelControl.swift; sourceTree = "<group>"; };
 		530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BackGroundDisplay.rtf; sourceTree = "<group>"; };
 		530414E023FED09800E268C3 /* ImageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControl.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		536D7B2F2448E1CD00B9B122 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		536D7B312448E61000B9B122 /* ViewControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSegue.swift; path = Segues/ViewControllerSegue.swift; sourceTree = "<group>"; };
+		537C6E2524527D39004954DA /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		53855A2D2450CA5700EEF64C /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		5396250F23FEE8B30044C468 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		539B083B2419A29E006A33D8 /* GestureHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureHandling.swift; sourceTree = "<group>"; };
@@ -99,10 +104,16 @@
 		53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedData+CoreDataProperties.swift"; path = "/Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The Color Rap Book/The Color Rap Book/OtherFiles/SavedData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		53AA0CB62410322100C2F036 /* OHCircleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OHCircleSegue.swift; sourceTree = "<group>"; };
 		53AA0CB82410A02400C2F036 /* TableOfContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentController.swift; sourceTree = "<group>"; };
+		53AF63F02453521A00BABEC1 /* Page47DrawingTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page47DrawingTools.swift; sourceTree = "<group>"; };
 		53C7E30D23FB90E100866321 /* Data.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Data.rtf; sourceTree = "<group>"; };
+		53CA27DD2454A855008A9731 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		53CA28BE2454BE03008A9731 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		53DC3EA1248F41400084D89A /* Page5Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page5Scene.swift; sourceTree = "<group>"; };
+		53DC3EA2248F41400084D89A /* Page5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Page5Scene.sks; sourceTree = "<group>"; };
 		53DEF52323EF4057002AEB13 /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		53DEF52523EF4416002AEB13 /* ViewControllerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSegue.swift; sourceTree = "<group>"; };
 		53DEF52723EF4436002AEB13 /* ViewControllerSegueUnwind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSegueUnwind.swift; sourceTree = "<group>"; };
+		53F4D94524A1607F0018D924 /* Morgan_bold-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Morgan_bold-Regular.otf"; sourceTree = "<group>"; };
 		5DA0B9D326F5820F2429CAEB /* Pods-The Color Rap Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book.debug.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book.debug.xcconfig"; sourceTree = "<group>"; };
 		7BF0A9A4EE338E812D0DCA68 /* Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig"; path = "Target Support Files/Pods-The Color Rap Book-The Color Rap BookUITests/Pods-The Color Rap Book-The Color Rap BookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		905654F0A4217DD7DE35972E /* Pods-The Color Rap BookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Color Rap BookTests.debug.xcconfig"; path = "Target Support Files/Pods-The Color Rap BookTests/Pods-The Color Rap BookTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +189,7 @@
 		533CC20123ECC01A00871876 /* The Color Rap Book */ = {
 			isa = PBXGroup;
 			children = (
+				537C6E2424527CFF004954DA /* Models */,
 				53A09BE724182C0C00077EEB /* The_Color_Rap_Book.xcdatamodeld */,
 				533CF96523F89BDC0015FDCC /* OtherFiles */,
 				533CF96423F89BB30015FDCC /* Delegates */,
@@ -223,6 +235,8 @@
 		533CF96223F89B740015FDCC /* MainControllers */ = {
 			isa = PBXGroup;
 			children = (
+				53DC3EA2248F41400084D89A /* Page5Scene.sks */,
+				53DC3EA1248F41400084D89A /* Page5Scene.swift */,
 				533CC20623ECC01A00871876 /* ViewController.swift */,
 				53AA0CB82410A02400C2F036 /* TableOfContentController.swift */,
 				53DEF52323EF4057002AEB13 /* DetailPage.swift */,
@@ -235,6 +249,8 @@
 				536BC29F2412B9DD000AB196 /* DeveloperController.swift */,
 				536D7B2F2448E1CD00B9B122 /* MenuController.swift */,
 				53855A2D2450CA5700EEF64C /* CanvasView.swift */,
+				53AF63F02453521A00BABEC1 /* Page47DrawingTools.swift */,
+				53CA28BE2454BE03008A9731 /* ImagePicker.swift */,
 			);
 			path = MainControllers;
 			sourceTree = "<group>";
@@ -244,6 +260,7 @@
 			children = (
 				533CC20823ECC01A00871876 /* Main.storyboard */,
 				533CC21023ECC01C00871876 /* LaunchScreen.storyboard */,
+				53CA27DD2454A855008A9731 /* Alert.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -261,10 +278,10 @@
 		533CF96523F89BDC0015FDCC /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				53F4D94524A1607F0018D924 /* Morgan_bold-Regular.otf */,
 				53A09BEE24182D1500077EEB /* SavedData+CoreDataClass.swift */,
 				53A09BEF24182D1500077EEB /* SavedData+CoreDataProperties.swift */,
 				536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */,
-				530062722411E5AF004FFE29 /* Morgan_bold-Regular.otf */,
 				530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */,
 				53C7E30D23FB90E100866321 /* Data.rtf */,
 			);
@@ -276,6 +293,14 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		537C6E2424527CFF004954DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				537C6E2524527D39004954DA /* Line.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ADD2F53FEDFF2831618ED710 /* Frameworks */ = {
@@ -356,7 +381,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = 7744;
 				TargetAttributes = {
 					533CC1FE23ECC01A00871876 = {
@@ -397,11 +422,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				530062742411E837004FFE29 /* Morgan_bold-Regular.otf in Resources */,
 				53C7E30E23FB90E100866321 /* Data.rtf in Resources */,
+				53F4D94624A1607F0018D924 /* Morgan_bold-Regular.otf in Resources */,
 				533CC21223ECC01C00871876 /* LaunchScreen.storyboard in Resources */,
 				533CC20F23ECC01C00871876 /* Assets.xcassets in Resources */,
 				533CC20A23ECC01A00871876 /* Main.storyboard in Resources */,
+				53DC3EA4248F41400084D89A /* Page5Scene.sks in Resources */,
+				53CA27DE2454A855008A9731 /* Alert.storyboard in Resources */,
 				530414DF23FECE2200E268C3 /* BackGroundDisplay.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,7 +570,10 @@
 				53AA0CB72410322100C2F036 /* OHCircleSegue.swift in Sources */,
 				53AA0CB92410A02400C2F036 /* TableOfContentController.swift in Sources */,
 				533CC20D23ECC01A00871876 /* The_Color_Rap_Book.xcdatamodeld in Sources */,
+				53CA28BF2454BE03008A9731 /* ImagePicker.swift in Sources */,
 				53038BEB24043E4100F36DB7 /* labelControl.swift in Sources */,
+				53AF63F12453521A00BABEC1 /* Page47DrawingTools.swift in Sources */,
+				53DC3EA3248F41400084D89A /* Page5Scene.swift in Sources */,
 				53DEF52823EF4436002AEB13 /* ViewControllerSegueUnwind.swift in Sources */,
 				53DEF52423EF4057002AEB13 /* DetailPage.swift in Sources */,
 				533CC20523ECC01A00871876 /* SceneDelegate.swift in Sources */,
@@ -551,7 +581,7 @@
 				530414E523FED22C00E268C3 /* backgroundControl.swift in Sources */,
 				53A09BF124182D1500077EEB /* SavedData+CoreDataClass.swift in Sources */,
 				536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */,
-				536D7B322448E61000B9B122 /* ViewControllerSegue.swift in Sources */,
+				537C6E2624527D39004954DA /* Line.swift in Sources */,
 				5396251023FEE8B30044C468 /* AnimationController.swift in Sources */,
 				539B083E2419A4C8006A33D8 /* SwitchesAndOrientationControl.swift in Sources */,
 			);
@@ -728,13 +758,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z52U7XV573;
+				DEVELOPMENT_TEAM = 35WMU34J2U;
 				INFOPLIST_FILE = "The Color Rap Book/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "yuxinliu.The-Color-Rap-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = "mattewsmith.The-Color-Rap-Book";
 				PRODUCT_NAME = "Color Rap Book";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -747,13 +778,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z52U7XV573;
+				DEVELOPMENT_TEAM = 35WMU34J2U;
 				INFOPLIST_FILE = "The Color Rap Book/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "yuxinliu.The-Color-Rap-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = "mattewsmith.The-Color-Rap-Book";
 				PRODUCT_NAME = "Color Rap Book";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

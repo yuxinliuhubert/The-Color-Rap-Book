@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict/>
@@ -24,6 +26,21 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Select "allow" to take a picture with your Camera!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Select "allow" to add a photo to the library!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Select "allow" to choose a photo from the library!
+&lt;string&gt;This app requires access to the photo library.&lt;/string&gt;
+&lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;
+&lt;string&gt;This app does not require access to the microphone.&lt;/string&gt;
+&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;
+&lt;string&gt;This app requires access to the camera.&lt;/string&gt;</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Morgan_bold-Regular.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -60,19 +77,12 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Morgan_bold-Regular.otf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

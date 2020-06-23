@@ -11,105 +11,32 @@ import  UIKit
 
 
 extension (DetailPageController) {
+   
     
-    //    Orientation Control
-    func orientationDetectorSwwitch(Bool: Bool) {
-        switch Bool {
-        case false:
-            NotificationCenter.default.removeObserver(self)
-        default:
-            if UIDevice.current.orientation == .landscapeLeft {
-                print("left orientation recognizer enabled")
-                NotificationCenter.default.addObserver(self, selector:#selector(leftOrientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
-            } else if UIDevice.current.orientation == .landscapeRight {
-                print("right orientation recognizer enabled")
-                NotificationCenter.default.addObserver(self, selector:#selector(rightOrientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
-            }
-        }
+   
+      @objc func orientationChanged(notification: NSNotification) {
+               if let device = notification.object as? UIDevice {
+                   switch device.orientation {
+                   case .landscapeRight:
+                    myVariable.orientation = 3
+                   case .landscapeLeft:
+                    myVariable.orientation = 4
+                   default:
+                       return
+                   }
+               }
+           }
+    
+    func addOrientationObserver() {
+         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
         
+        isObserving = true
     }
     
-    
-    @objc func leftOrientationChanged(notification: NSNotification) {
-        self.label1.alpha = 0
-        if let device = notification.object as? UIDevice {
-            switch device.orientation {
-            case .portrait:
-                portraitOrientationChange()
-                print("right")
-            case .portraitUpsideDown:
-                portraitUpsideDownOrientationChange()
-                print("left")
-            case .landscapeRight:
-                print("up")
-                landscapeRightOrientationChange()
-            case .landscapeLeft:
-                landscapeLeftOrientationChange()
-                print("down")
-            default:
-                flatOrientation()
-                print("stop")
-                return
-            }
-        }
+    func removeOrientationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.orientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
+        isObserving = false
     }
-    
-    @objc func rightOrientationChanged(notification: NSNotification) {
-        self.label1.alpha = 0
-        if let device = notification.object as? UIDevice {
-            switch device.orientation {
-            case .portrait:
-                portraitUpsideDownOrientationChange()
-                print("left")
-            case .portraitUpsideDown:
-                portraitOrientationChange()
-                print("right")
-            case .landscapeRight:
-                print("down")
-                landscapeLeftOrientationChange()
-            case .landscapeLeft:
-                landscapeRightOrientationChange()
-                print("up")
-            default:
-                flatOrientation()
-                print("stop")
-                return
-            }
-        }
-    }
-    
-    func portraitOrientationChange() {
-        // Change gravity direction
-        myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.regularGravityVectorCanceller})
-        myVariable.timer.invalidate()
-        gravityBehavior?.gravityDirection = regularGravityVector
-    }
-    
-    
-    func portraitUpsideDownOrientationChange() {
-        // Flip our gravity
-        myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.invertedGravityVectorCanceller})
-        myVariable.timer.invalidate()
-        gravityBehavior?.gravityDirection = invertedGravityVector
-    }
-    
-    func landscapeRightOrientationChange() {
-        myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalInvertGravityVectorCanceller})
-        myVariable.timer.invalidate()
-        gravityBehavior?.gravityDirection = normalInvertGravityVector
-    }
-    
-    func landscapeLeftOrientationChange() {
-        myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in self.gravityBehavior?.gravityDirection = self.normalRegularGravityVectorCanceller})
-        myVariable.timer.invalidate()
-        gravityBehavior?.gravityDirection = normalRegularGravityVector
-    }
-    
-    func flatOrientation() {
-        gravityBehavior?.gravityDirection = zeroGravityVector
-        
-    }
-    
     
     
     

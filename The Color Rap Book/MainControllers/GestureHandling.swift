@@ -127,6 +127,7 @@ extension (DetailPageController) {
         if (gesture.state == .began) {
             
             print("Pan Gesture Began");
+            
             //            print("before drag: ", gesture.object!.center)
         } else if (gesture.state == .changed) {
             
@@ -135,19 +136,33 @@ extension (DetailPageController) {
             case 22:
                 
                 //                label1 change to indicate movement
-                label1.text = "Look for grass..."
+                let viewsForAnimation: [UIImageView] = [image2, image3, image4,image5, image6, image7]
+                var count = 0
+                //                compare see if there is any grass that is not mowed
+                for imageSubView in viewsForAnimation {
+                    if imageSubView.frame != gesture.page22ImageFrameArray[count] {
+                        count += 1
+                    }
+                }
+                if count < 6 {
+                    label1.text = "Look for grass..."
+                } else {
+                    label1.text = "YAY! All done!"
+                }
+
                 //            measure the finger movement
                 gesture.translation = gesture.translation(in: self.view)
                 //            transform the object in accordance to the movement
                 gesture.object?.transform = CGAffineTransform(translationX: gesture.translation?.x ?? 0, y: gesture.translation?.y ?? 0)
                 
                 
-                let viewsForAnimation: [UIImageView] = [image2, image3, image4,image5, image6, image7]
                 
                 //                iterate through all the grass images see if the mower overlaps the grass
                 for imageSubView in viewsForAnimation {
                     if (gesture.object?.frame.contains(imageSubView.frame) == true) {
-                    
+                        
+//                        print("contain")
+                        
                         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
                             imageSubView.alpha = 0
                             imageSubView.transform = CGAffineTransform.identity.translatedBy(x: -self.screenHeight * 0.5, y: 0).rotated(by: -.pi / 1.3)
@@ -156,6 +171,7 @@ extension (DetailPageController) {
                         
                     }
                 }
+                
                 
                 
             default:
@@ -168,7 +184,7 @@ extension (DetailPageController) {
             case 22:
                 let viewsForAnimation: [UIImageView] = [image2, image3, image4,image5, image6, image7]
                 var count = 0
-//                compare see if there is any grass that is not mowed
+                //                compare see if there is any grass that is not mowed
                 for imageSubView in viewsForAnimation {
                     if imageSubView.frame != gesture.page22ImageFrameArray[count] {
                         count += 1
@@ -198,6 +214,99 @@ extension (DetailPageController) {
     
     
     
+    @objc func drawingToolsDragged(gesture: CustomPanGestureRecognizer) {
+        
+
+        //        let bottomBox = CGRect(x: 0, y: 0 , width: self.screenWidth, height: self.screenHeight)
+        let bottomBox = CGRect(x: 0, y: self.screenHeight * 0.5 , width: self.screenWidth, height: self.screenHeight * 0.5)
+        let topBox = CGRect(x: 0, y: 0 , width: self.screenWidth, height: self.screenHeight * 0.5)
+        var topPosition =  CGPoint()
+        var bottomPosition = CGPoint()
+        if UIDevice.current.userInterfaceIdiom == .pad {
+         topPosition = CGPoint(x: self.screenWidth * 0.5, y: self.screenHeight * 0.12)
+         bottomPosition = CGPoint(x: self.screenWidth * 0.5, y: self.screenHeight * 0.87)
+        }
+        if UIDevice.current.userInterfaceIdiom == .phone {
+         topPosition = CGPoint(x: self.screenWidth * 0.5, y: self.screenHeight * 0.15)
+         bottomPosition = CGPoint(x: self.screenWidth * 0.5, y: self.screenHeight * 0.84)
+        }
+        
+        
+        
+        switch gesture.state {
+            
+        case .began:
+            print("Pan Gesture Began");
+            gesture.finalPoint = gesture.object?.center
+            
+        case .changed:
+        
+                //            measure the finger movement
+                gesture.translation = gesture.translation(in: self.view)
+                gesture.object?.transform = CGAffineTransform(translationX: gesture.translation?.x ?? 0, y: gesture.translation?.y ?? 0)
+                gesture.finalPoint = CGPoint(x: (gesture.object?.center.x)! + gesture.translation!.x, y: (gesture.object?.center.y)! + gesture.translation!.y)
+                
+        
+        case .ended:
+            //            reset the coordinate system back to original place
+                if bottomBox.contains(gesture.finalPoint!) || bottomBox.intersects(gesture.object!.frame){
+                    print("contains")
+                    UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: [.curveEaseOut, .allowUserInteraction], animations: {
+                        gesture.object?.transform = .identity
+                        //                    gesture.objectMovingAlong?.transform = .identity
+                        gesture.object!.center = bottomPosition
+
+                    }, completion: {_ in
+                    })
+                    
+                    
+                } else if topBox.contains(gesture.finalPoint!) || topBox.intersects(gesture.object!.frame){
+                    UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: [.curveEaseOut, .allowUserInteraction], animations: {
+                        gesture.object?.transform = .identity
+                        gesture.objectMovingAlong?.transform = .identity
+                        gesture.object!.center = topPosition
+                    }, completion: {_ in
+                    })
+                    
+                } else {
+                    print("The third drawing tool situation (unexpected)")
+                    //                            let the object center equal to the final point
+                    gesture.object?.transform = .identity
+                    
+                    gesture.object!.center = bottomPosition
+
+
+                
+            }
+            break;
+            
+        default:
+            break;
+            
+            
+            
+            
+        
+        
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -206,8 +315,10 @@ extension (DetailPageController) {
 
 class CustomPanGestureRecognizer: UIPanGestureRecognizer {
     var object: UIView?
+    var objectMovingAlong: UIView?
     var translation: CGPoint?
     var finalPoint: CGPoint?
     var page = Int()
     var page22ImageFrameArray = [CGRect]()
 }
+
