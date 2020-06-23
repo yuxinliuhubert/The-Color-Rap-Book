@@ -37,10 +37,10 @@ class ViewController: UIViewController {
         
         if myVariable.state >= 3 {
             if #available(iOS 13.0, *) {
-                self.performSegue(withIdentifier: "ToDetailSegue", sender: self)
+                self.performSegue(withIdentifier: "ToSplashSegue", sender: self)
             } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.performSegue(withIdentifier: "ToDetailSegue", sender: self)
+                self.performSegue(withIdentifier: "ToSplashSegue", sender: self)
             })
             }
             
@@ -155,7 +155,7 @@ class ViewController: UIViewController {
     
     @IBAction func readTap(_ sender: Any) {
         myVariable.state = 3
-        self.performSegue(withIdentifier: "ToDetailSegue", sender: sender)
+        self.performSegue(withIdentifier: "ToSplashSegue", sender: sender)
     }
     
     
@@ -210,7 +210,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: timeControl, delay: 0.25, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
             
             self.introLabel.alpha = 1
-            self.introLabel.frame = CGRect(x: self.screenWidth * 0.05, y: self.screenHeight * 0.8, width: self.screenWidth * 0.8, height: self.screenHeight * 0.19)
+            self.introLabel.frame = CGRect(x: self.screenWidth * 0.05, y: self.screenHeight * 0.7, width: self.screenWidth * 0.8, height: self.screenHeight * 0.19)
         }, completion: {(finished) in
         })
         

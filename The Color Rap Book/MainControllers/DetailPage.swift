@@ -15,6 +15,7 @@ import QuartzCore
 import ColorSlider
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 
 struct myVariable {
@@ -68,6 +69,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     var labelArray = [String]() // do not use NSMutableArray in Swift
     var backgroundAtray = [String]()
     //    var dictClients = [String]()
+    
+    var player: AVAudioPlayer?
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label1: UILabel!
@@ -206,7 +209,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
 
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
 
         nextButton.isExclusiveTouch = true
@@ -271,9 +276,17 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         
     
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.pageNumberBackgroundDisplay(imageView: backgroundImageView, pageNum: myVariable.state)
+    }
     override func viewDidAppear(_ animated: Bool) {
-        
-        
+        super.viewDidAppear(true)
+//        self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
+//        self.pageNumberBackgroundDisplay(imageView: backgroundImageView, pageNum: state)
+        self.loadingViewChange(state: myVariable.state, label: self.label)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -308,8 +321,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         
         print("here")
         if (sender is DetailPageController) {
-            myVariable.state = 2
-            (segue as! OHCircleSegue).circleOrigin = myVariable.center ?? CGPoint(x: screenWidth * 0.5, y: screenHeight * 0.5)
+//            myVariable.state = 2
+//            (segue as! OHCircleSegue).circleOrigin = myVariable.center ?? CGPoint(x: screenWidth * 0.5, y: screenHeight * 0.5)
         } else {
             if sender as! UIButton? === showMoreButton {
             } else if sender as AnyObject? === DetailPageController.self {
@@ -374,7 +387,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         self.SpriteView.scene?.isPaused = true
         self.SpriteView.scene?.removeFromParent()
         
-        performSegue(withIdentifier: "BackToViewController", sender: self)
+        performSegue(withIdentifier: "BackToSplashScreen", sender: self)
     }
     
     func updatePage() {
@@ -491,11 +504,14 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
             if myVariable.state == 3 {
             self.backgroundImageView.backgroundColor = .systemPink
             }
+//            print("myvariable state,, ", myVariable.state)
+            
 //            view.addSubview(canvas)
             canvas.alpha = 0
             self.canvas.frame = self.view.frame
             canvas.isHidden = true
-            self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
+//            self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
+//            print("image 1 image, ", self.image1.image)
             self.SpriteView.isHidden = true
             self.SpriteView.alpha = 0
             self.SpriteView.backgroundColor =  .clear
@@ -511,13 +527,13 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         }
         completion(true)
     }
-    func loadingViewTask(state: Int, completion: (_ success: Bool) -> Void) {
-        // Do something
-        self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
-        // Call completion, when finished, success or faliure
-        completion(true)
-    }
-    
+//    func loadingViewTask(state: Int, completion: (_ success: Bool) -> Void) {
+//        // Do something
+//        self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
+//        // Call completion, when finished, success or faliure
+//        completion(true)
+//    }
+//
     
     
 
