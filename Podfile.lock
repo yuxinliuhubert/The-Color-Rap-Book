@@ -1,0 +1,36 @@
+PODS:
+  - ColorSlider (4.4)
+  - CropViewController (2.5.2)
+  - GhostTypewriter (2.0.1)
+  - LBTAComponents (1.1)
+  - RevealingSplashView (0.6.0)
+  - VegaScrollFlowLayout (1.1)
+
+DEPENDENCIES:
+  - ColorSlider (~> 4.4)
+  - CropViewController
+  - GhostTypewriter
+  - LBTAComponents
+  - RevealingSplashView
+  - VegaScrollFlowLayout
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ColorSlider
+    - CropViewController
+    - GhostTypewriter
+    - LBTAComponents
+    - RevealingSplashView
+    - VegaScrollFlowLayout
+
+SPEC CHECKSUMS:
+  ColorSlider: 9a888e65b871fa1e6a26fadebf4931c949935681
+  CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
+  GhostTypewriter: 1f655ea369860f854668a8f8f7cc63490599ded4
+  LBTAComponents: 2e7719683ddcf1cdf7280700438c0c6a5f7da550
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
+  VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
+
+PODFILE CHECKSUM: c59a97c9a9577dd6245740f0bca132ceb959d174
+
+COCOAPODS: 1.8.4
