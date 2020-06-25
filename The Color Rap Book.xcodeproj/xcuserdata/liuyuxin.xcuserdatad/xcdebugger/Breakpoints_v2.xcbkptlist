@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CF82CADD-74F2-45FF-BB75-EA65F745722A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE83DE9A-E933-49A0-BCB1-50C606C66A11"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Color Rap Book/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E21A803A-1C41-48EB-BFD4-0CF8666C6D2D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Color Rap Book/DetailPage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "DetailPageController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0551F56-D916-4A47-A03D-C6D27AA840AF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Color Rap Book/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "labelFadeIn(label:delay:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C9C9A15-1D96-4FC3-B153-0BDD2855BA09"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Color Rap Book/MainControllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4C9C9A15-1D96-4FC3-B153-0BDD2855BA09 - ca18bc72526e3afc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.ViewController.introLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/TheColorRapBook/The%20Color%20Rap%20Book/MainControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "4C9C9A15-1D96-4FC3-B153-0BDD2855BA09 - 190f9b7d82686688"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.ViewController.introLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/TheColorRapBook/The%20Color%20Rap%20Book/MainControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "4C9C9A15-1D96-4FC3-B153-0BDD2855BA09 - 7027174c4caa63f9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.ViewController.introLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/TheColorRapBook/The%20Color%20Rap%20Book/MainControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "4C9C9A15-1D96-4FC3-B153-0BDD2855BA09 - 1f6674e77bd500bc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.ViewController.introLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/TheColorRapBook/The%20Color%20Rap%20Book/MainControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "4C9C9A15-1D96-4FC3-B153-0BDD2855BA09 - d15a034977b53f14"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; The_Color_Rap_Book.ViewController"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/TheColorRapBook/The%20Color%20Rap%20Book/MainControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "4C9C9A15-1D96-4FC3-B153-0BDD2855BA09 - 10ded8a1a44a5657"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;The_Color_Rap_Book.ViewController&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/TheColorRapBook/The%20Color%20Rap%20Book/MainControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E51E608-8943-4416-9F4C-4BDB42503231"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Color Rap Book/Delegates/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9E51E608-8943-4416-9F4C-4BDB42503231 - 5f309452694fa865"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.AppDelegate.__allocating_init() -&gt; The_Color_Rap_Book.AppDelegate"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/Delegates/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "9E51E608-8943-4416-9F4C-4BDB42503231 - 6e4cef9046e8b73d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.AppDelegate.init() -&gt; The_Color_Rap_Book.AppDelegate"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/Delegates/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "9E51E608-8943-4416-9F4C-4BDB42503231 - 99d3246ce02fd44a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.AppDelegate.__deallocating_deinit"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/Delegates/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "9E51E608-8943-4416-9F4C-4BDB42503231 - ab5e692e086ed24b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Desktop/Xcode/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/Delegates/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "49DAEC62-BDFB-40CA-AE8D-385905007E1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABF7ED72-A7DD-4F56-BFF1-4D24B6219045"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Color Rap Book/MainControllers/DetailPage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "DetailPageController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "ABF7ED72-A7DD-4F56-BFF1-4D24B6219045 - 815472f45acd552c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.DetailPageController.image6.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/MainControllers/DetailPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "ABF7ED72-A7DD-4F56-BFF1-4D24B6219045 - 1934b525e98b3938"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.DetailPageController.image6.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/MainControllers/DetailPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "ABF7ED72-A7DD-4F56-BFF1-4D24B6219045 - f110aa445319f029"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.DetailPageController.image6.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/MainControllers/DetailPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "ABF7ED72-A7DD-4F56-BFF1-4D24B6219045 - b5fa8c580a56608c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.DetailPageController.image6.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/MainControllers/DetailPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "ABF7ED72-A7DD-4F56-BFF1-4D24B6219045 - 81465a465c3ac318"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.DetailPageController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; The_Color_Rap_Book.DetailPageController"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/MainControllers/DetailPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1708">
+               </Location>
+               <Location
+                  uuid = "ABF7ED72-A7DD-4F56-BFF1-4D24B6219045 - bae800b499e90c40"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "The_Color_Rap_Book.DetailPageController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;The_Color_Rap_Book.DetailPageController&gt;"
+                  moduleName = "The Color Rap Book"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuyuxin/Downloads/TheColorRapBookBigFolder/The%20Color%20Rap%20Book/The%20Color%20Rap%20Book/MainControllers/DetailPage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1684">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

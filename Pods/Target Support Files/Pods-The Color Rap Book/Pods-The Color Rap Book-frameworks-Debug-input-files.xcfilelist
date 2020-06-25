@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ColorSlider/ColorSlider.framework
+${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework
+${BUILT_PRODUCTS_DIR}/GhostTypewriter/GhostTypewriter.framework
+${BUILT_PRODUCTS_DIR}/LBTAComponents/LBTAComponents.framework
+${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework
+${BUILT_PRODUCTS_DIR}/VegaScrollFlowLayout/VegaScrollFlowLayout.framework

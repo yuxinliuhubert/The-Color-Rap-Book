@@ -16,6 +16,13 @@ var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let developVC = DeveloperController()
+//
+//               let nav = UINavigationController(rootViewController: developVC)
+//               nav.isNavigationBarHidden = true
+//               window = UIWindow(frame: UIScreen.main.bounds)
+//               window?.rootViewController = nav
+//               window?.makeKeyAndVisible()
         return true
     }
 

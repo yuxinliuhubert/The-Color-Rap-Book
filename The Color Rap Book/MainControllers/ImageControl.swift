@@ -12,6 +12,7 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 import QuartzCore
+import AVFoundation
 
 extension(DetailPageController) {
     
@@ -38,7 +39,7 @@ extension(DetailPageController) {
             
             
     
-            
+//             print("image 1 image after set up, ", self.image1.image)
             
             let cloudHeight = screenHeight * 0.2
             let leftCloudWidth = cloudHeight * 1.14
@@ -202,8 +203,8 @@ extension(DetailPageController) {
             image2.image = UIImage(named: "page17Cage")
             //        image2.backgroundColor = .blue
             image2.frame = CGRect(x: screenWidth * 0.10, y: screenHeight * 0.21, width: cageWidth, height: cageHeight)
-//            image2.removeShadow()
-            image2.addShadow()
+            image2.removeShadow()
+//            image2.addShadow()
             
             let birdHeight = screenHeight * 0.36
             let birdWidth = birdHeight * 0.5922
@@ -616,6 +617,36 @@ extension(DetailPageController) {
         switch myVariable.state {
             
         case 17:
+//            if let player = player, player.isPlaying {
+////                stop playback
+//
+//                player.stop
+//
+//            } else {
+//                set up player
+                
+                let urlString = Bundle.main.path(forResource: "birdChirping", ofType: "m4a")
+                do {
+                    try AVAudioSession.sharedInstance().setMode(.default)
+                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                    
+                    guard let urlString = urlString else {
+                        return
+                    }
+                
+                    player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                    
+                    guard let player = player else {
+                        return
+                    }
+                    
+                    player.play()
+                
+                }
+                catch {
+                    print("audio player error")
+                }
+//            }
             self.imageRotate(imageview: image3, x: 0.8, y: 0.2, state: 17)
             let notes = ["♩♪♫♩♫♪♫♬", "♬♫♩♩♪♫♬♬", "♫♪♩♬♫♩♯♩♫"]
             label1.text = notes.randomElement()
