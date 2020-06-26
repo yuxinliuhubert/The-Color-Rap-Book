@@ -18,24 +18,28 @@
                 <subviews>
                     <view clipsSubviews="YES" tag="100" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="R63-WG-af1">
                         <rect key="frame" x="10" y="10" width="355" height="360"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-uK-EHb">
+                                <rect key="frame" x="87" y="17" width="181" height="181"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="181" id="0S4-z5-C92"/>
+                                    <constraint firstAttribute="height" constant="181" id="Yj7-79-b4Y"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-uK-EHb">
-                        <rect key="frame" x="97" y="147" width="181" height="48"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="181" id="9ah-bk-SSU"/>
-                            <constraint firstAttribute="height" constant="48" id="kzk-rn-yZH"/>
+                            <constraint firstItem="VU7-uK-EHb" firstAttribute="centerY" secondItem="R63-WG-af1" secondAttribute="centerY" multiplier="0.9" constant="-54.5" id="hix-ER-A7E"/>
+                            <constraint firstItem="VU7-uK-EHb" firstAttribute="centerX" secondItem="R63-WG-af1" secondAttribute="centerX" id="nny-ge-kb7"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="VU7-uK-EHb" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.9" id="BkC-gt-6Dq"/>
                 <constraint firstAttribute="trailing" secondItem="R63-WG-af1" secondAttribute="trailing" constant="10" id="EK9-mz-Ieg"/>
                 <constraint firstItem="R63-WG-af1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="S3W-Xx-UNN"/>
-                <constraint firstItem="VU7-uK-EHb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="WhS-wZ-dgm"/>
                 <constraint firstAttribute="bottom" secondItem="R63-WG-af1" secondAttribute="bottom" constant="10" id="nOK-UF-Czk"/>
                 <constraint firstItem="R63-WG-af1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="qV3-7n-XOR"/>
             </constraints>

@@ -27,11 +27,15 @@ import UIKit
 
 class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
+    
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 2.0
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        
         
         let containerView = transitionContext.containerView        
         
@@ -47,7 +51,12 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let toViewController = transitionContext.viewController(forKey: .to)!
         
         let imageViewSnapshot = UIImageView(image: fromVC.cellImageView.image)
-        imageViewSnapshot.contentMode = .scaleAspectFit
+        let imageViewMaskView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
+        imageViewSnapshot.mask = imageViewMaskView
+        imageViewMaskView.frame = imageViewSnapshot.bounds
+         imageViewMaskView.clipsToBounds = true
+        imageViewSnapshot.contentMode = .scaleAspectFill
+
         
         
         // Background View With Correct Color
@@ -76,7 +85,8 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         
         imageViewSnapshot.frame = containerView.convert(fromVC.cellImageView.frame, from: fromVC.cellImageView.superview)
-        
+        imageViewMaskView.frame = imageViewSnapshot.bounds
+
         
         let frameAnim1 = CGRect(x: 0, y: cellBackground.frame.minY, width: UIScreen.main.bounds.width, height: cellBackground.frame.height)
         let frameAnim2 = CGRect(x: 0, y: toVC.cellBackground.frame.minY, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - toVC.cellBackground.frame.minY)
@@ -92,13 +102,19 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             UIViewPropertyAnimator(duration: 0.3, dampingRatio: 0.9) {
                 cellBackground.layer.cornerRadius = 0
                 cellBackground.frame = frameAnim1
+//                imageViewMaskView.frame = imageViewSnapshot.bounds
             }
         }()
         
         let animator3 = {
             UIViewPropertyAnimator(duration: 0.2, dampingRatio: 1.4) {
                 cellBackground.frame = frameAnim2
+
                 imageViewSnapshot.frame = containerView.convert(toVC.cellImageView.frame, from: toVC.cellImageView.superview)
+                imageViewMaskView.frame = imageViewSnapshot.bounds
+                
+                print("mask frame, ", imageViewMaskView.frame)
+                print("pictureframe, ", imageViewSnapshot.frame)
             }
         }()
         
@@ -115,6 +131,7 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         animator3.addCompletion {  _ in
             
             imageViewSnapshot.removeFromSuperview()
+//            imageViewMaskView.removeFromSuperview()
             cellBackground.removeFromSuperview()
             fromViewController.view.removeFromSuperview()
             
@@ -128,4 +145,9 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         animator1.startAnimation()
         
     }
+    
+
+    
 }
+
+

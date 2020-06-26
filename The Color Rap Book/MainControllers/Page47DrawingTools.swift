@@ -360,10 +360,12 @@ extension DetailPageController: CropViewControllerDelegate {
         
         
      func drawingPageFirstSceneSetup() {
-        self.startButton.setTitle("Select a picture for background", for: .normal)
-        self.noPictureButton.setTitle("Draw on a white backbground", for: .normal)
-        self.startButton.backgroundColor = .blue
-        self.noPictureButton.backgroundColor = .blue
+//        self.startButton.setTitle("Select a picture for background", for: .normal)
+//        self.noPictureButton.setTitle("Draw on a white backbground", for: .normal)
+        self.startButton.setImage(UIImage(named: "selectBackground"), for: .normal)
+        self.noPictureButton.setImage(UIImage(named: "noPictureButton"), for: .normal)
+//        self.startButton.backgroundColor = .blue
+//        self.noPictureButton.backgroundColor = .blue
         self.startButton.addTarget(self, action: #selector(drawingPageStartButtonTap), for: .touchUpInside)
         self.noPictureButton.addTarget(self, action: #selector(whiteBackgroundButtonTap), for: .touchUpInside)
         self.startButton.isEnabled = true

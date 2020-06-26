@@ -133,6 +133,8 @@ class ViewController: UIViewController {
             myVariable.center = readButton.center
         }
         
+        print("sender, ", sender)
+        
         labelFadeOut(label: introLabel, delay: 0)
     }
     

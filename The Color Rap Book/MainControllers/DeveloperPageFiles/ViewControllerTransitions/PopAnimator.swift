@@ -51,8 +51,14 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         
         let imageViewSnapshot = UIImageView(image: fromVC.cellImageView.image)
-        imageViewSnapshot.contentMode = .scaleAspectFit
+         let imageViewMaskView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
+               imageViewSnapshot.mask = imageViewMaskView
+               imageViewMaskView.frame = imageViewSnapshot.bounds
+                imageViewMaskView.clipsToBounds = true
+               imageViewSnapshot.contentMode = .scaleAspectFill
+    
         imageViewSnapshot.frame = containerView.convert(fromVC.cellImageView.frame, from: fromVC.cellImageView.superview)
+        imageViewMaskView.frame = imageViewSnapshot.bounds
         
         
         //Background View With Correct Color
@@ -94,6 +100,9 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let animator2 = {
             UIViewPropertyAnimator(duration: 0.3, curve: .easeOut) {
                 imageViewSnapshot.frame = CGRect(x: frameImageToVC.minX, y: cellBackgroundToVC.minY - (toVC.cellImageView.frame.height / 2) , width: imageViewToVC.width, height: imageViewToVC.height)
+                imageViewMaskView.frame = imageViewSnapshot.bounds
+                
+
             }
         }()
         
@@ -103,6 +112,7 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 cellBackground.layer.cornerRadius = 10
 
                 imageViewSnapshot.frame = frameImageToVC
+//                imageViewMaskView.frame = imageViewSnapshot.bounds
                 
             }
         }()

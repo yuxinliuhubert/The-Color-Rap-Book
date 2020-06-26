@@ -11,10 +11,14 @@ import UIKit
 
 class DeveloperController: UIViewController,  UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    let nav = UINavigationController()
+    @IBOutlet weak var goBackButton: UIButton!
+    //    let nav = UINavigationController()
     
     let transition = TransitionCoordinator()
     
@@ -40,32 +44,32 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
 //        ]
         
         [
-            "bottleName": "bottle1",
+            "developerName": "page11Back",
             "hexBackgroundColor": "761e30"
         ],
         [
-            "bottleName": "bottle2",
+            "developerName": "bottle2",
             "hexBackgroundColor": "d86940"
         ],
         [
-            "bottleName": "bottle4",
+            "developerName": "bottle4",
             "hexBackgroundColor": "ebb700"
         ],
         [
-            "bottleName": "bottle3",
+            "developerName": "bottle3",
             "hexBackgroundColor": "363538"
         ],
 
         [
-            "bottleName": "bottle5",
+            "developerName": "bottle5",
             "hexBackgroundColor": "8e5700"
         ],
         [
-            "bottleName": "bottle6",
+            "developerName": "bottle6",
             "hexBackgroundColor": "44485b"
         ],
         [
-            "bottleName": "bottle7",
+            "developerName": "bottle7",
             "hexBackgroundColor": "d6622f"
         ]
     ]
@@ -95,6 +99,13 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        goBackButton.frame = CGRect(x: screenWidth * 0.01953, y: 30, width: screenWidth * 0.12, height: screenWidth * 0.090136)
+               goBackButton.setImage(UIImage(named:"home"), for: .normal)
+               goBackButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+               goBackButton.layer.cornerRadius = 20
+        
+
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,7 +122,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
                self.selectedIndexPath = indexPath
                
                let finalVC = PushedViewController()
-               finalVC.selectedImage = dictionaryDataArray[indexPath.row]["bottleName"]!
+               finalVC.selectedImage = dictionaryDataArray[indexPath.row]["developerName"]!
                finalVC.topHexColor = dictionaryDataArray[indexPath.row]["hexBackgroundColor"]!
 //                finalVC.selectedImage = dictionaryDataArray[indexPath.row]["developerIntro"]!
 
@@ -140,4 +151,18 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
 
        }
     
+    override var prefersStatusBarHidden: Bool { return true }
+       override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .landscape }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+     (segue as! OHCircleSegue).circleOrigin = myVariable.center ?? CGPoint(x: screenWidth * 0.5, y: screenHeight * 0.5)
+    
+    }
+    
+    @IBAction func goBackButtonTapped(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "DeveloperUnwind", sender: self)
+    }
 }

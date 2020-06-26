@@ -39,6 +39,12 @@ class PushedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        imageBottle.makeRounded()
+        let imageViewMaskView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
+        imageViewMaskView.frame = imageBottle.bounds
+        self.imageBottle.mask = imageViewMaskView
+        self.imageBottle.contentMode = .scaleAspectFill
+        
         
         if let topColor = topHexColor {
             topBackground.backgroundColor =  topColor.hexColor

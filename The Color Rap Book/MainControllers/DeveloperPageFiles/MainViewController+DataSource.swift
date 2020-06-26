@@ -36,7 +36,7 @@ extension DeveloperController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCellIdentifier", for: indexPath) as! CardCell
-        cell.setupCell(imgViewName: dictionaryDataArray[indexPath.row]["bottleName"]!)
+        cell.setupCell(imgViewName: dictionaryDataArray[indexPath.row]["developerName"]!)
         
         return cell
     }
