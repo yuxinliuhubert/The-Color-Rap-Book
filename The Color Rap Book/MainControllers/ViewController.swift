@@ -57,6 +57,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print("screenheight", screenHeight)
         view.isExclusiveTouch = true
         readButton.isExclusiveTouch = true
         tableOfContentButton.isExclusiveTouch = true

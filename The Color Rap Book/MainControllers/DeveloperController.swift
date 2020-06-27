@@ -26,6 +26,11 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
     
     var cardView: CardCell?
     
+    var cellSize = CGSize(
+        width: (UIScreen.main.bounds.width * 92) / 100,
+        height: (UIScreen.main.bounds.height * 71) / 100
+    )
+    
     var dictionaryDataArray: [[String: String]] = [
 //        [
 //            "developerName": "goBack",
@@ -105,6 +110,12 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
                goBackButton.layer.cornerRadius = 20
         
 
+        
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
+//        imageView.frame = CGRect(x: screenWidth / 2 - cellSize.height * 0.102, y: (screenHeight / 2 - cellSize.height * 0.102) - screenHeight * 0.0653, width: cellSize.height * 0.204, height: cellSize.height * 0.204)
+          imageView.frame = CGRect(x: screenWidth / 2, y: screenHeight / 2, width: cellSize.height * 0.204, height: cellSize.height * 0.204)
+        print("black imageciew frmae, ", imageView.frame)
+        view.addSubview(imageView)
         
     }
     

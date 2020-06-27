@@ -27,6 +27,13 @@ import UIKit
 
 class CardCell: UICollectionViewCell {
     
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    
+    var cellSize = CGSize(
+        width: (UIScreen.main.bounds.width * 92) / 100,
+        height: (UIScreen.main.bounds.height * 71) / 100
+    )
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cellBackground: UIView!
@@ -58,10 +65,33 @@ class CardCell: UICollectionViewCell {
         self.cellBackground.layer.masksToBounds = false
         
         
-        let imageViewMaskView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
-        imageViewMaskView.frame = imageView.bounds
+      
         
-        self.imageView.mask = imageViewMaskView
+    
+        
+//
+//        self.imageView.heightAnchor.constraint(equalToConstant: cellSize.height * 0.204).isActive = true
+//        self.imageView.widthAnchor.constraint(equalToConstant: cellSize.height * 0.204).isActive = true
+//        self.imageView.center = cellBackground.center
+//        self.imageView.center.x = cellBackground.center.x
+//        self.imageView.center.y = cellBackground.center.y
+//        self.imageView.centerYAnchor.constraint(equalTo: superview?.centerYAnchor ?? , constant: -screenHeight * 0.0653).isActive = true
+//        self.imageView.centerXAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutXAxisAnchor>#>, constant: <#T##CGFloat#>)
+        
+        
+        
+        
+        
+//        print("cellbackground, ", cellBackground.frame)
+        
+//        self.imageView.frame = CGRect(x: screenWidth / 2 - cellSize.height * 0.102, y: (screenHeight / 2 - cellSize.height * 0.102) - screenHeight * 0.0653, width: cellSize.height * 0.204, height: cellSize.height * 0.204)
+        self.imageView.frame = CGRect(x: screenWidth / 2, y: screenHeight / 2, width: cellSize.height * 0.204, height: cellSize.height * 0.204)
+        print("cellsize, ", cellSize)
+        print("imageview frame, ", imageView.frame)
+        print("superview",self.contentView.frame)
+        let imageViewMaskView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
+              imageViewMaskView.frame = imageView.bounds
+            self.imageView.mask = imageViewMaskView
         self.imageView.contentMode = .scaleAspectFill
         
         

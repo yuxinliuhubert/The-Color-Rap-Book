@@ -11,6 +11,8 @@
 		530414DF23FECE2200E268C3 /* BackGroundDisplay.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */; };
 		530414E123FED09800E268C3 /* ImageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530414E023FED09800E268C3 /* ImageControl.swift */; };
 		530414E523FED22C00E268C3 /* backgroundControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530414E423FED22C00E268C3 /* backgroundControl.swift */; };
+		530F73A224A795AD00C7C4A7 /* pageTurn.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 530F73A124A795AD00C7C4A7 /* pageTurn.m4a */; };
+		530F73A424A797F900C7C4A7 /* pageTurn2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 530F73A324A797F900C7C4A7 /* pageTurn2.m4a */; };
 		533CC20323ECC01A00871876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20223ECC01A00871876 /* AppDelegate.swift */; };
 		533CC20523ECC01A00871876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20423ECC01A00871876 /* SceneDelegate.swift */; };
 		533CC20723ECC01A00871876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20623ECC01A00871876 /* ViewController.swift */; };
@@ -91,6 +93,8 @@
 		530414DE23FECE2200E268C3 /* BackGroundDisplay.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BackGroundDisplay.rtf; sourceTree = "<group>"; };
 		530414E023FED09800E268C3 /* ImageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControl.swift; sourceTree = "<group>"; };
 		530414E423FED22C00E268C3 /* backgroundControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundControl.swift; sourceTree = "<group>"; };
+		530F73A124A795AD00C7C4A7 /* pageTurn.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = pageTurn.m4a; sourceTree = "<group>"; };
+		530F73A324A797F900C7C4A7 /* pageTurn2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = pageTurn2.m4a; sourceTree = "<group>"; };
 		533CC1FF23ECC01A00871876 /* Color Rap Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Rap Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		533CC20223ECC01A00871876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		533CC20423ECC01A00871876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,16 @@
 				05C128004F908EBFDEB66B03 /* Pods-The Color Rap BookUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		530F739B24A78E4700C7C4A7 /* SoundEffects */ = {
+			isa = PBXGroup;
+			children = (
+				530F73A324A797F900C7C4A7 /* pageTurn2.m4a */,
+				530F73A124A795AD00C7C4A7 /* pageTurn.m4a */,
+				5388922E24A26E6100CEE536 /* birdChirping.m4a */,
+			);
+			path = SoundEffects;
 			sourceTree = "<group>";
 		};
 		533CC1F623ECC01A00871876 = {
@@ -312,7 +326,7 @@
 		533CF96523F89BDC0015FDCC /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
-				5388922E24A26E6100CEE536 /* birdChirping.m4a */,
+				530F739B24A78E4700C7C4A7 /* SoundEffects */,
 				539044BC24A196B900B5D72A /* SavedData+CoreDataClass.swift */,
 				539044BD24A196B900B5D72A /* SavedData+CoreDataProperties.swift */,
 				53F4D94524A1607F0018D924 /* Morgan_bold-Regular.otf */,
@@ -516,6 +530,7 @@
 			files = (
 				53C7E30E23FB90E100866321 /* Data.rtf in Resources */,
 				5388922F24A26E6100CEE536 /* birdChirping.m4a in Resources */,
+				530F73A224A795AD00C7C4A7 /* pageTurn.m4a in Resources */,
 				53F4D94624A1607F0018D924 /* Morgan_bold-Regular.otf in Resources */,
 				533CC21223ECC01C00871876 /* LaunchScreen.storyboard in Resources */,
 				533CC20F23ECC01C00871876 /* Assets.xcassets in Resources */,
@@ -525,6 +540,7 @@
 				53BF1B6024A5215D008A1648 /* CardCell.xib in Resources */,
 				53CA27DE2454A855008A9731 /* Alert.storyboard in Resources */,
 				530414DF23FECE2200E268C3 /* BackGroundDisplay.rtf in Resources */,
+				530F73A424A797F900C7C4A7 /* pageTurn2.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

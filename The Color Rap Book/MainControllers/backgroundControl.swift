@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 extension (DetailPageController) {
     
@@ -21,6 +22,7 @@ extension (DetailPageController) {
             self.labelTextDisappearing(label: label)
             self.imageDisappearing()
             UIView.transition(with: imageView, duration: 1.5, options: [.transitionCurlDown], animations: {
+                self.pageTurnSoundPlay()
                 self.pageNumberBackgroundDisplay(imageView: imageView, pageNum: state)
             }, completion: { finished in
                 
@@ -133,6 +135,7 @@ extension (DetailPageController) {
         
         testingTextfield.placeholder = "Page \(state)"
         UIView.transition(with: imageView, duration: 1.5, options: [.transitionCurlUp], animations: {
+            self.pageTurnSoundPlay()
             UIView.transition(with: label, duration: 1.5, options: [.transitionCurlUp], animations: {
                 self.labelTextDisappearing(label: label)
                 self.imageDisappearing()
@@ -345,8 +348,34 @@ extension (DetailPageController) {
         }
         
         
+        
     }
     
+    
+    func pageTurnSoundPlay() {
+         let urlString = Bundle.main.path(forResource: "pageTurn2", ofType: "m4a")
+                        do {
+                            try AVAudioSession.sharedInstance().setMode(.default)
+                            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                            
+                            guard let urlString = urlString else {
+                                return
+                            }
+                        
+                            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                            
+                            guard let player = player else {
+                                return
+                            }
+                            
+                            player.play()
+                        
+                        }
+                        catch {
+                            print("audio player error")
+                        }
+        //            }
+    }
     
     
    
