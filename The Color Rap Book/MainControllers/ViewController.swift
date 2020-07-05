@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 
 
+
+
+
+
 class ViewController: UIViewController {
     
     var imageInitialState: CGAffineTransform.Type?
@@ -57,7 +61,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print("screenheight", screenHeight)
+        
+        setUpBubblePlayer()
+        
         view.isExclusiveTouch = true
         readButton.isExclusiveTouch = true
         tableOfContentButton.isExclusiveTouch = true
@@ -133,8 +139,7 @@ class ViewController: UIViewController {
             (segue as! OHCircleSegue).circleOrigin = view.readButton.center
             myVariable.center = readButton.center
         }
-        
-        print("sender, ", sender)
+
         
         labelFadeOut(label: introLabel, delay: 0)
     }
@@ -158,16 +163,24 @@ class ViewController: UIViewController {
     
     @IBAction func readTap(_ sender: Any) {
         myVariable.state = 3
+        myVariable.buttonSoundPlayer?.play()
         self.performSegue(withIdentifier: "ToSplashSegue", sender: sender)
     }
     
     
     
     @IBAction func tableOfContentTap(_ sender: Any) {
+        myVariable.buttonSoundPlayer?.play()
         self.performSegue(withIdentifier: "ToTableOfContent", sender: sender)
     }
     
+    @IBAction func developerTap(_ sender: Any) {
+        myVariable.buttonSoundPlayer?.play()
+    }
     
+    @IBAction func treeTap(_ sender: Any) {
+        myVariable.buttonSoundPlayer?.play()
+    }
     
     @IBAction func leftSwipeHandler(_ sender: Any) {
         switch introLabel.alpha {
@@ -230,6 +243,10 @@ class ViewController: UIViewController {
                         completion: nil)
         
     }
+    
+    
+  
+    
     
     func elementEntering() {
         let treeHeight = screenHeight * 0.90

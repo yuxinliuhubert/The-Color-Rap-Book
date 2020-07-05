@@ -42,10 +42,9 @@ class AnimationCollectionViewLayout: UICollectionViewFlowLayout {
 
         self.scrollDirection = .horizontal
         self.itemSize = self.cellSize
-//        self.minimumInteritemSpacing = 20.0
-//        self.minimumLineSpacing = 20.0
-//        self.sectionInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
-       
+        self.minimumInteritemSpacing = 20.0
+        self.minimumLineSpacing = 20.0
+        self.sectionInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,9 +66,6 @@ class AnimationCollectionViewLayout: UICollectionViewFlowLayout {
             collectionView.contentInset = UIEdgeInsets(top: 0, left: contentInsetLeft, bottom: 0, right: contentInsetRight)
             
   
-//            print("after autolayout size, ", self.itemSize)
-//                   print("after autolayout frame, ", self.sectionInset)
-//            print("after autolayout collectionView frame, ", collectionView.frame)
         }
     }
  

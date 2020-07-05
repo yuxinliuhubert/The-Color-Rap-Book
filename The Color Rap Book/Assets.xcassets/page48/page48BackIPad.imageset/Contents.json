@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "page48BackIPad.png",
+      "idiom" : "ipad"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

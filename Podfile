@@ -21,7 +21,8 @@ target 'The Color Rap Book' do
   pod 'GhostTypewriter'
   pod 'VegaScrollFlowLayout'
   pod 'RevealingSplashView'
-  pod "LBTAComponents"
+  pod 'LBTAComponents'
+  pod 'LayoutHelper'
   
   end
 

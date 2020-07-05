@@ -25,6 +25,7 @@ struct myVariable {
     static var page = Int()
     static var timer = Timer()
     static var orientation = 4
+    static var buttonSoundPlayer: AVAudioPlayer?
 }
 
 protocol exitProtocol {
@@ -32,7 +33,7 @@ protocol exitProtocol {
     func updatePage()
 }
 
-class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate,exitProtocol, ImagePickerDelegate {
+class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate,exitProtocol, ImagePickerDelegate, AVAudioPlayerDelegate {
 
     
     
@@ -52,14 +53,10 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     @IBOutlet weak var image7: UIImageView!
     @IBOutlet weak var testingTextfield: UITextField!
     @IBOutlet weak var canvas: Canvas!
-    
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var label1: UILabel!
     @IBOutlet var leftSwipeGesture: UISwipeGestureRecognizer!
-    @IBOutlet var upSwipeGesture: UISwipeGestureRecognizer!
-    @IBOutlet var rightSwipeGesture: UISwipeGestureRecognizer!
-    @IBOutlet var downSwipeGesture: UISwipeGestureRecognizer!
     @IBOutlet var singleTap: UITapGestureRecognizer!
-    //    @IBOutlet var panGesture: CustomPanGestureRecognizer!
-    
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var showMoreButton: UIButton!
@@ -72,8 +69,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
     var player: AVAudioPlayer?
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var label1: UILabel!
+    var page23Phase = 0
+  
+    let page23LightLayer = CAShapeLayer()
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -97,6 +95,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         view.backgroundColor = .clear
         return view
     }()
+    
     
     lazy var undoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -183,6 +182,35 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
            return background
        }()
     
+            
+       
+       lazy var startOverButton: UIButton = {
+           let button = UIButton(type: .custom)
+           button.setImage(UIImage(named: "startOver"), for: .normal)
+           button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(startOverTap), for: .touchUpInside)
+           return button
+       }()
+       
+       lazy var readLaterButton: UIButton = {
+              let button = UIButton(type: .custom)
+              button.setImage(UIImage(named: "readLater"), for: .normal)
+              button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(readLaterTap), for: .touchUpInside)
+              return button
+          }()
+    
+    lazy var lastPageButtonStack: UIStackView = {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.alignment = .center
+            stackView.distribution = .fillProportionally
+//            stackView.spacing = UIScreen.main.bounds.height * 0.2
+            stackView.alpha = 0
+        stackView.addArrangedSubview(self.startOverButton)
+        stackView.addArrangedSubview(self.readLaterButton)
+            return stackView
+        }()
 //    let stackBackPanGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
 //    let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
     lazy var backgroundColors = [UIColor()]
@@ -203,7 +231,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         let gesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
         return gesture
     }()
-            
+    
+       
 //    let alert = UIAlertController( title: "Title", message: "Message", preferredStyle: .alert)
     
 
@@ -212,6 +241,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         
         super.viewDidLoad()
         
+        
+//        print("views, ", view.subviews)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
 
         nextButton.isExclusiveTouch = true
@@ -265,6 +296,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
                 
                 self.showMoreButton.frame = CGRect(x: screenWidth * 0.48, y: screenHeight * 0.02, width: screenWidth * 0.0283, height: screenWidth * 0.03)
                 showMoreButton.setImage(UIImage(named: "showMoreHouse"), for: .normal)
+                 view.addSubview(lastPageButtonStack)
                 print("pagenumberSaved ",myVariable.page)
                 
                 
@@ -283,8 +315,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-//        self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
-//        self.pageNumberBackgroundDisplay(imageView: backgroundImageView, pageNum: state)
         self.loadingViewChange(state: myVariable.state, label: self.label)
 
     }
@@ -311,9 +341,11 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
             position = touch.location(in: view)
             //            print(position)
         }
-        UIView.animate(withDuration: 0.5, animations: {
-            self.showMoreButton.alpha = 1
-        })
+//        If you click the screen, house button shows up
+//        UIView.animate(withDuration: 0.5, animations: {
+//
+//            self.showMoreButton.alpha = 1
+//        })
     }
     
     
@@ -356,7 +388,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
             } catch {
                 print(error)
             }
-            print("labelArray ", labelArray)
+//            print("labelArray ", labelArray)
         }
         
         if let url = Bundle.main.url(forResource:"BackGroundDisplay", withExtension: "rtf") {
@@ -377,12 +409,17 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
     
     
-    
+   
     
     //    protocol functions called by Menu Controller
-    func exitFromDetailPage() {
+    @objc func exitFromDetailPage() {
         print("exiting!!!!!")
-        myVariable.page = myVariable.state
+        if myVariable.state != 48 {
+             myVariable.page = myVariable.state
+                  
+        } else {
+             myVariable.page = 3
+        }
         saveData()
         self.SpriteView.scene?.isPaused = true
         self.SpriteView.scene?.removeFromParent()
@@ -418,6 +455,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     //    IBAction functions
     
     @IBAction func showMoreButtonTapped(_ sender: Any) {
+        myVariable.buttonSoundPlayer?.play()
         gotoVCB()
     }
     
@@ -434,6 +472,12 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         buttonsEnabled(Bool: false)
         myVariable.state += 1
         myVariable.page = myVariable.state
+        if myVariable.state != 48 {
+             myVariable.page = myVariable.state
+                  
+        } else {
+             myVariable.page = 3
+        }
         saveData()
         if myVariable.state != 5 {
 //            cloudsFloatingEffect(leftCloud: previousButton, rightCloud: nextButton)
@@ -447,7 +491,12 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
     @IBAction func lastPage(_ sender: Any) {
         myVariable.state -= 1
-        myVariable.page = myVariable.state
+        if myVariable.state != 48 {
+                    myVariable.page = myVariable.state
+                         
+               } else {
+                    myVariable.page = 3
+               }
         saveData()
         buttonsEnabled(Bool: false)
         if myVariable.state != 5 {
@@ -468,30 +517,16 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     }
     
     
-    
-    
-    @IBAction func rightSwipe(_ sender: Any) {
-    }
-    
-    
-    
-    
-    
-    @IBAction func downSwipe(_ sender: Any) {
-    }
+
     
     
     
     
     @IBAction func leftSwipe(_ sender: Any) {
-        //        print("leftswiperecognize")
-        leftSwipeHandler(state: myVariable.state)
+                print("leftswiperecognize")
+        leftSwipeHandler()
         
     }
-    
-    @IBAction func upSwipe(_ sender: Any) {
-    }
-    
     
     
     
@@ -516,7 +551,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
             self.SpriteView.alpha = 0
             self.SpriteView.backgroundColor =  .clear
             self.SpriteView.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
-            
+            view.layer.addSublayer(page23LightLayer)
         
         
         }else if state == 1{
@@ -553,9 +588,23 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
     
     @objc func startButtonTap() {
+        myVariable.buttonSoundPlayer?.play()
         myVariable.state += 1
         backgroundChangeForward(imageView: backgroundImageView, delay: 0, state: myVariable.state, label: label)
         
+    }
+    @objc func startOverTap() {
+           myVariable.buttonSoundPlayer?.play()
+           exitFromDetailPage()
+       }
+    
+    @objc func readLaterTap() {
+        myVariable.buttonSoundPlayer?.play()
+        exitApp()
+    }
+    
+    @objc func exitApp() {
+        exit(0)
     }
     
  

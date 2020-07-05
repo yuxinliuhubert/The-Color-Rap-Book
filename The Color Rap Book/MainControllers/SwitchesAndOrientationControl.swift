@@ -68,16 +68,16 @@ extension (DetailPageController) {
     func grestureRecognizerSwitch(Bool: Bool) {
         if (Bool == true) {
             leftSwipeGesture.isEnabled = true
-            rightSwipeGesture.isEnabled = true
-            upSwipeGesture.isEnabled = true
-            downSwipeGesture.isEnabled = true
+//            rightSwipeGesture.isEnabled = true
+//            upSwipeGesture.isEnabled = true
+//            downSwipeGesture.isEnabled = true
             singleTap.isEnabled = true
             edgePan.isEnabled = true
         }else if (Bool == false) {
             leftSwipeGesture.isEnabled = false
-            rightSwipeGesture.isEnabled = false
-            upSwipeGesture.isEnabled = false
-            downSwipeGesture.isEnabled = false
+//            rightSwipeGesture.isEnabled = false
+//            upSwipeGesture.isEnabled = false
+//            downSwipeGesture.isEnabled = false
             singleTap.isEnabled = false
             edgePan.isEnabled = false
         }
@@ -90,11 +90,15 @@ extension (DetailPageController) {
         switch Bool {
         case true:
             previousButton.isEnabled = true
-            nextButton.isEnabled = true
+            if myVariable.state != 48 {
+                nextButton.isEnabled = true
+            }
             showMoreButton.isEnabled = true
             UIView.animate(withDuration: 1.0, animations: {
                 self.previousButton.alpha = 1
-                self.nextButton.alpha = 1
+                if myVariable.state != 48 {
+                    self.nextButton.alpha = 1
+                }
                 self.showMoreButton.alpha = 1
             })
             
@@ -104,7 +108,11 @@ extension (DetailPageController) {
             nextButton.isEnabled = false
             showMoreButton.isEnabled = false
             previousButton.alpha = 0.4
+            if myVariable.state == 48 {
+                self.nextButton.alpha = 0
+            } else {
             nextButton.alpha = 0.4
+            }
             showMoreButton.alpha = 0.4
             
         }

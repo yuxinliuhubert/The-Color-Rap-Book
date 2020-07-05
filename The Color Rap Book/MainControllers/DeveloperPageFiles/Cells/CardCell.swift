@@ -27,16 +27,15 @@ import UIKit
 
 class CardCell: UICollectionViewCell {
     
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
-    
-    var cellSize = CGSize(
-        width: (UIScreen.main.bounds.width * 92) / 100,
-        height: (UIScreen.main.bounds.height * 71) / 100
-    )
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cellBackground: UIView!
+    @IBOutlet weak var coverLabel: UILabel!
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    
+    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -53,48 +52,46 @@ class CardCell: UICollectionViewCell {
     }
     
     
-    func setupCell(imgViewName: String) {
+    func setupCell(imgViewName: String, coverLabelText: String) {
         imageView.image = UIImage(named: imgViewName)
+        coverLabel.text = coverLabelText
     }
     
-    func setupView() {
+    fileprivate func setUpCoverLabel() {
+        self.coverLabel.anchorCenterXToSuperview()
+        self.coverLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 20).isActive = true
+        self.coverLabel.heightAnchor.constraint(equalToConstant: screenHeight * 0.3).isActive = true
+        self.coverLabel.widthAnchor.constraint(equalToConstant: screenWidth * 0.7).isActive = true
+        self.coverLabel.textColor = .black
+        self.coverLabel.font = UIFont(name: "Morgan_bold", size: 40)
+        self.coverLabel.adjustsFontSizeToFitWidth = true
+        self.coverLabel.textAlignment = .center
         
+    }
+    
+    fileprivate func setUpImageView() {
+        self.imageView.frame = CGRect(x: 0, y: 0, width: screenHeight * 0.204, height: screenHeight * 0.204)
+        
+        self.imageView.anchorCenterXToSuperview()
+        self.imageView.anchorCenterYToSuperview(constant: -screenHeight * 0.2)
+        self.imageView.heightAnchor.constraint(equalToConstant: screenHeight * 0.204).isActive = true
+        self.imageView.widthAnchor.constraint(equalToConstant: screenHeight * 0.204).isActive = true
+        self.imageView.clipsToBounds = true
+        self.imageView.makeRounded()
+         self.imageView.contentMode = .scaleAspectFill
+    }
+    
+    fileprivate func setUpCellBackground() {
         self.cellBackground.layer.borderWidth = 0.0
         self.cellBackground.layer.borderColor = UIColor.clear.cgColor
         self.cellBackground.layer.cornerRadius = 10
         self.cellBackground.layer.masksToBounds = false
-        
-        
-      
-        
+    }
     
-        
-//
-//        self.imageView.heightAnchor.constraint(equalToConstant: cellSize.height * 0.204).isActive = true
-//        self.imageView.widthAnchor.constraint(equalToConstant: cellSize.height * 0.204).isActive = true
-//        self.imageView.center = cellBackground.center
-//        self.imageView.center.x = cellBackground.center.x
-//        self.imageView.center.y = cellBackground.center.y
-//        self.imageView.centerYAnchor.constraint(equalTo: superview?.centerYAnchor ?? , constant: -screenHeight * 0.0653).isActive = true
-//        self.imageView.centerXAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutXAxisAnchor>#>, constant: <#T##CGFloat#>)
-        
-        
-        
-        
-        
-//        print("cellbackground, ", cellBackground.frame)
-        
-//        self.imageView.frame = CGRect(x: screenWidth / 2 - cellSize.height * 0.102, y: (screenHeight / 2 - cellSize.height * 0.102) - screenHeight * 0.0653, width: cellSize.height * 0.204, height: cellSize.height * 0.204)
-        self.imageView.frame = CGRect(x: screenWidth / 2, y: screenHeight / 2, width: cellSize.height * 0.204, height: cellSize.height * 0.204)
-        print("cellsize, ", cellSize)
-        print("imageview frame, ", imageView.frame)
-        print("superview",self.contentView.frame)
-        let imageViewMaskView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
-              imageViewMaskView.frame = imageView.bounds
-            self.imageView.mask = imageViewMaskView
-        self.imageView.contentMode = .scaleAspectFill
-        
-        
+    func setupView() {
+        setUpCellBackground()
+        setUpImageView()
+        setUpCoverLabel()
     }
     
     
@@ -107,7 +104,7 @@ extension UIImageView {
 
         self.layer.borderWidth = 1
         self.layer.masksToBounds = false
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor.clear.cgColor
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
         

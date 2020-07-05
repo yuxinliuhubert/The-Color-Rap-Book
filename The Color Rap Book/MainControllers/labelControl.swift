@@ -15,15 +15,15 @@ extension (DetailPageController) {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowRadius = 3.0
+        label.layer.shadowRadius = 2.0
         label.layer.shadowOpacity = 1.0
-        label.layer.shadowOffset = CGSize(width: 4, height: 4)
+        label.layer.shadowOffset = CGSize(width: 3,height: 3)
         label.layer.masksToBounds = false
         label.adjustsFontSizeToFitWidth = true
         label1.layer.shadowColor = UIColor.black.cgColor
-        label1.layer.shadowRadius = 3.0
+        label1.layer.shadowRadius = 2.0
         label1.layer.shadowOpacity = 1.0
-        label1.layer.shadowOffset = CGSize(width: 4, height: 4)
+        label1.layer.shadowOffset = CGSize(width: 3, height: 3)
         label1.layer.masksToBounds = false
         switch pageNum {
         case 3:
@@ -156,6 +156,21 @@ extension (DetailPageController) {
             label1.frame = CGRect(x: screenWidth * 0.2, y: screenHeight * 0.2, width: screenWidth * 0.4, height: screenHeight * 0.12)
             label1.font = UIFont(name: "Morgan_bold", size: 100)
             
+            
+        case 16:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .yellow
+            label.frame = CGRect(x: screenWidth * 0.45, y: screenHeight * 0.80, width: screenWidth * 0.55
+                , height: screenHeight * 0.1714)
+            label.font = UIFont(name: "Morgan_bold", size: 100)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            
+            
+            
+            
+            
+            
         case 17:
             label.alpha = 1
             label.textAlignment = .left
@@ -186,7 +201,7 @@ extension (DetailPageController) {
             label.alpha = 1
             label.textAlignment = .left
             label.textColor = .white
-            label.frame = CGRect(x: screenWidth *  0.05, y: screenHeight * 0.05, width: screenWidth * 0.90
+            label.frame = CGRect(x: screenWidth *  0.07, y: screenHeight * 0.05, width: screenWidth * 0.86
                 , height: screenHeight * 0.1719644)
             label.font = UIFont(name: "Morgan_bold", size: 200)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
@@ -201,6 +216,18 @@ extension (DetailPageController) {
             }, completion: nil)
             
             
+            
+            
+        case 21: 
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .white
+            label.frame = CGRect(x: screenWidth *  0.07, y: screenHeight * 0.05, width: screenWidth * 0.45
+                , height: screenHeight * 0.1719644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            
+    
             
             
             
@@ -219,6 +246,23 @@ extension (DetailPageController) {
             label1.textColor = .white
             label1.font = UIFont(name: "Morgan_bold", size: 150)
             
+        case 23:
+            label.alpha = 1
+            label.textAlignment = .center
+            label.textColor = .white
+            label.frame = CGRect(x: screenWidth *  0.03, y: screenHeight * 0.80, width: screenWidth * 0.94
+                , height: screenHeight * 0.1419644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            label1.adjustsFontSizeToFitWidth = true
+            label1.text = "Click on the traffic light!"
+            label1.alpha = 1
+            label1.textAlignment = .center
+            label1.frame = CGRect(x: screenWidth *  0.10, y: screenHeight * 0.05, width: screenWidth * 0.80
+            , height: screenHeight * 0.1219644)
+            label1.textColor = .white
+            label1.font = UIFont(name: "Morgan_bold", size: 150)
+            
             
         case 24:
             label.alpha = 1
@@ -231,14 +275,55 @@ extension (DetailPageController) {
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
             
             
+        case 25:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .orange
+            label.frame = CGRect(x: screenWidth *  0.07, y: screenHeight * 0.05, width: screenWidth * 0.86
+                , height: screenHeight * 0.1719644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            label1.frame = CGRect(x: screenWidth * 0.45, y: screenHeight * 0.45, width: screenWidth * 0.45, height: screenHeight * 0.12)
+            label1.textAlignment = .center
+            label1.textColor = .orange
+            //                label1.alpha = 1
+            label1.font = UIFont(name: "Morgan_bold", size: 100)
+            label1.adjustsFontSizeToFitWidth = true
+            label1.text = "⤶ Click on the tree to shake it!"
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+                self.label1.alpha = 1
+            }, completion: nil)
+            
+            
         case 26:
             label.alpha = 1
             label.textAlignment = .left
             label.textColor = .orange
-            label.frame = CGRect(x: screenWidth * 0.05, y:screenHeight * 0.09 , width: screenWidth * 0.9
+            label.frame = CGRect(x: screenWidth * 0.07, y:screenHeight * 0.09 , width: screenWidth * 0.86
                 , height: screenHeight * 0.1714)
             label.font = UIFont(name: "Morgan_bold", size: 350)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            
+        case 27:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .orange
+            label.frame = CGRect(x: screenWidth *  0.07, y: screenHeight * 0.05, width: screenWidth * 0.86
+                , height: screenHeight * 0.1719644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            label1.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.45, width: screenWidth * 0.45, height: screenHeight * 0.15)
+            label1.textAlignment = .center
+            label1.textColor = .orange
+            //                label1.alpha = 1
+            label1.font = UIFont(name: "Morgan_bold", size: 100)
+            label1.adjustsFontSizeToFitWidth = true
+            label1.text = "Touch the orange!"
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+                self.label1.alpha = 1
+            }, completion: nil)
+            
+            
             
         case 35:
             label.alpha = 1
@@ -278,14 +363,25 @@ extension (DetailPageController) {
             label.text?.removeAll()
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
             
+            
+        case 48:
+            label.alpha = 1
+            label.textAlignment = .center
+            label.textColor = .white
+            label.frame = CGRect(x: screenWidth * 0.25, y: screenHeight * 0.45, width: screenWidth * 0.5, height: screenHeight * 0.2)
+//            label.bottomAnchor.constraint(equalTo: self.lastPageButtonStack.topAnchor, constant: -screenHeight * 0.05).isActive = true
+//            label.anchorCenterXToSuperview()
+//            label.widthAnchor.constraint(equalToConstant: screenWidth * 0.5).isActive = true
+//            label.heightAnchor.constraint(equalToConstant: screenHeight * 0.2).isActive = true
+            label.font = UIFont(name: "Morgan_bold", size: 50)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            
         default:
             break;
         }
         
         buttonsEnabled(Bool: true)
         grestureRecognizerSwitch(Bool: true)
-        print("is left swipe enabled: ", leftSwipeGesture.isEnabled)
-        print("is edge swipe enabled: ", leftSwipeGesture.isEnabled)
         
     }
     
@@ -367,3 +463,6 @@ extension (DetailPageController) {
     
     
 }
+
+
+

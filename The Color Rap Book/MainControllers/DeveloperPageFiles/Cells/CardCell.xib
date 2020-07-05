@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -19,11 +19,18 @@
                     <view clipsSubviews="YES" tag="100" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="R63-WG-af1">
                         <rect key="frame" x="10" y="10" width="355" height="360"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-uK-EHb">
-                                <rect key="frame" x="87" y="17" width="181" height="181"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="121" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="VU7-uK-EHb">
+                                <rect key="frame" x="137.5" y="67.5" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="adsjadjkadbajkdbsajkbkjw jkhd jhd sjkdbakjdbjhfc wjhadsb jhasdb awhj,db awj,dhbaw jhdmbawhjndeawdwaafawefwafwafwafwafwafwafwafa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rec-3U-W8K">
+                                <rect key="frame" x="69.5" y="187.5" width="216" height="86.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -38,9 +45,10 @@
             </constraints>
             <connections>
                 <outlet property="cellBackground" destination="R63-WG-af1" id="CyH-1S-SZw"/>
+                <outlet property="coverLabel" destination="rec-3U-W8K" id="ORI-Q8-GDz"/>
                 <outlet property="imageView" destination="VU7-uK-EHb" id="esz-Va-akG"/>
             </connections>
-            <point key="canvasLocation" x="61.5" y="59"/>
+            <point key="canvasLocation" x="60" y="58.47076461769116"/>
         </collectionViewCell>
     </objects>
 </document>

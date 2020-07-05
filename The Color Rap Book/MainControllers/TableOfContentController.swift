@@ -72,8 +72,8 @@ class TableOfContentController: UIViewController {
         goBackButton.isExclusiveTouch = true
 
         self.getSavedData()
-        print("page", myVariable.page)
-        print("customdata for book mark" , data)
+//        print("page", myVariable.page)
+//        print("customdata for book mark" , data)
         
         tableLabel.frame = CGRect(x: width * 0.165235, y: 30, width: width * 0.80, height: width * 0.11267)
         tableLabel.text = "Table Of Content"
@@ -110,6 +110,7 @@ class TableOfContentController: UIViewController {
     }
     
     @IBAction func goBackTap(_ sender: Any) {
+        myVariable.buttonSoundPlayer?.play()
         self.performSegue(withIdentifier: "returnToMainController", sender: sender)
     }
     

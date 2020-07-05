@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,6 +16,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N7R-ov-icD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ubw-zD-I5E"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,14 +27,13 @@
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6N7-av-TB7">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="4xQ-1C-6WT" appends="YES" id="md5-qb-YsC"/>
-                                    <outletCollection property="gestureRecognizers" destination="mpw-5P-tbb" appends="YES" id="j6g-bK-a8o"/>
-                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1p-TX-3EH">
                                 <rect key="frame" x="497" y="367" width="30" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="treeTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WuA-fV-uPb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-TH-gBP">
                                 <rect key="frame" x="668" y="136" width="30" height="34"/>
@@ -57,6 +59,7 @@
                                     <attributedString key="attributedTitle"/>
                                 </state>
                                 <connections>
+                                    <action selector="developerTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UfL-fq-DCf"/>
                                     <segue destination="GoL-ND-Ogw" kind="custom" identifier="ToDeveloperPage" customClass="OHCircleSegue" customModule="Color_Rap_Book" customModuleProvider="target" id="HHu-VO-OO8"/>
                                 </connections>
                             </button>
@@ -75,7 +78,6 @@
                             <constraint firstItem="6N7-av-TB7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8RA-EF-R0p"/>
                             <constraint firstAttribute="bottom" secondItem="6N7-av-TB7" secondAttribute="bottom" id="8zi-00-qwN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4xQ-1C-6WT" appends="YES" id="kIR-TI-onF"/>
                             <outletCollection property="gestureRecognizers" destination="mpw-5P-tbb" appends="YES" id="lub-Md-lfl"/>
@@ -128,6 +130,10 @@
         <scene sceneID="MNX-nN-y6z">
             <objects>
                 <viewController wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="GCB-e3-WIT" customClass="DetailPageController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pBh-hJ-dY4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qo0-0D-dmR"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uoT-F0-xUz">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,19 +155,10 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="MQT-7w-Qsn" appends="YES" id="ofN-ob-SRw"/>
-                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHU-qR-NYI">
                                 <rect key="frame" x="600" y="121" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Y00-oU-hxL" appends="YES" id="Kyh-kD-6c0"/>
-                                    <outletCollection property="gestureRecognizers" destination="Qhr-dV-jqe" appends="YES" id="JLS-Wf-jFm"/>
-                                    <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="KsC-mw-PQi"/>
-                                    <outletCollection property="gestureRecognizers" destination="2oc-z3-bxd" appends="YES" id="ih8-8V-B16"/>
-                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7UB-uK-XLm">
                                 <rect key="frame" x="138" y="449" width="240" height="128"/>
@@ -174,9 +171,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9N-GT-uyF">
                                 <rect key="frame" x="392" y="320" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="yKX-HB-SYv"/>
-                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xL-es-oqc">
                                 <rect key="frame" x="600" y="271" width="240" height="128"/>
@@ -221,11 +215,10 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY4-M6-6UU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY4-M6-6UU">
                                 <rect key="frame" x="491" y="67" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-hj-NUU">
@@ -243,11 +236,7 @@
                             <constraint firstItem="8Ep-KY-FMy" firstAttribute="top" secondItem="uoT-F0-xUz" secondAttribute="top" id="ouJ-qL-GVb"/>
                             <constraint firstAttribute="bottom" secondItem="8Ep-KY-FMy" secondAttribute="bottom" id="vMB-hL-Qed"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="e3O-pA-3Ve"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="Qhr-dV-jqe" appends="YES" id="xAu-YQ-ztS"/>
-                            <outletCollection property="gestureRecognizers" destination="2oc-z3-bxd" appends="YES" id="gkt-gG-ZYh"/>
-                            <outletCollection property="gestureRecognizers" destination="Y00-oU-hxL" appends="YES" id="O01-5a-60r"/>
                             <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="iUq-Uj-Ktc"/>
                             <outletCollection property="gestureRecognizers" destination="MQT-7w-Qsn" appends="YES" id="CCe-lZ-Cpg"/>
                         </connections>
@@ -257,7 +246,6 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="8Ep-KY-FMy" id="CJ7-D2-aSh"/>
                         <outlet property="canvas" destination="hzu-yg-xPA" id="3i9-h5-1w2"/>
-                        <outlet property="downSwipeGesture" destination="Y00-oU-hxL" id="0v3-yI-SqP"/>
                         <outlet property="image1" destination="Giz-MN-OoP" id="zun-ye-wF1"/>
                         <outlet property="image2" destination="LHU-qR-NYI" id="Qmf-e6-QOr"/>
                         <outlet property="image3" destination="7UB-uK-XLm" id="q7d-hT-Ci4"/>
@@ -267,44 +255,27 @@
                         <outlet property="image7" destination="b9U-G9-nVw" id="QbW-Js-BU9"/>
                         <outlet property="label" destination="wko-Zk-kCR" id="Tt0-OP-jEn"/>
                         <outlet property="label1" destination="RY4-M6-6UU" id="qzC-n2-ecK"/>
-                        <outlet property="leftSwipeGesture" destination="3NM-h4-lAb" id="hVX-vg-WG3"/>
+                        <outlet property="leftSwipeGesture" destination="3NM-h4-lAb" id="wIr-pc-MAV"/>
                         <outlet property="nextButton" destination="SUg-ho-Bcz" id="kHG-Cj-yZf"/>
                         <outlet property="previousButton" destination="hOq-gA-8nN" id="ntV-9U-u8F"/>
-                        <outlet property="rightSwipeGesture" destination="Qhr-dV-jqe" id="dEo-3C-aoD"/>
                         <outlet property="showMoreButton" destination="KYE-SS-bCq" id="rNU-yb-7KO"/>
                         <outlet property="singleTap" destination="MQT-7w-Qsn" id="ut9-4z-f2q"/>
                         <outlet property="testingTextfield" destination="b3i-hj-NUU" id="EmQ-Ze-1FK"/>
-                        <outlet property="upSwipeGesture" destination="2oc-z3-bxd" id="gAW-tm-FkE"/>
                         <segue destination="pyE-cE-vpm" kind="unwind" identifier="BackToSplashScreen" unwindAction="returnFromSegueActionsWithSender:" id="5Pu-Ge-dVi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGH-UC-hAU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="3NM-h4-lAb">
-                    <connections>
-                        <action selector="leftSwipe:" destination="GCB-e3-WIT" id="Qt8-SR-gHE"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="Qhr-dV-jqe">
-                    <connections>
-                        <action selector="rightSwipe:" destination="GCB-e3-WIT" id="qqG-NQ-JIR"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="Y00-oU-hxL">
-                    <connections>
-                        <action selector="downSwipe:" destination="GCB-e3-WIT" id="1fL-zs-aH1"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="2oc-z3-bxd">
-                    <connections>
-                        <action selector="upSwipe:" destination="GCB-e3-WIT" id="EvJ-Jn-MGN"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <tapGestureRecognizer id="MQT-7w-Qsn">
                     <connections>
                         <action selector="singleTapped:" destination="GCB-e3-WIT" id="WAm-Tf-4HH"/>
                     </connections>
                 </tapGestureRecognizer>
                 <exit id="pyE-cE-vpm" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="left" id="3NM-h4-lAb">
+                    <connections>
+                        <action selector="leftSwipe:" destination="GCB-e3-WIT" id="Qt8-SR-gHE"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="374" y="2170"/>
         </scene>
@@ -312,6 +283,10 @@
         <scene sceneID="xFz-LH-se8">
             <objects>
                 <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="R4J-m2-hmf" customClass="TableOfContentController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8e3-On-CgC"/>
+                        <viewControllerLayoutGuide type="bottom" id="jAl-uZ-xgd"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="k7p-I5-L2s">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,7 +314,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="FyS-sa-WwO"/>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="oZ2-Dv-dLJ" id="p5X-YS-YPF"/>
@@ -357,11 +331,14 @@
         <scene sceneID="5WC-0r-pal">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="fw4-FW-r7Q" customClass="MenuController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y9m-We-1GN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cpu-ng-tQy"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="env-xO-9NF">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="dUg-fF-b9K"/>
                     </view>
                     <navigationItem key="navigationItem" id="RzP-9m-I72"/>
                 </viewController>
@@ -373,11 +350,14 @@
         <scene sceneID="ymc-rf-y6f">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="8yZ-vL-XNj" customClass="DetailPageSplashViewController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D6k-Cd-6Ki"/>
+                        <viewControllerLayoutGuide type="bottom" id="OqS-22-Yy4"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a9i-Ig-cqg">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="juO-OE-ckQ"/>
                     </view>
                     <connections>
                         <segue destination="GCB-e3-WIT" kind="presentation" identifier="ToDetailPageSegue" id="oby-RM-IV0"/>
@@ -393,6 +373,10 @@
         <scene sceneID="k6J-kO-bck">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Hsu-sT-kjD" customClass="DeveloperController" customModule="Color_Rap_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Lr-xM-IgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="y4T-3p-JKz"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iHp-MR-gF0">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -435,7 +419,6 @@
                             <constraint firstItem="qX3-Oc-rRZ" firstAttribute="centerY" secondItem="iHp-MR-gF0" secondAttribute="centerY" id="rZe-kd-csC"/>
                             <constraint firstItem="OsN-Qu-iVk" firstAttribute="top" secondItem="iHp-MR-gF0" secondAttribute="top" id="w8L-y9-OeT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="TuN-fA-7FZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="I49-ML-uBg"/>
                     <connections>

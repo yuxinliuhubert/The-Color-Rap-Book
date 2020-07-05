@@ -195,7 +195,46 @@ extension(DetailPageController) {
             self.image1.frame = CGRect(x: screenWidth * 0.55, y: screenHeight * 0.2, width: screenHeight * 0.5324, height: screenHeight * 0.6)
             self.image1.addShadow()
             
+            
+        case 16:
+            self.image1.image = UIImage(named:"page16CornLeft")
+            let leftCornHeight = screenHeight * 0.5
+            let leftCornWidth = leftCornHeight * (980/646)
+//            self.image1.frame = CGRect(x: screenWidth * 0.005, y: screenHeight * 0.4, width: leftCornWidth , height: leftCornHeight)
+            
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                if self.screenHeight / self.screenWidth <= 0.47 {
+                    self.image1.frame = CGRect(x: screenWidth * 0.10, y: screenHeight * 0.4, width: leftCornWidth , height: leftCornHeight)
+                } else {
+                    self.image1.frame = CGRect(x: screenWidth * 0.03, y: screenHeight * 0.4, width: leftCornWidth , height: leftCornHeight)
+                }
+            } else {
+                self.image1.frame = CGRect(x: screenWidth * 0.005, y: screenHeight * 0.4, width: leftCornWidth , height: leftCornHeight)
+            }
+            
+            let rightCornHeight = self.screenHeight * 0.77
+            let rightCornWidth = rightCornHeight * (980/872)
+            UIView.animate(withDuration: 1.5, delay: 0.8, options: .curveEaseIn, animations: {
+                self.image5.image = UIImage(named: "page16CornRight")
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    if self.screenHeight / self.screenWidth <= 0.47 {
+                       self.image5.frame = CGRect(x: self.screenWidth * 0.6, y: self.screenHeight * 0.10, width: rightCornWidth , height: rightCornHeight)
+                    } else {
+                        self.image5.frame = CGRect(x: self.screenWidth * 0.55, y: self.screenHeight * 0.10, width: rightCornWidth , height: rightCornHeight)
+                    }
+                } else {
+                    self.image5.frame = CGRect(x: self.screenWidth * 0.4, y: self.screenHeight * 0.10, width: rightCornWidth , height: rightCornHeight)
+                }
+                
+                
         
+                
+
+            }, completion: {_ in
+                self.imageFloatingEffect(image1: self.image1, image2: self.image5, image3: nil, image4: nil, image5: nil, state: state)
+            })
+            
+           
             
         case 17:
             let cageHeight = screenHeight * 0.79
@@ -268,12 +307,33 @@ extension(DetailPageController) {
             image3.addShadow()
             UIView.animate(withDuration: 1.5, delay: 0.4, options: .curveEaseIn, animations: {
                 self.image5.image = UIImage(named: "page20Frog")
+                print("image 5 frame, ",self.image5.frame)
                 self.image5.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
+//                let tapTheFrog = UITapGestureRecognizer(target: self, action: #selector(self.leftSwipeHandler))
+//                self.image5.addGestureRecognizer(tapTheFrog)
                 self.image5.addShadow()
             }, completion: {(finished) in
+                self.frogCallSound(stop: false)
                 //            self.view.isUserInteractionEnabled = true
                 //            self.image5.isUserInteractionEnabled = true
                 self.imageFloatingEffect(image1: self.label1, image2: self.image5, image3: nil, image4: self.image3, image5: nil, state: state)
+                
+            })
+            
+        case 21:
+            image6.image = UIImage(named: "page21Leaf")
+            let leafHeight = screenHeight * 0.55
+            let leafWidth = leafHeight * (1024/1055)
+            image6.frame = CGRect(x: screenWidth * 0.1, y: screenHeight * 0.35, width: leafWidth, height: leafHeight)
+            image6.addShadow()
+            UIView.animate(withDuration: 1.5, delay: 0.4, options: .transitionFlipFromTop, animations: {
+                let treeHeight = self.screenHeight * 0.80
+                let treeWidth = treeHeight * (1024/1512)
+                self.image5.image = UIImage(named: "page21Tree")
+                self.image5.frame = CGRect(x: self.screenWidth * 0.55, y: self.screenHeight * 0.07, width: treeWidth, height: treeHeight)
+                self.image5.addShadow()
+            }, completion: {(finished) in
+                self.imageFloatingEffect(image1: self.image6, image2: nil, image3: self.image5, image4: nil, image5: nil, state: state)
                 
             })
             
@@ -322,12 +382,36 @@ extension(DetailPageController) {
             
             
             
+        case 23:
+            page23Phase = 0
+            image5.image = UIImage(named: "page23Light")
+            let lightHeight = screenHeight * 0.6
+            let lightWidth = lightHeight * (1024/1170)
+            image5.frame = CGRect(x: 0, y: screenHeight * 0.15, width: lightWidth, height: lightHeight)
+            image5.addShadow()
+            image5.center = view.convert(view.center, from: view)
+            
+            
             
         case 25:
-            image2.image = UIImage(named: "page25LeafOnTree")
-            image2.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
-            image3.image = UIImage(named: "page25LeafOnFloor")
-            image3.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
+            image5.image = UIImage(named: "page25Tree")
+            let treeHeight = screenHeight * 0.70
+            let treeWidth = treeHeight * (980/1379)
+            image5.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.23, width: treeWidth, height: treeHeight)
+            image5.addShadow()
+            
+            self.image6.alpha = 0
+            UIView.animate(withDuration: 1.5, delay: 1.0, options: .transitionFlipFromTop, animations: {
+                self.image6.image = UIImage(named: "page25LeafOnFloor")
+                let leafHeight = self.screenHeight * 0.25
+                let leafWidth = leafHeight * (273/311)
+                self.image6.frame = CGRect(x: self.screenWidth * 0.21, y: self.screenHeight * 0.40, width: leafWidth, height: leafHeight)
+//                self.image6.addShadow()
+            }, completion: {(finished) in
+                self.imageFloatingEffect(image1: self.image6, image2: nil, image3: self.image5, image4: nil, image5: nil, state: state)
+                
+            })
+            
             
             
             
@@ -347,6 +431,17 @@ extension(DetailPageController) {
             
             
             
+        case 27:
+            let orangeHeight = screenHeight * 0.45
+            let orangeWidth = orangeHeight * (1024/906)
+            image1.image = UIImage(named: "page27Orange")
+            if self.screenHeight / self.screenWidth <= 0.47 {
+                  image1.frame = CGRect(x: screenWidth * 0.65, y: screenHeight * 0.4, width: orangeWidth, height: orangeHeight)
+            } else {
+            image1.frame = CGRect(x: screenWidth * 0.50, y: screenHeight * 0.4, width: orangeWidth, height: orangeHeight)
+            }
+            image1.addShadow()
+            imageFloatingEffect(image1: self.image1, image2: nil, image3: nil, image4: nil, image5: nil, state: state)
             
             
             
@@ -367,8 +462,19 @@ extension(DetailPageController) {
             
             
             
+        case 48:
+            self.lastPageButtonStack.anchorCenterXToSuperview()
+            self.lastPageButtonStack.anchorCenterYToSuperview(constant: screenHeight * 0.3)
+            self.lastPageButtonStack.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.6).isActive = true
+            self.lastPageButtonStack.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2).isActive = true
+            self.lastPageButtonStack.alpha = 1
+
+            
+           
             
             
+//            self.lastPageButtonStack.backgroundColor = .blue
+          
             
             
         default:
@@ -406,6 +512,7 @@ extension(DetailPageController) {
 //            self.backgroundImageView.layer.removeAllAnimations()
             self.view.layer.removeAllAnimations()
 
+//            self.frogCallSound(stop: true)
             self.page5Delegate?.dismissPage5Scene()
             self.scene?.dismissPage5Scene()
             self.previousButton.alpha = 0
@@ -413,6 +520,8 @@ extension(DetailPageController) {
             self.showMoreButton.alpha = 0
             self.startButton.alpha = 0
             self.noPictureButton.alpha = 0
+            self.lastPageButtonStack.alpha = 0
+//            self.label.removeConstraints(self.label.constraints)
 
                 self.canvas.alpha = 0
                 self.canvas.isHidden = true
@@ -422,6 +531,7 @@ extension(DetailPageController) {
             self.colorSlider.alpha = 0
             self.drawingToolViewBackground.alpha = 0
             self.SpriteView.alpha = 0
+            self.page23LightLayer.opacity = 0
     
         }, completion: { (finished) in
             self.startButton.removeTarget(self, action: #selector(self.startButtonTap), for: .touchUpInside)
@@ -617,36 +727,7 @@ extension(DetailPageController) {
         switch myVariable.state {
             
         case 17:
-//            if let player = player, player.isPlaying {
-////                stop playback
-//
-//                player.stop
-//
-//            } else {
-//                set up player
-                
-                let urlString = Bundle.main.path(forResource: "birdChirping", ofType: "m4a")
-                do {
-                    try AVAudioSession.sharedInstance().setMode(.default)
-                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                    
-                    guard let urlString = urlString else {
-                        return
-                    }
-                
-                    player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-                    
-                    guard let player = player else {
-                        return
-                    }
-                    
-                    player.play()
-                
-                }
-                catch {
-                    print("audio player error")
-                }
-//            }
+            self.birdChirpingSound()
             self.imageRotate(imageview: image3, x: 0.8, y: 0.2, state: 17)
             let notes = ["♩♪♫♩♫♪♫♬", "♬♫♩♩♪♫♬♬", "♫♪♩♬♫♩♯♩♫"]
             label1.text = notes.randomElement()
@@ -812,6 +893,8 @@ extension (UIViewController) {
                 rightCloud?.frame.origin.y += floatingConstant
             })}
     }
+    
+    
     
 }
 

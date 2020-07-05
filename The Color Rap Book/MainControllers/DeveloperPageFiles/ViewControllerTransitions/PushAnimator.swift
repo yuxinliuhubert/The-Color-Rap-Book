@@ -26,7 +26,8 @@
 import UIKit
 
 class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
     
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -51,6 +52,7 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let toViewController = transitionContext.viewController(forKey: .to)!
         
         let imageViewSnapshot = UIImageView(image: fromVC.cellImageView.image)
+//        imageViewSnapshot.makeRounded()
         let imageViewMaskView = UIImageView(image: #imageLiteral(resourceName: "circlePictureMask"))
         imageViewSnapshot.mask = imageViewMaskView
         imageViewMaskView.frame = imageViewSnapshot.bounds
@@ -89,7 +91,8 @@ class PushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
         
         let frameAnim1 = CGRect(x: 0, y: cellBackground.frame.minY, width: UIScreen.main.bounds.width, height: cellBackground.frame.height)
-        let frameAnim2 = CGRect(x: 0, y: toVC.cellBackground.frame.minY, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - toVC.cellBackground.frame.minY)
+//        let frameAnim2 = CGRect(x: 0, y: toVC.cellBackground.frame.minY, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - toVC.cellBackground.frame.minY)
+         let frameAnim2 = CGRect(x: 0, y: screenHeight * 0.1293, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - screenHeight * 0.1293)
         
         
         let animator1 = {

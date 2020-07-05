@@ -41,15 +41,12 @@ class DetailPageSplashViewController: UIViewController {
             splashBackground.image = UIImage(named: "transitionBackIPad")
             revealingSplashView.backgroundImageView?.image = UIImage(named: "transitionBackIPad")
         } else {
-            if screenHeight / screenWidth < 0.50 && screenHeight / screenWidth > 0.40 {
+            if screenHeight / screenWidth < 0.50 {
                 splashBackground.image = UIImage(named: "transition_896")
                 revealingSplashView.backgroundImageView?.image = UIImage(named: "transition_896")
-            } else if screenHeight / screenWidth < 0.60 && screenHeight / screenWidth > 0.50 {
-                splashBackground.image = UIImage(named: "transition_736")
-                revealingSplashView.backgroundImageView?.image = UIImage(named: "transition_736")
-
             } else {
-                
+               splashBackground.image = UIImage(named: "transition_736")
+                revealingSplashView.backgroundImageView?.image = UIImage(named: "transition_736")
             
         }
             
@@ -89,7 +86,7 @@ class DetailPageSplashViewController: UIViewController {
         splashBackground.alpha = 1
         splashIcon.alpha = 1
         
-        print("all the views, ", view.subviews)
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             

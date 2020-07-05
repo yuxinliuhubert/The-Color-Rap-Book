@@ -48,9 +48,8 @@ extension DetailPageController: CropViewControllerDelegate {
         self.imagePicker.present(from: self.backgroundChangeButton)
     }
     
-    func handleWhiteBackgroundSelected() {
-        
-    }
+                  
+    
     @objc func changedColor(slider: ColorSlider) {
          let color = slider.color
         panGesture.isEnabled = false
@@ -79,8 +78,10 @@ extension DetailPageController: CropViewControllerDelegate {
             self.noPictureButton.isEnabled = false
         },completion: {_ in
             UIView.animate(withDuration: 1.2, animations: {
-//                self.backgroundImageView.image = nil
-                self.drawingSceneAfterImageSelected()
+              self.drawingPageBackgroundImage = UIImage(named: "page47Blank")
+              self.drawingSceneAfterImageSelected()
+        
+          
             })
             
             
@@ -101,7 +102,7 @@ extension DetailPageController: CropViewControllerDelegate {
             self.noPictureButton.isEnabled = false
         },completion: {_ in
             UIView.animate(withDuration: 1.2, animations: {
-                self.drawingPageBackgroundImage = image!
+                self.drawingPageBackgroundImage = image ?? UIImage(named: "page47Blank")
                 self.drawingSceneAfterImageSelected()
             })
             
@@ -153,8 +154,8 @@ extension DetailPageController: CropViewControllerDelegate {
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             drawingToolViewBackground.translatesAutoresizingMaskIntoConstraints = false
-            drawingToolViewBackground.centerXAnchor.constraint(equalToSystemSpacingAfter: view.centerXAnchor, multiplier: 1).isActive = true
-            //        stackViewBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: self.screenWidth * 0.15).isActive = true
+            drawingToolViewBackground.anchorCenterXToSuperview()
+
             drawingToolViewBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -self.screenHeight * 0.05).isActive = true
             drawingToolViewBackground.widthAnchor.constraint(equalToConstant: 716.8).isActive = true
             drawingToolViewBackground.heightAnchor.constraint(equalToConstant: 120).isActive = true
@@ -245,8 +246,7 @@ extension DetailPageController: CropViewControllerDelegate {
             
             
             dragPic.translatesAutoresizingMaskIntoConstraints = false
-            dragPic.centerYAnchor.constraint(equalToSystemSpacingBelow: drawingToolViewBackground.centerYAnchor, multiplier: 1).isActive = true
-            //        dragPic.topAnchor.constraint(equalTo: stackViewBackground.topAnchor, constant: screenHeight * 0.02).isActive = true
+            dragPic.anchorCenterYToSuperview()
             dragPic.trailingAnchor.constraint(equalTo: drawingToolViewBackground.trailingAnchor, constant: -30).isActive = true
             dragPic.heightAnchor.constraint(equalToConstant: self.screenWidth * 0.04).isActive = true
             dragPic.widthAnchor.constraint(equalToConstant: self.screenWidth * 0.04).isActive = true
@@ -258,7 +258,7 @@ extension DetailPageController: CropViewControllerDelegate {
         
         if UIDevice.current.userInterfaceIdiom == .phone {
             drawingToolViewBackground.translatesAutoresizingMaskIntoConstraints = false
-            drawingToolViewBackground.centerXAnchor.constraint(equalToSystemSpacingAfter: view.centerXAnchor, multiplier: 1).isActive = true
+            drawingToolViewBackground.anchorCenterXToSuperview()
             //        stackViewBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: self.screenWidth * 0.15).isActive = true
             drawingToolViewBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -self.screenHeight * 0.03).isActive = true
             drawingToolViewBackground.widthAnchor.constraint(equalToConstant: 560).isActive = true
@@ -347,8 +347,7 @@ extension DetailPageController: CropViewControllerDelegate {
             
             
             dragPic.translatesAutoresizingMaskIntoConstraints = false
-            dragPic.centerYAnchor.constraint(equalToSystemSpacingBelow: drawingToolViewBackground.centerYAnchor, multiplier: 1).isActive = true
-            //        dragPic.topAnchor.constraint(equalTo: stackViewBackground.topAnchor, constant: screenHeight * 0.02).isActive = true
+            dragPic.anchorCenterYToSuperview()
             dragPic.trailingAnchor.constraint(equalTo: drawingToolViewBackground.trailingAnchor, constant: -30).isActive = true
             dragPic.heightAnchor.constraint(equalToConstant: self.screenWidth * 0.04).isActive = true
             dragPic.widthAnchor.constraint(equalToConstant: self.screenWidth * 0.04).isActive = true
@@ -403,6 +402,9 @@ extension DetailPageController: CropViewControllerDelegate {
          self.canvas.backgroundColor = .clear
          self.drawingToolViewBackground.alpha = 1
          self.colorSlider.alpha = 1
+        self.nextButton.alpha = 0
+        self.showMoreButton.alpha = 0
+        self.previousButton.alpha = 0
          self.page47Phase = 1
     }
         
