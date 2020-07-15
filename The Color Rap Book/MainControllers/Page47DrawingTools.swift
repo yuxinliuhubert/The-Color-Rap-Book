@@ -31,7 +31,7 @@ extension DetailPageController: CropViewControllerDelegate {
     }
     
     @objc func handleWidthSlider() {
-        print(widthSlider.value)
+//        print(widthSlider.value)
         canvas.setStrokeWidth(width: widthSlider.value)
     }
     

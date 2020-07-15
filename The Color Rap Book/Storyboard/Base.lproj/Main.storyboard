@@ -81,8 +81,6 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4xQ-1C-6WT" appends="YES" id="kIR-TI-onF"/>
                             <outletCollection property="gestureRecognizers" destination="mpw-5P-tbb" appends="YES" id="lub-Md-lfl"/>
-                            <outletCollection property="gestureRecognizers" destination="4uI-qf-ybr" appends="YES" id="gZu-OX-iv3"/>
-                            <outletCollection property="gestureRecognizers" destination="GFL-HV-jlX" appends="YES" id="OAo-oR-jeT"/>
                             <outletCollection property="gestureRecognizers" destination="y4K-hB-Vz0" appends="YES" id="IkF-DF-k8y"/>
                         </connections>
                     </view>
@@ -93,7 +91,9 @@
                         <outlet property="developerButton" destination="DjH-xh-F2D" id="cHa-hn-2Cc"/>
                         <outlet property="frontCoverView" destination="6N7-av-TB7" id="p2S-7e-Qkw"/>
                         <outlet property="introLabel" destination="VfU-xd-qaw" id="VJO-kO-Sr1"/>
+                        <outlet property="leftSwipeGesture" destination="mpw-5P-tbb" id="lbx-ka-bEx"/>
                         <outlet property="readButton" destination="gK8-TH-gBP" id="Iwd-tW-nwd"/>
+                        <outlet property="rightSwipeGesture" destination="4xQ-1C-6WT" id="bpe-Nq-t7E"/>
                         <outlet property="singleTap" destination="y4K-hB-Vz0" id="K7l-ul-7pS"/>
                         <outlet property="tableOfContentButton" destination="IfC-9B-7AN" id="RKd-49-gk6"/>
                         <outlet property="treeButton" destination="B1p-TX-3EH" id="GV4-w1-bcN"/>
@@ -107,19 +107,9 @@
                         <action selector="rightSwipeHandler:" destination="BYZ-38-t0r" id="9CU-CF-tTH"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="4uI-qf-ybr" userLabel="Dlwn Swipe Gesture">
-                    <connections>
-                        <action selector="rightSwipeHandler:" destination="BYZ-38-t0r" id="fJT-Wb-9Pi"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="mpw-5P-tbb" userLabel="Left Swipe Gesture">
                     <connections>
                         <action selector="leftSwipeHandler:" destination="BYZ-38-t0r" id="0PN-qe-fK1"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="GFL-HV-jlX" userLabel="Up Swipe Gesture">
-                    <connections>
-                        <action selector="leftSwipeHandler:" destination="BYZ-38-t0r" id="txz-U3-2DJ"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="y4K-hB-Vz0"/>

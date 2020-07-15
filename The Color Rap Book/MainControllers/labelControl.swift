@@ -187,7 +187,7 @@ extension (DetailPageController) {
             //                label1.alpha = 1
             label1.font = UIFont(name: "Morgan_bold", size: 100)
             label1.adjustsFontSizeToFitWidth = true
-            label1.text = "⤶ Keep clicking on the bird!"
+            label1.text = "⤶ Click on the bird!"
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
                 self.label1.alpha = 1
             }, completion: nil)
@@ -303,6 +303,7 @@ extension (DetailPageController) {
                 , height: screenHeight * 0.1714)
             label.font = UIFont(name: "Morgan_bold", size: 350)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+        
             
         case 27:
             label.alpha = 1
@@ -324,6 +325,14 @@ extension (DetailPageController) {
             }, completion: nil)
             
             
+        case 29:
+            label.alpha = 1
+            label.textAlignment = .center
+            label.textColor = .white
+            label.frame = CGRect(x: screenWidth *  0.25, y: screenHeight * 0.80, width: screenWidth * 0.50
+                , height: screenHeight * 0.1419644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
             
         case 35:
             label.alpha = 1

@@ -23,6 +23,7 @@ target 'The Color Rap Book' do
   pod 'RevealingSplashView'
   pod 'LBTAComponents'
   pod 'LayoutHelper'
+  pod 'StepSlider', '~> 1.3.0'
   
   end
 

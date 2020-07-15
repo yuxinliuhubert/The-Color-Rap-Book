@@ -29,6 +29,7 @@ extension DetailPageController {
             guard let player = player else {
                 return
             }
+            player.volume = myVariable.allSoundVolume
             player.numberOfLoops = 0
             player.play()
             
@@ -38,33 +39,33 @@ extension DetailPageController {
         }
     }
     
-    func birdChirpingSound() {
-        
-        
-        let urlString = Bundle.main.path(forResource: "birdChirping", ofType: "m4a")
-        do {
-            try AVAudioSession.sharedInstance().setMode(.default)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            
-            guard let urlString = urlString else {
-                return
-            }
-            
-    
-            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-            
-            guard let player = player else {
-                return
-            }
-            player.numberOfLoops = 0
-            player.play()
-            
-        }
-        catch {
-            print("audio player error")
-        }
-        
-    }
+//    func birdChirpingSound() {
+//        
+//        
+//        let urlString = Bundle.main.path(forResource: "birdChirping", ofType: "m4a")
+//        do {
+//            try AVAudioSession.sharedInstance().setMode(.default)
+//            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+//            
+//            guard let urlString = urlString else {
+//                return
+//            }
+//            
+//    
+//            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+//            
+//            guard let player = player else {
+//                return
+//            }
+//            player.numberOfLoops = 0
+//            player.play()
+//            
+//        }
+//        catch {
+//            print("audio player error")
+//        }
+//        
+//    }
     
     
     func frogCallSound(stop: Bool) {
@@ -82,8 +83,10 @@ extension DetailPageController {
                 guard let player = player else {
                     return
                 }
+                player.volume = myVariable.allSoundVolume
                 if stop == false {
                 player.numberOfLoops = -1
+                    
                 player.play()
                 } else {
                     player.numberOfLoops = 0
@@ -113,8 +116,9 @@ extension DetailPageController {
             guard let player = player else {
                 return
             }
+            
             player.numberOfLoops = 0
-            player.volume = 0.6
+            player.volume = myVariable.allSoundVolume * 0.6
             player.play()
             player.delegate = self
             
@@ -144,7 +148,7 @@ extension DetailPageController {
                    }
 //                lawnMowerOperatingPrepareSound()
                    player.numberOfLoops = 0
-                   player.volume = 1
+                   player.volume = myVariable.allSoundVolume
                    player.play()
                 player.delegate = self
                 
@@ -175,7 +179,7 @@ extension DetailPageController {
                           return
                       }
                       player.numberOfLoops = -1
-                      player.volume = 1
+                      player.volume = myVariable.allSoundVolume
                       player.play()
                    player.delegate = self
                    
@@ -208,7 +212,7 @@ extension DetailPageController {
                        return
                    }
                    player.numberOfLoops = 0
-                   player.volume = 1
+                   player.volume = myVariable.allSoundVolume
                    player.play()
                 
                 player.delegate = self
@@ -243,70 +247,124 @@ extension DetailPageController {
         }
     }
     
-    func page25ShakingTreeSound() {
-        let urlString = Bundle.main.path(forResource: "page25ShakeSound", ofType: "m4a")
-        do {
-            try AVAudioSession.sharedInstance().setMode(.default)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            
-            guard let urlString = urlString else {
-                return
-            }
-            
-            
-            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-            
-            guard let player = player else {
-                return
-            }
-            player.numberOfLoops = 0
-            player.volume = 1
-            player.play()
-            
-            player.delegate = self
-            
-            
-        }
-        catch {
-            print("audio player error")
-        }
+//    func page25ShakingTreeSound() {
+//        let urlString = Bundle.main.path(forResource: "page25ShakeSound", ofType: "m4a")
+//        do {
+//            try AVAudioSession.sharedInstance().setMode(.default)
+//            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+//
+//            guard let urlString = urlString else {
+//                return
+//            }
+//
+//
+//            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+//
+//            guard let player = player else {
+//                return
+//            }
+//            player.numberOfLoops = 0
+//            player.volume = 1
+//            player.play()
+//
+//            player.delegate = self
+//
+//
+//        }
+//        catch {
+//            print("audio player error")
+//        }
+//    }
+//
+//
+//
+//    func page27SqueezingOrangeSound() {
+//           let urlString = Bundle.main.path(forResource: "page27OrangeSqueezSound", ofType: "m4a")
+//           do {
+//               try AVAudioSession.sharedInstance().setMode(.default)
+//               try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+//
+//               guard let urlString = urlString else {
+//                   return
+//               }
+//
+//
+//               player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+//
+//               guard let player = player else {
+//                   return
+//               }
+//               player.numberOfLoops = 0
+//               player.volume = 1
+//               player.play()
+//
+//               player.delegate = self
+//
+//
+//           }
+//           catch {
+//               print("audio player error")
+//           }
+//       }
+    
+    func soundPlay(forResource: String, ofType: String) {
+        
+        let urlString = Bundle.main.path(forResource: forResource, ofType: ofType)
+                 do {
+                     try AVAudioSession.sharedInstance().setMode(.default)
+                     try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                     
+                     guard let urlString = urlString else {
+                         return
+                     }
+                     
+                     
+                     player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                     
+                     guard let player = player else {
+                         return
+                     }
+                     player.numberOfLoops = 0
+                     player.volume = myVariable.allSoundVolume
+                     player.play()
+                     
+                     player.delegate = self
+                     
+                     
+                 }
+                 catch {
+                     print("audio player error")
+                 }
     }
-    
-    
-    
-    func page27SqueezingOrangeSound() {
-           let urlString = Bundle.main.path(forResource: "page27OrangeSqueezSound", ofType: "m4a")
-           do {
-               try AVAudioSession.sharedInstance().setMode(.default)
-               try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-               
-               guard let urlString = urlString else {
-                   return
-               }
-               
-               
-               player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-               
-               guard let player = player else {
-                   return
-               }
-               player.numberOfLoops = 0
-               player.volume = 1
-               player.play()
-               
-               player.delegate = self
-               
-               
-           }
-           catch {
-               print("audio player error")
-           }
-       }
     
 }
 
 
 extension UIViewController {
+    func setUpBackgroundPlayer() {
+        let urlString = Bundle.main.path(forResource: "backgroundMusic", ofType: "m4a")
+                      do {
+                          try AVAudioSession.sharedInstance().setMode(.default)
+                          try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                          
+                          guard let urlString = urlString else {
+                              return
+                          }
+                          
+                  
+                         myVariable.backgroundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                          
+                         guard let player = myVariable.backgroundPlayer else {
+                              return
+                          }
+                          player.numberOfLoops = -1
+                          player.prepareToPlay()
+                          
+                      }
+                      catch {
+                          print("audio player error")
+                      }
+    }
     
     func setUpBubblePlayer() {
           
@@ -325,7 +383,9 @@ extension UIViewController {
                     guard let player = myVariable.buttonSoundPlayer else {
                          return
                      }
+                    player.volume = myVariable.allSoundVolume
                      player.numberOfLoops = 0
+                    
                      player.prepareToPlay()
                      
                  }

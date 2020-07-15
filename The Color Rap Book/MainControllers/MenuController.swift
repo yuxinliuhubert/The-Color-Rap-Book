@@ -91,6 +91,12 @@ final class MenuController: UIViewController {
     
     
     
+    
+    fileprivate func musicPanelSetUp() {
+           view.addSubview(myVariable.musicControlPanelStack)
+           myVariable.musicControlPanelStack.frame = CGRect(x: width * 0.45, y: height * 0.70, width: width * 0.50, height: height * 0.15)
+           myVariable.musicControlPanelStack.alpha = 1
+       }
     //    override functions
     
     override func viewDidLoad() {
@@ -98,10 +104,9 @@ final class MenuController: UIViewController {
         view.isExclusiveTouch = true
         homeButton.isExclusiveTouch = true
         collectionView.isExclusiveTouch = true
-
         setupNotificationObservers()
         view.addSubview(backdropView)
-        
+        musicPanelSetUp()
         //        create my track layer
         
        
@@ -115,6 +120,7 @@ final class MenuController: UIViewController {
         shapeLayer = createShapeLayer(strokeColor: .red, fillColor: .clear, lineWidth: height * 0.04)
               shapeLayer.strokeEnd = 0
               shapeLayer.strokeColor = setupStrokeColor()
+        print("strokeCOlor, ", shapeLayer.strokeColor)
               view.layer.addSublayer(shapeLayer)
 //        set up rainbow pulsating layer
 //        if myVariable.state == 3 || myVariable.state == 47 || myVariable.state == 48 {
@@ -301,7 +307,9 @@ final class MenuController: UIViewController {
         case 14...18:
             return UIColor.yellow.cgColor
         case 19...23:
-            return UIColor.green.cgColor
+            let greenColor = "339233"
+            let greenUIColor = greenColor.hexColor.cgColor
+            return greenUIColor
         case 24...27:
             return UIColor.orange.cgColor
         case 28...31:
@@ -443,7 +451,7 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
         
         if isPresenting == true {
             containerView.addSubview(toVC.view)
-            
+            myVariable.musicControlPanelStack.frame.origin.x -= self.width * 0.95
             menuView.frame.origin.x -= menuWidth
             collectionView.frame.origin.x -= menuWidth
             menuLabel.frame.origin.x -= menuWidth
@@ -454,16 +462,18 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
             percentageLabel.alpha = 0
             trackLayer.opacity = 0
             pulsatingLayer.opacity = 0
+            myVariable.musicControlPanelStack.alpha = 0
             
             UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
                 self.menuView.frame.origin.x += self.menuWidth
                 self.collectionView.frame.origin.x += self.menuWidth
                 self.menuLabel.frame.origin.x += self.menuWidth
                 self.homeButton.frame.origin.x += self.menuWidth
+                myVariable.musicControlPanelStack.frame.origin.x += self.width * 0.95
                 self.shapeLayer.opacity = 1
-                
-                  if myVariable.state == 3 || myVariable.state == 47 || myVariable.state == 48 {
-                self.shapeLayer1.opacity = 1
+                myVariable.musicControlPanelStack.alpha = 1
+                if myVariable.state == 3 || myVariable.state == 47 || myVariable.state == 48 {
+                    self.shapeLayer1.opacity = 1
                 }
                 
                 self.backdropView.alpha = 1
@@ -484,9 +494,11 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
                 self.collectionView.frame.origin.x -= self.menuWidth
                 self.menuLabel.frame.origin.x -= self.menuWidth
                 self.homeButton.frame.origin.x -= self.menuWidth
+                myVariable.musicControlPanelStack.frame.origin.x -= self.width * 0.95
                 self.shapeLayer.opacity = 0
                     self.shapeLayer1.opacity = 0
     
+                myVariable.musicControlPanelStack.alpha = 0
                 self.backdropView.alpha = 0
                 self.percentageLabel.alpha = 0
                 self.trackLayer.opacity = 0

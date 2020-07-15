@@ -20,12 +20,15 @@ import AVFoundation
 
 struct myVariable {
     static var state = 0
+    static var allSoundVolume = Float(1.00)
     static var center: CGPoint?
     static var comingFromTableOfContent = false
     static var page = Int()
     static var timer = Timer()
     static var orientation = 4
     static var buttonSoundPlayer: AVAudioPlayer?
+    static var backgroundPlayer: AVAudioPlayer?
+    static let musicControlPanelStack = MusicPanelControlStack()
 }
 
 protocol exitProtocol {

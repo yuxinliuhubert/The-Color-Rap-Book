@@ -5,6 +5,7 @@ PODS:
   - LayoutHelper (0.1.3)
   - LBTAComponents (1.1)
   - RevealingSplashView (0.6.0)
+  - StepSlider (1.3.0)
   - VegaScrollFlowLayout (1.1)
 
 DEPENDENCIES:
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - LayoutHelper
   - LBTAComponents
   - RevealingSplashView
+  - StepSlider (~> 1.3.0)
   - VegaScrollFlowLayout
 
 SPEC REPOS:
@@ -24,6 +26,7 @@ SPEC REPOS:
     - LayoutHelper
     - LBTAComponents
     - RevealingSplashView
+    - StepSlider
     - VegaScrollFlowLayout
 
 SPEC CHECKSUMS:
@@ -33,8 +36,9 @@ SPEC CHECKSUMS:
   LayoutHelper: 89385ca8de2464665b777265da86c84c1a28a128
   LBTAComponents: 2e7719683ddcf1cdf7280700438c0c6a5f7da550
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
+  StepSlider: c54e471186f29c6535260c9866178a3900f787e9
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: bafbb687098ca7b852052e36458bc1ae66619566
+PODFILE CHECKSUM: 28970c4991e9a54e84ccca40cf36e0678ad6d51d
 
 COCOAPODS: 1.8.4

@@ -7,128 +7,126 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C413D630779ABAA8102DF84E257506 /* UIImage+CropRotate.h in Headers */ = {isa = PBXBuildFile; fileRef = B2EFB5C79516E16E3078B77565A8F00A /* UIImage+CropRotate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05F2F6185291510DDAABD8F63A23C232 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A1F79F0F59B7471BFDBCF6BD5165797E /* ko.lproj */; };
-		0C8661F0463C9739F42170060B8C5C3B /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8CF2C604266717166F6C9830B3B39C56 /* vi.lproj */; };
-		0CFFBD55760461439DCD2E287895CF0C /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73206B9B858346E5241AE658C6DDAE5 /* Animations.swift */; };
+		00C413D630779ABAA8102DF84E257506 /* UIImage+CropRotate.h in Headers */ = {isa = PBXBuildFile; fileRef = D160EEAE9178E397135EB45E0B2A5728 /* UIImage+CropRotate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05F2F6185291510DDAABD8F63A23C232 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 15C2E94BC5ABFC2F11C0695504ADC757 /* ko.lproj */; };
+		0C8661F0463C9739F42170060B8C5C3B /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A6F0AB12C9A043DD742A2429A2202C91 /* vi.lproj */; };
+		0CFFBD55760461439DCD2E287895CF0C /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C9601005AC88174C3F618121DEA81 /* Animations.swift */; };
 		0D333F7F0FD80F97F098E9C4C8AC59F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		10EECD797ADB1D4009616A3518FD339A /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B645FB5751C03D6E1A58A3D4F0D78 /* Datasource.swift */; };
-		110CE986D909D3181E6B51EB8EE70FF6 /* Pods-The Color Rap Book-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE8CB6C00A640958135AC6139018A04 /* Pods-The Color Rap Book-dummy.m */; };
+		10EECD797ADB1D4009616A3518FD339A /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBD20E6AE9D0FDFD27261A73C2B8E1 /* Datasource.swift */; };
 		11412B800ED37F0FC1DD241DB0914098 /* TOCropViewControllerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97A93DCEF2B1499B1F84D43333829DC7 /* TOCropViewControllerBundle.bundle */; };
-		169D829DAC4F47C413563B68A0452CFB /* fi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 174EB00847A852720DE1C08321004816 /* fi.lproj */; };
-		1BEB5BB3685AAA5326F83CF9DC13EC8B /* TypewriterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C32FC959FEA4846C0F593F65E5FF4 /* TypewriterLabel.swift */; };
-		1CC464BE1E583E5160D751E207F3BFE7 /* ColorSliderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E08A6BD608AEBDEFB16A8CC35B56E9 /* ColorSliderExtensions.swift */; };
-		1E0C73A80A9F07F78DD476B48CBEB6AE /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB23E80A0D7F6082C6A21DAA45C87 /* VegaScrollFlowLayout.swift */; };
-		1EFAD1F82D559DD77ED2846F18F41B8E /* fa-IR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C6D313F5FEF9CFE0B3E5B1242F3548F1 /* fa-IR.lproj */; };
-		2D349BB945163A41C7ABDEF4DCEBF8B4 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3830C3076922B5CFD63D55EDD27B3453 /* pl.lproj */; };
-		2D796693C82C88B236B517CC3BF3DD81 /* RevealingSplashView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6D4D4E4E21D9A883E28B00B77FC54D /* RevealingSplashView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		31F570C9F4C083F5A7D4060CEA42435F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01993502B015D1FB78A770A4A2FF4C /* PreviewView.swift */; };
-		32872FD31704779EB88A7014F4956A29 /* DefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD54426D61757206D0A2DA401A1155 /* DefaultCells.swift */; };
-		32B0706EF583EC48078886ED3FFA3C8A /* ColorSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3F47BE152177F299926D43AB89863B /* ColorSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		334B4420C1D35AB5E97786B7EC59AF53 /* SplashAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38080AC0E89B8E48B4CD0A31D55C5845 /* SplashAnimatable.swift */; };
-		345301588CE2D5818996472BA109A6B2 /* RevealingSplashView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B956BE252B04A6BF947C8FCA9C396683 /* RevealingSplashView-dummy.m */; };
-		36B1B591BF2862E81ADE2DD5BC630FB7 /* ro.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0D2DFC038534CBEDBD038C14F3355240 /* ro.lproj */; };
-		39AF1B7D71211DB608677E5E044ACB21 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365C55352996417A4C7910568CDDBD0 /* ColorSlider.swift */; };
-		3B06E4FDC01F2FEBD7C44F03587A8D59 /* GhostTypewriter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAF9A7CF3B4B053CD89F573AE7B53E1 /* GhostTypewriter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		169D829DAC4F47C413563B68A0452CFB /* fi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 087359EA17370A99C9516681FA862049 /* fi.lproj */; };
+		1BEB5BB3685AAA5326F83CF9DC13EC8B /* TypewriterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875FA020ED6789F24379D93CB9CFC0BC /* TypewriterLabel.swift */; };
+		1CC464BE1E583E5160D751E207F3BFE7 /* ColorSliderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66E2C018BF1029BF828B146447050F /* ColorSliderExtensions.swift */; };
+		1E0C73A80A9F07F78DD476B48CBEB6AE /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3AC54956F27F4AB9DF715E57C42D79 /* VegaScrollFlowLayout.swift */; };
+		1EFAD1F82D559DD77ED2846F18F41B8E /* fa-IR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 893CC3154AC1E585CF2918F3853BE54C /* fa-IR.lproj */; };
+		26942B0A48F3437796B278C0BAEA97BB /* StepSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 919989F8549F0CEDE1541DA08A7530D9 /* StepSlider-dummy.m */; };
+		2D349BB945163A41C7ABDEF4DCEBF8B4 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 93F0F52969AB9ABDFC182B02FCF56752 /* pl.lproj */; };
+		2D796693C82C88B236B517CC3BF3DD81 /* RevealingSplashView.h in Headers */ = {isa = PBXBuildFile; fileRef = 715E21BA6F88189A60A5BA7A30EFD362 /* RevealingSplashView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F570C9F4C083F5A7D4060CEA42435F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EB49CE31611040F1E9A1BEA4EE2766 /* PreviewView.swift */; };
+		32872FD31704779EB88A7014F4956A29 /* DefaultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EA0BDF1F566BDF27DE417F641392E /* DefaultCells.swift */; };
+		32B0706EF583EC48078886ED3FFA3C8A /* ColorSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C038259C24A3C666A91B5558172EC6 /* ColorSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		334B4420C1D35AB5E97786B7EC59AF53 /* SplashAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284057EA1D587EE0D31CC462D85D4A75 /* SplashAnimatable.swift */; };
+		345301588CE2D5818996472BA109A6B2 /* RevealingSplashView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C73564ED336EDAE37F75951193A5CFB4 /* RevealingSplashView-dummy.m */; };
+		36B1B591BF2862E81ADE2DD5BC630FB7 /* ro.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8569F112EB76D6F47897545BEE6C6 /* ro.lproj */; };
+		39AF1B7D71211DB608677E5E044ACB21 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98210C94407A345F4411C07A437965EC /* ColorSlider.swift */; };
+		3B06E4FDC01F2FEBD7C44F03587A8D59 /* GhostTypewriter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D72C771135A012E23C4CDCC708D9338F /* GhostTypewriter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D3284D1B236580D227E2AE67BB7204A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A7DACB743F2A39BC0D9C0E317842D5 /* CoreGraphics.framework */; };
-		3DF14D858FC63A1B1B2B794E1C5C0BAB /* UITextViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCE60BD279B2A23A71A6B435D745839 /* UITextViewHelper.swift */; };
-		40423826FB45EE4F6C90AA660AA5FC38 /* Pods-The Color Rap Book-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CA22617B2FA7D1DC876330BB9FAE104E /* Pods-The Color Rap Book-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		457E2722877BAC6B250EDAEBE07B179F /* ColorSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6E74DF52E3489572FBC1DB973D46B /* ColorSlider-dummy.m */; };
-		47861484AA0C434E56E6F252AF863815 /* TOCropViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CF66D5FE88743393D2F5BB3D366E4685 /* TOCropViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DF14D858FC63A1B1B2B794E1C5C0BAB /* UITextViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04C3918FB88AF85924CA99FA5BEB4B /* UITextViewHelper.swift */; };
+		457E2722877BAC6B250EDAEBE07B179F /* ColorSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB275359B2C814D935D8C254AE8B4D11 /* ColorSlider-dummy.m */; };
+		47861484AA0C434E56E6F252AF863815 /* TOCropViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCC116443E9AAF3C89B9A12BD266246 /* TOCropViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A19C476B765502F3B4621FF563CBC68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		4AD942A0055F4AA9E88F5794116C0954 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A83EA088E436B4A95EA413B9528527 /* CropViewController.swift */; };
-		4BA564C9A4D51CFB5930C77E9E92FF11 /* TOActivityCroppedImageProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B29DB56ACCC5DD5D81AF05C9A37F509 /* TOActivityCroppedImageProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4DF7AA361C820F101BC38D086934B788 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980148578ED2BFF174051EC9D4BE98B4 /* DiscardableImageCacheItem.swift */; };
-		4FDF851B7B66B5F47086CAF035CC45D5 /* TOCropViewControllerTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7078F0597713DB58313B0B8FD0462B11 /* TOCropViewControllerTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55DABFACB6849AA3BE0A2CDFA476F7F1 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A42B641B569711E68B7029456FD8B2 /* UIImage+CropRotate.m */; };
-		57C5C754EBAEBBCB6B650E60DD98CCA6 /* UIButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A7A36D621C0000F8ECFDF4AE5B3345 /* UIButtonHelper.swift */; };
-		58610ED925E763568D0F8452A00DB80C /* hu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B3306F34D521446F4561C8C07119F2BA /* hu.lproj */; };
-		5EB1A56FB922629093CEE3ACE912F44B /* TOCroppedImageAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5FC2B9407B13A403EF042DF2AD5D76 /* TOCroppedImageAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5ECB3EECBA25B0A18F93ECD759FBF26E /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 11282133436FAC700AA58C0D0821507C /* it.lproj */; };
-		6608117DFF47DEB3554446BBEFB61589 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8362C8C6C5EE62CF7AE6C85F581FE0 /* GradientView.swift */; };
-		6742ED0424B2BD4475AD0C0DC6D939E9 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799B9C33C17C38BDEAD944E0A57C7F64 /* CachedImageView.swift */; };
-		7113990EADDCBCF82B361D88FCED2953 /* VegaScrollFlowLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A988DC4ED4F8E99A78DA9680B3687E50 /* VegaScrollFlowLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		745905EADE10CA025812B5F0D4AC3340 /* ar.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6C3EDC026F70B4A778CD233738933178 /* ar.lproj */; };
-		76514F175C899CD9E365A7D957938889 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 02B6863C04D3A753CDCD223520766223 /* nl.lproj */; };
-		76AD5E9A04E8E12939629A23AC837F04 /* tr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = ACEAF32EAE215386D6C69D4B71864C03 /* tr.lproj */; };
-		76BA8A40AA73B49A31B71F9061C0989B /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521641A18B28C8822291A3C274322EEC /* DeviceHelper.swift */; };
+		4AD942A0055F4AA9E88F5794116C0954 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CD57E2838A35227DC403ED07A924C /* CropViewController.swift */; };
+		4BA564C9A4D51CFB5930C77E9E92FF11 /* TOActivityCroppedImageProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F72D2D0B00F2AC3446F1F6942D6ADD8 /* TOActivityCroppedImageProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DF7AA361C820F101BC38D086934B788 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEEDEF40F702D73938D24D31AA077EC /* DiscardableImageCacheItem.swift */; };
+		4FDF851B7B66B5F47086CAF035CC45D5 /* TOCropViewControllerTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 570013A68C8CA00DD0A182F335F6CD56 /* TOCropViewControllerTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55DABFACB6849AA3BE0A2CDFA476F7F1 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EB1899387D393158E5C1929155FDC8 /* UIImage+CropRotate.m */; };
+		57C5C754EBAEBBCB6B650E60DD98CCA6 /* UIButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CEC7011618A6AF6AA0882E82995263 /* UIButtonHelper.swift */; };
+		58610ED925E763568D0F8452A00DB80C /* hu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3F38B196F1B9A0043D33F0C534A8EF28 /* hu.lproj */; };
+		5EB1A56FB922629093CEE3ACE912F44B /* TOCroppedImageAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 39FD19F5C480083A7023D2A7AAACA44D /* TOCroppedImageAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5ECB3EECBA25B0A18F93ECD759FBF26E /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3E1C4430F11DD8415669E6BBD39AB377 /* it.lproj */; };
+		5F56360302C7F440A5E9389DBFD4C360 /* StepSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAA4BF28DB5285EC5711E3123207736 /* StepSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65D7DEEC4E51B7BF1D0AE109EBA70B79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
+		6608117DFF47DEB3554446BBEFB61589 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCA974842DDC335CDA9A5CDA4EBFFE /* GradientView.swift */; };
+		6742ED0424B2BD4475AD0C0DC6D939E9 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B74CE6B3BC64968A77748BAABA6A5 /* CachedImageView.swift */; };
+		7113990EADDCBCF82B361D88FCED2953 /* VegaScrollFlowLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB7ACEC1F633E2FE839BC67F1E2F68 /* VegaScrollFlowLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		745905EADE10CA025812B5F0D4AC3340 /* ar.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 18B823530D825176205730711A0A6FE1 /* ar.lproj */; };
+		752B196C61DCB16CB2771C9C26AC3773 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
+		76514F175C899CD9E365A7D957938889 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A0C734CE4C595B33271187EDAB2BAA27 /* nl.lproj */; };
+		76AD5E9A04E8E12939629A23AC837F04 /* tr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D5C682643ABDB88753608BAF319AB9A5 /* tr.lproj */; };
+		76BA8A40AA73B49A31B71F9061C0989B /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104BDCC15C67551BBE09C5F98CBCDBF /* DeviceHelper.swift */; };
 		770168DE52B4855A94437E5EB527EC84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		776C8675E6F20EE4F8C7D7344D670BB1 /* SplashAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F570F9479D3C1C9F972674A75E2EE521 /* SplashAnimationType.swift */; };
+		776C8675E6F20EE4F8C7D7344D670BB1 /* SplashAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B6EEBC7B49EA7F360984AB33704427 /* SplashAnimationType.swift */; };
 		7B63048690E3EFD4D67EFA53CD786319 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B86528815F4C81E70D4F6522BB7687 /* QuartzCore.framework */; };
-		7B7AC99FB6AB7DF426DE640D9ED899D2 /* id.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A9C98DCC6EF712BAB61DF9249E68CB6A /* id.lproj */; };
+		7B7AC99FB6AB7DF426DE640D9ED899D2 /* id.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 10D6D0758C08C2DAFCB88E6439F551F7 /* id.lproj */; };
 		7CC13490155D254C6526A939BE6DDF0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DE6DFF52489DACAF66A82BFD0FE2CA /* UIKit.framework */; };
-		817E5C2D4D4992CFAC5B1CC136BAD31E /* UITextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F78CDC7F789C8A0048523A51BBD24A /* UITextFieldHelper.swift */; };
+		817E5C2D4D4992CFAC5B1CC136BAD31E /* UITextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97068BE42D23F72C321F4A3E28AB9255 /* UITextFieldHelper.swift */; };
 		8229628F6871E9AB2535A7EAE7891306 /* Pods-The Color Rap BookUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB91869BEA4FDFA675E9417AE5A20F0D /* Pods-The Color Rap BookUITests-dummy.m */; };
-		835A666879FD46160295080BA9D92CAE /* LayoutHelper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3629A696DBE4F16B12840F623F1C7D14 /* LayoutHelper-dummy.m */; };
-		89B8212E999B2F02B2EDA95083DC62A5 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4FC1937581AA593BC8FDF38FD6EC647F /* zh-Hans.lproj */; };
-		89DBECD09DDACD4EC4C1AF8C242CA946 /* LBTATextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88831407C7765C5CD40BF623132A65D /* LBTATextView.swift */; };
-		8C7168CD4EA6EA815FB919C93FB6CF62 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 63A5804056D50078B0C43076E55C19E7 /* zh-Hant.lproj */; };
-		8CA861FE1437795CE4240538BC579EDD /* TOCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8B88726C8D809C2E6ADDB752265E47 /* TOCropOverlayView.m */; };
-		8D8D106AA03DEF31A98088E3FB03133B /* TOCropScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D68016A6B2A47A59D5710E8F614D7C5 /* TOCropScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F767739DE7DC31738CDC31039902DDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		900B8997F1759ADFEDB2E8980DD9B211 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033EDC4CB417C8239A2608CA3858409 /* UIColor+Helper.swift */; };
-		9159870549A47838B2A1B5B7CA2CF93D /* DatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1395E6190DCDACA47D7C867669F133D /* DatasourceCell.swift */; };
-		91E75569E3773B795F0B6F6DD5732FE1 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = CC05630BCCC73A83D3D1292D2203F3B8 /* ru.lproj */; };
-		92C15A390F040786F9C49A72F0B8699D /* TimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764984066E3B8B412609446D4DA47A7B /* TimerFactory.swift */; };
-		932C642C04CB8A1E65199F5019C0E21F /* GhostTypewriter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE44B9C5BAA39DEF12242DCCE8081CD8 /* GhostTypewriter-dummy.m */; };
-		941CF8600D86F37CEF165DA6E7F3134A /* RevealingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53895D4BF0D6F122BEE0540C73572519 /* RevealingSplashView.swift */; };
-		964629F0BB83DBC47EFA7941A547F341 /* TOActivityCroppedImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B89E55589DFD96345773E9BEDAE6C1 /* TOActivityCroppedImageProvider.m */; };
-		96F9C58704D9774946612F82CEC6A9DD /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D29129F63D736CB0D4B4E312C545EA /* Gradient.swift */; };
-		A030756696D2667B302AFAD412EE6DA4 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4DFAFAB6058E9855BB0F8F784A4D0201 /* pt.lproj */; };
-		A43CFE049F8ED02A3E056C1BFD813C4B /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65AE5FFBD57C21DF6CDDB0E204551DC /* UIView+Anchors.swift */; };
-		AC1C8AE0F266EC5EDCAA287123CEF8F5 /* LBTAComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFFD150FCFF8E8EE22859C692B218621 /* LBTAComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC512EDA7BCD9F7296136478C37D7444 /* NSMutableAttributedString+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC20C2041E8627BF8303313A9622D /* NSMutableAttributedString+Helper.swift */; };
-		AC7E3966EF061B3BE31E1F36CF2F4BB4 /* TOCropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 473276060E164EAF78C5F5F2D8EDF277 /* TOCropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ADA90ED5CDCEAA7123760E6E1D4F4AF6 /* ms.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E7E35EF98CAAC8532BA5BD558D95A205 /* ms.lproj */; };
-		ADE6BEE47203FC7D13382D654CA804D8 /* LBTALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F7F24B687B99C661F050C88BA647B5 /* LBTALabel.swift */; };
-		AEDCB7E481D4563A9CA6A9CE3CE285F2 /* TOCropOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 86864A3A023FB2F700105BB9692EB054 /* TOCropOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AFF4A89763C184DF5B8AE09D4E9CCEB5 /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6142107963BEA18BDF6D3AAEC9B31D5 /* TOCropView.m */; };
-		B164C5A18BB4056C18FEFCE8171FC22F /* TOCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785590CBC568DC45481ECEE68FF2292A /* TOCropViewController.m */; };
-		B293982645E0D238781C47BB6D4459D9 /* VegaScrollFlowLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC6EAA28BD0BF37895C538826A3194 /* VegaScrollFlowLayout-dummy.m */; };
-		B7142950D98AD68CDD7A65246F0816BD /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 06C04F54E149A8159BBCAEF0F850DDE5 /* fr.lproj */; };
-		B7339A69E6F8E46E7C7A67AAA135EE79 /* TOCropScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 265795B6AB9868DA03DF3628AC28F17F /* TOCropScrollView.m */; };
+		835A666879FD46160295080BA9D92CAE /* LayoutHelper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EF7BA9CB8429FA0D0BE31B76FFF490 /* LayoutHelper-dummy.m */; };
+		89B8212E999B2F02B2EDA95083DC62A5 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4194E5400E37905CC5D59E84FCA7C7A2 /* zh-Hans.lproj */; };
+		89DBECD09DDACD4EC4C1AF8C242CA946 /* LBTATextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093885ED0EEA655BECC986FF8F6D4FF6 /* LBTATextView.swift */; };
+		8C7168CD4EA6EA815FB919C93FB6CF62 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 5315FBDBE48BF571A7249560CB5883F7 /* zh-Hant.lproj */; };
+		8CA861FE1437795CE4240538BC579EDD /* TOCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC2F7FE3CC5427B49613D96010AA95 /* TOCropOverlayView.m */; };
+		8D8D106AA03DEF31A98088E3FB03133B /* TOCropScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EAEB0CD035787D9F8433E80F881D2AA /* TOCropScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		900B8997F1759ADFEDB2E8980DD9B211 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E79F384674641706CCC827B31E7DFDD /* UIColor+Helper.swift */; };
+		90A0673EEC3A3E28229FFAC08C7E46E8 /* StepSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EE01360655DF5DE788C53C473501E7 /* StepSlider.m */; };
+		9159870549A47838B2A1B5B7CA2CF93D /* DatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F97A0EBEA380E23B72D5BC39D2CFB /* DatasourceCell.swift */; };
+		91E75569E3773B795F0B6F6DD5732FE1 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E1C5BD6E71D0A0ECF3270EE943616A45 /* ru.lproj */; };
+		92C15A390F040786F9C49A72F0B8699D /* TimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C049A121DA628394C109FB741BD78 /* TimerFactory.swift */; };
+		932C642C04CB8A1E65199F5019C0E21F /* GhostTypewriter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7480C996EF1A6663EC911739D2E706 /* GhostTypewriter-dummy.m */; };
+		941CF8600D86F37CEF165DA6E7F3134A /* RevealingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B974C24A2ED04E01A683D42198F834 /* RevealingSplashView.swift */; };
+		964629F0BB83DBC47EFA7941A547F341 /* TOActivityCroppedImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0855819D07988459B745FD1823325F3D /* TOActivityCroppedImageProvider.m */; };
+		96F9C58704D9774946612F82CEC6A9DD /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD195123D3989E9F851AE615A7E387B /* Gradient.swift */; };
+		9904C05364BA0DD53F951663210E3C21 /* Pods-The Color Rap Book-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE8CB6C00A640958135AC6139018A04 /* Pods-The Color Rap Book-dummy.m */; };
+		A030756696D2667B302AFAD412EE6DA4 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 431E43DD9832EA9AB240BC69DC9190BF /* pt.lproj */; };
+		A43CFE049F8ED02A3E056C1BFD813C4B /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65571B58D56855D31BDB763A7976A42 /* UIView+Anchors.swift */; };
+		AC1C8AE0F266EC5EDCAA287123CEF8F5 /* LBTAComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54BCCC1D44DD25772EEC478B601B5F7E /* LBTAComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC512EDA7BCD9F7296136478C37D7444 /* NSMutableAttributedString+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935E19AC6DCDCCA05E6BE23F408448B6 /* NSMutableAttributedString+Helper.swift */; };
+		AC7E3966EF061B3BE31E1F36CF2F4BB4 /* TOCropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F1B913386AE22C7D747187034582EEC8 /* TOCropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADA90ED5CDCEAA7123760E6E1D4F4AF6 /* ms.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E081DAD17B0E7DD491FEAACB5D970 /* ms.lproj */; };
+		ADE6BEE47203FC7D13382D654CA804D8 /* LBTALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73F0F82E519719A5CE514367FE5EE6B /* LBTALabel.swift */; };
+		AEDCB7E481D4563A9CA6A9CE3CE285F2 /* TOCropOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBA2A8B73CC042DB9AC75E5C86650E9 /* TOCropOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFF4A89763C184DF5B8AE09D4E9CCEB5 /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2786EFA9F727B39228343CEE8C2C4BEE /* TOCropView.m */; };
+		B164C5A18BB4056C18FEFCE8171FC22F /* TOCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A69AD6930113188F783008635A8A9A6 /* TOCropViewController.m */; };
+		B293982645E0D238781C47BB6D4459D9 /* VegaScrollFlowLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D7B85A7A5278E3DC3996FBE41929AF /* VegaScrollFlowLayout-dummy.m */; };
+		B7142950D98AD68CDD7A65246F0816BD /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DC6C98BAB684904878A1C73883D63CFB /* fr.lproj */; };
+		B7339A69E6F8E46E7C7A67AAA135EE79 /* TOCropScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E41C4C9B03D126580076FD1F53F82229 /* TOCropScrollView.m */; };
 		BF1B6B8E68CC3B03FCE714FA78437343 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		BF3DACC2CA45F6C62877E8A87E90E39F /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7F7874CE8ECA0D39B2CC85982DE33DEB /* de.lproj */; };
-		C319505FD4E1B4E5C92BFA1B4C5DC42B /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 40ACE1233C564F660A4D2278B67496F6 /* ja.lproj */; };
-		C5ECDBD5830B0D787FEFC80EAAF23DFB /* TOCropView.h in Headers */ = {isa = PBXBuildFile; fileRef = ADB0ED5DAC8EB45F1570E09966547C4D /* TOCropView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C723373E46E94CDFA73F6B93CADAE0A8 /* fa.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3E8773A836953434CA0C875FAA3BFE42 /* fa.lproj */; };
-		C76D330BCF67CFEF5D59C8723698B987 /* UILabelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080436AD0EFE4D822FEFB10212F25DB /* UILabelHelper.swift */; };
-		C8AFF49FE9FC1844F42633BE49FE6D7A /* pt-BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4044D2061F741C2974D7BA32FDAB4201 /* pt-BR.lproj */; };
+		BF3DACC2CA45F6C62877E8A87E90E39F /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 77195E31D7CD0E7118A1A1A999D2D8A9 /* de.lproj */; };
+		C319505FD4E1B4E5C92BFA1B4C5DC42B /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BF3979306C8AFAF43822B1C0A35AF377 /* ja.lproj */; };
+		C5ECDBD5830B0D787FEFC80EAAF23DFB /* TOCropView.h in Headers */ = {isa = PBXBuildFile; fileRef = EBBE3042C777DED5339217719866470B /* TOCropView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C723373E46E94CDFA73F6B93CADAE0A8 /* fa.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FE4D1C70A240F202F33AD7DBABC86ECC /* fa.lproj */; };
+		C76D330BCF67CFEF5D59C8723698B987 /* UILabelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D5685185CE717E2CFAAE77E9F8188B /* UILabelHelper.swift */; };
+		C8AFF49FE9FC1844F42633BE49FE6D7A /* pt-BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6EB8B7FEC5762F50823F75580A89E451 /* pt-BR.lproj */; };
 		C98F1898828AC519FE8FF540AB8470AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		C99C5022A4A2FA0C4572B7216819A1C4 /* da-DK.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 85A504239D4A5B4744C19C13CA03EF99 /* da-DK.lproj */; };
-		CA5A2B0B83A55942F6CBA31560EEB3C0 /* HSBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7B1D117A4D0732435BC6A4E225E6D /* HSBColor.swift */; };
-		CB830DBF1C71C4B0810B81010164F609 /* TOCroppedImageAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 598847E5F8B0481CCBF29344C9DB9E45 /* TOCroppedImageAttributes.m */; };
-		D087A1342467E1CB44410ADB2DC1DBA1 /* LBTAComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB745E7FD6B7998D15443B8EC9E0066 /* LBTAComponents-dummy.m */; };
-		D33D3828100F5B0D7430EE70F3AE5B93 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9BA497F4DCA3DFA006E2092751F7A7D7 /* es.lproj */; };
-		D5575E844552163CF79CCC435B24F392 /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CDDA6647D5456BAA475CDE994429E0 /* UIButton+Helper.swift */; };
-		D7B66357D263C0CE81DAE2BC9CADD0CF /* TOCropViewControllerTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 2497EC0D54E567A64E8FCEF5439D1C42 /* TOCropViewControllerTransitioning.m */; };
-		D98F26017BAF92CC7211C077750D942F /* DefaultPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D41314EA23912F9697E3AB3311431A1 /* DefaultPreviewView.swift */; };
-		DB1234F5AEBB99CAFBD091C65F59D3EE /* CropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D3CE1AB225B8FD7A52860F6CC5D58028 /* CropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC3550C29FCBD11A90A76FDB542EF31E /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 06381FE397DDF6239FFA2FEA59CE6C01 /* en.lproj */; };
-		DC57BCCDAEECCC260C2FD1E5DCB57F2D /* LayoutHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 150C1A8B94F6747507BABECE6B2291EF /* LayoutHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DDAAA73FF9068FC7FD59782E84433D9D /* CropViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF4272731D59BE8FABA870564FD634B /* CropViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE0209B68D58D8600F0C7B9F5639F9E7 /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB8685B5FC4AD41AD94BE4545B5C2EC /* TOCropToolbar.m */; };
+		C99C5022A4A2FA0C4572B7216819A1C4 /* da-DK.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 80E5947DE1E36D1E16B3F4CD4838FF80 /* da-DK.lproj */; };
+		CA5A2B0B83A55942F6CBA31560EEB3C0 /* HSBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92B703FC4BE5E352219C9CED813EF /* HSBColor.swift */; };
+		CB3EB50E623ACD8D62774AFB6AB936AE /* StepSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AA81C7FB6FBE77B137030284DA9A47 /* StepSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB830DBF1C71C4B0810B81010164F609 /* TOCroppedImageAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = FE001E3239B94369A1BC4AA4328056DE /* TOCroppedImageAttributes.m */; };
+		D087A1342467E1CB44410ADB2DC1DBA1 /* LBTAComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B116157F793A0F4ABE5D8E3BA6E8A91 /* LBTAComponents-dummy.m */; };
+		D33D3828100F5B0D7430EE70F3AE5B93 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 11F28E196A7AA76B9F97611D35F3274A /* es.lproj */; };
+		D5575E844552163CF79CCC435B24F392 /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6E5B6ED63EE872F9F0AB8C81935316 /* UIButton+Helper.swift */; };
+		D7B66357D263C0CE81DAE2BC9CADD0CF /* TOCropViewControllerTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DB32C9CA7D99D745694073EB42213A /* TOCropViewControllerTransitioning.m */; };
+		D98F26017BAF92CC7211C077750D942F /* DefaultPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F41E65D26B88DFBD2068556472D1C /* DefaultPreviewView.swift */; };
+		DB1234F5AEBB99CAFBD091C65F59D3EE /* CropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A4DFD59DF0B5AA3A816BC1C225BEA05 /* CropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3550C29FCBD11A90A76FDB542EF31E /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F18EA3412D9834483F1762CD093A51A5 /* en.lproj */; };
+		DC57BCCDAEECCC260C2FD1E5DCB57F2D /* LayoutHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F16C685371F5B855E1E069D21EAEE01 /* LayoutHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDAAA73FF9068FC7FD59782E84433D9D /* CropViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB044024B8AB2B9B46594DE9399A4DC8 /* CropViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE0209B68D58D8600F0C7B9F5639F9E7 /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D654B3FC0E1A570FA076E1733BE582 /* TOCropToolbar.m */; };
+		DF66BC7F0673A5A4A59EFB3A5F40EF89 /* Pods-The Color Rap Book-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CA22617B2FA7D1DC876330BB9FAE104E /* Pods-The Color Rap Book-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0F6D453F095F67B83B8C62FEA084285 /* Pods-The Color Rap BookTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F11334C2AB34AB72D320FDDB5BAE6CAD /* Pods-The Color Rap BookTests-dummy.m */; };
-		E13372B63486D7FF431908499DA04D55 /* CropViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B25F5C288F8CB29BEDE5E25BD200AAF /* CropViewController-dummy.m */; };
+		E13372B63486D7FF431908499DA04D55 /* CropViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8ECC12120DD28031682B6E9811CD /* CropViewController-dummy.m */; };
 		E2E7C547C9DE21C008E067386A828E01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DE6DFF52489DACAF66A82BFD0FE2CA /* UIKit.framework */; };
-		E83278EE529B051A03768F5674A17555 /* DatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93DA8630528466FC5E362B0E70D869 /* DatasourceController.swift */; };
+		E83278EE529B051A03768F5674A17555 /* DatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B66615A31629D8BD331B899E909E17A /* DatasourceController.swift */; };
 		EA655628154FFF8D0A863F0617A5580D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		EA9000D13577463FE3632471AEE05228 /* TOCropToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 94E74B89907C37FA8944D212A905BFBB /* TOCropToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEE0D3C75AD36D038BB20C20FA47F0E0 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 820FE5B96F8C71AA2D273B486083CEB1 /* Base.lproj */; };
+		EA9000D13577463FE3632471AEE05228 /* TOCropToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A5B2B0B0B48BD94FEA0E411DC81D30 /* TOCropToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEE0D3C75AD36D038BB20C20FA47F0E0 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BF91123E0BEE5B2F0106A3AB3764E325 /* Base.lproj */; };
 		EEEAAD7A83977059AB41FF5FA746A9BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */; };
-		F5092A5B86F6E1D9EFD762F8E09AAEC0 /* NSLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C0E4C09A140B265D0EC71CC385175 /* NSLayoutHelper.swift */; };
-		F5314F2BB4EBA2C5AC7C3EFB485C16DD /* RevealingSplashView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1538B9270FEF489675DBC9A55B0285E1 /* RevealingSplashView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FFCD4F1BA26E802B6DB1A8824F759AC1 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F472AF1516F6C8589D5C8735F3767 /* UIImage+Helper.swift */; };
+		F5092A5B86F6E1D9EFD762F8E09AAEC0 /* NSLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70235A06928723BD5C0EEB604025FE5B /* NSLayoutHelper.swift */; };
+		F5314F2BB4EBA2C5AC7C3EFB485C16DD /* RevealingSplashView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32022BB0974889A15D5F2B8460AAE909 /* RevealingSplashView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFCD4F1BA26E802B6DB1A8824F759AC1 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647CE152AFC2D748B094DE90F18A286 /* UIImage+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		074D92E7E1D4930243FF7E68BA86679D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A16BB753FC705C22DAFCD8B7C1071A09;
-			remoteInfo = RevealingSplashView;
-		};
 		1755646AD62003C90F7BAE7ADC74C228 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -136,213 +134,252 @@
 			remoteGlobalIDString = BB4EEF23ECB2BAF774CE8EFA5AF90C40;
 			remoteInfo = "CropViewController-TOCropViewControllerBundle";
 		};
-		2D13D99D4CCD772152AA701A901BC156 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DDE6B10EDAC938DA6D87A1F53A7AC3A6;
-			remoteInfo = GhostTypewriter;
-		};
-		370E47A91F7A6F41E83246A32A06CA31 /* PBXContainerItemProxy */ = {
+		2992643A3ECCD764D5BD0CAD7F1A08EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 507F07FC62AFC9C6A73513E671361060;
 			remoteInfo = LBTAComponents;
 		};
-		50E2877B32850973F950871EAB4A54F5 /* PBXContainerItemProxy */ = {
+		3DF660BF2A8217BD8C485515B6387DD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E3469B000FE3C67BAD723C2FB400BCC;
-			remoteInfo = ColorSlider;
+			remoteGlobalIDString = 52EA8B3667B8849AB63C4EF323988478;
+			remoteInfo = StepSlider;
 		};
-		98B7CEFD91A2F41E5A333B3E0DC0E66C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CC81A5995F9CEB2971CBA61ACA13FCA3;
-			remoteInfo = CropViewController;
-		};
-		CBDDF9B99E82B7BB89AB78B63604AC2A /* PBXContainerItemProxy */ = {
+		5D5FAE0BAE3C074A6A5277A88E1BDA78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6738B61255F4E5F64DBC885C2955BE0F;
 			remoteInfo = VegaScrollFlowLayout;
 		};
-		DDCBDE1614EA775C7B9621FF9BF5E477 /* PBXContainerItemProxy */ = {
+		79C61B8AB7A64FCD128CB6BE9D5C6FC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC81A5995F9CEB2971CBA61ACA13FCA3;
+			remoteInfo = CropViewController;
+		};
+		874717909DF8E408B2496DF12FFA0DB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDE6B10EDAC938DA6D87A1F53A7AC3A6;
+			remoteInfo = GhostTypewriter;
+		};
+		E05691E7F2ED2CCACE6155A3DADAF2D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B97EF92BEE5DAB35D006DEEB09E7CAA8;
 			remoteInfo = LayoutHelper;
 		};
+		E6E4F15E90A0DBB0604940F1EA450149 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A16BB753FC705C22DAFCD8B7C1071A09;
+			remoteInfo = RevealingSplashView;
+		};
+		ECB493B10382625274097348105C276F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E3469B000FE3C67BAD723C2FB400BCC;
+			remoteInfo = ColorSlider;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0145CF9C28951E114B320F657E1ED059 /* VegaScrollFlowLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VegaScrollFlowLayout-prefix.pch"; sourceTree = "<group>"; };
-		02B6863C04D3A753CDCD223520766223 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = "Objective-C/TOCropViewController/Resources/nl.lproj"; sourceTree = "<group>"; };
+		00DB7ACEC1F633E2FE839BC67F1E2F68 /* VegaScrollFlowLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VegaScrollFlowLayout-umbrella.h"; sourceTree = "<group>"; };
+		01AA81C7FB6FBE77B137030284DA9A47 /* StepSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StepSlider.h; path = StepSlider/source/StepSlider/StepSlider.h; sourceTree = "<group>"; };
 		0424A3B4BA0E69DD5CB3E63630A7FE92 /* Pods-The Color Rap Book-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-The Color Rap Book-frameworks.sh"; sourceTree = "<group>"; };
-		06381FE397DDF6239FFA2FEA59CE6C01 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = "Objective-C/TOCropViewController/Resources/en.lproj"; sourceTree = "<group>"; };
-		06C04F54E149A8159BBCAEF0F850DDE5 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = "Objective-C/TOCropViewController/Resources/fr.lproj"; sourceTree = "<group>"; };
-		0748C1D72860C8EF1AC8B1C31465D65E /* LBTAComponents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LBTAComponents-Info.plist"; sourceTree = "<group>"; };
+		070E21137836999FFE6831B158F32D2E /* LayoutHelper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LayoutHelper-Info.plist"; sourceTree = "<group>"; };
+		0855819D07988459B745FD1823325F3D /* TOActivityCroppedImageProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOActivityCroppedImageProvider.m; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.m"; sourceTree = "<group>"; };
+		087359EA17370A99C9516681FA862049 /* fi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fi.lproj; path = "Objective-C/TOCropViewController/Resources/fi.lproj"; sourceTree = "<group>"; };
+		093885ED0EEA655BECC986FF8F6D4FF6 /* LBTATextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LBTATextView.swift; path = LBTAComponents/Classes/LBTATextView.swift; sourceTree = "<group>"; };
 		0C179446A8BAE6FED46868125ABFD9F3 /* GhostTypewriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GhostTypewriter.framework; path = GhostTypewriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C2EC20C2041E8627BF8303313A9622D /* NSMutableAttributedString+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+Helper.swift"; path = "LBTAComponents/Classes/NSMutableAttributedString+Helper.swift"; sourceTree = "<group>"; };
-		0CC9629394EFC3C6AEFC265B4AB6C7EC /* VegaScrollFlowLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VegaScrollFlowLayout.modulemap; sourceTree = "<group>"; };
-		0D2DFC038534CBEDBD038C14F3355240 /* ro.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ro.lproj; path = "Objective-C/TOCropViewController/Resources/ro.lproj"; sourceTree = "<group>"; };
-		0D41314EA23912F9697E3AB3311431A1 /* DefaultPreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultPreviewView.swift; path = Sources/DefaultPreviewView.swift; sourceTree = "<group>"; };
+		0ED8569F112EB76D6F47897545BEE6C6 /* ro.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ro.lproj; path = "Objective-C/TOCropViewController/Resources/ro.lproj"; sourceTree = "<group>"; };
+		0F16C685371F5B855E1E069D21EAEE01 /* LayoutHelper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LayoutHelper-umbrella.h"; sourceTree = "<group>"; };
 		100472E2F40A332B2AA1FEF539717C47 /* libPods-The Color Rap BookTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-The Color Rap BookTests.a"; path = "libPods-The Color Rap BookTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		103C92850664AD0C549E1923F16834B5 /* Pods-The Color Rap BookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-The Color Rap BookTests.release.xcconfig"; sourceTree = "<group>"; };
-		11282133436FAC700AA58C0D0821507C /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = it.lproj; path = "Objective-C/TOCropViewController/Resources/it.lproj"; sourceTree = "<group>"; };
-		113B645FB5751C03D6E1A58A3D4F0D78 /* Datasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Datasource.swift; path = LBTAComponents/Classes/Datasource.swift; sourceTree = "<group>"; };
-		150C1A8B94F6747507BABECE6B2291EF /* LayoutHelper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LayoutHelper-umbrella.h"; sourceTree = "<group>"; };
-		1538B9270FEF489675DBC9A55B0285E1 /* RevealingSplashView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealingSplashView-umbrella.h"; sourceTree = "<group>"; };
-		174EB00847A852720DE1C08321004816 /* fi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fi.lproj; path = "Objective-C/TOCropViewController/Resources/fi.lproj"; sourceTree = "<group>"; };
-		190790C9633FC2A1570EF221FA4F7034 /* CropViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CropViewController-prefix.pch"; sourceTree = "<group>"; };
+		10D6D0758C08C2DAFCB88E6439F551F7 /* id.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = id.lproj; path = "Objective-C/TOCropViewController/Resources/id.lproj"; sourceTree = "<group>"; };
+		11F28E196A7AA76B9F97611D35F3274A /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = "Objective-C/TOCropViewController/Resources/es.lproj"; sourceTree = "<group>"; };
+		143EA0BDF1F566BDF27DE417F641392E /* DefaultCells.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultCells.swift; path = LBTAComponents/Classes/DefaultCells.swift; sourceTree = "<group>"; };
+		14D5685185CE717E2CFAAE77E9F8188B /* UILabelHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UILabelHelper.swift; path = LayoutHelper/Classes/UILabelHelper.swift; sourceTree = "<group>"; };
+		15C2E94BC5ABFC2F11C0695504ADC757 /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ko.lproj; path = "Objective-C/TOCropViewController/Resources/ko.lproj"; sourceTree = "<group>"; };
+		168CD57E2838A35227DC403ED07A924C /* CropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropViewController.swift; path = Swift/CropViewController/CropViewController.swift; sourceTree = "<group>"; };
+		18B823530D825176205730711A0A6FE1 /* ar.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ar.lproj; path = "Objective-C/TOCropViewController/Resources/ar.lproj"; sourceTree = "<group>"; };
 		19672639458D5EF5EC76A48F6BF5A2B3 /* CropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CropViewController.framework; path = CropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B11AF28FB2116EF4B6E72E15E8511FE /* VegaScrollFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VegaScrollFlowLayout.framework; path = VegaScrollFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA1F1AB9E0E8DBA4CA730BDDADD8165 /* Pods-The Color Rap Book-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-The Color Rap Book-Info.plist"; sourceTree = "<group>"; };
-		1DEAA52B83395B90EFD0332AE8BF2E15 /* GhostTypewriter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GhostTypewriter.xcconfig; sourceTree = "<group>"; };
+		1EAEB0CD035787D9F8433E80F881D2AA /* TOCropScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropScrollView.h; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.h"; sourceTree = "<group>"; };
 		20A7DACB743F2A39BC0D9C0E317842D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		2497EC0D54E567A64E8FCEF5439D1C42 /* TOCropViewControllerTransitioning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewControllerTransitioning.m; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.m"; sourceTree = "<group>"; };
-		24ED57845CC5610BB5DBAE36BC75E626 /* RevealingSplashView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RevealingSplashView.xcconfig; sourceTree = "<group>"; };
-		251414F022F3254E3EED2FB4C3410A97 /* GhostTypewriter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GhostTypewriter-prefix.pch"; sourceTree = "<group>"; };
+		21074B88E3C3BA3939FAF4FE38DB9699 /* ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist"; sourceTree = "<group>"; };
+		22EB49CE31611040F1E9A1BEA4EE2766 /* PreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = Sources/PreviewView.swift; sourceTree = "<group>"; };
+		25473FFAF214768AB3307FB5ABD4C5C6 /* StepSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StepSlider-Info.plist"; sourceTree = "<group>"; };
 		2548648C39D2AF009765091145938093 /* Pods-The Color Rap BookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-The Color Rap BookUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		265795B6AB9868DA03DF3628AC28F17F /* TOCropScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropScrollView.m; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.m"; sourceTree = "<group>"; };
-		2A9AC3466BBC396289B22AE4F309D09E /* CropViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CropViewController.modulemap; sourceTree = "<group>"; };
+		2786EFA9F727B39228343CEE8C2C4BEE /* TOCropView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropView.m; path = "Objective-C/TOCropViewController/Views/TOCropView.m"; sourceTree = "<group>"; };
+		284057EA1D587EE0D31CC462D85D4A75 /* SplashAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplashAnimatable.swift; path = RevealingSplashView/SplashAnimatable.swift; sourceTree = "<group>"; };
 		2AE8CB6C00A640958135AC6139018A04 /* Pods-The Color Rap Book-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-The Color Rap Book-dummy.m"; sourceTree = "<group>"; };
-		2B25F5C288F8CB29BEDE5E25BD200AAF /* CropViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CropViewController-dummy.m"; sourceTree = "<group>"; };
-		2B8B2A121C60D245534B8A93BA3A6E08 /* VegaScrollFlowLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VegaScrollFlowLayout-Info.plist"; sourceTree = "<group>"; };
-		2F0F472AF1516F6C8589D5C8735F3767 /* UIImage+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Helper.swift"; path = "LBTAComponents/Classes/UIImage+Helper.swift"; sourceTree = "<group>"; };
-		32A83EA088E436B4A95EA413B9528527 /* CropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropViewController.swift; path = Swift/CropViewController/CropViewController.swift; sourceTree = "<group>"; };
-		3629A696DBE4F16B12840F623F1C7D14 /* LayoutHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LayoutHelper-dummy.m"; sourceTree = "<group>"; };
-		38080AC0E89B8E48B4CD0A31D55C5845 /* SplashAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplashAnimatable.swift; path = RevealingSplashView/SplashAnimatable.swift; sourceTree = "<group>"; };
-		3830C3076922B5CFD63D55EDD27B3453 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pl.lproj; path = "Objective-C/TOCropViewController/Resources/pl.lproj"; sourceTree = "<group>"; };
-		3C01993502B015D1FB78A770A4A2FF4C /* PreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = Sources/PreviewView.swift; sourceTree = "<group>"; };
-		3D6D4D4E4E21D9A883E28B00B77FC54D /* RevealingSplashView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RevealingSplashView.h; path = RevealingSplashView/RevealingSplashView.h; sourceTree = "<group>"; };
-		3E8773A836953434CA0C875FAA3BFE42 /* fa.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fa.lproj; path = "Objective-C/TOCropViewController/Resources/fa.lproj"; sourceTree = "<group>"; };
+		2B66615A31629D8BD331B899E909E17A /* DatasourceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatasourceController.swift; path = LBTAComponents/Classes/DatasourceController.swift; sourceTree = "<group>"; };
+		2C04C3918FB88AF85924CA99FA5BEB4B /* UITextViewHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextViewHelper.swift; path = LayoutHelper/Classes/UITextViewHelper.swift; sourceTree = "<group>"; };
+		3073A1BED2E1A040E6679CC9B8ACACF9 /* GhostTypewriter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GhostTypewriter-prefix.pch"; sourceTree = "<group>"; };
+		309C9601005AC88174C3F618121DEA81 /* Animations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animations.swift; path = RevealingSplashView/Animations.swift; sourceTree = "<group>"; };
+		3104BDCC15C67551BBE09C5F98CBCDBF /* DeviceHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceHelper.swift; path = LayoutHelper/Classes/DeviceHelper.swift; sourceTree = "<group>"; };
+		32022BB0974889A15D5F2B8460AAE909 /* RevealingSplashView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealingSplashView-umbrella.h"; sourceTree = "<group>"; };
+		333B7273435CEF02A2483EC4728738C8 /* VegaScrollFlowLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VegaScrollFlowLayout-Info.plist"; sourceTree = "<group>"; };
+		34A7A4C33B99B9135B6731A82F379136 /* RevealingSplashView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RevealingSplashView.xcconfig; sourceTree = "<group>"; };
+		36B65B9154DDB0AC4FEF27C3D8289DCC /* StepSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StepSlider.modulemap; sourceTree = "<group>"; };
+		39FD19F5C480083A7023D2A7AAACA44D /* TOCroppedImageAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCroppedImageAttributes.h; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.h"; sourceTree = "<group>"; };
+		3E1C4430F11DD8415669E6BBD39AB377 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = it.lproj; path = "Objective-C/TOCropViewController/Resources/it.lproj"; sourceTree = "<group>"; };
+		3E4B8ECC12120DD28031682B6E9811CD /* CropViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CropViewController-dummy.m"; sourceTree = "<group>"; };
+		3F38B196F1B9A0043D33F0C534A8EF28 /* hu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hu.lproj; path = "Objective-C/TOCropViewController/Resources/hu.lproj"; sourceTree = "<group>"; };
 		40174C8E8CE21726FD14C2F752320F59 /* LayoutHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LayoutHelper.framework; path = LayoutHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4044D2061F741C2974D7BA32FDAB4201 /* pt-BR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "pt-BR.lproj"; path = "Objective-C/TOCropViewController/Resources/pt-BR.lproj"; sourceTree = "<group>"; };
-		40ACE1233C564F660A4D2278B67496F6 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = "Objective-C/TOCropViewController/Resources/ja.lproj"; sourceTree = "<group>"; };
-		4160EE59511950657E90D73FF16BE6E4 /* LBTAComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LBTAComponents.modulemap; sourceTree = "<group>"; };
-		45F9BB7FD690F8ECC71B47FC67467608 /* ColorSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColorSlider-prefix.pch"; sourceTree = "<group>"; };
-		473276060E164EAF78C5F5F2D8EDF277 /* TOCropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewController.h; path = "Objective-C/TOCropViewController/TOCropViewController.h"; sourceTree = "<group>"; };
-		4A8362C8C6C5EE62CF7AE6C85F581FE0 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = Sources/GradientView.swift; sourceTree = "<group>"; };
-		4DFAFAB6058E9855BB0F8F784A4D0201 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pt.lproj; path = "Objective-C/TOCropViewController/Resources/pt.lproj"; sourceTree = "<group>"; };
-		4FC1937581AA593BC8FDF38FD6EC647F /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hans.lproj"; sourceTree = "<group>"; };
+		40E9AF2CBAB2F572363EFA2841BF1C2B /* LBTAComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LBTAComponents.modulemap; sourceTree = "<group>"; };
+		4194E5400E37905CC5D59E84FCA7C7A2 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hans.lproj"; sourceTree = "<group>"; };
+		431E43DD9832EA9AB240BC69DC9190BF /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pt.lproj; path = "Objective-C/TOCropViewController/Resources/pt.lproj"; sourceTree = "<group>"; };
+		469D861EAE6FFBE8FBF3E42301104581 /* LayoutHelper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LayoutHelper-prefix.pch"; sourceTree = "<group>"; };
+		46FC5ACDDD847FB54A847F3C97D27963 /* StepSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StepSlider.xcconfig; sourceTree = "<group>"; };
+		4D3E081DAD17B0E7DD491FEAACB5D970 /* ms.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ms.lproj; path = "Objective-C/TOCropViewController/Resources/ms.lproj"; sourceTree = "<group>"; };
 		5039E84AF17B8C167F61DEFFFA9BEE13 /* Pods-The Color Rap Book-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-The Color Rap Book-acknowledgements.plist"; sourceTree = "<group>"; };
-		5080436AD0EFE4D822FEFB10212F25DB /* UILabelHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UILabelHelper.swift; path = LayoutHelper/Classes/UILabelHelper.swift; sourceTree = "<group>"; };
-		521641A18B28C8822291A3C274322EEC /* DeviceHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceHelper.swift; path = LayoutHelper/Classes/DeviceHelper.swift; sourceTree = "<group>"; };
-		53895D4BF0D6F122BEE0540C73572519 /* RevealingSplashView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RevealingSplashView.swift; path = RevealingSplashView/RevealingSplashView.swift; sourceTree = "<group>"; };
-		558E869878BFE4C1B0749CA4E99D0ECD /* LBTAComponents.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LBTAComponents.xcconfig; sourceTree = "<group>"; };
+		508F41E65D26B88DFBD2068556472D1C /* DefaultPreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultPreviewView.swift; path = Sources/DefaultPreviewView.swift; sourceTree = "<group>"; };
+		50EBD20E6AE9D0FDFD27261A73C2B8E1 /* Datasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Datasource.swift; path = LBTAComponents/Classes/Datasource.swift; sourceTree = "<group>"; };
+		51B974C24A2ED04E01A683D42198F834 /* RevealingSplashView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RevealingSplashView.swift; path = RevealingSplashView/RevealingSplashView.swift; sourceTree = "<group>"; };
+		5315FBDBE48BF571A7249560CB5883F7 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hant.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hant.lproj"; sourceTree = "<group>"; };
+		53DB32C9CA7D99D745694073EB42213A /* TOCropViewControllerTransitioning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewControllerTransitioning.m; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.m"; sourceTree = "<group>"; };
+		54BCCC1D44DD25772EEC478B601B5F7E /* LBTAComponents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBTAComponents-umbrella.h"; sourceTree = "<group>"; };
+		54D654B3FC0E1A570FA076E1733BE582 /* TOCropToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropToolbar.m; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.m"; sourceTree = "<group>"; };
 		56DE6DFF52489DACAF66A82BFD0FE2CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		57FC6EAA28BD0BF37895C538826A3194 /* VegaScrollFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VegaScrollFlowLayout-dummy.m"; sourceTree = "<group>"; };
-		598847E5F8B0481CCBF29344C9DB9E45 /* TOCroppedImageAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCroppedImageAttributes.m; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.m"; sourceTree = "<group>"; };
+		570013A68C8CA00DD0A182F335F6CD56 /* TOCropViewControllerTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewControllerTransitioning.h; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.h"; sourceTree = "<group>"; };
+		577C049A121DA628394C109FB741BD78 /* TimerFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimerFactory.swift; path = GhostTypewriter/Label/Timer/TimerFactory.swift; sourceTree = "<group>"; };
+		59A5B2B0B0B48BD94FEA0E411DC81D30 /* TOCropToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropToolbar.h; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.h"; sourceTree = "<group>"; };
+		5A4DFD59DF0B5AA3A816BC1C225BEA05 /* CropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CropViewController.h; path = Swift/CropViewController/CropViewController.h; sourceTree = "<group>"; };
 		5AFF0B3ADEF081B79D3F85BB75E6941C /* Pods-The Color Rap Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-The Color Rap Book.release.xcconfig"; sourceTree = "<group>"; };
-		5C5FC2B9407B13A403EF042DF2AD5D76 /* TOCroppedImageAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCroppedImageAttributes.h; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.h"; sourceTree = "<group>"; };
+		5B116157F793A0F4ABE5D8E3BA6E8A91 /* LBTAComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LBTAComponents-dummy.m"; sourceTree = "<group>"; };
 		5E05DF2FEAC2DDB70D19A714FB5A51BD /* Pods-The Color Rap BookUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-The Color Rap BookUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5EEC90C1919245459F3163DBCE076F1C /* ColorSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ColorSlider.modulemap; sourceTree = "<group>"; };
+		5E70CFB0CE1D144C9EF50E21367B672C /* LayoutHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LayoutHelper.xcconfig; sourceTree = "<group>"; };
 		5F472A4BD62DB4B1E2364111AA921CA3 /* Pods-The Color Rap Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-The Color Rap Book.debug.xcconfig"; sourceTree = "<group>"; };
-		5FF4272731D59BE8FABA870564FD634B /* CropViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CropViewController-umbrella.h"; sourceTree = "<group>"; };
-		60F7F24B687B99C661F050C88BA647B5 /* LBTALabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LBTALabel.swift; path = LBTAComponents/Classes/LBTALabel.swift; sourceTree = "<group>"; };
-		63A5804056D50078B0C43076E55C19E7 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hant.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hant.lproj"; sourceTree = "<group>"; };
-		65236E0C07EC7062D7A1B879A3051A21 /* VegaScrollFlowLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VegaScrollFlowLayout.xcconfig; sourceTree = "<group>"; };
+		606341187F24DB86B6BBB388E45CB7BE /* GhostTypewriter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GhostTypewriter.xcconfig; sourceTree = "<group>"; };
+		61B6EEBC7B49EA7F360984AB33704427 /* SplashAnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplashAnimationType.swift; path = RevealingSplashView/SplashAnimationType.swift; sourceTree = "<group>"; };
+		665025155CF56334A8A589D392F8CFA0 /* VegaScrollFlowLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VegaScrollFlowLayout-prefix.pch"; sourceTree = "<group>"; };
 		6713DB6345CF5F8A38B6A26762B81F23 /* Pods-The Color Rap BookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-The Color Rap BookTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6B29DB56ACCC5DD5D81AF05C9A37F509 /* TOActivityCroppedImageProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOActivityCroppedImageProvider.h; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.h"; sourceTree = "<group>"; };
-		6C3EDC026F70B4A778CD233738933178 /* ar.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ar.lproj; path = "Objective-C/TOCropViewController/Resources/ar.lproj"; sourceTree = "<group>"; };
+		678C7EB863C14C8FE17F1F4A39D687CD /* RevealingSplashView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealingSplashView-prefix.pch"; sourceTree = "<group>"; };
+		6A3A92DB954754D1CC5E09394403C846 /* LBTAComponents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LBTAComponents-Info.plist"; sourceTree = "<group>"; };
+		6A69AD6930113188F783008635A8A9A6 /* TOCropViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewController.m; path = "Objective-C/TOCropViewController/TOCropViewController.m"; sourceTree = "<group>"; };
 		6C59B339E434E5D7B7354CCF5F0CA45E /* LBTAComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LBTAComponents.framework; path = LBTAComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7078F0597713DB58313B0B8FD0462B11 /* TOCropViewControllerTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewControllerTransitioning.h; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.h"; sourceTree = "<group>"; };
+		6CEB40D3F10DCEE76AE20CF52617DE6B /* VegaScrollFlowLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VegaScrollFlowLayout.xcconfig; sourceTree = "<group>"; };
+		6EB8B7FEC5762F50823F75580A89E451 /* pt-BR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "pt-BR.lproj"; path = "Objective-C/TOCropViewController/Resources/pt-BR.lproj"; sourceTree = "<group>"; };
+		70235A06928723BD5C0EEB604025FE5B /* NSLayoutHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSLayoutHelper.swift; path = LayoutHelper/Classes/NSLayoutHelper.swift; sourceTree = "<group>"; };
 		710535AEE820180425DB8B8C4068A265 /* libPods-The Color Rap BookUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-The Color Rap BookUITests.a"; path = "libPods-The Color Rap BookUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		720C32FC959FEA4846C0F593F65E5FF4 /* TypewriterLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypewriterLabel.swift; path = GhostTypewriter/Label/TypewriterLabel.swift; sourceTree = "<group>"; };
-		7258CE14DAC436D68D0860196353DBE5 /* GhostTypewriter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GhostTypewriter.modulemap; sourceTree = "<group>"; };
+		715E21BA6F88189A60A5BA7A30EFD362 /* RevealingSplashView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RevealingSplashView.h; path = RevealingSplashView/RevealingSplashView.h; sourceTree = "<group>"; };
+		71B3B51B0A730AEBC935661E244A9B10 /* ColorSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ColorSlider.xcconfig; sourceTree = "<group>"; };
+		75AFB432101E5570BC6083330F7BD439 /* CropViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CropViewController.modulemap; sourceTree = "<group>"; };
 		762C973A19DDE5A5AD81F317CEA5461F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		764984066E3B8B412609446D4DA47A7B /* TimerFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimerFactory.swift; path = GhostTypewriter/Label/Timer/TimerFactory.swift; sourceTree = "<group>"; };
-		785590CBC568DC45481ECEE68FF2292A /* TOCropViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewController.m; path = "Objective-C/TOCropViewController/TOCropViewController.m"; sourceTree = "<group>"; };
-		799B9C33C17C38BDEAD944E0A57C7F64 /* CachedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedImageView.swift; path = LBTAComponents/Classes/CachedImageView.swift; sourceTree = "<group>"; };
+		77195E31D7CD0E7118A1A1A999D2D8A9 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = "Objective-C/TOCropViewController/Resources/de.lproj"; sourceTree = "<group>"; };
+		7A6F71E1E2C33927DF7021A084E1475F /* StepSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StepSlider.framework; path = StepSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3507822DA4BE5E96FA75ADA995B3A8 /* Pods-The Color Rap BookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-The Color Rap BookUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7F7874CE8ECA0D39B2CC85982DE33DEB /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = "Objective-C/TOCropViewController/Resources/de.lproj"; sourceTree = "<group>"; };
-		820FE5B96F8C71AA2D273B486083CEB1 /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = Base.lproj; path = "Objective-C/TOCropViewController/Resources/Base.lproj"; sourceTree = "<group>"; };
-		84E08A6BD608AEBDEFB16A8CC35B56E9 /* ColorSliderExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorSliderExtensions.swift; path = Sources/Internal/ColorSliderExtensions.swift; sourceTree = "<group>"; };
-		85A504239D4A5B4744C19C13CA03EF99 /* da-DK.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "da-DK.lproj"; path = "Objective-C/TOCropViewController/Resources/da-DK.lproj"; sourceTree = "<group>"; };
-		86864A3A023FB2F700105BB9692EB054 /* TOCropOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropOverlayView.h; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.h"; sourceTree = "<group>"; };
-		86A7A36D621C0000F8ECFDF4AE5B3345 /* UIButtonHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIButtonHelper.swift; path = LayoutHelper/Classes/UIButtonHelper.swift; sourceTree = "<group>"; };
-		8742D2AB41C0EC156C136F4C01A1A1B9 /* RevealingSplashView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RevealingSplashView-Info.plist"; sourceTree = "<group>"; };
-		8CF2C604266717166F6C9830B3B39C56 /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = vi.lproj; path = "Objective-C/TOCropViewController/Resources/vi.lproj"; sourceTree = "<group>"; };
-		8D68016A6B2A47A59D5710E8F614D7C5 /* TOCropScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropScrollView.h; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.h"; sourceTree = "<group>"; };
-		8DC7B1D117A4D0732435BC6A4E225E6D /* HSBColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HSBColor.swift; path = Sources/Internal/HSBColor.swift; sourceTree = "<group>"; };
-		8F3F47BE152177F299926D43AB89863B /* ColorSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColorSlider-umbrella.h"; sourceTree = "<group>"; };
-		94E74B89907C37FA8944D212A905BFBB /* TOCropToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropToolbar.h; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.h"; sourceTree = "<group>"; };
+		80E5947DE1E36D1E16B3F4CD4838FF80 /* da-DK.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "da-DK.lproj"; path = "Objective-C/TOCropViewController/Resources/da-DK.lproj"; sourceTree = "<group>"; };
+		816850A74BB0C5C6C7F4B4728EB97416 /* ColorSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ColorSlider.modulemap; sourceTree = "<group>"; };
+		81DFB9ABB80A1837B8EB7371DB2FA504 /* LBTAComponents.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LBTAComponents.xcconfig; sourceTree = "<group>"; };
+		8289A933E98B8D2A3D612C39D4A9793C /* CropViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CropViewController-Info.plist"; sourceTree = "<group>"; };
+		84C038259C24A3C666A91B5558172EC6 /* ColorSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColorSlider-umbrella.h"; sourceTree = "<group>"; };
+		85CED5A2A8E666065FD80DCDFCC00E86 /* RevealingSplashView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RevealingSplashView-Info.plist"; sourceTree = "<group>"; };
+		8728A832950E4126DB68F2F6DFFC24F6 /* StepSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StepSlider-prefix.pch"; sourceTree = "<group>"; };
+		875FA020ED6789F24379D93CB9CFC0BC /* TypewriterLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypewriterLabel.swift; path = GhostTypewriter/Label/TypewriterLabel.swift; sourceTree = "<group>"; };
+		893CC3154AC1E585CF2918F3853BE54C /* fa-IR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "fa-IR.lproj"; path = "Objective-C/TOCropViewController/Resources/fa-IR.lproj"; sourceTree = "<group>"; };
+		8CCA73681F34C9F4EA493796A8C00F46 /* VegaScrollFlowLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VegaScrollFlowLayout.modulemap; sourceTree = "<group>"; };
+		919989F8549F0CEDE1541DA08A7530D9 /* StepSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StepSlider-dummy.m"; sourceTree = "<group>"; };
+		935E19AC6DCDCCA05E6BE23F408448B6 /* NSMutableAttributedString+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+Helper.swift"; path = "LBTAComponents/Classes/NSMutableAttributedString+Helper.swift"; sourceTree = "<group>"; };
+		93F0F52969AB9ABDFC182B02FCF56752 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pl.lproj; path = "Objective-C/TOCropViewController/Resources/pl.lproj"; sourceTree = "<group>"; };
+		94CEC7011618A6AF6AA0882E82995263 /* UIButtonHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIButtonHelper.swift; path = LayoutHelper/Classes/UIButtonHelper.swift; sourceTree = "<group>"; };
 		95D7543150B19E7D2E611B86A65FA6EE /* Pods-The Color Rap Book-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-The Color Rap Book-acknowledgements.markdown"; sourceTree = "<group>"; };
+		97068BE42D23F72C321F4A3E28AB9255 /* UITextFieldHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextFieldHelper.swift; path = LayoutHelper/Classes/UITextFieldHelper.swift; sourceTree = "<group>"; };
 		97A93DCEF2B1499B1F84D43333829DC7 /* TOCropViewControllerBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TOCropViewControllerBundle.bundle; path = "CropViewController-TOCropViewControllerBundle.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		980148578ED2BFF174051EC9D4BE98B4 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscardableImageCacheItem.swift; path = LBTAComponents/Classes/DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
-		98A42B641B569711E68B7029456FD8B2 /* UIImage+CropRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropRotate.m"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.m"; sourceTree = "<group>"; };
+		98210C94407A345F4411C07A437965EC /* ColorSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorSlider.swift; path = Sources/ColorSlider.swift; sourceTree = "<group>"; };
 		9B46F9A4008A8B460A288FE5F1A05EF8 /* Pods-The Color Rap Book.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-The Color Rap Book.modulemap"; sourceTree = "<group>"; };
-		9BA497F4DCA3DFA006E2092751F7A7D7 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = "Objective-C/TOCropViewController/Resources/es.lproj"; sourceTree = "<group>"; };
-		9BA6E74DF52E3489572FBC1DB973D46B /* ColorSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ColorSlider-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EB745E7FD6B7998D15443B8EC9E0066 /* LBTAComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LBTAComponents-dummy.m"; sourceTree = "<group>"; };
-		A0F78CDC7F789C8A0048523A51BBD24A /* UITextFieldHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextFieldHelper.swift; path = LayoutHelper/Classes/UITextFieldHelper.swift; sourceTree = "<group>"; };
-		A1F79F0F59B7471BFDBCF6BD5165797E /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ko.lproj; path = "Objective-C/TOCropViewController/Resources/ko.lproj"; sourceTree = "<group>"; };
+		9E79F384674641706CCC827B31E7DFDD /* UIColor+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Helper.swift"; path = "LBTAComponents/Classes/UIColor+Helper.swift"; sourceTree = "<group>"; };
+		9F72D2D0B00F2AC3446F1F6942D6ADD8 /* TOActivityCroppedImageProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOActivityCroppedImageProvider.h; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.h"; sourceTree = "<group>"; };
+		A0C734CE4C595B33271187EDAB2BAA27 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = "Objective-C/TOCropViewController/Resources/nl.lproj"; sourceTree = "<group>"; };
+		A3D7B85A7A5278E3DC3996FBE41929AF /* VegaScrollFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VegaScrollFlowLayout-dummy.m"; sourceTree = "<group>"; };
+		A6F0AB12C9A043DD742A2429A2202C91 /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = vi.lproj; path = "Objective-C/TOCropViewController/Resources/vi.lproj"; sourceTree = "<group>"; };
+		A73F0F82E519719A5CE514367FE5EE6B /* LBTALabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LBTALabel.swift; path = LBTAComponents/Classes/LBTALabel.swift; sourceTree = "<group>"; };
 		A77BDD4D44222BCB204BE28CB9809722 /* ColorSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ColorSlider.framework; path = ColorSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A988DC4ED4F8E99A78DA9680B3687E50 /* VegaScrollFlowLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VegaScrollFlowLayout-umbrella.h"; sourceTree = "<group>"; };
-		A9C98DCC6EF712BAB61DF9249E68CB6A /* id.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = id.lproj; path = "Objective-C/TOCropViewController/Resources/id.lproj"; sourceTree = "<group>"; };
-		ACEAF32EAE215386D6C69D4B71864C03 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = tr.lproj; path = "Objective-C/TOCropViewController/Resources/tr.lproj"; sourceTree = "<group>"; };
-		ADB0ED5DAC8EB45F1570E09966547C4D /* TOCropView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropView.h; path = "Objective-C/TOCropViewController/Views/TOCropView.h"; sourceTree = "<group>"; };
-		ADFD54426D61757206D0A2DA401A1155 /* DefaultCells.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultCells.swift; path = LBTAComponents/Classes/DefaultCells.swift; sourceTree = "<group>"; };
-		AEAF9A7CF3B4B053CD89F573AE7B53E1 /* GhostTypewriter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GhostTypewriter-umbrella.h"; sourceTree = "<group>"; };
-		AEB8685B5FC4AD41AD94BE4545B5C2EC /* TOCropToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropToolbar.m; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.m"; sourceTree = "<group>"; };
-		AFFD150FCFF8E8EE22859C692B218621 /* LBTAComponents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBTAComponents-umbrella.h"; sourceTree = "<group>"; };
-		B033EDC4CB417C8239A2608CA3858409 /* UIColor+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Helper.swift"; path = "LBTAComponents/Classes/UIColor+Helper.swift"; sourceTree = "<group>"; };
+		AB275359B2C814D935D8C254AE8B4D11 /* ColorSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ColorSlider-dummy.m"; sourceTree = "<group>"; };
+		AF63521C8F89B57A106A7B6FDA13AFBA /* LBTAComponents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBTAComponents-prefix.pch"; sourceTree = "<group>"; };
 		B06B65CDD48947EB9B9BF08B5CE7066F /* Pods-The Color Rap BookTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-The Color Rap BookTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B0D29129F63D736CB0D4B4E312C545EA /* Gradient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = Sources/Internal/Gradient.swift; sourceTree = "<group>"; };
-		B2BE5BA2BD680B492AA786D89B893831 /* CropViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CropViewController.xcconfig; sourceTree = "<group>"; };
-		B2EFB5C79516E16E3078B77565A8F00A /* UIImage+CropRotate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropRotate.h"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.h"; sourceTree = "<group>"; };
-		B3306F34D521446F4561C8C07119F2BA /* hu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hu.lproj; path = "Objective-C/TOCropViewController/Resources/hu.lproj"; sourceTree = "<group>"; };
-		B6142107963BEA18BDF6D3AAEC9B31D5 /* TOCropView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropView.m; path = "Objective-C/TOCropViewController/Views/TOCropView.m"; sourceTree = "<group>"; };
-		B956BE252B04A6BF947C8FCA9C396683 /* RevealingSplashView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RevealingSplashView-dummy.m"; sourceTree = "<group>"; };
+		B65571B58D56855D31BDB763A7976A42 /* UIView+Anchors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Anchors.swift"; path = "LBTAComponents/Classes/UIView+Anchors.swift"; sourceTree = "<group>"; };
+		B6B7E730BE813FDB4994FC4540B2F208 /* RevealingSplashView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RevealingSplashView.modulemap; sourceTree = "<group>"; };
+		B761A943DD6B94732F433D9FAE425ECC /* ColorSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColorSlider-prefix.pch"; sourceTree = "<group>"; };
+		B7E92B703FC4BE5E352219C9CED813EF /* HSBColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HSBColor.swift; path = Sources/Internal/HSBColor.swift; sourceTree = "<group>"; };
+		B89B2AFE77A8046D4106E0AF6713FA1E /* ColorSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ColorSlider-Info.plist"; sourceTree = "<group>"; };
 		B9B86528815F4C81E70D4F6522BB7687 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		BB91869BEA4FDFA675E9417AE5A20F0D /* Pods-The Color Rap BookUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-The Color Rap BookUITests-dummy.m"; sourceTree = "<group>"; };
 		BD56534C888FE385363934C9ABE6E7B4 /* RevealingSplashView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RevealingSplashView.framework; path = RevealingSplashView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1B89E55589DFD96345773E9BEDAE6C1 /* TOActivityCroppedImageProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOActivityCroppedImageProvider.m; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.m"; sourceTree = "<group>"; };
-		C1DE21E0D0BC0AA722D015ABFED542A8 /* LayoutHelper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LayoutHelper-prefix.pch"; sourceTree = "<group>"; };
-		C365C55352996417A4C7910568CDDBD0 /* ColorSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorSlider.swift; path = Sources/ColorSlider.swift; sourceTree = "<group>"; };
-		C6D313F5FEF9CFE0B3E5B1242F3548F1 /* fa-IR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "fa-IR.lproj"; path = "Objective-C/TOCropViewController/Resources/fa-IR.lproj"; sourceTree = "<group>"; };
-		C9CFD79B323BF3C24BAFE173384E61FD /* CropViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CropViewController-Info.plist"; sourceTree = "<group>"; };
+		BF3979306C8AFAF43822B1C0A35AF377 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = "Objective-C/TOCropViewController/Resources/ja.lproj"; sourceTree = "<group>"; };
+		BF91123E0BEE5B2F0106A3AB3764E325 /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = Base.lproj; path = "Objective-C/TOCropViewController/Resources/Base.lproj"; sourceTree = "<group>"; };
+		C359D075A8B18B6024C3AD503925B4F4 /* LayoutHelper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LayoutHelper.modulemap; sourceTree = "<group>"; };
+		C647CE152AFC2D748B094DE90F18A286 /* UIImage+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Helper.swift"; path = "LBTAComponents/Classes/UIImage+Helper.swift"; sourceTree = "<group>"; };
+		C73564ED336EDAE37F75951193A5CFB4 /* RevealingSplashView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RevealingSplashView-dummy.m"; sourceTree = "<group>"; };
 		CA22617B2FA7D1DC876330BB9FAE104E /* Pods-The Color Rap Book-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-The Color Rap Book-umbrella.h"; sourceTree = "<group>"; };
-		CC05630BCCC73A83D3D1292D2203F3B8 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = "Objective-C/TOCropViewController/Resources/ru.lproj"; sourceTree = "<group>"; };
-		CC2B2F8A510BC2506F2EB8E49AB91EED /* LayoutHelper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LayoutHelper-Info.plist"; sourceTree = "<group>"; };
+		CA66E2C018BF1029BF828B146447050F /* ColorSliderExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorSliderExtensions.swift; path = Sources/Internal/ColorSliderExtensions.swift; sourceTree = "<group>"; };
+		CB044024B8AB2B9B46594DE9399A4DC8 /* CropViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CropViewController-umbrella.h"; sourceTree = "<group>"; };
+		CCC5D488A927417C0C7F37BFAC370E83 /* GhostTypewriter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GhostTypewriter-Info.plist"; sourceTree = "<group>"; };
+		CCD195123D3989E9F851AE615A7E387B /* Gradient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = Sources/Internal/Gradient.swift; sourceTree = "<group>"; };
 		CDFE17C33402221E65DF3C56BCE607AF /* Pods_The_Color_Rap_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_The_Color_Rap_Book.framework; path = "Pods-The Color Rap Book.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE44B9C5BAA39DEF12242DCCE8081CD8 /* GhostTypewriter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GhostTypewriter-dummy.m"; sourceTree = "<group>"; };
-		CF66D5FE88743393D2F5BB3D366E4685 /* TOCropViewConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewConstants.h; path = "Objective-C/TOCropViewController/Constants/TOCropViewConstants.h"; sourceTree = "<group>"; };
-		CFFBB23E80A0D7F6082C6A21DAA45C87 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VegaScrollFlowLayout.swift; path = VegaScroll/Classes/VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
-		D3CE1AB225B8FD7A52860F6CC5D58028 /* CropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CropViewController.h; path = Swift/CropViewController/CropViewController.h; sourceTree = "<group>"; };
-		D45B67D33DB8ED4173EAC239CD2AC834 /* RevealingSplashView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RevealingSplashView.modulemap; sourceTree = "<group>"; };
-		D8434FD9340AF293E3B77283604D2358 /* LayoutHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LayoutHelper.xcconfig; sourceTree = "<group>"; };
-		D8CDDA6647D5456BAA475CDE994429E0 /* UIButton+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Helper.swift"; path = "LBTAComponents/Classes/UIButton+Helper.swift"; sourceTree = "<group>"; };
+		CEDC2F7FE3CC5427B49613D96010AA95 /* TOCropOverlayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropOverlayView.m; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.m"; sourceTree = "<group>"; };
+		CFBA2A8B73CC042DB9AC75E5C86650E9 /* TOCropOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropOverlayView.h; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.h"; sourceTree = "<group>"; };
+		D160EEAE9178E397135EB45E0B2A5728 /* UIImage+CropRotate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropRotate.h"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.h"; sourceTree = "<group>"; };
+		D5C682643ABDB88753608BAF319AB9A5 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = tr.lproj; path = "Objective-C/TOCropViewController/Resources/tr.lproj"; sourceTree = "<group>"; };
+		D72C771135A012E23C4CDCC708D9338F /* GhostTypewriter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GhostTypewriter-umbrella.h"; sourceTree = "<group>"; };
+		DB3AC54956F27F4AB9DF715E57C42D79 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VegaScrollFlowLayout.swift; path = VegaScroll/Classes/VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		DC33534CAF42BCC31D52C80DAE62C37B /* Pods-The Color Rap BookUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-The Color Rap BookUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		DC8B88726C8D809C2E6ADDB752265E47 /* TOCropOverlayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropOverlayView.m; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.m"; sourceTree = "<group>"; };
-		DD0D9F1F551CE8F5A5E84ABDE929E495 /* GhostTypewriter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GhostTypewriter-Info.plist"; sourceTree = "<group>"; };
-		DD4C0E4C09A140B265D0EC71CC385175 /* NSLayoutHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSLayoutHelper.swift; path = LayoutHelper/Classes/NSLayoutHelper.swift; sourceTree = "<group>"; };
-		E0174C70B1E112E2EC1A4562BD57AC90 /* ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist"; sourceTree = "<group>"; };
-		E11B76E3FFE1BB8A75E63D8F16132F85 /* ColorSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ColorSlider.xcconfig; sourceTree = "<group>"; };
-		E65AE5FFBD57C21DF6CDDB0E204551DC /* UIView+Anchors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Anchors.swift"; path = "LBTAComponents/Classes/UIView+Anchors.swift"; sourceTree = "<group>"; };
-		E73206B9B858346E5241AE658C6DDAE5 /* Animations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animations.swift; path = RevealingSplashView/Animations.swift; sourceTree = "<group>"; };
-		E7A1BB2FDFC1CE21F2DC6078CD283C0B /* LayoutHelper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LayoutHelper.modulemap; sourceTree = "<group>"; };
-		E7E35EF98CAAC8532BA5BD558D95A205 /* ms.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ms.lproj; path = "Objective-C/TOCropViewController/Resources/ms.lproj"; sourceTree = "<group>"; };
-		E88831407C7765C5CD40BF623132A65D /* LBTATextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LBTATextView.swift; path = LBTAComponents/Classes/LBTATextView.swift; sourceTree = "<group>"; };
-		EB8761309069FB3E9C53436255945371 /* ColorSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ColorSlider-Info.plist"; sourceTree = "<group>"; };
-		EC93DA8630528466FC5E362B0E70D869 /* DatasourceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatasourceController.swift; path = LBTAComponents/Classes/DatasourceController.swift; sourceTree = "<group>"; };
-		ECEDB601D5D0856065B6FE207F963C8B /* RevealingSplashView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealingSplashView-prefix.pch"; sourceTree = "<group>"; };
+		DC6C98BAB684904878A1C73883D63CFB /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = "Objective-C/TOCropViewController/Resources/fr.lproj"; sourceTree = "<group>"; };
+		DCAA4BF28DB5285EC5711E3123207736 /* StepSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StepSlider-umbrella.h"; sourceTree = "<group>"; };
+		DFEEDEF40F702D73938D24D31AA077EC /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscardableImageCacheItem.swift; path = LBTAComponents/Classes/DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		E1C5BD6E71D0A0ECF3270EE943616A45 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = "Objective-C/TOCropViewController/Resources/ru.lproj"; sourceTree = "<group>"; };
+		E41C4C9B03D126580076FD1F53F82229 /* TOCropScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropScrollView.m; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.m"; sourceTree = "<group>"; };
+		E49F97A0EBEA380E23B72D5BC39D2CFB /* DatasourceCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatasourceCell.swift; path = LBTAComponents/Classes/DatasourceCell.swift; sourceTree = "<group>"; };
+		E4EF7BA9CB8429FA0D0BE31B76FFF490 /* LayoutHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LayoutHelper-dummy.m"; sourceTree = "<group>"; };
+		E8FCA974842DDC335CDA9A5CDA4EBFFE /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = Sources/GradientView.swift; sourceTree = "<group>"; };
+		EBBE3042C777DED5339217719866470B /* TOCropView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropView.h; path = "Objective-C/TOCropViewController/Views/TOCropView.h"; sourceTree = "<group>"; };
+		EE18BFE1816C735FDCE09A171518F72C /* CropViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CropViewController-prefix.pch"; sourceTree = "<group>"; };
+		EF6E5B6ED63EE872F9F0AB8C81935316 /* UIButton+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Helper.swift"; path = "LBTAComponents/Classes/UIButton+Helper.swift"; sourceTree = "<group>"; };
 		F11334C2AB34AB72D320FDDB5BAE6CAD /* Pods-The Color Rap BookTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-The Color Rap BookTests-dummy.m"; sourceTree = "<group>"; };
-		F1395E6190DCDACA47D7C867669F133D /* DatasourceCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatasourceCell.swift; path = LBTAComponents/Classes/DatasourceCell.swift; sourceTree = "<group>"; };
+		F18EA3412D9834483F1762CD093A51A5 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = "Objective-C/TOCropViewController/Resources/en.lproj"; sourceTree = "<group>"; };
+		F1B913386AE22C7D747187034582EEC8 /* TOCropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewController.h; path = "Objective-C/TOCropViewController/TOCropViewController.h"; sourceTree = "<group>"; };
 		F35E8D2D2CC2B6588DC304C9FC69F589 /* Pods-The Color Rap BookTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-The Color Rap BookTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F570F9479D3C1C9F972674A75E2EE521 /* SplashAnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplashAnimationType.swift; path = RevealingSplashView/SplashAnimationType.swift; sourceTree = "<group>"; };
-		FDCE60BD279B2A23A71A6B435D745839 /* UITextViewHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITextViewHelper.swift; path = LayoutHelper/Classes/UITextViewHelper.swift; sourceTree = "<group>"; };
-		FF572AB2FEB17474C7A50F8E2D465801 /* LBTAComponents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LBTAComponents-prefix.pch"; sourceTree = "<group>"; };
+		F4EB1899387D393158E5C1929155FDC8 /* UIImage+CropRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropRotate.m"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.m"; sourceTree = "<group>"; };
+		F7335579B7F848A2E10D2F48FD7AE617 /* CropViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CropViewController.xcconfig; sourceTree = "<group>"; };
+		F9EE01360655DF5DE788C53C473501E7 /* StepSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StepSlider.m; path = StepSlider/source/StepSlider/StepSlider.m; sourceTree = "<group>"; };
+		FBCC116443E9AAF3C89B9A12BD266246 /* TOCropViewConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewConstants.h; path = "Objective-C/TOCropViewController/Constants/TOCropViewConstants.h"; sourceTree = "<group>"; };
+		FC08F6E150B19B2527955E15B5A86336 /* GhostTypewriter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GhostTypewriter.modulemap; sourceTree = "<group>"; };
+		FC7480C996EF1A6663EC911739D2E706 /* GhostTypewriter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GhostTypewriter-dummy.m"; sourceTree = "<group>"; };
+		FE001E3239B94369A1BC4AA4328056DE /* TOCroppedImageAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCroppedImageAttributes.m; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.m"; sourceTree = "<group>"; };
+		FE0B74CE6B3BC64968A77748BAABA6A5 /* CachedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedImageView.swift; path = LBTAComponents/Classes/CachedImageView.swift; sourceTree = "<group>"; };
+		FE4D1C70A240F202F33AD7DBABC86ECC /* fa.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fa.lproj; path = "Objective-C/TOCropViewController/Resources/fa.lproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E3EF62F745216AEDCD68D0B1538BCE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				752B196C61DCB16CB2771C9C26AC3773 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1793082B3174053B239E161648B5C6D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D7DEEC4E51B7BF1D0AE109EBA70B79 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3508AB8B4880EB62637C47BAA6B50719 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,14 +454,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7798FEC22A0C9EB6F2B437EC6FA7CEB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8F767739DE7DC31738CDC31039902DDD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DFABAB5D273D31DCC8D22CAD02E59D0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,6 +464,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0143BB46541FC3003351CFA68361B098 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CCA73681F34C9F4EA493796A8C00F46 /* VegaScrollFlowLayout.modulemap */,
+				6CEB40D3F10DCEE76AE20CF52617DE6B /* VegaScrollFlowLayout.xcconfig */,
+				A3D7B85A7A5278E3DC3996FBE41929AF /* VegaScrollFlowLayout-dummy.m */,
+				333B7273435CEF02A2483EC4728738C8 /* VegaScrollFlowLayout-Info.plist */,
+				665025155CF56334A8A589D392F8CFA0 /* VegaScrollFlowLayout-prefix.pch */,
+				00DB7ACEC1F633E2FE839BC67F1E2F68 /* VegaScrollFlowLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/VegaScrollFlowLayout";
+			sourceTree = "<group>";
+		};
+		05053211DD53DFCC57808090C4DCAC53 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				40E9AF2CBAB2F572363EFA2841BF1C2B /* LBTAComponents.modulemap */,
+				81DFB9ABB80A1837B8EB7371DB2FA504 /* LBTAComponents.xcconfig */,
+				5B116157F793A0F4ABE5D8E3BA6E8A91 /* LBTAComponents-dummy.m */,
+				6A3A92DB954754D1CC5E09394403C846 /* LBTAComponents-Info.plist */,
+				AF63521C8F89B57A106A7B6FDA13AFBA /* LBTAComponents-prefix.pch */,
+				54BCCC1D44DD25772EEC478B601B5F7E /* LBTAComponents-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LBTAComponents";
+			sourceTree = "<group>";
+		};
 		080A71AF08A12AD86729C12474620758 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,49 +502,44 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		0E1AB1F8182EB34EDAB5AE4C3A1C2926 /* Support Files */ = {
+		13BC726D3BF4A4CDF0DFDC95D773A193 /* StepSlider */ = {
 			isa = PBXGroup;
 			children = (
-				0CC9629394EFC3C6AEFC265B4AB6C7EC /* VegaScrollFlowLayout.modulemap */,
-				65236E0C07EC7062D7A1B879A3051A21 /* VegaScrollFlowLayout.xcconfig */,
-				57FC6EAA28BD0BF37895C538826A3194 /* VegaScrollFlowLayout-dummy.m */,
-				2B8B2A121C60D245534B8A93BA3A6E08 /* VegaScrollFlowLayout-Info.plist */,
-				0145CF9C28951E114B320F657E1ED059 /* VegaScrollFlowLayout-prefix.pch */,
-				A988DC4ED4F8E99A78DA9680B3687E50 /* VegaScrollFlowLayout-umbrella.h */,
+				01AA81C7FB6FBE77B137030284DA9A47 /* StepSlider.h */,
+				F9EE01360655DF5DE788C53C473501E7 /* StepSlider.m */,
+				51B50BDF38F53E6FD8F783EF0D75430C /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/VegaScrollFlowLayout";
+			name = StepSlider;
+			path = StepSlider;
 			sourceTree = "<group>";
 		};
-		1AE242CBB43693CFA40BC4E4E6634ECB /* Support Files */ = {
+		1B1142E39784BB6E07A959DF059CF699 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2A9AC3466BBC396289B22AE4F309D09E /* CropViewController.modulemap */,
-				B2BE5BA2BD680B492AA786D89B893831 /* CropViewController.xcconfig */,
-				2B25F5C288F8CB29BEDE5E25BD200AAF /* CropViewController-dummy.m */,
-				C9CFD79B323BF3C24BAFE173384E61FD /* CropViewController-Info.plist */,
-				190790C9633FC2A1570EF221FA4F7034 /* CropViewController-prefix.pch */,
-				5FF4272731D59BE8FABA870564FD634B /* CropViewController-umbrella.h */,
-				E0174C70B1E112E2EC1A4562BD57AC90 /* ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist */,
+				816850A74BB0C5C6C7F4B4728EB97416 /* ColorSlider.modulemap */,
+				71B3B51B0A730AEBC935661E244A9B10 /* ColorSlider.xcconfig */,
+				AB275359B2C814D935D8C254AE8B4D11 /* ColorSlider-dummy.m */,
+				B89B2AFE77A8046D4106E0AF6713FA1E /* ColorSlider-Info.plist */,
+				B761A943DD6B94732F433D9FAE425ECC /* ColorSlider-prefix.pch */,
+				84C038259C24A3C666A91B5558172EC6 /* ColorSlider-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/CropViewController";
+			path = "../Target Support Files/ColorSlider";
 			sourceTree = "<group>";
 		};
-		1C2F046B9271EEB5F929A84B2127229A /* ColorSlider */ = {
+		1DEAE66F73093E7AB471366479C32A5B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C365C55352996417A4C7910568CDDBD0 /* ColorSlider.swift */,
-				84E08A6BD608AEBDEFB16A8CC35B56E9 /* ColorSliderExtensions.swift */,
-				0D41314EA23912F9697E3AB3311431A1 /* DefaultPreviewView.swift */,
-				B0D29129F63D736CB0D4B4E312C545EA /* Gradient.swift */,
-				4A8362C8C6C5EE62CF7AE6C85F581FE0 /* GradientView.swift */,
-				8DC7B1D117A4D0732435BC6A4E225E6D /* HSBColor.swift */,
-				3C01993502B015D1FB78A770A4A2FF4C /* PreviewView.swift */,
-				A731BAF5DD29C675B64506FACEB1DCC8 /* Support Files */,
+				74512A53EDBE7EC426EC81F888FC3BF7 /* ColorSlider */,
+				7C089E48F57401809BBF379E1BDC1F6E /* CropViewController */,
+				B285C4DB073A2F4B59150F3026A07D4F /* GhostTypewriter */,
+				B104BFB8FC747F25E3E5264BD1F06BF0 /* LayoutHelper */,
+				757C21E034D82B7AD5285C83248F9F4A /* LBTAComponents */,
+				C9F049270EDAC49F53AA1FFDCE614AC8 /* RevealingSplashView */,
+				13BC726D3BF4A4CDF0DFDC95D773A193 /* StepSlider */,
+				BFD7804D21F6939600B957F1C5669226 /* VegaScrollFlowLayout */,
 			);
-			name = ColorSlider;
-			path = ColorSlider;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		216D11D6253026459814863746CC99A1 /* iOS */ = {
@@ -499,69 +551,6 @@
 				56DE6DFF52489DACAF66A82BFD0FE2CA /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		241829450AB40D082343EE9706CC9CEF /* CropViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D3CE1AB225B8FD7A52860F6CC5D58028 /* CropViewController.h */,
-				32A83EA088E436B4A95EA413B9528527 /* CropViewController.swift */,
-				6B29DB56ACCC5DD5D81AF05C9A37F509 /* TOActivityCroppedImageProvider.h */,
-				C1B89E55589DFD96345773E9BEDAE6C1 /* TOActivityCroppedImageProvider.m */,
-				86864A3A023FB2F700105BB9692EB054 /* TOCropOverlayView.h */,
-				DC8B88726C8D809C2E6ADDB752265E47 /* TOCropOverlayView.m */,
-				5C5FC2B9407B13A403EF042DF2AD5D76 /* TOCroppedImageAttributes.h */,
-				598847E5F8B0481CCBF29344C9DB9E45 /* TOCroppedImageAttributes.m */,
-				8D68016A6B2A47A59D5710E8F614D7C5 /* TOCropScrollView.h */,
-				265795B6AB9868DA03DF3628AC28F17F /* TOCropScrollView.m */,
-				94E74B89907C37FA8944D212A905BFBB /* TOCropToolbar.h */,
-				AEB8685B5FC4AD41AD94BE4545B5C2EC /* TOCropToolbar.m */,
-				ADB0ED5DAC8EB45F1570E09966547C4D /* TOCropView.h */,
-				B6142107963BEA18BDF6D3AAEC9B31D5 /* TOCropView.m */,
-				CF66D5FE88743393D2F5BB3D366E4685 /* TOCropViewConstants.h */,
-				473276060E164EAF78C5F5F2D8EDF277 /* TOCropViewController.h */,
-				785590CBC568DC45481ECEE68FF2292A /* TOCropViewController.m */,
-				7078F0597713DB58313B0B8FD0462B11 /* TOCropViewControllerTransitioning.h */,
-				2497EC0D54E567A64E8FCEF5439D1C42 /* TOCropViewControllerTransitioning.m */,
-				B2EFB5C79516E16E3078B77565A8F00A /* UIImage+CropRotate.h */,
-				98A42B641B569711E68B7029456FD8B2 /* UIImage+CropRotate.m */,
-				A388E2D31BF22D96CE8929A3B0FA2042 /* Resources */,
-				1AE242CBB43693CFA40BC4E4E6634ECB /* Support Files */,
-			);
-			name = CropViewController;
-			path = CropViewController;
-			sourceTree = "<group>";
-		};
-		379D98BCEE3A8ED88A0540A243585F8A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7258CE14DAC436D68D0860196353DBE5 /* GhostTypewriter.modulemap */,
-				1DEAA52B83395B90EFD0332AE8BF2E15 /* GhostTypewriter.xcconfig */,
-				CE44B9C5BAA39DEF12242DCCE8081CD8 /* GhostTypewriter-dummy.m */,
-				DD0D9F1F551CE8F5A5E84ABDE929E495 /* GhostTypewriter-Info.plist */,
-				251414F022F3254E3EED2FB4C3410A97 /* GhostTypewriter-prefix.pch */,
-				AEAF9A7CF3B4B053CD89F573AE7B53E1 /* GhostTypewriter-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GhostTypewriter";
-			sourceTree = "<group>";
-		};
-		397B723EB6592CD824B1DFC811B61107 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A77BDD4D44222BCB204BE28CB9809722 /* ColorSlider.framework */,
-				19672639458D5EF5EC76A48F6BF5A2B3 /* CropViewController.framework */,
-				0C179446A8BAE6FED46868125ABFD9F3 /* GhostTypewriter.framework */,
-				40174C8E8CE21726FD14C2F752320F59 /* LayoutHelper.framework */,
-				6C59B339E434E5D7B7354CCF5F0CA45E /* LBTAComponents.framework */,
-				100472E2F40A332B2AA1FEF539717C47 /* libPods-The Color Rap BookTests.a */,
-				710535AEE820180425DB8B8C4068A265 /* libPods-The Color Rap BookUITests.a */,
-				CDFE17C33402221E65DF3C56BCE607AF /* Pods_The_Color_Rap_Book.framework */,
-				BD56534C888FE385363934C9ABE6E7B4 /* RevealingSplashView.framework */,
-				97A93DCEF2B1499B1F84D43333829DC7 /* TOCropViewControllerBundle.bundle */,
-				1B11AF28FB2116EF4B6E72E15E8511FE /* VegaScrollFlowLayout.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		49E843C216DCB79F5CBFF4AD6102955A /* Pods-The Color Rap Book */ = {
@@ -581,122 +570,174 @@
 			path = "Target Support Files/Pods-The Color Rap Book";
 			sourceTree = "<group>";
 		};
-		70E50E1D803BD1B5890BDE2E149A4A9A /* GhostTypewriter */ = {
+		51B50BDF38F53E6FD8F783EF0D75430C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				764984066E3B8B412609446D4DA47A7B /* TimerFactory.swift */,
-				720C32FC959FEA4846C0F593F65E5FF4 /* TypewriterLabel.swift */,
-				379D98BCEE3A8ED88A0540A243585F8A /* Support Files */,
+				36B65B9154DDB0AC4FEF27C3D8289DCC /* StepSlider.modulemap */,
+				46FC5ACDDD847FB54A847F3C97D27963 /* StepSlider.xcconfig */,
+				919989F8549F0CEDE1541DA08A7530D9 /* StepSlider-dummy.m */,
+				25473FFAF214768AB3307FB5ABD4C5C6 /* StepSlider-Info.plist */,
+				8728A832950E4126DB68F2F6DFFC24F6 /* StepSlider-prefix.pch */,
+				DCAA4BF28DB5285EC5711E3123207736 /* StepSlider-umbrella.h */,
 			);
-			name = GhostTypewriter;
-			path = GhostTypewriter;
+			name = "Support Files";
+			path = "../Target Support Files/StepSlider";
 			sourceTree = "<group>";
 		};
-		98D4D4310A9F62260C10C7F1B29C91AD /* RevealingSplashView */ = {
+		724E8622A78E715B90D7599C5A02A0BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E73206B9B858346E5241AE658C6DDAE5 /* Animations.swift */,
-				3D6D4D4E4E21D9A883E28B00B77FC54D /* RevealingSplashView.h */,
-				53895D4BF0D6F122BEE0540C73572519 /* RevealingSplashView.swift */,
-				38080AC0E89B8E48B4CD0A31D55C5845 /* SplashAnimatable.swift */,
-				F570F9479D3C1C9F972674A75E2EE521 /* SplashAnimationType.swift */,
-				D4FA099AD27F3317A310AF1300E96188 /* Support Files */,
+				18B823530D825176205730711A0A6FE1 /* ar.lproj */,
+				BF91123E0BEE5B2F0106A3AB3764E325 /* Base.lproj */,
+				80E5947DE1E36D1E16B3F4CD4838FF80 /* da-DK.lproj */,
+				77195E31D7CD0E7118A1A1A999D2D8A9 /* de.lproj */,
+				F18EA3412D9834483F1762CD093A51A5 /* en.lproj */,
+				11F28E196A7AA76B9F97611D35F3274A /* es.lproj */,
+				FE4D1C70A240F202F33AD7DBABC86ECC /* fa.lproj */,
+				893CC3154AC1E585CF2918F3853BE54C /* fa-IR.lproj */,
+				087359EA17370A99C9516681FA862049 /* fi.lproj */,
+				DC6C98BAB684904878A1C73883D63CFB /* fr.lproj */,
+				3F38B196F1B9A0043D33F0C534A8EF28 /* hu.lproj */,
+				10D6D0758C08C2DAFCB88E6439F551F7 /* id.lproj */,
+				3E1C4430F11DD8415669E6BBD39AB377 /* it.lproj */,
+				BF3979306C8AFAF43822B1C0A35AF377 /* ja.lproj */,
+				15C2E94BC5ABFC2F11C0695504ADC757 /* ko.lproj */,
+				4D3E081DAD17B0E7DD491FEAACB5D970 /* ms.lproj */,
+				A0C734CE4C595B33271187EDAB2BAA27 /* nl.lproj */,
+				93F0F52969AB9ABDFC182B02FCF56752 /* pl.lproj */,
+				431E43DD9832EA9AB240BC69DC9190BF /* pt.lproj */,
+				6EB8B7FEC5762F50823F75580A89E451 /* pt-BR.lproj */,
+				0ED8569F112EB76D6F47897545BEE6C6 /* ro.lproj */,
+				E1C5BD6E71D0A0ECF3270EE943616A45 /* ru.lproj */,
+				D5C682643ABDB88753608BAF319AB9A5 /* tr.lproj */,
+				A6F0AB12C9A043DD742A2429A2202C91 /* vi.lproj */,
+				4194E5400E37905CC5D59E84FCA7C7A2 /* zh-Hans.lproj */,
+				5315FBDBE48BF571A7249560CB5883F7 /* zh-Hant.lproj */,
 			);
-			name = RevealingSplashView;
-			path = RevealingSplashView;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		9B8B05C4FE9064E9237B9FA211F8EF3C /* LBTAComponents */ = {
+		74512A53EDBE7EC426EC81F888FC3BF7 /* ColorSlider */ = {
 			isa = PBXGroup;
 			children = (
-				799B9C33C17C38BDEAD944E0A57C7F64 /* CachedImageView.swift */,
-				113B645FB5751C03D6E1A58A3D4F0D78 /* Datasource.swift */,
-				F1395E6190DCDACA47D7C867669F133D /* DatasourceCell.swift */,
-				EC93DA8630528466FC5E362B0E70D869 /* DatasourceController.swift */,
-				ADFD54426D61757206D0A2DA401A1155 /* DefaultCells.swift */,
-				980148578ED2BFF174051EC9D4BE98B4 /* DiscardableImageCacheItem.swift */,
-				60F7F24B687B99C661F050C88BA647B5 /* LBTALabel.swift */,
-				E88831407C7765C5CD40BF623132A65D /* LBTATextView.swift */,
-				0C2EC20C2041E8627BF8303313A9622D /* NSMutableAttributedString+Helper.swift */,
-				D8CDDA6647D5456BAA475CDE994429E0 /* UIButton+Helper.swift */,
-				B033EDC4CB417C8239A2608CA3858409 /* UIColor+Helper.swift */,
-				2F0F472AF1516F6C8589D5C8735F3767 /* UIImage+Helper.swift */,
-				E65AE5FFBD57C21DF6CDDB0E204551DC /* UIView+Anchors.swift */,
-				A6EDA30FD1921611F4823FE6D15E8086 /* Support Files */,
+				98210C94407A345F4411C07A437965EC /* ColorSlider.swift */,
+				CA66E2C018BF1029BF828B146447050F /* ColorSliderExtensions.swift */,
+				508F41E65D26B88DFBD2068556472D1C /* DefaultPreviewView.swift */,
+				CCD195123D3989E9F851AE615A7E387B /* Gradient.swift */,
+				E8FCA974842DDC335CDA9A5CDA4EBFFE /* GradientView.swift */,
+				B7E92B703FC4BE5E352219C9CED813EF /* HSBColor.swift */,
+				22EB49CE31611040F1E9A1BEA4EE2766 /* PreviewView.swift */,
+				1B1142E39784BB6E07A959DF059CF699 /* Support Files */,
+			);
+			name = ColorSlider;
+			path = ColorSlider;
+			sourceTree = "<group>";
+		};
+		757C21E034D82B7AD5285C83248F9F4A /* LBTAComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FE0B74CE6B3BC64968A77748BAABA6A5 /* CachedImageView.swift */,
+				50EBD20E6AE9D0FDFD27261A73C2B8E1 /* Datasource.swift */,
+				E49F97A0EBEA380E23B72D5BC39D2CFB /* DatasourceCell.swift */,
+				2B66615A31629D8BD331B899E909E17A /* DatasourceController.swift */,
+				143EA0BDF1F566BDF27DE417F641392E /* DefaultCells.swift */,
+				DFEEDEF40F702D73938D24D31AA077EC /* DiscardableImageCacheItem.swift */,
+				A73F0F82E519719A5CE514367FE5EE6B /* LBTALabel.swift */,
+				093885ED0EEA655BECC986FF8F6D4FF6 /* LBTATextView.swift */,
+				935E19AC6DCDCCA05E6BE23F408448B6 /* NSMutableAttributedString+Helper.swift */,
+				EF6E5B6ED63EE872F9F0AB8C81935316 /* UIButton+Helper.swift */,
+				9E79F384674641706CCC827B31E7DFDD /* UIColor+Helper.swift */,
+				C647CE152AFC2D748B094DE90F18A286 /* UIImage+Helper.swift */,
+				B65571B58D56855D31BDB763A7976A42 /* UIView+Anchors.swift */,
+				05053211DD53DFCC57808090C4DCAC53 /* Support Files */,
 			);
 			name = LBTAComponents;
 			path = LBTAComponents;
 			sourceTree = "<group>";
 		};
-		A388E2D31BF22D96CE8929A3B0FA2042 /* Resources */ = {
+		77688BB2E184AF48D92F4E33449BB088 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6C3EDC026F70B4A778CD233738933178 /* ar.lproj */,
-				820FE5B96F8C71AA2D273B486083CEB1 /* Base.lproj */,
-				85A504239D4A5B4744C19C13CA03EF99 /* da-DK.lproj */,
-				7F7874CE8ECA0D39B2CC85982DE33DEB /* de.lproj */,
-				06381FE397DDF6239FFA2FEA59CE6C01 /* en.lproj */,
-				9BA497F4DCA3DFA006E2092751F7A7D7 /* es.lproj */,
-				3E8773A836953434CA0C875FAA3BFE42 /* fa.lproj */,
-				C6D313F5FEF9CFE0B3E5B1242F3548F1 /* fa-IR.lproj */,
-				174EB00847A852720DE1C08321004816 /* fi.lproj */,
-				06C04F54E149A8159BBCAEF0F850DDE5 /* fr.lproj */,
-				B3306F34D521446F4561C8C07119F2BA /* hu.lproj */,
-				A9C98DCC6EF712BAB61DF9249E68CB6A /* id.lproj */,
-				11282133436FAC700AA58C0D0821507C /* it.lproj */,
-				40ACE1233C564F660A4D2278B67496F6 /* ja.lproj */,
-				A1F79F0F59B7471BFDBCF6BD5165797E /* ko.lproj */,
-				E7E35EF98CAAC8532BA5BD558D95A205 /* ms.lproj */,
-				02B6863C04D3A753CDCD223520766223 /* nl.lproj */,
-				3830C3076922B5CFD63D55EDD27B3453 /* pl.lproj */,
-				4DFAFAB6058E9855BB0F8F784A4D0201 /* pt.lproj */,
-				4044D2061F741C2974D7BA32FDAB4201 /* pt-BR.lproj */,
-				0D2DFC038534CBEDBD038C14F3355240 /* ro.lproj */,
-				CC05630BCCC73A83D3D1292D2203F3B8 /* ru.lproj */,
-				ACEAF32EAE215386D6C69D4B71864C03 /* tr.lproj */,
-				8CF2C604266717166F6C9830B3B39C56 /* vi.lproj */,
-				4FC1937581AA593BC8FDF38FD6EC647F /* zh-Hans.lproj */,
-				63A5804056D50078B0C43076E55C19E7 /* zh-Hant.lproj */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		A6EDA30FD1921611F4823FE6D15E8086 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4160EE59511950657E90D73FF16BE6E4 /* LBTAComponents.modulemap */,
-				558E869878BFE4C1B0749CA4E99D0ECD /* LBTAComponents.xcconfig */,
-				9EB745E7FD6B7998D15443B8EC9E0066 /* LBTAComponents-dummy.m */,
-				0748C1D72860C8EF1AC8B1C31465D65E /* LBTAComponents-Info.plist */,
-				FF572AB2FEB17474C7A50F8E2D465801 /* LBTAComponents-prefix.pch */,
-				AFFD150FCFF8E8EE22859C692B218621 /* LBTAComponents-umbrella.h */,
+				C359D075A8B18B6024C3AD503925B4F4 /* LayoutHelper.modulemap */,
+				5E70CFB0CE1D144C9EF50E21367B672C /* LayoutHelper.xcconfig */,
+				E4EF7BA9CB8429FA0D0BE31B76FFF490 /* LayoutHelper-dummy.m */,
+				070E21137836999FFE6831B158F32D2E /* LayoutHelper-Info.plist */,
+				469D861EAE6FFBE8FBF3E42301104581 /* LayoutHelper-prefix.pch */,
+				0F16C685371F5B855E1E069D21EAEE01 /* LayoutHelper-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/LBTAComponents";
+			path = "../Target Support Files/LayoutHelper";
 			sourceTree = "<group>";
 		};
-		A731BAF5DD29C675B64506FACEB1DCC8 /* Support Files */ = {
+		7C089E48F57401809BBF379E1BDC1F6E /* CropViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5EEC90C1919245459F3163DBCE076F1C /* ColorSlider.modulemap */,
-				E11B76E3FFE1BB8A75E63D8F16132F85 /* ColorSlider.xcconfig */,
-				9BA6E74DF52E3489572FBC1DB973D46B /* ColorSlider-dummy.m */,
-				EB8761309069FB3E9C53436255945371 /* ColorSlider-Info.plist */,
-				45F9BB7FD690F8ECC71B47FC67467608 /* ColorSlider-prefix.pch */,
-				8F3F47BE152177F299926D43AB89863B /* ColorSlider-umbrella.h */,
+				5A4DFD59DF0B5AA3A816BC1C225BEA05 /* CropViewController.h */,
+				168CD57E2838A35227DC403ED07A924C /* CropViewController.swift */,
+				9F72D2D0B00F2AC3446F1F6942D6ADD8 /* TOActivityCroppedImageProvider.h */,
+				0855819D07988459B745FD1823325F3D /* TOActivityCroppedImageProvider.m */,
+				CFBA2A8B73CC042DB9AC75E5C86650E9 /* TOCropOverlayView.h */,
+				CEDC2F7FE3CC5427B49613D96010AA95 /* TOCropOverlayView.m */,
+				39FD19F5C480083A7023D2A7AAACA44D /* TOCroppedImageAttributes.h */,
+				FE001E3239B94369A1BC4AA4328056DE /* TOCroppedImageAttributes.m */,
+				1EAEB0CD035787D9F8433E80F881D2AA /* TOCropScrollView.h */,
+				E41C4C9B03D126580076FD1F53F82229 /* TOCropScrollView.m */,
+				59A5B2B0B0B48BD94FEA0E411DC81D30 /* TOCropToolbar.h */,
+				54D654B3FC0E1A570FA076E1733BE582 /* TOCropToolbar.m */,
+				EBBE3042C777DED5339217719866470B /* TOCropView.h */,
+				2786EFA9F727B39228343CEE8C2C4BEE /* TOCropView.m */,
+				FBCC116443E9AAF3C89B9A12BD266246 /* TOCropViewConstants.h */,
+				F1B913386AE22C7D747187034582EEC8 /* TOCropViewController.h */,
+				6A69AD6930113188F783008635A8A9A6 /* TOCropViewController.m */,
+				570013A68C8CA00DD0A182F335F6CD56 /* TOCropViewControllerTransitioning.h */,
+				53DB32C9CA7D99D745694073EB42213A /* TOCropViewControllerTransitioning.m */,
+				D160EEAE9178E397135EB45E0B2A5728 /* UIImage+CropRotate.h */,
+				F4EB1899387D393158E5C1929155FDC8 /* UIImage+CropRotate.m */,
+				724E8622A78E715B90D7599C5A02A0BD /* Resources */,
+				CCCC2C5E6235F2FCCF4F81A51462F29A /* Support Files */,
+			);
+			name = CropViewController;
+			path = CropViewController;
+			sourceTree = "<group>";
+		};
+		AA31E06425CBF96F17ECCBCC5ABC5C43 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6B7E730BE813FDB4994FC4540B2F208 /* RevealingSplashView.modulemap */,
+				34A7A4C33B99B9135B6731A82F379136 /* RevealingSplashView.xcconfig */,
+				C73564ED336EDAE37F75951193A5CFB4 /* RevealingSplashView-dummy.m */,
+				85CED5A2A8E666065FD80DCDFCC00E86 /* RevealingSplashView-Info.plist */,
+				678C7EB863C14C8FE17F1F4A39D687CD /* RevealingSplashView-prefix.pch */,
+				32022BB0974889A15D5F2B8460AAE909 /* RevealingSplashView-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/ColorSlider";
+			path = "../Target Support Files/RevealingSplashView";
 			sourceTree = "<group>";
 		};
-		B7458B23CCE146286380DA77972EB8B6 /* VegaScrollFlowLayout */ = {
+		B104BFB8FC747F25E3E5264BD1F06BF0 /* LayoutHelper */ = {
 			isa = PBXGroup;
 			children = (
-				CFFBB23E80A0D7F6082C6A21DAA45C87 /* VegaScrollFlowLayout.swift */,
-				0E1AB1F8182EB34EDAB5AE4C3A1C2926 /* Support Files */,
+				3104BDCC15C67551BBE09C5F98CBCDBF /* DeviceHelper.swift */,
+				70235A06928723BD5C0EEB604025FE5B /* NSLayoutHelper.swift */,
+				94CEC7011618A6AF6AA0882E82995263 /* UIButtonHelper.swift */,
+				14D5685185CE717E2CFAAE77E9F8188B /* UILabelHelper.swift */,
+				97068BE42D23F72C321F4A3E28AB9255 /* UITextFieldHelper.swift */,
+				2C04C3918FB88AF85924CA99FA5BEB4B /* UITextViewHelper.swift */,
+				77688BB2E184AF48D92F4E33449BB088 /* Support Files */,
 			);
-			name = VegaScrollFlowLayout;
-			path = VegaScrollFlowLayout;
+			name = LayoutHelper;
+			path = LayoutHelper;
+			sourceTree = "<group>";
+		};
+		B285C4DB073A2F4B59150F3026A07D4F /* GhostTypewriter */ = {
+			isa = PBXGroup;
+			children = (
+				577C049A121DA628394C109FB741BD78 /* TimerFactory.swift */,
+				875FA020ED6789F24379D93CB9CFC0BC /* TypewriterLabel.swift */,
+				C7010C89DF55C4C948494E4B9245D467 /* Support Files */,
+			);
+			name = GhostTypewriter;
+			path = GhostTypewriter;
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -705,6 +746,16 @@
 				216D11D6253026459814863746CC99A1 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFD7804D21F6939600B957F1C5669226 /* VegaScrollFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DB3AC54956F27F4AB9DF715E57C42D79 /* VegaScrollFlowLayout.swift */,
+				0143BB46541FC3003351CFA68361B098 /* Support Files */,
+			);
+			name = VegaScrollFlowLayout;
+			path = VegaScrollFlowLayout;
 			sourceTree = "<group>";
 		};
 		C2A8B01D6519DEFD27E6DF73B59940D5 /* Pods-The Color Rap BookUITests */ = {
@@ -720,57 +771,58 @@
 			path = "Target Support Files/Pods-The Color Rap BookUITests";
 			sourceTree = "<group>";
 		};
+		C7010C89DF55C4C948494E4B9245D467 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC08F6E150B19B2527955E15B5A86336 /* GhostTypewriter.modulemap */,
+				606341187F24DB86B6BBB388E45CB7BE /* GhostTypewriter.xcconfig */,
+				FC7480C996EF1A6663EC911739D2E706 /* GhostTypewriter-dummy.m */,
+				CCC5D488A927417C0C7F37BFAC370E83 /* GhostTypewriter-Info.plist */,
+				3073A1BED2E1A040E6679CC9B8ACACF9 /* GhostTypewriter-prefix.pch */,
+				D72C771135A012E23C4CDCC708D9338F /* GhostTypewriter-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GhostTypewriter";
+			sourceTree = "<group>";
+		};
+		C9F049270EDAC49F53AA1FFDCE614AC8 /* RevealingSplashView */ = {
+			isa = PBXGroup;
+			children = (
+				309C9601005AC88174C3F618121DEA81 /* Animations.swift */,
+				715E21BA6F88189A60A5BA7A30EFD362 /* RevealingSplashView.h */,
+				51B974C24A2ED04E01A683D42198F834 /* RevealingSplashView.swift */,
+				284057EA1D587EE0D31CC462D85D4A75 /* SplashAnimatable.swift */,
+				61B6EEBC7B49EA7F360984AB33704427 /* SplashAnimationType.swift */,
+				AA31E06425CBF96F17ECCBCC5ABC5C43 /* Support Files */,
+			);
+			name = RevealingSplashView;
+			path = RevealingSplashView;
+			sourceTree = "<group>";
+		};
+		CCCC2C5E6235F2FCCF4F81A51462F29A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				75AFB432101E5570BC6083330F7BD439 /* CropViewController.modulemap */,
+				F7335579B7F848A2E10D2F48FD7AE617 /* CropViewController.xcconfig */,
+				3E4B8ECC12120DD28031682B6E9811CD /* CropViewController-dummy.m */,
+				8289A933E98B8D2A3D612C39D4A9793C /* CropViewController-Info.plist */,
+				EE18BFE1816C735FDCE09A171518F72C /* CropViewController-prefix.pch */,
+				CB044024B8AB2B9B46594DE9399A4DC8 /* CropViewController-umbrella.h */,
+				21074B88E3C3BA3939FAF4FE38DB9699 /* ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CropViewController";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
-				DEB267FC49377AA895963B4E5901EDC8 /* Pods */,
-				397B723EB6592CD824B1DFC811B61107 /* Products */,
+				1DEAE66F73093E7AB471366479C32A5B /* Pods */,
+				EBCB7DAA0950A58C823AFF830605B227 /* Products */,
 				080A71AF08A12AD86729C12474620758 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D4FA099AD27F3317A310AF1300E96188 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D45B67D33DB8ED4173EAC239CD2AC834 /* RevealingSplashView.modulemap */,
-				24ED57845CC5610BB5DBAE36BC75E626 /* RevealingSplashView.xcconfig */,
-				B956BE252B04A6BF947C8FCA9C396683 /* RevealingSplashView-dummy.m */,
-				8742D2AB41C0EC156C136F4C01A1A1B9 /* RevealingSplashView-Info.plist */,
-				ECEDB601D5D0856065B6FE207F963C8B /* RevealingSplashView-prefix.pch */,
-				1538B9270FEF489675DBC9A55B0285E1 /* RevealingSplashView-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/RevealingSplashView";
-			sourceTree = "<group>";
-		};
-		D82265C87FBF1A7FC6666DC4B431112E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E7A1BB2FDFC1CE21F2DC6078CD283C0B /* LayoutHelper.modulemap */,
-				D8434FD9340AF293E3B77283604D2358 /* LayoutHelper.xcconfig */,
-				3629A696DBE4F16B12840F623F1C7D14 /* LayoutHelper-dummy.m */,
-				CC2B2F8A510BC2506F2EB8E49AB91EED /* LayoutHelper-Info.plist */,
-				C1DE21E0D0BC0AA722D015ABFED542A8 /* LayoutHelper-prefix.pch */,
-				150C1A8B94F6747507BABECE6B2291EF /* LayoutHelper-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LayoutHelper";
-			sourceTree = "<group>";
-		};
-		DEB267FC49377AA895963B4E5901EDC8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1C2F046B9271EEB5F929A84B2127229A /* ColorSlider */,
-				241829450AB40D082343EE9706CC9CEF /* CropViewController */,
-				70E50E1D803BD1B5890BDE2E149A4A9A /* GhostTypewriter */,
-				EFAEDF20522A1CC1C9CECFD01D93AE2C /* LayoutHelper */,
-				9B8B05C4FE9064E9237B9FA211F8EF3C /* LBTAComponents */,
-				98D4D4310A9F62260C10C7F1B29C91AD /* RevealingSplashView */,
-				B7458B23CCE146286380DA77972EB8B6 /* VegaScrollFlowLayout */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		E48DBEA565B5D6766B8D4BB4A5BDEC6B /* Pods-The Color Rap BookTests */ = {
@@ -786,19 +838,23 @@
 			path = "Target Support Files/Pods-The Color Rap BookTests";
 			sourceTree = "<group>";
 		};
-		EFAEDF20522A1CC1C9CECFD01D93AE2C /* LayoutHelper */ = {
+		EBCB7DAA0950A58C823AFF830605B227 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				521641A18B28C8822291A3C274322EEC /* DeviceHelper.swift */,
-				DD4C0E4C09A140B265D0EC71CC385175 /* NSLayoutHelper.swift */,
-				86A7A36D621C0000F8ECFDF4AE5B3345 /* UIButtonHelper.swift */,
-				5080436AD0EFE4D822FEFB10212F25DB /* UILabelHelper.swift */,
-				A0F78CDC7F789C8A0048523A51BBD24A /* UITextFieldHelper.swift */,
-				FDCE60BD279B2A23A71A6B435D745839 /* UITextViewHelper.swift */,
-				D82265C87FBF1A7FC6666DC4B431112E /* Support Files */,
+				A77BDD4D44222BCB204BE28CB9809722 /* ColorSlider.framework */,
+				19672639458D5EF5EC76A48F6BF5A2B3 /* CropViewController.framework */,
+				0C179446A8BAE6FED46868125ABFD9F3 /* GhostTypewriter.framework */,
+				40174C8E8CE21726FD14C2F752320F59 /* LayoutHelper.framework */,
+				6C59B339E434E5D7B7354CCF5F0CA45E /* LBTAComponents.framework */,
+				100472E2F40A332B2AA1FEF539717C47 /* libPods-The Color Rap BookTests.a */,
+				710535AEE820180425DB8B8C4068A265 /* libPods-The Color Rap BookUITests.a */,
+				CDFE17C33402221E65DF3C56BCE607AF /* Pods_The_Color_Rap_Book.framework */,
+				BD56534C888FE385363934C9ABE6E7B4 /* RevealingSplashView.framework */,
+				7A6F71E1E2C33927DF7021A084E1475F /* StepSlider.framework */,
+				97A93DCEF2B1499B1F84D43333829DC7 /* TOCropViewControllerBundle.bundle */,
+				1B11AF28FB2116EF4B6E72E15E8511FE /* VegaScrollFlowLayout.framework */,
 			);
-			name = LayoutHelper;
-			path = LayoutHelper;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -809,14 +865,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC57BCCDAEECCC260C2FD1E5DCB57F2D /* LayoutHelper-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		417B95092F919354C9D0AD6AB284E899 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				40423826FB45EE4F6C90AA660AA5FC38 /* Pods-The Color Rap Book-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +881,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				32B0706EF583EC48078886ED3FFA3C8A /* ColorSlider-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59C6F587A213D269BC9613DC903D8D45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F56360302C7F440A5E9389DBFD4C360 /* StepSlider-umbrella.h in Headers */,
+				CB3EB50E623ACD8D62774AFB6AB936AE /* StepSlider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,6 +913,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E840428A35C98072ACDF34ACEDC773 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF66BC7F0673A5A4A59EFB3A5F40EF89 /* Pods-The Color Rap Book-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,23 +964,24 @@
 /* Begin PBXNativeTarget section */
 		0F85E068CA1D7506CA1ECC46A367B82E /* Pods-The Color Rap Book */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D0C89D101AE5679D876CD10AEEEF9C9 /* Build configuration list for PBXNativeTarget "Pods-The Color Rap Book" */;
+			buildConfigurationList = B67D7B3894857FE41C458F1D282CF2BE /* Build configuration list for PBXNativeTarget "Pods-The Color Rap Book" */;
 			buildPhases = (
-				417B95092F919354C9D0AD6AB284E899 /* Headers */,
-				6698817BA66CBEDF7EB1319323D8A6EB /* Sources */,
-				D7798FEC22A0C9EB6F2B437EC6FA7CEB /* Frameworks */,
-				5DBB0BF53A5B92DDB06417369ABC62BE /* Resources */,
+				F0E840428A35C98072ACDF34ACEDC773 /* Headers */,
+				067232ED0DC283092890E423005F4FAC /* Sources */,
+				1793082B3174053B239E161648B5C6D1 /* Frameworks */,
+				550BD6016FD2DCFA5C19DDC5C6C3AFFB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				71E74DB2052A53CC48A618C794BF4BAD /* PBXTargetDependency */,
-				70852B7B9C85428FA567C66FF776DBD8 /* PBXTargetDependency */,
-				373410CDA3CBCD228D26CA3C7094A035 /* PBXTargetDependency */,
-				93C44271E60B0C6CF4F4BC833AF88A2E /* PBXTargetDependency */,
-				01CA0C1031D9DC068CC6D72E9389845E /* PBXTargetDependency */,
-				7FDFF6030F6985F3A9F3C80AB3B764B8 /* PBXTargetDependency */,
-				01545B52E2EA8354DEA091920EC1D3C9 /* PBXTargetDependency */,
+				91C47A033139DE5FE47090AC10D8CFF3 /* PBXTargetDependency */,
+				37CD2DD5ED7E7D30D138703D02F67C81 /* PBXTargetDependency */,
+				5D6474F05AA210926DE3CED298BD4D41 /* PBXTargetDependency */,
+				9EE4667C27EDD45B528DAE838CC0BB8D /* PBXTargetDependency */,
+				74B0DA106EF6F0CAA71CB8427240C7E1 /* PBXTargetDependency */,
+				A62DDD4621F6372153DC8A162979C076 /* PBXTargetDependency */,
+				4F9B57C53D29D3792BFDA6138F59BFE3 /* PBXTargetDependency */,
+				64461AA99403D127580F897A1B3DE4DD /* PBXTargetDependency */,
 			);
 			name = "Pods-The Color Rap Book";
 			productName = "Pods-The Color Rap Book";
@@ -990,6 +1056,24 @@
 			name = LBTAComponents;
 			productName = LBTAComponents;
 			productReference = 6C59B339E434E5D7B7354CCF5F0CA45E /* LBTAComponents.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		52EA8B3667B8849AB63C4EF323988478 /* StepSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 762C909E9064371A8E436819665D6A5A /* Build configuration list for PBXNativeTarget "StepSlider" */;
+			buildPhases = (
+				59C6F587A213D269BC9613DC903D8D45 /* Headers */,
+				08A1C407035477AF53E1A0F752CC8387 /* Sources */,
+				0E3EF62F745216AEDCD68D0B1538BCE2 /* Frameworks */,
+				70E1DFED6A003AF718BE7F87FF8C2B32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StepSlider;
+			productName = StepSlider;
+			productReference = 7A6F71E1E2C33927DF7021A084E1475F /* StepSlider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6738B61255F4E5F64DBC885C2955BE0F /* VegaScrollFlowLayout */ = {
@@ -1118,7 +1202,7 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 397B723EB6592CD824B1DFC811B61107 /* Products */;
+			productRefGroup = EBCB7DAA0950A58C823AFF830605B227 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1132,6 +1216,7 @@
 				17910F2EEF47EAF9222FCED776C2C650 /* Pods-The Color Rap BookTests */,
 				109EC7FD8CC090E704D62928AFBAC6BD /* Pods-The Color Rap BookUITests */,
 				A16BB753FC705C22DAFCD8B7C1071A09 /* RevealingSplashView */,
+				52EA8B3667B8849AB63C4EF323988478 /* StepSlider */,
 				6738B61255F4E5F64DBC885C2955BE0F /* VegaScrollFlowLayout */,
 			);
 		};
@@ -1160,7 +1245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DBB0BF53A5B92DDB06417369ABC62BE /* Resources */ = {
+		550BD6016FD2DCFA5C19DDC5C6C3AFFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1201,6 +1286,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6B62542F3F3CF4CE4E4154A80E27F8ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E1DFED6A003AF718BE7F87FF8C2B32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1249,6 +1341,23 @@
 				900B8997F1759ADFEDB2E8980DD9B211 /* UIColor+Helper.swift in Sources */,
 				FFCD4F1BA26E802B6DB1A8824F759AC1 /* UIImage+Helper.swift in Sources */,
 				A43CFE049F8ED02A3E056C1BFD813C4B /* UIView+Anchors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		067232ED0DC283092890E423005F4FAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9904C05364BA0DD53F951663210E3C21 /* Pods-The Color Rap Book-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08A1C407035477AF53E1A0F752CC8387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26942B0A48F3437796B278C0BAEA97BB /* StepSlider-dummy.m in Sources */,
+				90A0673EEC3A3E28229FFAC08C7E46E8 /* StepSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1304,14 +1413,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6698817BA66CBEDF7EB1319323D8A6EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				110CE986D909D3181E6B51EB8EE70FF6 /* Pods-The Color Rap Book-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8211B97F72570B3E10C5C96DB5D0ABFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1364,47 +1465,53 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		01545B52E2EA8354DEA091920EC1D3C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = VegaScrollFlowLayout;
-			target = 6738B61255F4E5F64DBC885C2955BE0F /* VegaScrollFlowLayout */;
-			targetProxy = CBDDF9B99E82B7BB89AB78B63604AC2A /* PBXContainerItemProxy */;
-		};
-		01CA0C1031D9DC068CC6D72E9389845E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LayoutHelper;
-			target = B97EF92BEE5DAB35D006DEEB09E7CAA8 /* LayoutHelper */;
-			targetProxy = DDCBDE1614EA775C7B9621FF9BF5E477 /* PBXContainerItemProxy */;
-		};
-		373410CDA3CBCD228D26CA3C7094A035 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GhostTypewriter;
-			target = DDE6B10EDAC938DA6D87A1F53A7AC3A6 /* GhostTypewriter */;
-			targetProxy = 2D13D99D4CCD772152AA701A901BC156 /* PBXContainerItemProxy */;
-		};
-		70852B7B9C85428FA567C66FF776DBD8 /* PBXTargetDependency */ = {
+		37CD2DD5ED7E7D30D138703D02F67C81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CropViewController;
 			target = CC81A5995F9CEB2971CBA61ACA13FCA3 /* CropViewController */;
-			targetProxy = 98B7CEFD91A2F41E5A333B3E0DC0E66C /* PBXContainerItemProxy */;
+			targetProxy = 79C61B8AB7A64FCD128CB6BE9D5C6FC7 /* PBXContainerItemProxy */;
 		};
-		71E74DB2052A53CC48A618C794BF4BAD /* PBXTargetDependency */ = {
+		4F9B57C53D29D3792BFDA6138F59BFE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StepSlider;
+			target = 52EA8B3667B8849AB63C4EF323988478 /* StepSlider */;
+			targetProxy = 3DF660BF2A8217BD8C485515B6387DD1 /* PBXContainerItemProxy */;
+		};
+		5D6474F05AA210926DE3CED298BD4D41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GhostTypewriter;
+			target = DDE6B10EDAC938DA6D87A1F53A7AC3A6 /* GhostTypewriter */;
+			targetProxy = 874717909DF8E408B2496DF12FFA0DB5 /* PBXContainerItemProxy */;
+		};
+		64461AA99403D127580F897A1B3DE4DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VegaScrollFlowLayout;
+			target = 6738B61255F4E5F64DBC885C2955BE0F /* VegaScrollFlowLayout */;
+			targetProxy = 5D5FAE0BAE3C074A6A5277A88E1BDA78 /* PBXContainerItemProxy */;
+		};
+		74B0DA106EF6F0CAA71CB8427240C7E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LayoutHelper;
+			target = B97EF92BEE5DAB35D006DEEB09E7CAA8 /* LayoutHelper */;
+			targetProxy = E05691E7F2ED2CCACE6155A3DADAF2D0 /* PBXContainerItemProxy */;
+		};
+		91C47A033139DE5FE47090AC10D8CFF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ColorSlider;
 			target = 1E3469B000FE3C67BAD723C2FB400BCC /* ColorSlider */;
-			targetProxy = 50E2877B32850973F950871EAB4A54F5 /* PBXContainerItemProxy */;
+			targetProxy = ECB493B10382625274097348105C276F /* PBXContainerItemProxy */;
 		};
-		7FDFF6030F6985F3A9F3C80AB3B764B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RevealingSplashView;
-			target = A16BB753FC705C22DAFCD8B7C1071A09 /* RevealingSplashView */;
-			targetProxy = 074D92E7E1D4930243FF7E68BA86679D /* PBXContainerItemProxy */;
-		};
-		93C44271E60B0C6CF4F4BC833AF88A2E /* PBXTargetDependency */ = {
+		9EE4667C27EDD45B528DAE838CC0BB8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LBTAComponents;
 			target = 507F07FC62AFC9C6A73513E671361060 /* LBTAComponents */;
-			targetProxy = 370E47A91F7A6F41E83246A32A06CA31 /* PBXContainerItemProxy */;
+			targetProxy = 2992643A3ECCD764D5BD0CAD7F1A08EC /* PBXContainerItemProxy */;
+		};
+		A62DDD4621F6372153DC8A162979C076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RevealingSplashView;
+			target = A16BB753FC705C22DAFCD8B7C1071A09 /* RevealingSplashView */;
+			targetProxy = E6E4F15E90A0DBB0604940F1EA450149 /* PBXContainerItemProxy */;
 		};
 		E45CF4216D64DD43E4FF564039D05089 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1417,7 +1524,7 @@
 /* Begin XCBuildConfiguration section */
 		0DBCC192316151E9CBE4518505D9EB42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24ED57845CC5610BB5DBAE36BC75E626 /* RevealingSplashView.xcconfig */;
+			baseConfigurationReference = 34A7A4C33B99B9135B6731A82F379136 /* RevealingSplashView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1453,7 +1560,7 @@
 		};
 		192B4318ECC023DCB3CDB323B476CC33 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 558E869878BFE4C1B0749CA4E99D0ECD /* LBTAComponents.xcconfig */;
+			baseConfigurationReference = 81DFB9ABB80A1837B8EB7371DB2FA504 /* LBTAComponents.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1488,7 +1595,7 @@
 		};
 		1C9E146998E747A327BAB85B0BCF6709 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24ED57845CC5610BB5DBAE36BC75E626 /* RevealingSplashView.xcconfig */;
+			baseConfigurationReference = 34A7A4C33B99B9135B6731A82F379136 /* RevealingSplashView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1523,7 +1630,7 @@
 		};
 		2494E8964437D832DA8D01CEF76E875A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DEAA52B83395B90EFD0332AE8BF2E15 /* GhostTypewriter.xcconfig */;
+			baseConfigurationReference = 606341187F24DB86B6BBB388E45CB7BE /* GhostTypewriter.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1620,7 +1727,7 @@
 		};
 		33152E7A482A077460DCA66EA2AF85F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DEAA52B83395B90EFD0332AE8BF2E15 /* GhostTypewriter.xcconfig */;
+			baseConfigurationReference = 606341187F24DB86B6BBB388E45CB7BE /* GhostTypewriter.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1654,9 +1761,48 @@
 			};
 			name = Debug;
 		};
+		3A8EA85794D4FF2B86EB0A8A7D01E74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AFF0B3ADEF081B79D3F85BB75E6941C /* Pods-The Color Rap Book.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3D33643AB561A5B192FE60E8D6BE16A7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65236E0C07EC7062D7A1B879A3051A21 /* VegaScrollFlowLayout.xcconfig */;
+			baseConfigurationReference = 6CEB40D3F10DCEE76AE20CF52617DE6B /* VegaScrollFlowLayout.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1692,7 +1838,7 @@
 		};
 		4C78EE8B1B620C9EA517A762983583CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2BE5BA2BD680B492AA786D89B893831 /* CropViewController.xcconfig */;
+			baseConfigurationReference = F7335579B7F848A2E10D2F48FD7AE617 /* CropViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CropViewController";
@@ -1732,7 +1878,7 @@
 		};
 		7422140FD461865493FD004C49FA70DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65236E0C07EC7062D7A1B879A3051A21 /* VegaScrollFlowLayout.xcconfig */;
+			baseConfigurationReference = 6CEB40D3F10DCEE76AE20CF52617DE6B /* VegaScrollFlowLayout.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1767,7 +1913,7 @@
 		};
 		82B13A0EEE43D9FD1DC5DB8A7FF753F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8434FD9340AF293E3B77283604D2358 /* LayoutHelper.xcconfig */;
+			baseConfigurationReference = 5E70CFB0CE1D144C9EF50E21367B672C /* LayoutHelper.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1801,158 +1947,7 @@
 			};
 			name = Release;
 		};
-		95261CAD15C49876FA7A510126B3C6A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B3507822DA4BE5E96FA75ADA995B3A8 /* Pods-The Color Rap BookUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9F8FC56BE88D45264C9F7BB8C02BABBA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E11B76E3FFE1BB8A75E63D8F16132F85 /* ColorSlider.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ColorSlider/ColorSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ColorSlider/ColorSlider-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ColorSlider/ColorSlider.modulemap";
-				PRODUCT_MODULE_NAME = ColorSlider;
-				PRODUCT_NAME = ColorSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A1698168749948F43A8079310D1C6C4B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2BE5BA2BD680B492AA786D89B893831 /* CropViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CropViewController";
-				IBSC_MODULE = CropViewController;
-				INFOPLIST_FILE = "Target Support Files/CropViewController/ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = TOCropViewControllerBundle;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		A66365F10B44321B73339126B4515EA1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 558E869878BFE4C1B0749CA4E99D0ECD /* LBTAComponents.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LBTAComponents/LBTAComponents-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LBTAComponents/LBTAComponents-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/LBTAComponents/LBTAComponents.modulemap";
-				PRODUCT_MODULE_NAME = LBTAComponents;
-				PRODUCT_NAME = LBTAComponents;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B81CEA4DB185635317303C18A0CBE26D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AFF0B3ADEF081B79D3F85BB75E6941C /* Pods-The Color Rap Book.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-The Color Rap Book/Pods-The Color Rap Book.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C53BA18CCD4829334173A61422D3B5F5 /* Debug */ = {
+		93EC4395C7BB2485B0CC4ED1F36322EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F472A4BD62DB4B1E2364111AA921CA3 /* Pods-The Color Rap Book.debug.xcconfig */;
 			buildSettings = {
@@ -1990,6 +1985,155 @@
 			};
 			name = Debug;
 		};
+		95261CAD15C49876FA7A510126B3C6A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3507822DA4BE5E96FA75ADA995B3A8 /* Pods-The Color Rap BookUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F8FC56BE88D45264C9F7BB8C02BABBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B3B51B0A730AEBC935661E244A9B10 /* ColorSlider.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ColorSlider/ColorSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ColorSlider/ColorSlider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ColorSlider/ColorSlider.modulemap";
+				PRODUCT_MODULE_NAME = ColorSlider;
+				PRODUCT_NAME = ColorSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A1698168749948F43A8079310D1C6C4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7335579B7F848A2E10D2F48FD7AE617 /* CropViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CropViewController";
+				IBSC_MODULE = CropViewController;
+				INFOPLIST_FILE = "Target Support Files/CropViewController/ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = TOCropViewControllerBundle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A66365F10B44321B73339126B4515EA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81DFB9ABB80A1837B8EB7371DB2FA504 /* LBTAComponents.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LBTAComponents/LBTAComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LBTAComponents/LBTAComponents-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LBTAComponents/LBTAComponents.modulemap";
+				PRODUCT_MODULE_NAME = LBTAComponents;
+				PRODUCT_NAME = LBTAComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3EB451C53221D9EB0B517C6F0A243D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46FC5ACDDD847FB54A847F3C97D27963 /* StepSlider.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StepSlider/StepSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StepSlider/StepSlider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/StepSlider/StepSlider.modulemap";
+				PRODUCT_MODULE_NAME = StepSlider;
+				PRODUCT_NAME = StepSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CAB349B76BADA259BA22E74272A07039 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6713DB6345CF5F8A38B6A26762B81F23 /* Pods-The Color Rap BookTests.debug.xcconfig */;
@@ -2014,7 +2158,7 @@
 		};
 		CFA174BFE7DA50707D738B1EE99714F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2BE5BA2BD680B492AA786D89B893831 /* CropViewController.xcconfig */;
+			baseConfigurationReference = F7335579B7F848A2E10D2F48FD7AE617 /* CropViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2134,9 +2278,45 @@
 			};
 			name = Debug;
 		};
+		E30263385BA381A8D33230A087378787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46FC5ACDDD847FB54A847F3C97D27963 /* StepSlider.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StepSlider/StepSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StepSlider/StepSlider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/StepSlider/StepSlider.modulemap";
+				PRODUCT_MODULE_NAME = StepSlider;
+				PRODUCT_NAME = StepSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		FA62E137DEF7F9B449F74E3971D65D90 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E11B76E3FFE1BB8A75E63D8F16132F85 /* ColorSlider.xcconfig */;
+			baseConfigurationReference = 71B3B51B0A730AEBC935661E244A9B10 /* ColorSlider.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2171,7 +2351,7 @@
 		};
 		FCB2A69D2D5A1BCD883E394D80C2612D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2BE5BA2BD680B492AA786D89B893831 /* CropViewController.xcconfig */;
+			baseConfigurationReference = F7335579B7F848A2E10D2F48FD7AE617 /* CropViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2206,7 +2386,7 @@
 		};
 		FD4753B832D87BEA3480A149941E483B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8434FD9340AF293E3B77283604D2358 /* LayoutHelper.xcconfig */;
+			baseConfigurationReference = 5E70CFB0CE1D144C9EF50E21367B672C /* LayoutHelper.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2251,15 +2431,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D0C89D101AE5679D876CD10AEEEF9C9 /* Build configuration list for PBXNativeTarget "Pods-The Color Rap Book" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C53BA18CCD4829334173A61422D3B5F5 /* Debug */,
-				B81CEA4DB185635317303C18A0CBE26D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2274,6 +2445,15 @@
 			buildConfigurations = (
 				E097A377FCDDD9437209959344BEA7BA /* Debug */,
 				95261CAD15C49876FA7A510126B3C6A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		762C909E9064371A8E436819665D6A5A /* Build configuration list for PBXNativeTarget "StepSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E30263385BA381A8D33230A087378787 /* Debug */,
+				C3EB451C53221D9EB0B517C6F0A243D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2319,6 +2499,15 @@
 			buildConfigurations = (
 				7422140FD461865493FD004C49FA70DF /* Debug */,
 				3D33643AB561A5B192FE60E8D6BE16A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B67D7B3894857FE41C458F1D282CF2BE /* Build configuration list for PBXNativeTarget "Pods-The Color Rap Book" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93EC4395C7BB2485B0CC4ED1F36322EB /* Debug */,
+				3A8EA85794D4FF2B86EB0A8A7D01E74C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

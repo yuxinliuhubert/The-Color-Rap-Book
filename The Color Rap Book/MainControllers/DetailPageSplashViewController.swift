@@ -65,10 +65,7 @@ class DetailPageSplashViewController: UIViewController {
 //
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//            print("ayyyyyyy")
-//            self.revealingSplashView.layer.removeAllAnimations()
-//            self.revealingSplashView.removeFromSuperview()
-//            self.revealingSplashView.heartAttack = true
+
              self.performSegue(withIdentifier: "ToDetailPageSegue", sender: self)
 
         })

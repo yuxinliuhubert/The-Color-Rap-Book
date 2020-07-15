@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import StepSlider
 
 
 
@@ -20,11 +20,42 @@ class ViewController: UIViewController {
     
     var timeControl = 2.0;
     var position = CGPoint()
+    @IBOutlet var leftSwipeGesture: UISwipeGestureRecognizer!
+    @IBOutlet var rightSwipeGesture: UISwipeGestureRecognizer!
     @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var frontCoverView: UIImageView!
     @IBOutlet var singleTap: UITapGestureRecognizer!
     var screenWidth = UIScreen.main.bounds.width
     var screenHeight = UIScreen.main.bounds.height
+    
+//    var backgroundMusicStack: MusicVolumeStack = {
+//        let stack = MusicVolumeStack()
+//        stack.label.text = "Music"
+//        stack.slider.maxCount = 5
+//        stack.slider.setIndex(5, animated: false)
+//        stack.slider.addTarget(self, action: #selector(backgroundMusicVolumeControl), for: .valueChanged)
+//        return stack
+//    }()
+//
+//    var soundControlStack: MusicVolumeStack = {
+//        let stack = MusicVolumeStack()
+//        stack.label.text = "Sound"
+//        stack.slider.maxCount = 5
+//        stack.slider.setIndex(5, animated: false)
+//        stack.slider.addTarget(self, action: #selector(soundVolumeControl), for: .valueChanged)
+//        return stack
+//
+//    }()
+//
+//    var musicControlPanelStack: UIStackView = {
+//        let stack = UIStackView()
+//        stack.axis = .vertical
+//        stack.distribution = .equalSpacing
+//        stack.alignment = .center
+//        return stack
+//    }()
+    
+    
     
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var tableOfContentButton: UIButton!
@@ -38,6 +69,10 @@ class ViewController: UIViewController {
 //    override fucntions
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if !myVariable.musicControlPanelStack.isDescendant(of: view) {
+            musicPanelSetUp()
+        }
         
         if myVariable.state >= 3 {
             if #available(iOS 13.0, *) {
@@ -59,10 +94,23 @@ class ViewController: UIViewController {
     }
     
     
+    
+    fileprivate func musicPanelSetUp() {
+        view.addSubview(myVariable.musicControlPanelStack)
+        myVariable.musicControlPanelStack.backgroundMusicStack.slider.addTarget(self, action: #selector(backgroundMusicVolumeControl), for: .valueChanged)
+        myVariable.musicControlPanelStack.soundControlStack.slider.addTarget(self, action: #selector(soundVolumeControl), for: .valueChanged)
+        myVariable.musicControlPanelStack.frame = CGRect(x: screenWidth * 0.3, y: screenHeight * 0.30, width: screenWidth * 0.28, height: screenHeight * 0.15)
+        myVariable.musicControlPanelStack.alpha = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        musicPanelSetUp()
         setUpBubblePlayer()
+        setUpBackgroundPlayer()
+        myVariable.backgroundPlayer?.setVolume(0.05, fadeDuration: 0)
+        myVariable.backgroundPlayer?.play()
+    
         
         view.isExclusiveTouch = true
         readButton.isExclusiveTouch = true
@@ -151,6 +199,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        myVariable.musicControlPanelStack.alpha = 0
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
@@ -180,6 +229,16 @@ class ViewController: UIViewController {
     
     @IBAction func treeTap(_ sender: Any) {
         myVariable.buttonSoundPlayer?.play()
+        if myVariable.musicControlPanelStack.alpha == 0 {
+            leftSwipeGesture.isEnabled = false
+            rightSwipeGesture.isEnabled = false
+            myVariable.musicControlPanelStack.alpha = 1
+        } else {
+            leftSwipeGesture.isEnabled = true
+            rightSwipeGesture.isEnabled = true
+            myVariable.musicControlPanelStack.alpha = 0
+        }
+        
     }
     
     @IBAction func leftSwipeHandler(_ sender: Any) {
@@ -296,10 +355,106 @@ class ViewController: UIViewController {
          self.imageFloatingEffect(image1: self.introLabel, image2: self.readButton, image3: self.tableOfContentButton, image4: self.treeButton, image5: self.developerButton, state: 0)
     }
     
+    @objc func backgroundMusicVolumeControl() {
+        print("value, ", myVariable.musicControlPanelStack.backgroundMusicStack.slider.index)
+        let value = 0.05 * ((Float)(myVariable.musicControlPanelStack.backgroundMusicStack.slider.index) / 4.00)
+        print("value, ", value)
+        myVariable.backgroundPlayer?.volume = value
+        
+    }
+
+    @objc func soundVolumeControl() {
+            
+        myVariable.allSoundVolume = (Float)(myVariable.musicControlPanelStack.soundControlStack.slider.index) / 4.00
+        print("value, ", myVariable.allSoundVolume)
+        myVariable.buttonSoundPlayer?.volume = myVariable.allSoundVolume
+//           myVariable.backgroundPlayer?.volume = value
+           
+       }
+}
+
+
+
+
+
+class MusicPanelControlStack: UIStackView {
+    
+    var backgroundMusicStack: MusicVolumeStack = {
+        let stack = MusicVolumeStack()
+        stack.label.text = "Music"
+        stack.slider.maxCount = 5
+        stack.slider.setIndex(5, animated: false)
+//        stack.slider.addTarget(self, action: #selector(backgroundMusicVolumeControl), for: .valueChanged)
+        return stack
+    }()
+    
+    var soundControlStack: MusicVolumeStack = {
+        let stack = MusicVolumeStack()
+        stack.label.text = "Sound"
+        stack.slider.maxCount = 5
+        stack.slider.setIndex(5, animated: false)
+        //        stack.slider.addTarget(self, action: #selector(soundVolumeControl), for: .valueChanged)
+        return stack
+        
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addArrangedSubview(backgroundMusicStack)
+        self.addArrangedSubview(soundControlStack)
+        axis = .vertical
+        distribution = .equalSpacing
+        alignment = .center
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
 }
 
 
+
+
+class MusicVolumeStack: UIStackView {
+    
+    
+    var label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Morgan_bold", size: 20)
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        label.textColor = .white
+        return label
+    }()
+    var slider: StepSlider = {
+        let slider = StepSlider()
+        slider.sliderCircleImage = UIImage(named: "imageCopy")
+        slider.contentMode = .scaleAspectFit
+//        slider.setTrackCircleImage(UIImage(named: "goBack"), for: .normal)
+        return slider
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addArrangedSubview(label)
+        self.addArrangedSubview(slider)
+        label.widthAnchor.constraint(equalTo: slider.widthAnchor, multiplier: 0.2).isActive = true
+        label.heightAnchor.constraint(equalTo: slider.heightAnchor, multiplier: 1).isActive = true
+        spacing = 10
+        axis = .horizontal
+//        distribution = .fillProportionally
+        alignment = .center
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+}
 
 
 

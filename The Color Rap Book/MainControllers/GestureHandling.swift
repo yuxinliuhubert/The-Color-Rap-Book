@@ -17,6 +17,7 @@ extension (DetailPageController) {
         
         switch state {
         case 15:
+            self.soundPlay(forResource: "twangSound", ofType: "m4a")
             image1.shake(duration: 0.5, rotationDivision: nil)
             if image1.frame.contains(position) {
                 switch self.image1.image {
@@ -82,7 +83,7 @@ extension (DetailPageController) {
             
         case 25:
             if image5.frame.contains(position) {
-                self.page25ShakingTreeSound()
+                self.soundPlay(forResource: "page25ShakeSound", ofType: "m4a")
                 self.image5.shake(duration: 0.5, rotationDivision: nil)
                 UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
                     self.image6.alpha = 1
@@ -101,7 +102,7 @@ extension (DetailPageController) {
         case 27:
             
             if image1.frame.contains(position) {
-                self.page27SqueezingOrangeSound()
+                self.soundPlay(forResource: "page27OrangeSqueezSound", ofType: "m4a")
                 self.image1.shake(duration: 1.5, rotationDivision: nil)
                 label1.text = "📣 Did you hear the juicy sound?"
             

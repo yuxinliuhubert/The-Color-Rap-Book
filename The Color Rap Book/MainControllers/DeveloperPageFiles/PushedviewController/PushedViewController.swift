@@ -99,7 +99,10 @@ class PushedViewController: UIViewController {
         self.tableView.estimatedRowHeight = 50
         let headerInset: CGFloat = tableView.frame.size.width * 0.2
         tableView.separatorInset = UIEdgeInsets.init(top: 0, left: headerInset, bottom: 0, right: 0)
-        
+
+        if #available(iOS 13.0, *) {
+                   self.overrideUserInterfaceStyle = .light
+               }
         constraintTableView()
         
        

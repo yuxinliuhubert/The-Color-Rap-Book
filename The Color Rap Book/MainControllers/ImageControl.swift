@@ -445,6 +445,27 @@ extension(DetailPageController) {
             
             
             
+        case 29:
+            let grapeHeight = screenHeight * 0.48
+            let grapeWidth = grapeHeight * (1039/1461)
+            image1.image = UIImage(named: "page29Grapes")
+            if self.screenHeight / self.screenWidth <= 0.47 {
+                self.image1.frame = CGRect(x: screenWidth * 0.16, y: screenHeight * 0.32, width: grapeWidth , height: grapeHeight)
+            } else {
+                image1.frame = CGRect(x: screenHeight * 0.1, y: screenHeight * 0.32, width: grapeWidth, height: grapeHeight)
+            }
+            UIView.animate(withDuration: 1.5, delay: 1.0, options: .transitionFlipFromTop, animations: {
+                self.image5.image = UIImage(named: "page29Bottle")
+                let bottleHeight = self.screenHeight * 0.46
+                let bottleWidth = bottleHeight * (980/1256)
+                self.image5.frame = CGRect(x: self.screenWidth * 0.7, y: self.screenHeight * 0.33, width: bottleWidth, height: bottleHeight)
+                //                self.image6.addShadow()
+            }, completion: {(finished) in
+                self.imageFloatingEffect(image1: self.image1, image2: nil, image3: self.image5, image4: nil, image5: nil, state: state)
+                
+            })
+            
+            
             
         case 35:
             self.image1.image = UIImage(named: "page35Chocolate")
@@ -727,7 +748,7 @@ extension(DetailPageController) {
         switch myVariable.state {
             
         case 17:
-            self.birdChirpingSound()
+            self.soundPlay(forResource: "birdChirping", ofType: "m4a")
             self.imageRotate(imageview: image3, x: 0.8, y: 0.2, state: 17)
             let notes = ["♩♪♫♩♫♪♫♬", "♬♫♩♩♪♫♬♬", "♫♪♩♬♫♩♯♩♫"]
             label1.text = notes.randomElement()
