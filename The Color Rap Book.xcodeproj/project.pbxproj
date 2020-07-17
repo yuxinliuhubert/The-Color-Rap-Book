@@ -23,6 +23,7 @@
 		533CC21D23ECC01C00871876 /* The_Color_Rap_BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC21C23ECC01C00871876 /* The_Color_Rap_BookTests.swift */; };
 		533CC22823ECC01C00871876 /* The_Color_Rap_BookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC22723ECC01C00871876 /* The_Color_Rap_BookUITests.swift */; };
 		5361589224AAA2B5007E3B60 /* pageTurn2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5361589124AAA2B5007E3B60 /* pageTurn2.m4a */; };
+		5367177E24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5367177D24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a */; };
 		536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC29F2412B9DD000AB196 /* DeveloperController.swift */; };
 		536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */; };
 		536D7B302448E1CD00B9B122 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D7B2F2448E1CD00B9B122 /* MenuController.swift */; };
@@ -123,6 +124,7 @@
 		533CC22723ECC01C00871876 /* The_Color_Rap_BookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Color_Rap_BookUITests.swift; sourceTree = "<group>"; };
 		533CC22923ECC01C00871876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5361589124AAA2B5007E3B60 /* pageTurn2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = pageTurn2.m4a; sourceTree = "<group>"; };
+		5367177D24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = yuxinDeveloperPageCheer.m4a; sourceTree = "<group>"; };
 		536BC29F2412B9DD000AB196 /* DeveloperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperController.swift; sourceTree = "<group>"; };
 		536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		536D7B2F2448E1CD00B9B122 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		530F73A524A7A3A700C7C4A7 /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
+				5367177D24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a */,
 				530A76EC24BD39EB0064CCB5 /* backgroundMusic.m4a */,
 				530A76EA24BD19F50064CCB5 /* twangSound.m4a */,
 				53B715D924AD045B0051ABF3 /* buttonSound.m4a */,
@@ -597,6 +600,7 @@
 				53B715CD24ACE90F0051ABF3 /* page20WaterSplashSound.m4a in Resources */,
 				53C7E30E23FB90E100866321 /* Data.rtf in Resources */,
 				5388922F24A26E6100CEE536 /* birdChirping.m4a in Resources */,
+				5367177E24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a in Resources */,
 				53F4D94624A1607F0018D924 /* Morgan_bold-Regular.otf in Resources */,
 				53A532E024AF855400DF32BF /* page25ShakeSound.m4a in Resources */,
 				533CC21223ECC01C00871876 /* LaunchScreen.storyboard in Resources */,

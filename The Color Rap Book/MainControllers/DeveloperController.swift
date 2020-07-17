@@ -18,6 +18,17 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var goBackButton: UIButton!
+    
+    let developerLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Morgan_bold", size: 100)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.text = "Swipe left & right to see all book creators\nClick on each block for more information"
+        label.textColor = .white
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
     //    let nav = UINavigationController()
     
     let transition = TransitionCoordinator()
@@ -37,7 +48,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         [
             "developerName": "SmithFamily",
             "hexBackgroundColor": "d86940",
-            "quickIntro": "Smith family is the family of Ann Smith."
+            "quickIntro": "The Smith family has given Ann tremendous support and published the book."
         ],
         [
             "developerName": "YuxinLiu",
@@ -47,7 +58,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         [
             "developerName": "JennieBaughman",
             "hexBackgroundColor": "800080",
-            "quickIntro": "Mrs. Jennie Baughman is the magician artist who made all the picture magic in this book."
+            "quickIntro": "Ms. Jennie Baughman is the magician artist who put together all the picture magic in this book."
         ],
         [
             "developerName": "Others",
@@ -57,7 +68,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         [
             "developerName": "Credits",
             "hexBackgroundColor": "44485b",
-            "quickIntro": "We have borrowed resources from these sources. Thanks for creatinig such useful content!"
+            "quickIntro": "We have borrowed resources from these websites. Thanks for creating such useful content!"
         ]
         
     ]
@@ -136,10 +147,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         super.viewDidAppear(animated)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+    fileprivate func readDeveloperData() {
         if let url = Bundle.main.url(forResource:"DeveloperData", withExtension: "rtf") {
             do {
                 let data = try Data(contentsOf:url)
@@ -147,25 +155,32 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
                 let fullText = attibutedString.string
                 for sectionCount in 0...5 {
                     for lineCount in 0...6 {
+                        var unProcessedText = String()
+                        var processedText = String()
+                        if lineCount != 6 {
+                            unProcessedText = fullText.components(separatedBy: .newlines)[lineCount + sectionCount * 7]
+                            processedText = unProcessedText.sortTextWithNewLine()
+                        }
                         switch lineCount {
                         case 0:
-                            developerDetailArray[sectionCount]["basicInfo", default: ["text":"", "image":""]]["text"] = fullText.components(separatedBy: .newlines)[lineCount + sectionCount * 7]
+                            
+                            developerDetailArray[sectionCount]["basicInfo", default: ["text":"", "image":""]]["text"] = processedText
                             
                         case 1:
-                            developerDetailArray[sectionCount]["basicInfo", default: ["text":"", "image":""]]["image"] = fullText.components(separatedBy: .newlines)[lineCount + sectionCount * 7]
+                            developerDetailArray[sectionCount]["basicInfo", default: ["text":"", "image":""]]["image"] = processedText
                             
                         case 2:
-                            developerDetailArray[sectionCount]["bookCreation", default: ["text":"", "image":""]]["text"] = fullText.components(separatedBy: .newlines)[lineCount + sectionCount * 7]
+                            developerDetailArray[sectionCount]["bookCreation", default: ["text":"", "image":""]]["text"] = processedText
                             
                             
                         case 3:
                             
-                            developerDetailArray[sectionCount]["bookCreation", default: ["text":"", "image":""]]["image"] = fullText.components(separatedBy: .newlines)[lineCount + sectionCount * 7]
+                            developerDetailArray[sectionCount]["bookCreation", default: ["text":"", "image":""]]["image"] = processedText
                         case 4:
-                            developerDetailArray[sectionCount]["favoritePage", default: ["text":"", "image":""]]["text"] = fullText.components(separatedBy: .newlines)[lineCount + sectionCount * 7]
+                            developerDetailArray[sectionCount]["favoritePage", default: ["text":"", "image":""]]["text"] = processedText
                             
                         case 5:
-                            developerDetailArray[sectionCount]["favoritePage", default: ["text":"", "image":""]]["image"] = fullText.components(separatedBy: .newlines)[lineCount + sectionCount * 7]
+                            developerDetailArray[sectionCount]["favoritePage", default: ["text":"", "image":""]]["image"] = processedText
                             
                         case 6:
                             continue;
@@ -173,7 +188,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
                         default:
                             print("something went terribly wrong with writing dicitonary, check coding grammar")
                         }
-                        print("developer[\(sectionCount)]", developerDetailArray[sectionCount])
+                        //                        print("developer[\(sectionCount)]", developerDetailArray[sectionCount])
                     }
                 }
             } catch {
@@ -181,6 +196,14 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
             }
             //            print("labelArray ", labelArray)
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.setUpAudioInterruptionNotification()
+        
+        readDeveloperData()
         
         
         //        print("dictionary, ", dictionaryDataArray)
@@ -196,6 +219,8 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         goBackButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
         goBackButton.layer.cornerRadius = 20
         
+        view.addSubview(developerLabel)
+        developerLabel.frame = CGRect(x: screenWidth * 0.16, y: 30, width: screenWidth * 0.80, height: screenHeight * 0.15)
         
         
     }
@@ -204,6 +229,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.goBackButton.alpha = 1
+        self.developerLabel.alpha = 1
     }
     
     override func didReceiveMemoryWarning() {
@@ -216,7 +242,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         
         UIView.animate(withDuration: 0.5, animations: {
             self.goBackButton.alpha = 0
-            
+            self.developerLabel.alpha = 0
             
         }, completion: {_ in
              if (collectionView.cellForItem(at: indexPath) as? CardCell) != nil {
@@ -278,4 +304,42 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         myVariable.buttonSoundPlayer?.play()
         self.performSegue(withIdentifier: "DeveloperUnwind", sender: self)
     }
+}
+
+
+
+extension String {
+    
+    func sortTextWithNewLine() -> String {
+               var checkForNL = ""
+                var labelString = ""
+               for i in self {
+                   if (i == "\\") {
+                       checkForNL += "\""
+                       print("sense the backslash", checkForNL)
+                       continue
+                   }
+                   if (checkForNL == "\"" && i == "n"){
+                       print("sense the n after backslash", checkForNL)
+                      labelString += "\n"
+    //                RunLoop.current.run(until: Date() + 0.0)
+                   }else {
+                       checkForNL = ""
+                    labelString += "\(i)"
+                       //                    print(i)
+    //                RunLoop.current.run(until: Date() + 0.0)
+                   }
+               }
+        return labelString
+//                label.text = labelString
+               //            labelFloating(label: label)
+               
+           }
+    
+    
+    
+    
+    
+    
+    
 }

@@ -240,6 +240,14 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
 
     
+    fileprivate func setUpDetailPageNotifications() {
+        self.setUpAudioInterruptionNotification()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEnteringForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -251,10 +259,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         nextButton.isExclusiveTouch = true
         previousButton.isExclusiveTouch = true
         showMoreButton.isExclusiveTouch = true
-       
-          NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged(notification:)), name: UIDevice.orientationDidChangeNotification, object: UIDevice.current)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleEnteringForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        setUpDetailPageNotifications()
         
         //if UIDevice.current.userInterfaceIdiom == .pad
         print(myVariable.state)

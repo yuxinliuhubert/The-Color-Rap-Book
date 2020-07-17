@@ -66,14 +66,9 @@ class TableOfContentController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
     }
     
-    override func viewDidLoad() {
-        view.isExclusiveTouch = true
-        collectionView.isExclusiveTouch = true
-        goBackButton.isExclusiveTouch = true
-
-        self.getSavedData()
-//        print("page", myVariable.page)
-//        print("customdata for book mark" , data)
+    fileprivate func setUpTableLabel() {
+        //        print("page", myVariable.page)
+        //        print("customdata for book mark" , data)
         
         tableLabel.frame = CGRect(x: width * 0.165235, y: 30, width: width * 0.80, height: width * 0.11267)
         tableLabel.text = "Table Of Content"
@@ -81,11 +76,37 @@ class TableOfContentController: UIViewController {
         tableLabel.adjustsFontSizeToFitWidth = true
         tableLabel.textAlignment = .center
         tableLabel.textColor = .white
-        
+    }
+    
+    fileprivate func setUpGoBackButton() {
         goBackButton.frame = CGRect(x: width * 0.01953, y: 30, width: width * 0.15, height: width * 0.11267)
         goBackButton.setImage(UIImage(named:"home"), for: .normal)
         goBackButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
         goBackButton.layer.cornerRadius = 20
+    }
+    
+    fileprivate func setUpCollectionView() {
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.1267 + 30).isActive = true
+        //        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.1267 + 60).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: width * 0.078125).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -width * 0.078125).isActive = true
+        //        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.05208).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.01208).isActive = true
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    override func viewDidLoad() {
+        self.setUpAudioInterruptionNotification()
+        view.isExclusiveTouch = true
+        collectionView.isExclusiveTouch = true
+        goBackButton.isExclusiveTouch = true
+
+        self.getSavedData()
+        setUpTableLabel()
+        
+        setUpGoBackButton()
         
         
         backgroundImageView.image = UIImage(named: "page20Back")
@@ -98,15 +119,7 @@ class TableOfContentController: UIViewController {
             collectionView.backgroundColor = .clear
         
 
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.1267 + 30).isActive = true
-//        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.1267 + 60).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: width * 0.078125).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -width * 0.078125).isActive = true
-//        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.05208).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.01208).isActive = true
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        setUpCollectionView()
     }
     
     @IBAction func goBackTap(_ sender: Any) {

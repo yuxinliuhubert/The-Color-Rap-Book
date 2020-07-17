@@ -26,99 +26,6 @@ extension (DetailPageController) {
                 self.pageNumberBackgroundDisplay(imageView: imageView, pageNum: state)
             }, completion: { finished in
                 self.loadingViewChange(state: state, label: label)
-//                switch state{
-//
-//
-//                case 3,4,8,9,13,18,19,24,28,31,32,36,41:
-//                    self.pageNumberLabelDisplay(label: label, pageNum: state)
-//
-//                case 5:
-////                    self.removeOrientationObserver()
-////                     print("Device orientation, ", UIDevice.current.orientation)
-//                    self.image1.contentMode = .scaleToFill
-//                    self.image2.contentMode = .scaleToFill
-//                    self.image3.contentMode = .scaleToFill
-//                    self.image6.contentMode = .scaleToFill
-//                    self.image7.contentMode = .scaleToFill
-//                    self.showMoreButton.layer.removeAllAnimations()
-//                    self.previousButton.layer.removeAllAnimations()
-//                    self.nextButton.layer.removeAllAnimations()
-//
-//                    let cloudHeight = self.screenHeight * 0.2
-//                    let leftCloudWidth = cloudHeight * 1.14
-//                    let rightCloudWidth = cloudHeight * 1.0952
-//                    let sunHeight = self.screenHeight * 0.25
-//                    let sunWidth = sunHeight * 0.9023
-//                    self.image2.frame = CGRect(x: self.screenWidth * 0.18, y: -cloudHeight * 2, width: leftCloudWidth, height: cloudHeight)
-//                    self.image3.frame = CGRect(x: self.screenWidth * 0.40, y: -cloudHeight * 2, width: rightCloudWidth, height: cloudHeight)
-//                    self.image6.frame = CGRect(x: 0, y: -sunHeight * 2, width: sunWidth, height: sunHeight)
-//                    UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
-//                        self.elementsEnteringStorage(state: state)
-//                        print("animation processed")
-//
-//
-//                    }, completion: {(finished) in
-//                        self.pageNumberLabelDisplay(label: label, pageNum: state)
-//                    })
-//
-//                case 11:
-//                    UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
-//                        self.elementsEnteringStorage(state: state)}, completion: {(finished) in
-//                            self.firstLabelTask(state: 11, completion: {(success) -> Void in
-//                                if success {
-//                                    self.imageRotate(imageview: self.image1, x: 0.79276, y: 1 - 0.1635, state: 11)
-//                                }})
-//                    })
-//
-//
-//
-//                case 12:
-//                    UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
-//                        self.elementsEnteringStorage(state: state)
-//                    }, completion: {(finished) in
-//                        self.pageNumberLabelDisplay(label: label, pageNum: state)
-//                    })
-//
-//                case 22:
-//                    UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
-//                        self.elementsEnteringStorage(state: state)
-//                        print("animation processed")
-//
-//
-//                    }, completion: {(finished) in
-//                        self.pageNumberLabelDisplay(label: label, pageNum: state)
-//                    })
-//
-//                case 35:
-//                    UIView.animate(withDuration: 1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
-//                        self.elementsEnteringStorage(state: state)}, completion: {(finished) in
-//                            self.pageNumberLabelDisplay(label: label, pageNum: state)
-//                            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
-//                            self.image1.isUserInteractionEnabled = true
-//                            self.image1.addGestureRecognizer(tapGestureRecognizer)
-//                            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
-//                            self.image1.addGestureRecognizer(longPressRecognizer)
-//
-//                    })
-//
-//                case 45:
-//                    UIView.animate(withDuration: 1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
-//
-//
-//
-//
-//
-//
-//                        }, completion: nil)
-//
-//
-//
-//                default:
-//                    UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
-                //                        self.elementsEnteringStorage(state: state)}, completion: {(finished) in
-                //                            self.pageNumberLabelDisplay(label: label, pageNum: state)
-                //                    })
-                //            }
                 
             })
         
@@ -168,9 +75,6 @@ extension (DetailPageController) {
             self.image3.contentMode = .scaleToFill
             self.image6.contentMode = .scaleToFill
             self.image7.contentMode = .scaleToFill
-            self.showMoreButton.layer.removeAllAnimations()
-            self.previousButton.layer.removeAllAnimations()
-            self.nextButton.layer.removeAllAnimations()
             let cloudHeight = self.screenHeight * 0.2
             let leftCloudWidth = cloudHeight * 1.14
             let rightCloudWidth = cloudHeight * 1.0952
@@ -335,25 +239,13 @@ extension (DetailPageController) {
                 self.backgroundImageView.backgroundColor =  self.backgroundColors[randomNum];
                
             })
-//            UIView.transition(with: self.label, duration: 2, options: .transitionCrossDissolve, animations: {
-//                if randomNum <= 1 {
-//                                   self.label.textColor = .black
-//                               } else {
-//                                   self.label.textColor = .white
-//                               }
-//            }, completion: nil)
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 let randomNum = Int.random(in: 0...6)
                 UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseInOut], animations: { () -> Void in
                     self.backgroundImageView.backgroundColor =  self.backgroundColors[randomNum];
                 })
-//                UIView.transition(with: self.label, duration: 2, options: .transitionCrossDissolve, animations: {
-//                               if randomNum <= 1 {
-//                                                  self.label.textColor = .black
-//                                              } else {
-//                                                  self.label.textColor = .white
-//                                              }
-//                           }, completion: nil)
+
             }})
         
     }

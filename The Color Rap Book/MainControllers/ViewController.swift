@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import StepSlider
+import AVFoundation
 
 
 
@@ -27,41 +27,14 @@ class ViewController: UIViewController {
     @IBOutlet var singleTap: UITapGestureRecognizer!
     var screenWidth = UIScreen.main.bounds.width
     var screenHeight = UIScreen.main.bounds.height
-    
-//    var backgroundMusicStack: MusicVolumeStack = {
-//        let stack = MusicVolumeStack()
-//        stack.label.text = "Music"
-//        stack.slider.maxCount = 5
-//        stack.slider.setIndex(5, animated: false)
-//        stack.slider.addTarget(self, action: #selector(backgroundMusicVolumeControl), for: .valueChanged)
-//        return stack
-//    }()
-//
-//    var soundControlStack: MusicVolumeStack = {
-//        let stack = MusicVolumeStack()
-//        stack.label.text = "Sound"
-//        stack.slider.maxCount = 5
-//        stack.slider.setIndex(5, animated: false)
-//        stack.slider.addTarget(self, action: #selector(soundVolumeControl), for: .valueChanged)
-//        return stack
-//
-//    }()
-//
-//    var musicControlPanelStack: UIStackView = {
-//        let stack = UIStackView()
-//        stack.axis = .vertical
-//        stack.distribution = .equalSpacing
-//        stack.alignment = .center
-//        return stack
-//    }()
-    
+
     
     
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var tableOfContentButton: UIButton!
     @IBOutlet weak var developerButton: UIButton!
     @IBOutlet weak var treeButton: UIButton!
-    
+    @IBOutlet weak var keepReadingButton: UIButton!
     
     
     
@@ -89,6 +62,12 @@ class ViewController: UIViewController {
             print("animation processed")
         }, completion: {(finished) in
             self.imageFloatingEffect(image1: self.introLabel, image2: self.readButton, image3: self.tableOfContentButton, image4: self.treeButton, image5: self.developerButton, state: 0)
+            myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: {_ in
+                self.keepReadingButton.transform = self.keepReadingButton.transform.rotated(by: .pi / 12)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.keepReadingButton.transform = self.keepReadingButton.transform.rotated(by: -.pi / 12)
+            }})
+//            self.imageRotate(imageview: self.keepReadingButton, x: 0, y: 0, state: 11)
             self.setupNotificationObservers()
         })
     }
@@ -99,18 +78,33 @@ class ViewController: UIViewController {
         view.addSubview(myVariable.musicControlPanelStack)
         myVariable.musicControlPanelStack.backgroundMusicStack.slider.addTarget(self, action: #selector(backgroundMusicVolumeControl), for: .valueChanged)
         myVariable.musicControlPanelStack.soundControlStack.slider.addTarget(self, action: #selector(soundVolumeControl), for: .valueChanged)
-        myVariable.musicControlPanelStack.frame = CGRect(x: screenWidth * 0.3, y: screenHeight * 0.30, width: screenWidth * 0.28, height: screenHeight * 0.15)
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            
+            if self.screenHeight / self.screenWidth <= 0.47 {
+                  myVariable.musicControlPanelStack.frame = CGRect(x: screenWidth * 0.25, y: screenHeight * 0.30, width: screenWidth * 0.38, height: screenHeight * 0.25)
+            } else {
+
+                 myVariable.musicControlPanelStack.frame = CGRect(x: screenWidth * 0.20, y: screenHeight * 0.30, width: screenWidth * 0.45, height: screenHeight * 0.25)
+            }
+
+            
+        } else {
+        myVariable.musicControlPanelStack.frame = CGRect(x: screenWidth * 0.2, y: screenHeight * 0.30, width: screenWidth * 0.38, height: screenHeight * 0.15)
+        }
         myVariable.musicControlPanelStack.alpha = 0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpAudioInterruptionNotification()
         musicPanelSetUp()
         setUpBubblePlayer()
         setUpBackgroundPlayer()
         myVariable.backgroundPlayer?.setVolume(0.05, fadeDuration: 0)
         myVariable.backgroundPlayer?.play()
     
+       
+        
         
         view.isExclusiveTouch = true
         readButton.isExclusiveTouch = true
@@ -121,11 +115,15 @@ class ViewController: UIViewController {
         self.getSavedData()
         screenWidth = UIScreen.main.bounds.width
         screenHeight = UIScreen.main.bounds.height
-        introLabel.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.3, width: screenWidth * 0.8, height: screenHeight * 0.19)
+        introLabel.frame = CGRect(x: screenWidth * 0.1, y: screenHeight * 0.3, width: screenWidth * 0.5, height: screenHeight * 0.19)
         introLabel.text = "The Color Rap Book"
-        introLabel.textColor = .red
-        introLabel.font = UIFont(name: "Morgan_bold", size: 80)
+        introLabel.numberOfLines = 1
+        introLabel.minimumScaleFactor = 0.1
         introLabel.adjustsFontSizeToFitWidth = true
+        introLabel.textColor = .red
+        introLabel.textAlignment = .left
+        introLabel.font = UIFont(name: "Morgan_bold", size: 80)
+        
         
         frontCoverView.image = UIImage(named: "page5Back")
         //        frontCoverView.image = UIImage(named: "FrontCover")
@@ -135,6 +133,7 @@ class ViewController: UIViewController {
         let readBWidth = readBHeight * 1.380723
         readButton.frame = CGRect(x: screenWidth * 0.42, y: -screenHeight * 0.40, width: readBWidth, height: readBHeight)
         readButton.setImage(UIImage(named: "readCloud"), for: .normal)
+        
         
         let tOCHeight = screenHeight * 0.20
         let tOCWidth = tOCHeight * 1.32477
@@ -158,6 +157,9 @@ class ViewController: UIViewController {
         treeButton.frame = CGRect(x: deviceTreePosition, y: screenHeight, width: treeWidth, height: treeHeight)
         treeButton.setImage((UIImage(named: "tree")), for: .normal)
         
+        
+        keepReadingButton.frame = CGRect(x: screenWidth * 0.1, y: screenHeight * 0.45, width: screenHeight * 0.2, height: screenHeight * 0.2)
+        keepReadingButton.alpha = 0
         
     }
 
@@ -200,6 +202,7 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         myVariable.musicControlPanelStack.alpha = 0
+        myVariable.timer.invalidate()
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
@@ -241,13 +244,18 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func keepReadingTap(_ sender: Any) {
+        myVariable.state = myVariable.page
+        myVariable.buttonSoundPlayer?.play()
+        self.performSegue(withIdentifier: "ToSplashSegue", sender: sender)
+    }
+    
+    
     @IBAction func leftSwipeHandler(_ sender: Any) {
         switch introLabel.alpha {
         case 0:
             
             labelFadeIn(label: introLabel, delay: TimeInterval())
-            //            state = 1;
-        //                    imageFloatingEffect(image1: introLabel, image2: readButton, image3: tableOfContentButton, image4: treeButton, image5: developerButton, state: 0)
         default:
             break;
         }
@@ -285,7 +293,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: timeControl, delay: 0.25, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
             
             self.introLabel.alpha = 1
-            self.introLabel.frame = CGRect(x: self.screenWidth * 0.05, y: self.screenHeight * 0.7, width: self.screenWidth * 0.8, height: self.screenHeight * 0.19)
+            self.introLabel.frame = CGRect(x: self.screenWidth * 0.10, y: self.screenHeight * 0.7, width: self.screenWidth * 0.5, height: self.screenHeight * 0.19)
         }, completion: {(finished) in
         })
         
@@ -297,7 +305,7 @@ class ViewController: UIViewController {
         
         UILabel.animate(withDuration: timeControl - 0.3, delay: delay, options: .curveEaseInOut, animations: {
             label.alpha = 0
-            self.introLabel.frame = CGRect(x: self.screenWidth * 0.05, y: self.screenHeight * 0.3, width: self.screenWidth * 0.8, height: self.screenHeight * 0.19)
+            self.introLabel.frame = CGRect(x: self.screenWidth * 0.10, y: self.screenHeight * 0.3, width: self.screenWidth * 0.5, height: self.screenHeight * 0.19)
         },
                         completion: nil)
         
@@ -336,9 +344,18 @@ class ViewController: UIViewController {
         let sunWidth = sunHeight * 0.9022
         UIView.animate(withDuration: 0.2, delay: 1.2, options: .curveEaseIn, animations: {
             self.developerButton.frame = CGRect(x: 0, y: 0, width: sunWidth, height: sunHeight)
-        }, completion: {(finished) in
-            self.labelFadeIn(label: self.introLabel, delay: 0)
-        })
+        }, completion: nil)
+        
+        
+        UIView.animate(withDuration: 0.2, delay: 1.4, options: .curveEaseIn, animations: {
+//            self.keepReadingButton.frame = CGRect(x: self.screenWidth * 0.2, y: self.screenHeight * 0.45, width: self.screenHeight * 0.2, height: self.screenHeight * 0.2)
+            self.keepReadingButton.alpha = 1
+               }, completion: {(finished) in
+                   self.labelFadeIn(label: self.introLabel, delay: 0)
+               })
+        
+        
+        
     }
     
     
@@ -356,9 +373,10 @@ class ViewController: UIViewController {
     }
     
     @objc func backgroundMusicVolumeControl() {
-        print("value, ", myVariable.musicControlPanelStack.backgroundMusicStack.slider.index)
+        if myVariable.backgroundPlayer?.isPlaying == false {
+            myVariable.backgroundPlayer?.play()
+        }
         let value = 0.05 * ((Float)(myVariable.musicControlPanelStack.backgroundMusicStack.slider.index) / 4.00)
-        print("value, ", value)
         myVariable.backgroundPlayer?.volume = value
         
     }
@@ -366,9 +384,7 @@ class ViewController: UIViewController {
     @objc func soundVolumeControl() {
             
         myVariable.allSoundVolume = (Float)(myVariable.musicControlPanelStack.soundControlStack.slider.index) / 4.00
-        print("value, ", myVariable.allSoundVolume)
         myVariable.buttonSoundPlayer?.volume = myVariable.allSoundVolume
-//           myVariable.backgroundPlayer?.volume = value
            
        }
 }
@@ -377,85 +393,20 @@ class ViewController: UIViewController {
 
 
 
-class MusicPanelControlStack: UIStackView {
-    
-    var backgroundMusicStack: MusicVolumeStack = {
-        let stack = MusicVolumeStack()
-        stack.label.text = "Music"
-        stack.slider.maxCount = 5
-        stack.slider.setIndex(5, animated: false)
-//        stack.slider.addTarget(self, action: #selector(backgroundMusicVolumeControl), for: .valueChanged)
-        return stack
-    }()
-    
-    var soundControlStack: MusicVolumeStack = {
-        let stack = MusicVolumeStack()
-        stack.label.text = "Sound"
-        stack.slider.maxCount = 5
-        stack.slider.setIndex(5, animated: false)
-        //        stack.slider.addTarget(self, action: #selector(soundVolumeControl), for: .valueChanged)
-        return stack
-        
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.addArrangedSubview(backgroundMusicStack)
-        self.addArrangedSubview(soundControlStack)
-        axis = .vertical
-        distribution = .equalSpacing
-        alignment = .center
+extension UIViewController {
+    func setUpAudioInterruptionNotification() {
+        let nc = NotificationCenter.default
+        nc.addObserver(self,
+                       selector: #selector(handleInterruption),
+                       name: AVAudioSession.interruptionNotification,
+                       object: nil)
     }
     
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @objc func handleInterruption(notification: Notification) {
+        myVariable.backgroundPlayer?.play()
     }
-    
-
-}
-
-
-
-
-class MusicVolumeStack: UIStackView {
-    
-    
-    var label: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Morgan_bold", size: 20)
-        label.adjustsFontSizeToFitWidth = true
-        label.textAlignment = .center
-        label.textColor = .white
-        return label
-    }()
-    var slider: StepSlider = {
-        let slider = StepSlider()
-        slider.sliderCircleImage = UIImage(named: "imageCopy")
-        slider.contentMode = .scaleAspectFit
-//        slider.setTrackCircleImage(UIImage(named: "goBack"), for: .normal)
-        return slider
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.addArrangedSubview(label)
-        self.addArrangedSubview(slider)
-        label.widthAnchor.constraint(equalTo: slider.widthAnchor, multiplier: 0.2).isActive = true
-        label.heightAnchor.constraint(equalTo: slider.heightAnchor, multiplier: 1).isActive = true
-        spacing = 10
-        axis = .horizontal
-//        distribution = .fillProportionally
-        alignment = .center
-    }
-    
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
     
 }
-
 
 
 

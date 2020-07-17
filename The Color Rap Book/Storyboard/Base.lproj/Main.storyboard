@@ -63,6 +63,15 @@
                                     <segue destination="GoL-ND-Ogw" kind="custom" identifier="ToDeveloperPage" customClass="OHCircleSegue" customModule="Color_Rap_Book" customModuleProvider="target" id="HHu-VO-OO8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9G6-Ne-Ya7">
+                                <rect key="frame" x="362" y="234" width="300" height="301"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="keepReading"/>
+                                <connections>
+                                    <action selector="keepReadingTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FiU-ub-RpJ"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfU-xd-qaw">
                                 <rect key="frame" x="68" y="307" width="1231" height="351"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,6 +100,7 @@
                         <outlet property="developerButton" destination="DjH-xh-F2D" id="cHa-hn-2Cc"/>
                         <outlet property="frontCoverView" destination="6N7-av-TB7" id="p2S-7e-Qkw"/>
                         <outlet property="introLabel" destination="VfU-xd-qaw" id="VJO-kO-Sr1"/>
+                        <outlet property="keepReadingButton" destination="9G6-Ne-Ya7" id="UeN-JQ-gyd"/>
                         <outlet property="leftSwipeGesture" destination="mpw-5P-tbb" id="lbx-ka-bEx"/>
                         <outlet property="readButton" destination="gK8-TH-gBP" id="Iwd-tW-nwd"/>
                         <outlet property="rightSwipeGesture" destination="4xQ-1C-6WT" id="bpe-Nq-t7E"/>
@@ -441,4 +451,7 @@
             <point key="canvasLocation" x="-751" y="-794"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="keepReading" width="300" height="301"/>
+    </resources>
 </document>

@@ -18,7 +18,10 @@ class BioInfoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+//        lContent.textAlignment = .left
+//        lContent.backgroundColor = .red
+//        lContent.sizeToFit()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

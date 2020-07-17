@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StepSlider
 import AVFoundation
 
 extension DetailPageController {
@@ -39,33 +40,6 @@ extension DetailPageController {
         }
     }
     
-//    func birdChirpingSound() {
-//        
-//        
-//        let urlString = Bundle.main.path(forResource: "birdChirping", ofType: "m4a")
-//        do {
-//            try AVAudioSession.sharedInstance().setMode(.default)
-//            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-//            
-//            guard let urlString = urlString else {
-//                return
-//            }
-//            
-//    
-//            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-//            
-//            guard let player = player else {
-//                return
-//            }
-//            player.numberOfLoops = 0
-//            player.play()
-//            
-//        }
-//        catch {
-//            print("audio player error")
-//        }
-//        
-//    }
     
     
     func frogCallSound(stop: Bool) {
@@ -341,6 +315,8 @@ extension DetailPageController {
 
 
 extension UIViewController {
+    
+    
     func setUpBackgroundPlayer() {
         let urlString = Bundle.main.path(forResource: "backgroundMusic", ofType: "m4a")
                       do {
@@ -402,6 +378,123 @@ extension UIViewController {
           
       }
     
+    
+    
+    
+}
+
+
+
+
+class MusicPanelControlStack: UIStackView {
+    
+    var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        view.layer.shadowOffset = CGSize(width: 4, height: 4)
+        view.alpha = 0.4
+        return view
+    }()
+    
+    var backgroundMusicStack: MusicVolumeStack = {
+        let stack = MusicVolumeStack()
+        stack.label.text = "Music"
+        stack.slider.maxCount = 5
+        stack.slider.setIndex(5, animated: false)
+//        stack.slider.addTarget(self, action: #selector(backgroundMusicVolumeControl), for: .valueChanged)
+        return stack
+    }()
+    
+    var soundControlStack: MusicVolumeStack = {
+        let stack = MusicVolumeStack()
+        stack.label.text = "Sound"
+        stack.slider.maxCount = 5
+        stack.slider.setIndex(5, animated: false)
+        //        stack.slider.addTarget(self, action: #selector(soundVolumeControl), for: .valueChanged)
+        return stack
+        
+    }()
+    
+
+    fileprivate func setUpBackgroundView() {
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.topAnchor.constraint(equalTo: self.topAnchor,constant: -20).isActive = true
+          backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 10).isActive = true
+          backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -10).isActive = true
+          backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 30).isActive = true
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addSubview(backgroundView)
+        setUpBackgroundView()
+        self.addArrangedSubview(backgroundMusicStack)
+        self.addArrangedSubview(soundControlStack)
+        backgroundMusicStack.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+         backgroundMusicStack.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+
+         soundControlStack.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+         soundControlStack.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+
+        
+        axis = .vertical
+        distribution = .fillProportionally
+        alignment = .center
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+
+}
+
+
+
+
+class MusicVolumeStack: UIStackView {
+    
+    
+    var label: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Morgan_bold", size: 20)
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        label.textColor = .white
+        return label
+    }()
+    var slider: StepSlider = {
+        let slider = StepSlider()
+//        slider.sliderCircleImage = UIImage(named: "imageCopy")
+        slider.contentMode = .scaleAspectFit
+        slider.trackHeight = 7
+        slider.trackCircleRadius = 8
+//        slider.adjustLabel = true
+        slider.labelOffset = 4
+        slider.labels = ["Mute", "Quiet", "Alright", "Loud","Very Loud"]
+        slider.labelFont = UIFont(name: "Morgan_bold", size: 15)
+    
+//        slider.setTrackCircleImage(UIImage(named: "goBack"), for: .normal)
+        return slider
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addArrangedSubview(label)
+        self.addArrangedSubview(slider)
+//        slider.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8).isActive = true
+        label.widthAnchor.constraint(equalTo: slider.widthAnchor, multiplier: 0.2).isActive = true
+        label.heightAnchor.constraint(equalTo: slider.heightAnchor, multiplier: 1).isActive = true
+        spacing = 5
+        axis = .horizontal
+        distribution = .fill
+        alignment = .center
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     

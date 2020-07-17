@@ -24,9 +24,10 @@
  */
 
 import UIKit
+import AVFoundation
 
 
-class PushedViewController: UIViewController {
+class PushedViewController: UIViewController,AVAudioPlayerDelegate {
     
     @IBOutlet weak var imageBottle: UIImageView!
     @IBOutlet weak var topBackground: UIView!
@@ -35,18 +36,24 @@ class PushedViewController: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    let exitLabel: UILabel = {
+       let label = UILabel()
+              label.font = UIFont(name: "Morgan_bold", size: 100)
+              label.numberOfLines = 0
+              label.textAlignment = .left
+              label.text = "Click anywhere to return!"
+              label.textColor = .white
+              label.adjustsFontSizeToFitWidth = true
+              return label
+    }()
     let screenWidth = UIScreen.main.bounds.width
+    var player: AVAudioPlayer?
     
     let screenHeight = UIScreen.main.bounds.height
     var selectedImage: String?
     var nameCheck:String?
     var topHexColor: String?
     var specificAuthorDataArray: [String:[String:String]]?
-    
-
-    
-    
-    let imageArr = ["page4Back","goBack","page17Back","page20Back","page21Back","page22Back"]
     
     fileprivate func setUpImageBottle() {
         self.imageBottle.translatesAutoresizingMaskIntoConstraints = false
@@ -78,9 +85,18 @@ class PushedViewController: UIViewController {
         self.topView.heightAnchor.constraint(equalToConstant: screenHeight * 0.1293).isActive = true
         self.topView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.topView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        setUpExitLabel()
     }
     
-    
+    fileprivate func setUpExitLabel() {
+        topView.addSubview(exitLabel)
+        self.exitLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.exitLabel.topAnchor.constraint(equalTo: self.topView.topAnchor, constant: screenHeight * 0.0647).isActive = true
+        self.exitLabel.heightAnchor.constraint(equalTo: self.topView.heightAnchor, multiplier: 0.5).isActive = true
+        self.exitLabel.leadingAnchor.constraint(equalTo: self.topView.leadingAnchor,constant: screenWidth * 0.05).isActive = true
+        self.exitLabel.widthAnchor.constraint(equalTo: self.topView.widthAnchor, multiplier: 0.3).isActive = true
+    }
     
     fileprivate func constraintTableView() {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -121,7 +137,36 @@ class PushedViewController: UIViewController {
         setUpTableView()
         
         print("customized number of section headers", tableView.numberOfSections)
-
+        
+        if nameCheck == "YuxinLiu" {
+            let urlString = Bundle.main.path(forResource: "yuxinDeveloperPageCheer", ofType: "m4a")
+            do {
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                
+                guard let urlString = urlString else {
+                    return
+                }
+                
+                
+                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                
+                guard let player = player else {
+                    return
+                }
+                player.numberOfLoops = 0
+                player.volume = 1
+                player.play()
+                
+                player.delegate = self
+                
+                
+            }
+            catch {
+                print("audio player error")
+            }
+        }
+    
         
         if let topColor = topHexColor {
             topBackground.backgroundColor =  topColor.hexColor
@@ -142,22 +187,6 @@ class PushedViewController: UIViewController {
     }
     
     
-//    func addDeveloperInfoVC() {
-//        addChild(annSmithInfoVC)
-//        view.addSubview(annSmithInfoVC.view)
-//        setUpDeveloperInfoVCConstraints()
-////        pass all the information to the child controller here
-////        annSmithInfoVC.view.backgroundColor = .red
-//        annSmithInfoVC.didMove(toParent: self)
-//    }
-    
-//    func setUpDeveloperInfoVCConstraints() {
-//
-//        annSmithInfoVC.view.translatesAutoresizingMaskIntoConstraints = false
-//        annSmithInfoVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        annSmithInfoVC.view.topAnchor.constraint(equalTo: imageBottle.bottomAnchor, constant: screenHeight * 0.04).isActive = true
-//        annSmithInfoVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: screenWidth * 0.03).isActive = true
-//         annSmithInfoVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -screenWidth * 0.03).isActive = true
 //    }
     
 }
@@ -195,15 +224,15 @@ extension PushedViewController : UITableViewDelegate, UITableViewDataSource  {
         switch indexPath.section {
         case 0:
             cell.lContent.text = specificAuthorDataArray!["basicInfo"]!["text"]
-            cell.cellImage.image = UIImage(named: imageArr[indexPath.section])
+            cell.cellImage.image = UIImage(named: specificAuthorDataArray!["basicInfo"]!["image"]!)
             
         case 1:
             cell.lContent.text = specificAuthorDataArray!["bookCreation"]!["text"]
-            cell.cellImage.image = UIImage(named: imageArr[indexPath.section])
+            cell.cellImage.image = UIImage(named: specificAuthorDataArray!["bookCreation"]!["image"]!)
             
         case 2:
             cell.lContent.text = specificAuthorDataArray!["favoritePage"]!["text"]
-            cell.cellImage.image = UIImage(named: imageArr[indexPath.section])
+            cell.cellImage.image = UIImage(named: specificAuthorDataArray!["favoritePage"]!["image"]!)
             
         default:
             break;

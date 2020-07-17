@@ -12,14 +12,15 @@ import AVFoundation
 extension (DetailPageController) {
     
     func singleTapHandler(state: Int) {
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
-        generator.impactOccurred()
+      let generator = UIImpactFeedbackGenerator(style: .heavy)
         
         switch state {
         case 15:
             self.soundPlay(forResource: "twangSound", ofType: "m4a")
             image1.shake(duration: 0.5, rotationDivision: nil)
             if image1.frame.contains(position) {
+              
+                generator.impactOccurred()
                 switch self.image1.image {
                     
                 case UIImage(named: "page15UnPeeledBanana"):
@@ -39,8 +40,11 @@ extension (DetailPageController) {
             
             
         case 23:
+            
             let circularPath = UIBezierPath(arcCenter: .zero, radius: screenHeight * 0.085, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
             if image5.frame.contains(position) {
+             
+                generator.impactOccurred()
                 switch page23Phase {
                 case 0:
                    
@@ -83,6 +87,8 @@ extension (DetailPageController) {
             
         case 25:
             if image5.frame.contains(position) {
+      
+                generator.impactOccurred()
                 self.soundPlay(forResource: "page25ShakeSound", ofType: "m4a")
                 self.image5.shake(duration: 0.5, rotationDivision: nil)
                 UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
@@ -102,6 +108,8 @@ extension (DetailPageController) {
         case 27:
             
             if image1.frame.contains(position) {
+            
+                generator.impactOccurred()
                 self.soundPlay(forResource: "page27OrangeSqueezSound", ofType: "m4a")
                 self.image1.shake(duration: 1.5, rotationDivision: nil)
                 label1.text = "📣 Did you hear the juicy sound?"

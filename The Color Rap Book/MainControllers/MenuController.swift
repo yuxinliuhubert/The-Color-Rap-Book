@@ -94,7 +94,21 @@ final class MenuController: UIViewController {
     
     fileprivate func musicPanelSetUp() {
            view.addSubview(myVariable.musicControlPanelStack)
-           myVariable.musicControlPanelStack.frame = CGRect(x: width * 0.45, y: height * 0.70, width: width * 0.50, height: height * 0.15)
+        if UIDevice.current.userInterfaceIdiom == .phone {
+                   
+                   if self.height / self.width <= 0.47 {
+                        myVariable.musicControlPanelStack.frame = CGRect(x: width * 0.45, y: height * 0.70, width: width * 0.50, height: height * 0.20)
+                   } else {
+
+                       myVariable.musicControlPanelStack.frame = CGRect(x: width * 0.45, y: height * 0.70, width: width * 0.50, height: height * 0.20)
+                   }
+
+                   
+               } else {
+               myVariable.musicControlPanelStack.frame = CGRect(x: width * 0.45, y: height * 0.70, width: width * 0.50, height: height * 0.15)
+               }
+        
+           
            myVariable.musicControlPanelStack.alpha = 1
        }
     //    override functions
@@ -201,6 +215,13 @@ final class MenuController: UIViewController {
         return .landscape
         
     }
+    override public var shouldAutorotate: Bool {
+           if myVariable.state == 5 {
+               return false
+           } else {
+               return true
+           }
+       }
     
     
     

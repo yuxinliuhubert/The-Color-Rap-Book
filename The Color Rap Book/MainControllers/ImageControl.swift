@@ -582,10 +582,6 @@ extension(DetailPageController) {
             self.SpriteView.removeFromSuperview()
             Motion.instance.motionManager.stopAccelerometerUpdates()
            
-//                if !self.isObserving {
-//                self.addOrientationObserver()
-//            }
-
                 
 
 
@@ -783,7 +779,7 @@ extension (UIViewController) {
     
     
     
-    func imageRotate(imageview: UIImageView, x: CGFloat, y: CGFloat, state: Int) {
+    func imageRotate(imageview: UIView, x: CGFloat, y: CGFloat, state: Int) {
         
         let anchorPoint = CGPoint(x: x, y: y)
         let oldAnchorPoint = imageview.layer.anchorPoint
