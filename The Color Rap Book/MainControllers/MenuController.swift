@@ -15,7 +15,7 @@ final class MenuController: UIViewController {
     
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
-    
+    var timer: Timer?
 
     let data = [
         CustomData(title: "red", image: #imageLiteral(resourceName: "2_red is red"), pageNum: 4),
@@ -36,6 +36,7 @@ final class MenuController: UIViewController {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
+
         
         return cv
     }()
@@ -48,6 +49,15 @@ final class MenuController: UIViewController {
         return bdView
     }()
     let menuLabel = UILabel()
+    let scrollLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "<- Scroll & click to go to different color section"
+        label.font = UIFont(name: "Morgan_bold", size: 50)
+        label.textColor = .white
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
     let menuView = UIView()
     let menuWidth = UIScreen.main.bounds.width * 0.4
     let homeButton = UIButton()
@@ -113,6 +123,56 @@ final class MenuController: UIViewController {
        }
     //    override functions
     
+    fileprivate func setUpCollectionview() {
+        view.addSubview(collectionView)
+        collectionView.backgroundColor = .clear
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.10 + 30).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        collectionView.widthAnchor.constraint(equalTo: menuView.widthAnchor, multiplier: 1).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.01208).isActive = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    fileprivate func setUpHomeButton() {
+        homeButton.frame = CGRect(x: width * 0.01653, y: height * 0.02, width: width * 0.13, height: width * 0.10)
+        homeButton.setImage(UIImage(named: "home"), for: .normal)
+        homeButton.addTarget(self, action: #selector(handleHome(_:)), for: .touchUpInside)
+    }
+    
+    fileprivate func setUpMenuLabel() {
+        menuLabel.frame = CGRect(x: width * 0.1653, y: height * 0.02, width: width * 0.20, height: width * 0.10)
+        menuLabel.text = "Menu"
+        menuLabel.font = UIFont(name: "Morgan_bold", size: 80)
+        menuLabel.adjustsFontSizeToFitWidth = true
+        menuLabel.textAlignment = .center
+        menuLabel.textColor = .white
+    }
+    
+    fileprivate func setUpScrollLabel() {
+        view.addSubview(scrollLabel)
+        scrollLabel.translatesAutoresizingMaskIntoConstraints = false
+//        scrollLabel.backgroundColor = .red
+        scrollLabel.leadingAnchor.constraint(equalTo: collectionView.trailingAnchor, constant: width * 0.02).isActive = true
+        scrollLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: height * 0.55).isActive = true
+        scrollLabel.heightAnchor.constraint(equalToConstant: height * 0.1).isActive = true
+        scrollLabel.widthAnchor.constraint(equalToConstant: width * 0.24).isActive = true
+    }
+    
+    fileprivate func setUpMenuView() {
+        //        animateStroke()
+        
+        
+        
+        menuView.backgroundColor = .clear
+        
+        menuView.translatesAutoresizingMaskIntoConstraints = false
+        menuView.widthAnchor.constraint(equalToConstant: menuWidth).isActive = true
+        menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        menuView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        menuView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.isExclusiveTouch = true
@@ -162,51 +222,21 @@ final class MenuController: UIViewController {
         //        percentageLabel.backgroundColor = .red
         percentageLabel.center = shapeLayer.position
         
-        //        animateStroke()
-        
-        
-        
-        menuView.backgroundColor = .clear
-        
-        menuView.translatesAutoresizingMaskIntoConstraints = false
-        menuView.widthAnchor.constraint(equalToConstant: menuWidth).isActive = true
-        menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        menuView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        menuView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        setUpMenuView()
         
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MenuController.handleTap(_:)))
         backdropView.addGestureRecognizer(tapGesture)
         
-        view.addSubview(collectionView)
-        collectionView.backgroundColor = .clear
+        setUpCollectionview()
         
+        setUpHomeButton()
         
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.10 + 30).isActive = true
-        //        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: width * 0.1267 + 60).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        collectionView.widthAnchor.constraint(equalTo: menuView.widthAnchor, multiplier: 1).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.01208).isActive = true
+        setUpMenuLabel()
         
+        setUpScrollLabel()
         
-        
-        homeButton.frame = CGRect(x: width * 0.01653, y: height * 0.02, width: width * 0.13, height: width * 0.10)
-        homeButton.setImage(UIImage(named: "home"), for: .normal)
-        homeButton.addTarget(self, action: #selector(handleHome(_:)), for: .touchUpInside)
-        
-        menuLabel.frame = CGRect(x: width * 0.1653, y: height * 0.02, width: width * 0.20, height: width * 0.10)
-        menuLabel.text = "Menu"
-        menuLabel.font = UIFont(name: "Morgan_bold", size: 80)
-        menuLabel.adjustsFontSizeToFitWidth = true
-        menuLabel.textAlignment = .center
-        menuLabel.textColor = .white
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        //        let displayIndexPathInInt = Int()
-        //        let displayIndexPath = displayIndexPathInInt.setCollectionViewDisplayCell()
-        //        print("displayIndexPath:", displayIndexPath)
-        //        collectionView.scrollToItem(at: IndexPath(row: 0, section: displayIndexPath), at: [], animated: false)
+       
     }
     
     
@@ -353,7 +383,7 @@ final class MenuController: UIViewController {
         let randomNum = Int.random(in: 0...8)
         self.shapeLayer1.strokeColor =  backgroundColors[randomNum];
         
-        myVariable.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {_ in
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {_ in
            
             UIView.animate(withDuration: 1.5, delay: 0, options: [.curveEaseInOut, .repeat], animations: { () -> Void in
                  let randomNum = Int.random(in: 0...8)
@@ -378,14 +408,14 @@ final class MenuController: UIViewController {
     
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        myVariable.timer.invalidate()
+        timer?.invalidate()
         myVariable.buttonSoundPlayer?.play()
 //        self.view.layer.removeAllAnimations()
         dismiss(animated: true, completion: nil)
     }
-    
+     
     @objc func handleHome(_ sender: UIButton) {
-         myVariable.timer.invalidate()
+        timer?.invalidate()
         
         myVariable.buttonSoundPlayer?.play()
 //        self.view.layer.removeAllAnimations()
@@ -484,6 +514,7 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
             trackLayer.opacity = 0
             pulsatingLayer.opacity = 0
             myVariable.musicControlPanelStack.alpha = 0
+            scrollLabel.alpha = 0
             
             UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
                 self.menuView.frame.origin.x += self.menuWidth
@@ -499,6 +530,7 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
                 
                 self.backdropView.alpha = 1
                 self.percentageLabel.alpha = 1
+                self.scrollLabel.alpha = 1
                 
             }, completion: { (finished) in
                 transitionContext.completeTransition(true)
@@ -524,6 +556,7 @@ extension MenuController: UIViewControllerTransitioningDelegate, UIViewControlle
                 self.percentageLabel.alpha = 0
                 self.trackLayer.opacity = 0
                 self.pulsatingLayer.opacity = 0
+                self.scrollLabel.alpha = 0
                 
             }, completion: { (finished) in
                 transitionContext.completeTransition(true)

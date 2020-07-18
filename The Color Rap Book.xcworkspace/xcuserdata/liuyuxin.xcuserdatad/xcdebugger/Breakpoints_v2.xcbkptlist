@@ -14,8 +14,8 @@
             filePath = "The Color Rap Book/MainControllers/DetailPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "nextPage(_:)"
             landmarkType = "7">
             <Locations>
@@ -125,8 +125,8 @@
             filePath = "The Color Rap Book/MainControllers/MenuController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "MenuController"
             landmarkType = "3">
          </BreakpointContent>
@@ -141,8 +141,8 @@
             filePath = "The Color Rap Book/MainControllers/GestureHandling.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "leftSwipeHandler()"
             landmarkType = "7">
          </BreakpointContent>
@@ -253,90 +253,10 @@
             filePath = "The Color Rap Book/MainControllers/DetailPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "DetailPageController"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CB85FF7F-FD16-4217-A143-7CE784D9C729"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "421"
-            endingLineNumber = "421"
-            landmarkName = "page47DoneSetup()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C309DD9-137B-467B-9940-B26A7BF1E1E0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "495"
-            endingLineNumber = "495"
-            landmarkName = "showTextFieldAlert(title:message:yesButton:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "08578309-6982-45D5-9E84-61B9C5CAD669"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
-            landmarkName = "showTextFieldAlert(title:message:yesButton:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9381ACD3-11D7-4F63-913B-56978846167F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "482"
-            endingLineNumber = "482"
-            landmarkName = "showTextFieldAlert(title:message:yesButton:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "66B83F7B-7A90-49AF-84DD-D783B0581419"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "483"
-            endingLineNumber = "483"
-            landmarkName = "showTextFieldAlert(title:message:yesButton:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -365,8 +285,8 @@
             filePath = "The Color Rap Book/MainControllers/ImageControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "857"
-            endingLineNumber = "857"
+            startingLineNumber = "946"
+            endingLineNumber = "946"
             landmarkName = "imageFloatingEffect(image1:image2:image3:image4:image5:state:)"
             landmarkType = "7">
             <Locations>
@@ -413,8 +333,8 @@
             filePath = "The Color Rap Book/MainControllers/ImageControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "860"
-            endingLineNumber = "860"
+            startingLineNumber = "949"
+            endingLineNumber = "949"
             landmarkName = "imageFloatingEffect(image1:image2:image3:image4:image5:state:)"
             landmarkType = "7">
             <Locations>
@@ -461,8 +381,8 @@
             filePath = "The Color Rap Book/MainControllers/ImageControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "858"
-            endingLineNumber = "858"
+            startingLineNumber = "947"
+            endingLineNumber = "947"
             landmarkName = "imageFloatingEffect(image1:image2:image3:image4:image5:state:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -477,8 +397,8 @@
             filePath = "The Color Rap Book/MainControllers/ImageControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "865"
-            endingLineNumber = "865"
+            startingLineNumber = "954"
+            endingLineNumber = "954"
             landmarkName = "imageFloatingEffect(image1:image2:image3:image4:image5:state:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -493,8 +413,8 @@
             filePath = "The Color Rap Book/MainControllers/MenuController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "animateStrokeColor()"
             landmarkType = "7">
             <Locations>
@@ -541,8 +461,8 @@
             filePath = "The Color Rap Book/MainControllers/DetailPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1165,8 +1085,8 @@
             filePath = "The Color Rap Book/MainControllers/backgroundControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "loadingViewChange(state:label:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1181,8 +1101,8 @@
             filePath = "The Color Rap Book/MainControllers/DetailPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
             landmarkName = "nextPage(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1197,8 +1117,8 @@
             filePath = "The Color Rap Book/MainControllers/ImageControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
+            startingLineNumber = "575"
+            endingLineNumber = "575"
             landmarkName = "elementsEnteringStorage(state:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1213,8 +1133,8 @@
             filePath = "The Color Rap Book/MainControllers/ImageControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "491"
-            endingLineNumber = "491"
+            startingLineNumber = "576"
+            endingLineNumber = "576"
             landmarkName = "elementsEnteringStorage(state:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1239,8 +1159,8 @@
             filePath = "The Color Rap Book/MainControllers/DetailPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "552"
-            endingLineNumber = "552"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
             landmarkName = "firstLabelTask(state:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1255,8 +1175,8 @@
             filePath = "The Color Rap Book/MainControllers/MenuController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "createShapeLayer(strokeColor:fillColor:lineWidth:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1271,8 +1191,8 @@
             filePath = "The Color Rap Book/MainControllers/DetailPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "589"
-            endingLineNumber = "589"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
             landmarkName = "screenEdgeSwiped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1350,8 +1270,8 @@
             filePath = "The Color Rap Book/MainControllers/labelControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "pageNumberLabelDisplay(label:pageNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1366,8 +1286,8 @@
             filePath = "The Color Rap Book/MainControllers/labelControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "pageNumberLabelDisplay(label:pageNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1382,8 +1302,8 @@
             filePath = "The Color Rap Book/MainControllers/labelControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "pageNumberLabelDisplay(label:pageNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1398,8 +1318,8 @@
             filePath = "The Color Rap Book/MainControllers/labelControl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "pageNumberLabelDisplay(label:pageNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1414,26 +1334,10 @@
             filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "didSelectSecond(image:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "17B67A9B-1E91-48E7-9177-F83B64A2BF75"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "DetailPageController"
-            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1450,6 +1354,22 @@
             endingLineNumber = "109"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8ADE2AC-EFE4-4CA6-9111-D767339DFC19"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Color Rap Book/MainControllers/Page47DrawingTools.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "setUpStackView()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

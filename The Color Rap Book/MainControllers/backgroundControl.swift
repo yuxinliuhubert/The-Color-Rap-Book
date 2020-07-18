@@ -60,7 +60,7 @@ extension (DetailPageController) {
         //        self.pageNumberBackgroundDisplay(imageView: imageView, pageNum: state)
         
         
-//        self.imageBackInPlace()
+        //        self.imageBackInPlace()
         switch myVariable.state
         {
             
@@ -124,26 +124,14 @@ extension (DetailPageController) {
             
         case 20:
             self.imageBackInPlace()
-
-            UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
-                           self.elementsEnteringStorage(state: state)
-                           print("animation processed")
-                           
-                           
-                       }, completion: {(finished) in
-                           self.pageNumberLabelDisplay(label: label, pageNum: state)
-                       })
             
-        case 35:
-            UIView.animate(withDuration: 1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
-                self.elementsEnteringStorage(state: state)}, completion: {(finished) in
-                    self.pageNumberLabelDisplay(label: label, pageNum: state)
-                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
-                    self.image1.isUserInteractionEnabled = true
-                    self.image1.addGestureRecognizer(tapGestureRecognizer)
-                    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
-                    self.image1.addGestureRecognizer(longPressRecognizer)
-                    
+            UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
+                self.elementsEnteringStorage(state: state)
+                print("animation processed")
+                
+                
+            }, completion: {(finished) in
+                self.pageNumberLabelDisplay(label: label, pageNum: state)
             })
             
         case 22:
@@ -157,6 +145,30 @@ extension (DetailPageController) {
             }, completion: {(finished) in
                 self.pageNumberLabelDisplay(label: label, pageNum: state)
             })
+            
+            
+        case 35:
+            UIView.animate(withDuration: 1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
+                self.elementsEnteringStorage(state: state)}, completion: {(finished) in
+                    self.pageNumberLabelDisplay(label: label, pageNum: state)
+                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
+                    self.image1.isUserInteractionEnabled = true
+                    self.image1.addGestureRecognizer(tapGestureRecognizer)
+                    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
+                    self.image1.addGestureRecognizer(longPressRecognizer)
+                    
+            })
+            
+        case 38:
+            UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
+                self.elementsEnteringStorage(state: state)
+            }, completion: {(finished) in
+                self.firstLabelTask(state: 38, completion: {(success) -> Void in
+                    if success {
+                        self.imageRotate(imageview: self.image1, x: 0.5, y: 0.5, state: 11)
+                    }})
+            })
+            
             
             
         case 47:
@@ -176,7 +188,7 @@ extension (DetailPageController) {
                     self.canvas.alpha = 1
                     self.canvas.isHidden = false
                     self.backgroundImageView.image = self.drawingPageBackgroundImage
-
+                    
                 default:
                     self.drawingPageFirstSceneSetup()
                 }
@@ -198,9 +210,9 @@ extension (DetailPageController) {
             firstPage48Task(completion: {(success) in
                 if success == true {
                     
-                     UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
-                    self.elementsEnteringStorage(state: state)
-                    print("animation processed")
+                    UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
+                        self.elementsEnteringStorage(state: state)
+                        print("animation processed")
                     }, completion: nil)
                 }
             })

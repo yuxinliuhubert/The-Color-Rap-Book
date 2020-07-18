@@ -63,8 +63,15 @@ class TableOfContentController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+       
+//         DispatchQueue.main.asyncAfter(deadline: (.now() + .milliseconds(500))) {
+//                   self.collectionView.flashScrollIndicators()
+//               }
     }
+  
+    
     
     fileprivate func setUpTableLabel() {
         //        print("page", myVariable.page)
@@ -92,7 +99,7 @@ class TableOfContentController: UIViewController {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -width * 0.078125).isActive = true
         //        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.05208).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height * 0.01208).isActive = true
-        
+         self.collectionView.showsVerticalScrollIndicator = true
         collectionView.delegate = self
         collectionView.dataSource = self
     }

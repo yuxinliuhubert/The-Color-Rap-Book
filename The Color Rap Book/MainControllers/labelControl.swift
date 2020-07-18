@@ -25,6 +25,12 @@ extension (DetailPageController) {
         label1.layer.shadowOpacity = 1.0
         label1.layer.shadowOffset = CGSize(width: 3, height: 3)
         label1.layer.masksToBounds = false
+        
+        label2.layer.shadowColor = UIColor.black.cgColor
+        label2.layer.shadowRadius = 2.0
+        label2.layer.shadowOpacity = 1.0
+        label2.layer.shadowOffset = CGSize(width: 3, height: 3)
+        label2.layer.masksToBounds = false
         switch pageNum {
         case 3:
 //            self.startButton.setTitle("Yes, let's go!", for: .normal)
@@ -55,7 +61,7 @@ extension (DetailPageController) {
             self.animateBackgroundColor()
             
         //          For Red Text
-        case 4,8,9,13,18,19,28,31,32,36:
+        case 4,8,9,13,18,19,28,31,32,36,40:
             label.alpha = 1
             label.textAlignment = .center
             label.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
@@ -334,6 +340,49 @@ extension (DetailPageController) {
             label.font = UIFont(name: "Morgan_bold", size: 200)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
             
+        case 33:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .brown
+            label.frame = CGRect(x: screenWidth *  0.10, y: screenHeight * 0.05, width: screenWidth * 0.80
+                , height: screenHeight * 0.1719644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            label1.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.45, width: screenWidth * 0.45, height: screenHeight * 0.15)
+            label1.textAlignment = .center
+            label1.textColor = .brown
+            //                label1.alpha = 1
+            label1.font = UIFont(name: "Morgan_bold", size: 100)
+            label1.adjustsFontSizeToFitWidth = true
+            label1.text = "Stomp on the mud ↷"
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+                self.label1.alpha = 1
+            }, completion: nil)
+            
+            
+            
+            
+        case 34:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .brown
+            label.frame = CGRect(x: screenWidth *  0.10, y: screenHeight * 0.05, width: screenWidth * 0.80
+                , height: screenHeight * 0.1719644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            label1.frame = CGRect(x: screenWidth * 0.70, y: screenHeight * 0.25, width: screenWidth * 0.20, height: screenHeight * 0.45)
+            label1.textAlignment = .left
+            label1.textColor = .brown
+            label1.alpha = 1
+            label1.font = UIFont(name: "Morgan_bold", size: 100)
+            label1.adjustsFontSizeToFitWidth = true
+//            label1.text = "yum,\n  yum,\n   yum."
+            labelAnimation(label: label1, string: "yum,\n  yum,\n    yum.", check: 0)
+//            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+//                self.label1.alpha = 1
+//            }, completion: nil)
+            
+            
         case 35:
             label.alpha = 1
             label.textAlignment = .left
@@ -351,6 +400,62 @@ extension (DetailPageController) {
             //                label1.backgroundColor = .white
             label1.text = "☟ Click or long press on it!"
             
+            
+        case 38:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .black
+            label.frame = CGRect(x: screenWidth *  0.25, y: screenHeight * 0.05, width: screenWidth * 0.50
+                , height: screenHeight * 0.1719644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            label1.frame = CGRect(x: screenWidth * 0.60, y: screenHeight * 0.40, width: screenWidth * 0.35, height: screenHeight * 0.15)
+            label1.textAlignment = .center
+            label1.textColor = .black
+            label1.alpha = 1
+            label1.font = UIFont(name: "Morgan_bold", size: 100)
+            label1.adjustsFontSizeToFitWidth = true
+            label1.text = "Click the witch's hat!"
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+                self.label1.alpha = 1
+            }, completion: nil)
+            
+            
+            
+        case 39:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .black
+            label.frame = CGRect(x: screenWidth *  0.10, y: screenHeight * 0.05, width: screenWidth * 0.5
+                , height: screenHeight * 0.1719644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            
+            label1.frame = CGRect(x: screenWidth * 0.4, y: screenHeight * 0.80, width: screenWidth * 0.55
+            , height: screenHeight * 0.1719644)
+            label1.textAlignment = .right
+            label1.textColor = .black
+            label1.alpha = 1
+            label1.font = UIFont(name: "Morgan_bold", size: 200)
+            label1.adjustsFontSizeToFitWidth = true
+            labelAnimation(label: label1, string: "and Halloween cats.", check: 0)
+            
+            label2.alpha = 1
+            label2.textAlignment = .center
+            label2.textColor = .black
+            label2.frame = CGRect(x: screenWidth *  0.7, y: screenHeight * 0.10, width: screenWidth * 0.20
+                , height: screenHeight * 0.1019644)
+            label2.font = UIFont(name: "Morgan_bold", size: 100)
+            label2.adjustsFontSizeToFitWidth = true
+            label2.text = "Click on the bats and the cat!"
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+                self.label1.alpha = 1
+            }, completion: nil)
+            
+           
+            
+            
+
         case 41:
             label.alpha = 1
             label.textAlignment = .center
@@ -360,7 +465,7 @@ extension (DetailPageController) {
                 , height: screenHeight - 120)
             label.font = UIFont(name: "Morgan_bold", size: 350)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
-//            print(backgroundImageView.backgroundColor)
+            print(backgroundImageView.backgroundColor)
             
         case 47:
             label.alpha = 1
@@ -400,10 +505,14 @@ extension (DetailPageController) {
             //        label.isHidden = true
             label.alpha = 0
             self.label1.alpha = 0
+            self.label2.alpha = 0
+        }, completion: {(finished) in
             label.text = ""
             self.label1.text = ""
             label.numberOfLines = 0
             self.label1.numberOfLines = 0
+            self.label2.text = ""
+            self.label2.numberOfLines = 0
         })
         
         

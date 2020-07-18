@@ -16,7 +16,7 @@ import ColorSlider
 import SpriteKit
 import GameplayKit
 import AVFoundation
-
+import ScratchCard
 
 struct myVariable {
     static var state = 0
@@ -58,6 +58,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     @IBOutlet weak var canvas: Canvas!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
     @IBOutlet var leftSwipeGesture: UISwipeGestureRecognizer!
     @IBOutlet var singleTap: UITapGestureRecognizer!
     @IBOutlet weak var previousButton: UIButton!
@@ -86,12 +87,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         return button
     }()
     
-    lazy var noPictureButton: UIButton = {
-        let button = UIButton()
-        button.isExclusiveTouch = true
-        return button
-    }()
-    
     lazy var SpriteView: SKView = {
         let view = SKView()
         view.allowsTransparency  = true
@@ -100,90 +95,43 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     }()
     
     
-    lazy var undoButton: UIButton = {
-        let button = UIButton(type: .system)
-//        button.setTitle("Undo", for: .normal)
-        button.setImage(UIImage(named: "undo"), for: .normal)
-//        button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
-        button.addTarget(self, action: #selector(handleUndo), for: .touchUpInside)
-//        button.frame.size.width = UIScreen.main.bounds.width * 0.1
-        return button
-    }()
-    
-    lazy var redoButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "redo"), for: .normal)
-        button.addTarget(self, action: #selector(handleRedo), for: .touchUpInside)
-        return button
-    }()
-    
-    
-    lazy var clearButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Clear", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
-        button.addTarget(self, action: #selector(handleClear), for: .touchUpInside)
-        button.isExclusiveTouch = true
-//        button.frame.size.width = UIScreen.main.bounds.width * 0.1
-        return button
-    }()
-    
-    lazy var completeButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setTitle("Complete", for: .normal)
-         button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
-        button.setTitleColor(.red, for: .normal)
-        button.addTarget(self, action: #selector(handleComplete), for: .touchUpInside)
+    lazy var noPictureButton: UIButton = {
+        let button = UIButton()
         button.isExclusiveTouch = true
         return button
     }()
     
-    lazy var backgroundChangeButton: UIButton = {
-           let button = UIButton(type: .system)
-           button.setTitle("change\nbackground", for: .normal)
-        button.titleLabel?.numberOfLines = 0
-        button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
-        button.titleLabel?.textAlignment = .center
-        button.addTarget(self, action: #selector(handleChangeBackground), for: .touchUpInside)
-        return button
-       }()
+   
+    lazy var panGesture: CustomPanGestureRecognizer = {
+        let gesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
+        return gesture
+    }()
     
     
+    let drawingToolPanel: DrawingToolPanel = {
+        let panel = DrawingToolPanel()
+        panel.undoButton.addTarget(self, action: #selector(handleUndo), for: .touchUpInside)
+        panel.redoButton.addTarget(self, action: #selector(handleRedo), for: .touchUpInside)
+        panel.clearButton.addTarget(self, action: #selector(handleClear), for: .touchUpInside)
+        panel.completeButton.addTarget(self, action: #selector(handleComplete), for: .touchUpInside)
+        panel.backgroundChangeButton.addTarget(self, action: #selector(handleChangeBackground), for: .touchUpInside)
+//        panel.colorSlider.addTarget(self, action: #selector(changedColor), for: .valueChanged)
+//        panel.colorSlider.addTarget(self, action: #selector(touchUpFinished), for: [.touchUpInside, .touchUpOutside])
+        panel.widthSlider.addTarget(self, action: #selector(handleWidthSlider), for: .valueChanged)
+//        panel.panGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
+        return panel
+    }()
+    
+
     lazy var colorSlider: ColorSlider = {
         let slider = ColorSlider(orientation: .horizontal, previewSide: .top)
         slider.addTarget(self, action: #selector(changedColor), for: .valueChanged)
-        
+
         slider.addTarget(self, action: #selector(touchUpFinished), for: [.touchUpInside, .touchUpOutside])
 
         slider.isExclusiveTouch = true
         return slider
     }()
-    
-   
-    
-    lazy var widthSlider: UISlider = {
-        let slider = UISlider()
-        slider.minimumValue = 1
-        slider.maximumValue = 20
-        slider.setValue(10, animated: false)
-        slider.isExclusiveTouch = true
-        slider.addTarget(self, action: #selector(handleWidthSlider), for: .valueChanged)
-        
-//        slider.frame.size.width = UIScreen.main.bounds.width * 0.25
-        return slider
-    }()
-    
-    let drawingToolViewBackground: UIView = {
-           let background = UIView()
-        background.layer.cornerRadius = UIScreen.main.bounds.height * 0.06
-        background.backgroundColor = .white
-        background.layer.shadowColor = UIColor.black.cgColor
-        background.layer.shadowOpacity = 0.3
-        background.layer.shadowOffset = .zero
-        background.layer.shadowRadius = 50
-
-           return background
-       }()
     
             
        
@@ -214,8 +162,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         stackView.addArrangedSubview(self.readLaterButton)
             return stackView
         }()
-//    let stackBackPanGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
-//    let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
+
     lazy var backgroundColors = [UIColor()]
 //    var alertStyle: UIAlertController.Style = .actionSheet
     var imagePicker: ImagePicker!
@@ -230,10 +177,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
     var isObserving = Bool()
 
-    lazy var panGesture: CustomPanGestureRecognizer! = {
-        let gesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
-        return gesture
-    }()
+   
     
        
 //    let alert = UIAlertController( title: "Title", message: "Message", preferredStyle: .alert)
@@ -323,6 +267,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        buttonsEnabled(Bool: false)
         self.loadingViewChange(state: myVariable.state, label: self.label)
 
     }

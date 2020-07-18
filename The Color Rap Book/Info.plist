@@ -24,14 +24,16 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Select &quot;allow&quot; to take a picture with your Camera!</string>
+	<string>Select "allow" to take a picture with your Camera!</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Select &quot;allow&quot; to add a photo to the library!</string>
+	<string>Select "allow" to add a photo to the library!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Select &quot;allow&quot; to choose a photo from the library!
+	<string>Select "allow" to choose a photo from the library!
 &lt;string&gt;This app requires access to the photo library.&lt;/string&gt;
 &lt;key&gt;NSMicrophoneUsageDescription&lt;/key&gt;
 &lt;string&gt;This app does not require access to the microphone.&lt;/string&gt;

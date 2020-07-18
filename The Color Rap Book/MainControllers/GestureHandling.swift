@@ -116,6 +116,60 @@ extension (DetailPageController) {
             
             }
             
+        case 33:
+            if image1.frame.contains(position) {
+                generator.impactOccurred()
+                soundPlay(forResource: "page33Mud", ofType: "m4a")
+            }
+            
+        case 38:
+            
+            if image1.frame.contains(position) {
+                generator.impactOccurred()
+                soundPlay(forResource: "page38WitchSound", ofType: "m4a")
+                let catHeight = screenHeight * 0.14
+                let catWidth = catHeight * (956/474)
+                if image3.frame != CGRect(x: self.screenWidth , y: self.screenHeight * 0.22, width: catWidth, height: catHeight) {
+                    image3.frame = CGRect(x: -screenWidth * 0.20 , y: screenHeight * 0.22, width: catWidth, height: catHeight)
+                                   UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseIn, animations: {
+                                       self.image3.image = UIImage(named: "page38CatLookR")
+                                       self.image3.frame = CGRect(x: self.screenWidth , y: self.screenHeight * 0.22, width: catWidth, height: catHeight)
+                                    
+                                   }, completion: {(finished) in
+                                    self.image3.image = nil
+                                   })
+                } else {
+                    UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseIn, animations: {
+                        self.image3.image = UIImage(named: "page38CatLookL")
+                        self.image3.frame = CGRect(x: -self.screenWidth * 0.20 , y: self.screenHeight * 0.22, width: catWidth, height: catHeight)
+//                        self.image1.isUserInteractionEnabled = false
+                    }, completion: {(finished) in
+                        self.image3.image = nil
+                    })
+                }
+      }
+            
+            
+            
+        case 39:
+            if image2.frame.contains(position) {
+                generator.impactOccurred()
+                soundPlay(forResource: "page39BigBatsSound", ofType: "m4a")
+                label2.text = "SCREECH"
+            }
+            if image6.frame.contains(position) {
+                generator.impactOccurred()
+                soundPlay(forResource: "page39SmallBatsSound", ofType: "m4a")
+                label2.text = "screechy sound"
+            }
+            if image5.frame.contains(position){
+                generator.impactOccurred()
+                soundPlay(forResource: "page39CatSound", ofType: "m4a")
+                label2.text = "meow"
+            }
+            
+            
+            
         default:
             break;
         }

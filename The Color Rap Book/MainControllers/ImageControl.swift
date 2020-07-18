@@ -466,6 +466,30 @@ extension(DetailPageController) {
             })
             
             
+        case 33:
+            let mudHeight = screenHeight * 0.25
+            let mudWidth = mudHeight * (980/412)
+            image1.image = UIImage(named: "page33Mud")
+            image1.frame = CGRect(x: screenWidth * 0.5, y: screenHeight * 0.73, width: mudWidth, height: mudHeight)
+            
+            
+        case 34:
+            let plateHeight = screenHeight * 0.7
+            let plateWidth = plateHeight * (980/897)
+            image1.image = UIImage(named: "page34Plate")
+            image1.frame = CGRect(x: screenWidth * 0.10, y: screenHeight * 0.25, width: plateWidth, height: plateHeight)
+            UIView.animate(withDuration: 1.5, delay: 0.5, options: .transitionFlipFromTop, animations: {
+                self.image6.image = UIImage(named: "page34Brownies")
+                let browniesHeight = self.screenHeight * 0.65
+                let browniesWidth = browniesHeight * (980/736)
+                self.image6.frame = CGRect(x: self.screenWidth * 0.7, y: self.screenHeight * 0.33, width: browniesWidth, height: browniesHeight)
+                self.image6.center = self.image1.center
+                //                self.image6.addShadow()
+            }, completion: {(finished) in
+                self.imageFloatingEffect(image1: self.image1, image2: nil, image3: self.image6, image4: nil, image5: nil, state: state)
+                
+            })
+            
             
         case 35:
             self.image1.image = UIImage(named: "page35Chocolate")
@@ -480,6 +504,67 @@ extension(DetailPageController) {
             let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
             self.image1.addGestureRecognizer(longPressRecognizer)
             imageFloatingEffect(image1: label1, image2: image2, image3: image3, image4: image4, image5: nil, state: state)
+            
+            
+        case 38:
+            let hatHeight = screenHeight * 0.5
+            let hatWidth = hatHeight * (980/763)
+            image1.image = UIImage(named: "page38Hat")
+            image1.frame = CGRect(x: screenWidth * 0.10, y: screenHeight * 0.40, width: hatWidth, height: hatHeight)
+            
+        case 39:
+            let bigBatsHeight = screenHeight * 0.4
+            let bigBatsWidth = bigBatsHeight * (980/572)
+            image2.image = UIImage(named: "page39BigBats")
+            if screenHeight / screenWidth <= 0.47 {
+                 image2.frame = CGRect(x: screenWidth * 0.25, y: screenHeight * 0.2, width: bigBatsWidth, height: bigBatsHeight)
+            } else {
+            image2.frame = CGRect(x: screenWidth * 0.18, y: screenHeight * 0.2, width: bigBatsWidth, height: bigBatsHeight)
+            }
+            image2.addShadow()
+            
+            UIView.animate(withDuration: 1.5, delay: 1.0, options: .transitionFlipFromTop, animations: {
+                let smallBatsHeight = self.screenHeight * 0.32
+                let smallBatsWidth = smallBatsHeight * (650/883)
+                 self.image6.image = UIImage(named: "page39SmallBats")
+                self.image6.frame = CGRect(x: self.screenWidth * 0.74, y: self.screenHeight * 0.37, width: smallBatsWidth, height: smallBatsHeight)
+                self.image6.addShadow()
+            }, completion: {(finished) in
+                let catHeight = self.screenHeight * 0.14
+                let catWidth = catHeight * (956/474)
+                 self.image3.image = UIImage(named: "page38CatLookR")
+                self.image3.frame = CGRect(x: -self.screenWidth * 0.20 , y: self.screenHeight * 0.22, width: catWidth, height: catHeight)
+                self.soundPlay(forResource: "page38WitchSound", ofType: "m4a")
+                UIView.animateKeyframes(withDuration: 1.5, delay: 0, options: .calculationModeCubic, animations: {
+                    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3, animations: {
+                        self.image3.frame = CGRect(x: 0 , y: self.screenHeight * 0.22, width: catWidth, height: catHeight)
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.3, animations: {
+                        self.image3.frame = CGRect(x: self.screenWidth * 0.1 , y: self.screenHeight * 0.46, width: catWidth, height: catHeight)
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.9, animations: {
+                        self.image3.frame = CGRect(x: self.screenWidth
+                            * 0.2, y: self.screenHeight, width: catWidth, height: catHeight)
+                    })
+                }, completion: {(finished) in
+                    self.image3.image = nil
+                    UIView.animate(withDuration: 1.5, delay: 0.5, options: .transitionFlipFromTop, animations: {
+                        self.image5.image = UIImage(named: "page39Cat")
+                        let catHeight = self.screenHeight * 0.32
+                        let catWidth = catHeight * (980/881)
+//                        if self.screenHeight / screenWidth <= 0.47 {
+//
+//                        }
+                        self.image5.frame = CGRect(x: self.screenWidth * 0.10, y: self.screenHeight * 0.63, width: catWidth, height: catHeight)
+                        self.image5.addShadow()
+                    }, completion: {(finished) in
+                        self.imageFloatingEffect(image1: self.image2, image2: nil, image3: self.image6, image4: nil, image5: self.image5, state: state)
+                        
+                    })
+                })
+                
+            })
+            
             
             
             
@@ -548,9 +633,8 @@ extension(DetailPageController) {
                 self.canvas.isHidden = true
             
             self.startButton.isEnabled = false
-           
             self.colorSlider.alpha = 0
-            self.drawingToolViewBackground.alpha = 0
+            self.drawingToolPanel.alpha = 0
             self.SpriteView.alpha = 0
             self.page23LightLayer.opacity = 0
     
@@ -788,17 +872,21 @@ extension (UIViewController) {
         let offsetFromMovingAnchorPointsX = anchorPoint.x - oldAnchorPoint.x
         let offsetFromMovingAnchorPointsY = anchorPoint.y - oldAnchorPoint.y
         print("CGRect ", imageview.frame)
-        switch state {
-        case 10:
-            break;
+//        switch state {
+//        case 10:
+//            break;
             
-        case 17:
+//        case 17:
+//            imageview.layer.anchorPoint = anchorPoint
+//            imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * imageview.bounds.width, y: offsetFromMovingAnchorPointsY * imageview.bounds.height)
+//        case 38:
+//            break;
+            
+//        default:
             imageview.layer.anchorPoint = anchorPoint
-            imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * imageview.bounds.width, y: offsetFromMovingAnchorPointsY * imageview.bounds.height)
-        default:
-            imageview.layer.anchorPoint = anchorPoint
-            imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * UIScreen.main.bounds.width, y: offsetFromMovingAnchorPointsY * UIScreen.main.bounds.height)
-        }
+             imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * imageview.bounds.width, y: offsetFromMovingAnchorPointsY * imageview.bounds.height)
+//            imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * UIScreen.main.bounds.width, y: offsetFromMovingAnchorPointsY * UIScreen.main.bounds.height)
+//        }
         
         print("CGRect ", imageview.frame)
         switch state {
@@ -848,7 +936,8 @@ extension (UIViewController) {
             case 7:
                 imageRotate(imageview: image1 as! UIImageView, x: 0.76276, y: 1 - 0.1435, state: state)
             case 10:
-                imageRotate(imageview: image1 as! UIImageView, x: 0.32276, y: 1 - 0.4435, state: state)
+//                imageRotate(imageview: image1 as! UIImageView, x: 0.32276, y: 1 - 0.4435, state: state)
+                imageRotate(imageview: image1 as! UIImageView, x: 0.5, y: 0.5, state: state)
                 
             default:
                 UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {

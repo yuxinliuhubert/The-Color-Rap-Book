@@ -245,6 +245,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func keepReadingTap(_ sender: Any) {
+        print("pagenumber, ", myVariable.page)
+        if myVariable.page < 3 || myVariable.page > 48 {
+            myVariable.page = 3
+        }
         myVariable.state = myVariable.page
         myVariable.buttonSoundPlayer?.play()
         self.performSegue(withIdentifier: "ToSplashSegue", sender: sender)
