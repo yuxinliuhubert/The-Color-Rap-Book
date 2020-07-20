@@ -20,6 +20,7 @@ extension (DetailPageController) {
             image1.shake(duration: 0.5, rotationDivision: nil)
             if image1.frame.contains(position) {
               
+                
                 generator.impactOccurred()
                 switch self.image1.image {
                     
@@ -116,10 +117,65 @@ extension (DetailPageController) {
             
             }
             
+        case 30:
+            if image4.frame.contains(position) {
+                switch image4.image {
+                case UIImage(named: "page30NoJelly"):
+                    label1.text = "More jelly!"
+                    self.image4.image = UIImage(named: "page30FirstClick")
+            
+                    
+                case UIImage(named: "page30FirstClick"):
+                    label1.text = "A little bit more!"
+                    self.image4.image = UIImage(named: "page30SecondClick")
+                    
+                case UIImage(named: "page30SecondClick"):
+                    label1.text = "Enjoy!"
+                    self.image4.image = UIImage(named: "page30ThirdClick")
+                    
+                default:
+                    
+                    break;
+                }
+            }
+            
+            
         case 33:
             if image1.frame.contains(position) {
                 generator.impactOccurred()
                 soundPlay(forResource: "page33Mud", ofType: "m4a")
+            }
+            
+            
+        case 37:
+            if image1.frame.contains(position) || image5.frame.contains(position) {
+                label1.text = ""
+                generator.impactOccurred()
+                let bootHeight = screenHeight * 0.5
+                let bootWidth = bootHeight * (980/1125)
+                UIView.animateKeyframes(withDuration: 1.5, delay: 0, options: .calculationModeCubic, animations: {
+                    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.333, animations: {
+                        self.image1.center = CGPoint(x: self.screenWidth * 0.5 - bootWidth / 2 - 30, y: self.screenHeight * 0.03 + bootHeight / 2)
+                    })
+                    
+                    UIView.addKeyframe(withRelativeStartTime: 0.333, relativeDuration: 0.167, animations: {
+                        self.image1.center = CGPoint(x: self.screenWidth * 0.5 - bootWidth / 2 - 30, y: self.screenHeight * 0.25 + bootHeight / 2)
+                    })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: {
+                        self.soundPlay(forResource: "page37Boot", ofType: "m4a")
+                    })
+                    
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.333, animations: {
+                        self.image5.center = CGPoint(x: self.screenWidth * 0.5 + bootWidth / 2 + 30, y: self.screenHeight * 0.03 + bootHeight / 2)                    })
+                    
+                    UIView.addKeyframe(withRelativeStartTime: 0.833, relativeDuration: 0.1667, animations: {
+                        self.image5.center = CGPoint(x: self.screenWidth * 0.5 + bootWidth / 2 + 30, y: self.screenHeight * 0.25 + bootHeight / 2)
+                    })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.3, execute: {
+                        self.soundPlay(forResource: "page37Boot", ofType: "m4a")
+                    })
+                }, completion: nil)
+                
             }
             
         case 38:
@@ -167,6 +223,43 @@ extension (DetailPageController) {
                 soundPlay(forResource: "page39CatSound", ofType: "m4a")
                 label2.text = "meow"
             }
+            
+        case 42:
+            if image2.frame.contains(position){
+                generator.impactOccurred()
+                myVariable.backgroundPlayer?.pause()
+                soundPlay(forResource: "page42JingleBells", ofType: "m4a")
+                label1.text = "Jingle all the way~~"
+                image2.shake(duration: 1.0, rotationDivision: 160)
+            }
+            
+            if image1.frame.contains(position) {
+                generator.impactOccurred()
+                myVariable.backgroundPlayer?.pause()
+                soundPlay(forResource: "page42Bell", ofType: "m4a")
+                label1.text = "Ding!"
+                image1.shake(duration: 1.0, rotationDivision: 160)
+            }
+            
+            if image3.frame.contains(position) {
+                generator.impactOccurred()
+                myVariable.backgroundPlayer?.pause()
+                soundPlay(forResource: "page42Carol", ofType: "m4a")
+                label1.text = "Sounds like Christmas is here!"
+                image3.shake(duration: 1.0, rotationDivision: 160)
+            }
+            
+            
+            
+        case 44:
+            if image3.frame.contains(position) {
+                generator.impactOccurred()
+                image3.shake(duration: 1.0, rotationDivision: 160)
+                myVariable.backgroundPlayer?.pause()
+                soundPlay(forResource: "page44Wedding", ofType: "m4a")
+                label1.text = ""
+            }
+            
             
             
             

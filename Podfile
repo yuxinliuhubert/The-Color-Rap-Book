@@ -24,7 +24,7 @@ target 'The Color Rap Book' do
   pod 'LBTAComponents'
   pod 'LayoutHelper'
   pod 'StepSlider', '~> 1.3.0'
-  pod 'ScratchCard', '~> 1.1.3'
+  #pod 'ScratchCard', '~> 1.1.3'
   
   end
 

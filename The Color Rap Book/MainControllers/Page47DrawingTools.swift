@@ -141,7 +141,7 @@ extension DetailPageController: CropViewControllerDelegate {
     func setUpStackView() {
         //        dragPic.backgroundColor = .red
         
-        
+//        ATTENTION: COLOR SLIDER MUST BE SEPARATE FROM THE DRAWING PANEL TO MAKE THE WHOLE THING WORK
         //          view.addSubview(stackView)
         view.addSubview(drawingToolPanel)
         self.drawingToolPanel.addSubview(colorSlider)

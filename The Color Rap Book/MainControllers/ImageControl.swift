@@ -13,6 +13,7 @@ import GameplayKit
 import CoreMotion
 import QuartzCore
 import AVFoundation
+//import ScratchCard
 
 extension(DetailPageController) {
     
@@ -85,9 +86,6 @@ extension(DetailPageController) {
                             view.presentScene(sceneNode)
                             view.ignoresSiblingOrder = true
     
-                        
-                        //                                              view.showsFPS = true
-                        //                                              view.showsNodeCount = true
                     }
                 }
                 
@@ -345,7 +343,7 @@ extension(DetailPageController) {
             image1.image = UIImage(named: "page22Mower")
             image1.frame = CGRect(x: 0, y: screenHeight * 0.55, width: screenWidth * 0.25, height: screenWidth * 0.185)
             image1.isUserInteractionEnabled = true
-            self.image1.layer.zPosition = 7
+            self.image1.layer.zPosition = 1
             image1.addShadow()
             let panGesture = CustomPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
             panGesture.object = self.image1
@@ -386,7 +384,7 @@ extension(DetailPageController) {
             page23Phase = 0
             image5.image = UIImage(named: "page23Light")
             let lightHeight = screenHeight * 0.6
-            let lightWidth = lightHeight * (1024/1170)
+            let lightWidth = lightHeight * (1024.0/1170.0)
             image5.frame = CGRect(x: 0, y: screenHeight * 0.15, width: lightWidth, height: lightHeight)
             image5.addShadow()
             image5.center = view.convert(view.center, from: view)
@@ -396,7 +394,7 @@ extension(DetailPageController) {
         case 25:
             image5.image = UIImage(named: "page25Tree")
             let treeHeight = screenHeight * 0.70
-            let treeWidth = treeHeight * (980/1379)
+            let treeWidth = treeHeight * (980.0/1379.0)
             image5.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.23, width: treeWidth, height: treeHeight)
             image5.addShadow()
             
@@ -433,7 +431,7 @@ extension(DetailPageController) {
             
         case 27:
             let orangeHeight = screenHeight * 0.45
-            let orangeWidth = orangeHeight * (1024/906)
+            let orangeWidth = orangeHeight * (1024.0/906.0)
             image1.image = UIImage(named: "page27Orange")
             if self.screenHeight / self.screenWidth <= 0.47 {
                   image1.frame = CGRect(x: screenWidth * 0.65, y: screenHeight * 0.4, width: orangeWidth, height: orangeHeight)
@@ -447,7 +445,7 @@ extension(DetailPageController) {
             
         case 29:
             let grapeHeight = screenHeight * 0.48
-            let grapeWidth = grapeHeight * (1039/1461)
+            let grapeWidth = grapeHeight * (1039.0/1461.0)
             image1.image = UIImage(named: "page29Grapes")
             if self.screenHeight / self.screenWidth <= 0.47 {
                 self.image1.frame = CGRect(x: screenWidth * 0.16, y: screenHeight * 0.32, width: grapeWidth , height: grapeHeight)
@@ -465,6 +463,16 @@ extension(DetailPageController) {
                 
             })
             
+        case 30:
+//            page30ScratchCard.alpha = 1
+            let breadHeight = screenHeight * 0.60
+            let breadWidth = breadHeight * (980.0/973.0)
+            image4.image = UIImage(named: "page30NoJelly")
+            image4.frame = CGRect(x: screenWidth * 0.15, y: screenHeight * 0.25, width: breadWidth, height: breadHeight)
+//            let page30PanGesture = UISwipeGestureRecognizer(target: self, action: #selector(page30ScratchForJelly(gesture:)))
+//            page30PanGesture.direction = [.down, .up, .left, .right]
+//            image4.addGestureRecognizer(page30PanGesture)
+            
             
         case 33:
             let mudHeight = screenHeight * 0.25
@@ -473,17 +481,24 @@ extension(DetailPageController) {
             image1.frame = CGRect(x: screenWidth * 0.5, y: screenHeight * 0.73, width: mudWidth, height: mudHeight)
             
             
+            
         case 34:
             let plateHeight = screenHeight * 0.7
             let plateWidth = plateHeight * (980/897)
             image1.image = UIImage(named: "page34Plate")
             image1.frame = CGRect(x: screenWidth * 0.10, y: screenHeight * 0.25, width: plateWidth, height: plateHeight)
+        
+//            print("page34supposeframe,", CGRect(x: screenWidth * 0.10, y: screenHeight * 0.25, width: plateWidth, height: plateHeight))
+//            print("page34actualframe,", image1.frame)
+            
             UIView.animate(withDuration: 1.5, delay: 0.5, options: .transitionFlipFromTop, animations: {
                 self.image6.image = UIImage(named: "page34Brownies")
                 let browniesHeight = self.screenHeight * 0.65
                 let browniesWidth = browniesHeight * (980/736)
                 self.image6.frame = CGRect(x: self.screenWidth * 0.7, y: self.screenHeight * 0.33, width: browniesWidth, height: browniesHeight)
+//                print("image1 center", self.image1.center)
                 self.image6.center = self.image1.center
+//                print
                 //                self.image6.addShadow()
             }, completion: {(finished) in
                 self.imageFloatingEffect(image1: self.image1, image2: nil, image3: self.image6, image4: nil, image5: nil, state: state)
@@ -505,6 +520,16 @@ extension(DetailPageController) {
             self.image1.addGestureRecognizer(longPressRecognizer)
             imageFloatingEffect(image1: label1, image2: image2, image3: image3, image4: image4, image5: nil, state: state)
             
+        case 37:
+            let bootHeight = screenHeight * 0.5
+            let bootWidth = bootHeight * (980.0/1125.0)
+            image1.image = UIImage(named: "page37LeftBoot")
+            image5.image = UIImage(named: "page37RightBoot")
+            image1.frame = CGRect(x: screenWidth * 0.15, y: screenHeight * 0.25, width: bootWidth, height: bootHeight)
+            image5.frame = CGRect(x: screenWidth * 0.6, y: screenHeight * 0.25, width: bootWidth, height: bootHeight)
+            image1.center = CGPoint(x: screenWidth * 0.5 - bootWidth / 2 - 30, y: screenHeight * 0.25 + bootHeight / 2)
+            image5.center = CGPoint(x: screenWidth * 0.5 + bootWidth / 2 + 30, y: screenHeight * 0.25 + bootHeight / 2)
+
             
         case 38:
             let hatHeight = screenHeight * 0.5
@@ -525,13 +550,13 @@ extension(DetailPageController) {
             
             UIView.animate(withDuration: 1.5, delay: 1.0, options: .transitionFlipFromTop, animations: {
                 let smallBatsHeight = self.screenHeight * 0.32
-                let smallBatsWidth = smallBatsHeight * (650/883)
+                let smallBatsWidth = smallBatsHeight * (650.0/883.0)
                  self.image6.image = UIImage(named: "page39SmallBats")
                 self.image6.frame = CGRect(x: self.screenWidth * 0.74, y: self.screenHeight * 0.37, width: smallBatsWidth, height: smallBatsHeight)
                 self.image6.addShadow()
             }, completion: {(finished) in
                 let catHeight = self.screenHeight * 0.14
-                let catWidth = catHeight * (956/474)
+                let catWidth = catHeight * (956.0/474.0)
                  self.image3.image = UIImage(named: "page38CatLookR")
                 self.image3.frame = CGRect(x: -self.screenWidth * 0.20 , y: self.screenHeight * 0.22, width: catWidth, height: catHeight)
                 self.soundPlay(forResource: "page38WitchSound", ofType: "m4a")
@@ -551,7 +576,7 @@ extension(DetailPageController) {
                     UIView.animate(withDuration: 1.5, delay: 0.5, options: .transitionFlipFromTop, animations: {
                         self.image5.image = UIImage(named: "page39Cat")
                         let catHeight = self.screenHeight * 0.32
-                        let catWidth = catHeight * (980/881)
+                        let catWidth = catHeight * (980.0/881.0)
 //                        if self.screenHeight / screenWidth <= 0.47 {
 //
 //                        }
@@ -565,6 +590,71 @@ extension(DetailPageController) {
                 
             })
             
+        case 42:
+            let snowMidHeight = screenHeight * 0.4
+            let snowMidWidth = snowMidHeight * (1196.0/1095.0)
+            image2.image = UIImage(named: "page42SnowMid")
+            image2.frame = CGRect(x: 0, y: 0, width: snowMidWidth, height: snowMidHeight)
+            image2.center = CGPoint(x: screenWidth * 0.5, y: screenHeight * 0.5)
+            image2.addShadow()
+            
+            let snowLeftHeight = screenHeight * 0.3
+            let snowLeftWidth = snowLeftHeight * (852.0/776.0)
+            UIView.animate(withDuration: 1.5, delay: 0.3, options: .transitionFlipFromTop, animations: {
+                self.image1.image = UIImage(named: "page42SnowLeft")
+                self.image1.frame = CGRect(x: 0, y: 0, width: snowLeftWidth, height: snowLeftHeight)
+//                self.image1.center = CGPoint(x: self.screenWidth * 0.5 - (snowMidWidth + snowLeftWidth) / 2.0, y: self.screenHeight * 0.75)
+                self.image1.center = CGPoint(x: self.screenWidth * 0.15, y: self.screenHeight * 0.75)
+            }, completion: nil)
+            
+            let snowRightHeight = screenHeight * 0.3
+            let snowRightWidth = snowRightHeight * (892.0/911.0)
+            UIView.animate(withDuration: 1.5, delay: 0.6, options: .transitionFlipFromTop, animations: {
+                self.image3.image = UIImage(named: "page42SnowRight")
+                self.image3.frame = CGRect(x: 0, y: 0, width: snowRightWidth, height: snowRightHeight)
+//                self.image3.center = CGPoint(x: self.screenWidth * 0.5 + (snowMidWidth + snowRightWidth) / 2.0, y: self.screenHeight * 0.25)
+                self.image3.center = CGPoint(x: self.screenWidth * 0.85, y: self.screenHeight * 0.25)
+            }, completion: { _ in
+                
+                self.imageFloatingEffect(image1: self.image2, image2: nil, image3: self.image3, image4: nil, image5: self.image1, state: 42)
+            })
+            
+            
+        case 43:
+            let lighthouseWidth = screenWidth * 0.35
+            let lighthouseHeight = lighthouseWidth * (1028.0/980.0)
+            image5.image = UIImage(named: "page43Lighthouse")
+            image5.frame = CGRect(x: 0, y: screenHeight - lighthouseHeight, width: lighthouseWidth, height: lighthouseHeight)
+            
+            let beamWidth = screenWidth * 0.25
+            let beamHeight = beamWidth * (985.0/980)
+            image1.alpha = 0
+//            image1.backgroundColor = .blue
+            image1.image = UIImage(named: "page43Beam")
+             image1.frame = CGRect(x: screenWidth * 0.182, y: screenHeight * 1.05 - lighthouseHeight , width: beamWidth, height: beamHeight)
+             UIView.animate(withDuration: 1.5, delay: 0.6, options: .transitionFlipFromTop, animations: {
+                self.image1.alpha = 1
+                        }, completion: { _ in
+                            self.imageRotate(imageview: self.image1, x: 0.05, y: 0.16, state: 43)
+//                            self.imageRotate(imageview: self.image1, x: 0, y: 0, state: 43)
+                        })
+           
+            
+        case 44:
+            let dressHeight = screenHeight * 0.55
+            let dressWidth = dressHeight * (980.0/1201.0)
+            image3.image = UIImage(named: "page44Dress")
+            image3.frame = CGRect(x: screenWidth * 0.6, y: screenHeight * 0.35, width: dressWidth, height: dressHeight)
+
+        case 45:
+            let ghostWidth = screenWidth * 0.3
+            let ghostHeight = ghostWidth * (842.0/980.0)
+//             image4.image = UIImage(named: "page45Ghost")
+            image4.frame = CGRect(x: screenWidth, y: screenHeight * 0.40, width: ghostWidth, height: ghostHeight)
+            
+
+            //            The ghost's translation is in the background section
+           
             
             
             
@@ -590,6 +680,7 @@ extension(DetailPageController) {
             self.image4.image = nil
             self.image5.image = nil
             self.image6.image = nil
+            self.image7.image = nil
             break;
             
         }
@@ -600,6 +691,7 @@ extension(DetailPageController) {
     
     func imageDisappearing() {
         myVariable.timer.invalidate()
+        myVariable.backgroundPlayer?.play()
 //        print("MyVariable.timer, ", myVariable.timer)
 //        myVariable.timer = nil
         UIImageView.animate(withDuration:  1.0, delay: 0, options: [.curveEaseInOut], animations: {
@@ -647,6 +739,13 @@ extension(DetailPageController) {
             self.image5.image = nil
             self.image6.image = nil
             self.image7.image = nil
+            self.image1.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.image2.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.image3.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.image4.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.image5.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.image6.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.image7.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             self.label1.layer.removeAllAnimations()
             self.image5.layer.removeAllAnimations()
             self.backgroundImageView.layer.removeAllAnimations()
@@ -665,7 +764,8 @@ extension(DetailPageController) {
             self.SpriteView.scene?.removeFromParent()
             self.SpriteView.removeFromSuperview()
             Motion.instance.motionManager.stopAccelerometerUpdates()
-           
+
+//            self.page30ScratchCard = ScratchUIView(frame: CGRect(x: -self.screenWidth, y: 0, width: 0, height: 0), Coupon: "", MaskImage: "", ScratchWidth: 0)
                 
 
 
@@ -676,6 +776,14 @@ extension(DetailPageController) {
     
     
     func imageBackInPlace() {
+        image1.transform = .identity
+             image2.transform = .identity
+             image3.transform = .identity
+             image4.transform = .identity
+             image5.transform = .identity
+             image6.transform = .identity
+             image7.transform = .identity
+        
         image1.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image2.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
         image3.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
@@ -683,17 +791,24 @@ extension(DetailPageController) {
         image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image6.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
         image7.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
-        image1.transform = .identity
-        image2.transform = .identity
-        image3.transform = .identity
-        image4.transform = .identity
-        image5.transform = .identity
-        image6.transform = .identity
-        image7.transform = .identity
+//        page30ScratchCard.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
+//        image1.transform = .identity
+//        image2.transform = .identity
+//        image3.transform = .identity
+//        image4.transform = .identity
+//        image5.transform = .identity
+//        image6.transform = .identity
+//        image7.transform = .identity
+//        page30ScratchCard.transform = .identity
         image1.layer.zPosition = 0
         if let recognizers = image1.gestureRecognizers {
             for recognizer in recognizers {
                 image1.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+            }
+        }
+        if let recognizers = image4.gestureRecognizers {
+            for recognizer in recognizers {
+                image4.removeGestureRecognizer(recognizer as UIGestureRecognizer)
             }
         }
         if let recognizers = image5.gestureRecognizers {
@@ -703,7 +818,11 @@ extension(DetailPageController) {
         }
         image1.alpha = 1
         image2.alpha = 1
+        image3.alpha = 1
+        image4.alpha = 1
         image5.alpha = 1
+        image6.alpha = 1
+        image7.alpha = 1
         image2.removeShadow()
         label1.transform = .identity
         myVariable.timer.invalidate()
@@ -722,6 +841,8 @@ extension(DetailPageController) {
         image3.frame = CGRect(x: self.screenWidth * 0.40, y: -cloudHeight * 2, width: rightCloudWidth, height: cloudHeight)
         image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image6.frame = CGRect(x: 0, y: -sunHeight * 2, width: sunWidth, height: sunHeight)
+        image7.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
+//        page30ScratchCard.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
         image1.transform = .identity
         image2.transform = .identity
         image3.transform = .identity
@@ -729,12 +850,18 @@ extension(DetailPageController) {
         image5.transform = .identity
         image6.transform = .identity
         image7.transform = .identity
+//        page30ScratchCard.transform = .identity
         image1.layer.zPosition = 0
         if let recognizers = image1.gestureRecognizers {
             for recognizer in recognizers {
                 image1.removeGestureRecognizer(recognizer as UIGestureRecognizer)
             }
         }
+        if let recognizers = image4.gestureRecognizers {
+                   for recognizer in recognizers {
+                       image4.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+                   }
+               }
         if let recognizers = image5.gestureRecognizers {
             for recognizer in recognizers {
                 image5.removeGestureRecognizer(recognizer as UIGestureRecognizer)
@@ -742,7 +869,11 @@ extension(DetailPageController) {
         }
         image1.alpha = 1
         image2.alpha = 1
+        image3.alpha = 1
+        image4.alpha = 1
         image5.alpha = 1
+        image6.alpha = 1
+        image7.alpha = 1
         image2.removeShadow()
         label1.transform = .identity
         myVariable.timer.invalidate()
@@ -757,6 +888,7 @@ extension(DetailPageController) {
         image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image6.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image7.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+//        page30ScratchCard.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
         image1.transform = .identity
         image2.transform = .identity
         image3.transform = .identity
@@ -765,6 +897,7 @@ extension(DetailPageController) {
         image6.transform = .identity
         image7.transform = .identity
         label1.transform = .identity
+//        page30ScratchCard.transform = .identity
         image1.alpha = 1
         image2.alpha = 1
         image3.alpha = 1
@@ -778,6 +911,16 @@ extension(DetailPageController) {
                 image1.removeGestureRecognizer(recognizer as UIGestureRecognizer)
             }
         }
+        if let recognizers = image4.gestureRecognizers {
+                   for recognizer in recognizers {
+                       image4.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+                   }
+               }
+        if let recognizers = image5.gestureRecognizers {
+                   for recognizer in recognizers {
+                       image5.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+                   }
+               }
   
         myVariable.timer.invalidate()
     }
@@ -863,30 +1006,22 @@ extension (UIViewController) {
     
     
     
+    
+    
     func imageRotate(imageview: UIView, x: CGFloat, y: CGFloat, state: Int) {
         
         let anchorPoint = CGPoint(x: x, y: y)
         let oldAnchorPoint = imageview.layer.anchorPoint
-        print("old anchor point ", oldAnchorPoint)
-        print("anchorPoint ", anchorPoint)
+//        print("old anchor point ", oldAnchorPoint)
+//        print("anchorPoint ", anchorPoint)
+        //        print("omage original point", imageview.frame.origin)
         let offsetFromMovingAnchorPointsX = anchorPoint.x - oldAnchorPoint.x
         let offsetFromMovingAnchorPointsY = anchorPoint.y - oldAnchorPoint.y
-        print("CGRect ", imageview.frame)
-//        switch state {
-//        case 10:
-//            break;
-            
-//        case 17:
-//            imageview.layer.anchorPoint = anchorPoint
-//            imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * imageview.bounds.width, y: offsetFromMovingAnchorPointsY * imageview.bounds.height)
-//        case 38:
-//            break;
-            
-//        default:
-            imageview.layer.anchorPoint = anchorPoint
-             imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * imageview.bounds.width, y: offsetFromMovingAnchorPointsY * imageview.bounds.height)
-//            imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * UIScreen.main.bounds.width, y: offsetFromMovingAnchorPointsY * UIScreen.main.bounds.height)
-//        }
+        
+         imageview.layer.anchorPoint = anchorPoint
+                imageview.transform = imageview.transform.translatedBy(x: offsetFromMovingAnchorPointsX * imageview.bounds.width, y: offsetFromMovingAnchorPointsY * imageview.bounds.height)
+        print("CGRect ", imageview.bounds)
+
         
         print("CGRect ", imageview.frame)
         switch state {
@@ -912,6 +1047,28 @@ extension (UIViewController) {
                 UIView.animateKeyframes(withDuration: 0.1, delay: 0.15, options: [.autoreverse, .allowUserInteraction], animations: {
                     imageview.transform = imageview.transform.rotated(by: -.pi / 4)
                 })}
+            
+            
+        case 43:
+            if #available(iOS 13, *) {
+                UIView.animate(withDuration: 3, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+                    imageview.transform = imageview.transform.rotated(by: -.pi / 4)
+                }, completion: nil)
+                // use UICollectionViewCompositionalLayout
+            } else {
+                myVariable.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: {_ in
+                    imageview.transform = imageview.transform.rotated(by: -.pi / 4)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                        
+                        imageview.transform = imageview.transform.rotated(by: .pi / 4)
+                        
+                    }
+                    })
+                
+            }
+
+            
         default:
             break;
         }
@@ -920,7 +1077,10 @@ extension (UIViewController) {
     
    func imageFloatingEffect(image1: UIView?, image2: UIView?, image3: UIView?, image4: UIView?, image5: UIView?, state: Int){
         self.view.isUserInteractionEnabled = true
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
         if myVariable.state == 17 {
+            
             let floatingConstant = UIScreen.main.bounds.height * 0.02604
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
                 image1?.frame.origin.y -= floatingConstant * 0.3
@@ -938,6 +1098,13 @@ extension (UIViewController) {
             case 10:
 //                imageRotate(imageview: image1 as! UIImageView, x: 0.32276, y: 1 - 0.4435, state: state)
                 imageRotate(imageview: image1 as! UIImageView, x: 0.5, y: 0.5, state: state)
+            case 45:
+                UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+                    image1?.frame.origin.y -= 50
+                }){_ in
+                    UIView.animateKeyframes(withDuration: 1.0, delay: 0.25, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
+                        image1?.frame.origin.y += 50
+                    })}
                 
             default:
                 UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {

@@ -203,8 +203,9 @@ extension DetailPageController {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
       
        
-        if myVariable.state == 22 {
+        switch myVariable.state {
 //
+        case 22:
         if flag == true {
            guard let playerUrl = player.url?.absoluteString else {
                       print("player url error")
@@ -218,68 +219,23 @@ extension DetailPageController {
 
 
         }
+            
+        case 42:
+            if flag == true {
+                myVariable.backgroundPlayer?.play()
+                label1.text = "Click on different snow flakes!"
+            }
+            
+        case 44:
+            if flag == true{
+                myVariable.backgroundPlayer?.play()
+            }
+            
+        default:
+            break
         }
     }
     
-//    func page25ShakingTreeSound() {
-//        let urlString = Bundle.main.path(forResource: "page25ShakeSound", ofType: "m4a")
-//        do {
-//            try AVAudioSession.sharedInstance().setMode(.default)
-//            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-//
-//            guard let urlString = urlString else {
-//                return
-//            }
-//
-//
-//            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-//
-//            guard let player = player else {
-//                return
-//            }
-//            player.numberOfLoops = 0
-//            player.volume = 1
-//            player.play()
-//
-//            player.delegate = self
-//
-//
-//        }
-//        catch {
-//            print("audio player error")
-//        }
-//    }
-//
-//
-//
-//    func page27SqueezingOrangeSound() {
-//           let urlString = Bundle.main.path(forResource: "page27OrangeSqueezSound", ofType: "m4a")
-//           do {
-//               try AVAudioSession.sharedInstance().setMode(.default)
-//               try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-//
-//               guard let urlString = urlString else {
-//                   return
-//               }
-//
-//
-//               player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-//
-//               guard let player = player else {
-//                   return
-//               }
-//               player.numberOfLoops = 0
-//               player.volume = 1
-//               player.play()
-//
-//               player.delegate = self
-//
-//
-//           }
-//           catch {
-//               print("audio player error")
-//           }
-//       }
     
     func soundPlay(forResource: String, ofType: String) {
         

@@ -170,6 +170,39 @@ extension (DetailPageController) {
             })
             
             
+        case 45:
+            self.imageBackInPlace()
+            UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
+                self.elementsEnteringStorage(state: state)
+                print("animation processed")
+                
+                
+            }, completion: {(finished) in
+                self.pageNumberLabelDisplay(label: label, pageNum: state)
+                self.soundPlay(forResource: "page45GhostSound", ofType: "m4a")
+                UIView.animateKeyframes(withDuration: 5, delay: 0, options: [.calculationModeCubic, .repeat], animations: {
+                    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1, animations: {
+                        self.image4.image = UIImage(named: "page45Ghost")
+                        self.image4.transform = self.image4.transform.translatedBy(x: -self.screenWidth * 1.4, y: 0)
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+                        self.image4.center.y -= 50
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.2, animations: {
+                        self.image4.center.y += 50
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.2, animations: {
+                        self.image4.center.y -= 50
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.2, animations: {
+                        self.image4.center.y += 50
+                    })
+                    
+                    
+                }, completion: nil)
+            })
+            
+            
             
         case 47:
             UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {

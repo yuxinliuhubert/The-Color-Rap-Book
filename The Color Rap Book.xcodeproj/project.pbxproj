@@ -66,6 +66,12 @@
 		53B715D624ACF5A20051ABF3 /* page22MowerOperatingSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53B715D324ACF5A20051ABF3 /* page22MowerOperatingSound.m4a */; };
 		53B715D824ACFA670051ABF3 /* page22MowerShutdownSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53B715D724ACFA670051ABF3 /* page22MowerShutdownSound.m4a */; };
 		53B715DA24AD045B0051ABF3 /* buttonSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53B715D924AD045B0051ABF3 /* buttonSound.m4a */; };
+		53BDBDA224C4B5F700625ABF /* page37Boot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDA124C4B5F700625ABF /* page37Boot.m4a */; };
+		53BDBDA724C4C24B00625ABF /* page42JingleBells.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDA424C4C24B00625ABF /* page42JingleBells.m4a */; };
+		53BDBDA824C4C24B00625ABF /* page42Carol.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDA524C4C24B00625ABF /* page42Carol.m4a */; };
+		53BDBDA924C4C24B00625ABF /* page42Bell.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDA624C4C24B00625ABF /* page42Bell.m4a */; };
+		53BDBDAB24C4EBA800625ABF /* page44Wedding.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDAA24C4EBA800625ABF /* page44Wedding.m4a */; };
+		53BDBDAD24C540E100625ABF /* page45GhostSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDAC24C540E100625ABF /* page45GhostSound.m4a */; };
 		53BF1B5B24A520ED008A1648 /* AnimationCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BF1B5A24A520ED008A1648 /* AnimationCollectionViewLayout.swift */; };
 		53BF1B5F24A5215D008A1648 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BF1B5D24A5215D008A1648 /* CardCell.swift */; };
 		53BF1B6024A5215D008A1648 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53BF1B5E24A5215D008A1648 /* CardCell.xib */; };
@@ -170,6 +176,12 @@
 		53B715D324ACF5A20051ABF3 /* page22MowerOperatingSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page22MowerOperatingSound.m4a; sourceTree = "<group>"; };
 		53B715D724ACFA670051ABF3 /* page22MowerShutdownSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page22MowerShutdownSound.m4a; sourceTree = "<group>"; };
 		53B715D924AD045B0051ABF3 /* buttonSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttonSound.m4a; sourceTree = "<group>"; };
+		53BDBDA124C4B5F700625ABF /* page37Boot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page37Boot.m4a; sourceTree = "<group>"; };
+		53BDBDA424C4C24B00625ABF /* page42JingleBells.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page42JingleBells.m4a; sourceTree = "<group>"; };
+		53BDBDA524C4C24B00625ABF /* page42Carol.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page42Carol.m4a; sourceTree = "<group>"; };
+		53BDBDA624C4C24B00625ABF /* page42Bell.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page42Bell.m4a; sourceTree = "<group>"; };
+		53BDBDAA24C4EBA800625ABF /* page44Wedding.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page44Wedding.m4a; sourceTree = "<group>"; };
+		53BDBDAC24C540E100625ABF /* page45GhostSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page45GhostSound.m4a; sourceTree = "<group>"; };
 		53BF1B5A24A520ED008A1648 /* AnimationCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationCollectionViewLayout.swift; sourceTree = "<group>"; };
 		53BF1B5D24A5215D008A1648 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		53BF1B5E24A5215D008A1648 /* CardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
@@ -237,6 +249,10 @@
 		530F73A524A7A3A700C7C4A7 /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
+				53BDBDAC24C540E100625ABF /* page45GhostSound.m4a */,
+				53BDBDAA24C4EBA800625ABF /* page44Wedding.m4a */,
+				53BDBDA324C4C24B00625ABF /* page42Sounds */,
+				53BDBDA124C4B5F700625ABF /* page37Boot.m4a */,
 				535B2A5624C245A300667A1C /* page33Mud.m4a */,
 				535B2A4F24C2415A00667A1C /* page39Sounds */,
 				5368AFB324C219CD00786CDC /* page38WitchSound.m4a */,
@@ -442,6 +458,16 @@
 			path = page22Sounds;
 			sourceTree = "<group>";
 		};
+		53BDBDA324C4C24B00625ABF /* page42Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				53BDBDA424C4C24B00625ABF /* page42JingleBells.m4a */,
+				53BDBDA524C4C24B00625ABF /* page42Carol.m4a */,
+				53BDBDA624C4C24B00625ABF /* page42Bell.m4a */,
+			);
+			path = page42Sounds;
+			sourceTree = "<group>";
+		};
 		53BF1B5624A5183C008A1648 /* DeveloperPageFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,12 +652,14 @@
 				5367177E24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a in Resources */,
 				53F4D94624A1607F0018D924 /* Morgan_bold-Regular.otf in Resources */,
 				53A532E024AF855400DF32BF /* page25ShakeSound.m4a in Resources */,
+				53BDBDA924C4C24B00625ABF /* page42Bell.m4a in Resources */,
 				533CC21223ECC01C00871876 /* LaunchScreen.storyboard in Resources */,
 				530A76EB24BD19F50064CCB5 /* twangSound.m4a in Resources */,
 				53F9C95C24A855CC00F7DA29 /* BioInfoTableViewCell.xib in Resources */,
 				53B715C924ACE52A0051ABF3 /* page20FrogCall.m4a in Resources */,
 				5361589224AAA2B5007E3B60 /* pageTurn2.m4a in Resources */,
 				53B715D624ACF5A20051ABF3 /* page22MowerOperatingSound.m4a in Resources */,
+				53BDBDAB24C4EBA800625ABF /* page44Wedding.m4a in Resources */,
 				535B2A5424C2415A00667A1C /* page39BigBatsSound.m4a in Resources */,
 				533CC20F23ECC01C00871876 /* Assets.xcassets in Resources */,
 				53A532E224AF899E00DF32BF /* page27OrangeSqueezSound.m4a in Resources */,
@@ -639,17 +667,21 @@
 				535B2A5324C2415A00667A1C /* page39SmallBatsSound.m4a in Resources */,
 				53DC3EA4248F41400084D89A /* Page5Scene.sks in Resources */,
 				5368AFB424C219CD00786CDC /* page38WitchSound.m4a in Resources */,
+				53BDBDA724C4C24B00625ABF /* page42JingleBells.m4a in Resources */,
 				53B715DA24AD045B0051ABF3 /* buttonSound.m4a in Resources */,
 				539D6CD524A5263A0032646F /* PushedViewController.xib in Resources */,
 				535B2A5524C2415A00667A1C /* page39CatSound.m4a in Resources */,
 				535B2A5724C245A300667A1C /* page33Mud.m4a in Resources */,
 				53B715D524ACF5A20051ABF3 /* page22MowerStartSound.m4a in Resources */,
 				53A532E524AFC3EB00DF32BF /* DeveloperData.rtf in Resources */,
+				53BDBDAD24C540E100625ABF /* page45GhostSound.m4a in Resources */,
 				53BF1B6024A5215D008A1648 /* CardCell.xib in Resources */,
 				530A76ED24BD39EB0064CCB5 /* backgroundMusic.m4a in Resources */,
 				53CA27DE2454A855008A9731 /* Alert.storyboard in Resources */,
 				53B715D824ACFA670051ABF3 /* page22MowerShutdownSound.m4a in Resources */,
+				53BDBDA224C4B5F700625ABF /* page37Boot.m4a in Resources */,
 				530414DF23FECE2200E268C3 /* BackGroundDisplay.rtf in Resources */,
+				53BDBDA824C4C24B00625ABF /* page42Carol.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

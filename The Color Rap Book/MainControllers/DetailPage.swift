@@ -16,7 +16,7 @@ import ColorSlider
 import SpriteKit
 import GameplayKit
 import AVFoundation
-import ScratchCard
+//import ScratchCard
 
 struct myVariable {
     static var state = 0
@@ -41,6 +41,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
     
     var printingTimeControl = 0.12
+//    var printingTimeControl = 0.0
     
     var position = CGPoint()
     weak var page5Delegate: page5SceneProtocol?
@@ -77,8 +78,12 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
   
     let page23LightLayer = CAShapeLayer()
     
+    
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    
+//    var page30ScratchCard = ScratchUIView(frame: CGRect(x: -UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height * 0.55, width: UIScreen.main.bounds.height * 0.5539, height: UIScreen.main.bounds.height * 0.55), Coupon: "page30BottomBread.png", MaskImage: "page30TopBread.png", ScratchWidth: CGFloat(30))
+//    
     
     let edgePan = UIScreenEdgePanGestureRecognizer()
     let startButton: UIButton = {
@@ -205,7 +210,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         showMoreButton.isExclusiveTouch = true
         setUpDetailPageNotifications()
         
-        //if UIDevice.current.userInterfaceIdiom == .pad
         print(myVariable.state)
         
         setUpStackView()
@@ -292,7 +296,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             position = touch.location(in: view)
-            //            print(position)
+//                        print(position)
         }
 //        If you click the screen, house button shows up
 //        UIView.animate(withDuration: 0.5, animations: {
@@ -492,19 +496,18 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
             if myVariable.state == 3 {
             self.backgroundImageView.backgroundColor = .systemPink
             }
-//            print("myvariable state,, ", myVariable.state)
-            
-//            view.addSubview(canvas)
             canvas.alpha = 0
             self.canvas.frame = self.view.frame
             canvas.isHidden = true
-//            self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
-//            print("image 1 image, ", self.image1.image)
+
             self.SpriteView.isHidden = true
             self.SpriteView.alpha = 0
             self.SpriteView.backgroundColor =  .clear
             self.SpriteView.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
             view.layer.addSublayer(page23LightLayer)
+            
+//            view.addSubview(page30ScratchCard)
+//            page30ScratchCard.alpha = 0
         
         
         }else if state == 1{
@@ -515,14 +518,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         }
         completion(true)
     }
-//    func loadingViewTask(state: Int, completion: (_ success: Bool) -> Void) {
-//        // Do something
-//        self.backgroundChangeForward(imageView: backgroundImageView, delay: 0.2, state: myVariable.state, label: label)
-//        // Call completion, when finished, success or faliure
-//        completion(true)
-//    }
-//
     
+    
+
     
 
     
