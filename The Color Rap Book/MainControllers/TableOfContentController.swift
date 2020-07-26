@@ -27,7 +27,7 @@ class TableOfContentController: UIViewController {
     
     @IBOutlet var goBackButton: UIButton!
     let data = [
-        CustomData(title: "keepReading", image: #imageLiteral(resourceName: "keep reading"), pageNum: myVariable.page),
+//        CustomData(title: "keepReading", image: #imageLiteral(resourceName: "keep reading"), pageNum: myVariable.page),
         CustomData(title: "red", image: #imageLiteral(resourceName: "2_red is red"), pageNum: 4),
         CustomData(title: "blue", image: #imageLiteral(resourceName: "11_blue is blue"), pageNum: 9),
         CustomData(title: "yellow", image: #imageLiteral(resourceName: "16_yellow is yellow 061319"), pageNum: 14),
@@ -78,7 +78,7 @@ class TableOfContentController: UIViewController {
         //        print("customdata for book mark" , data)
         
         tableLabel.frame = CGRect(x: width * 0.165235, y: 30, width: width * 0.80, height: width * 0.11267)
-        tableLabel.text = "Table Of Content"
+        tableLabel.text = "Table Of Colors"
         tableLabel.font = UIFont(name: "Morgan_bold", size: 100)
         tableLabel.adjustsFontSizeToFitWidth = true
         tableLabel.textAlignment = .center
@@ -195,7 +195,7 @@ extension TableOfContentController: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

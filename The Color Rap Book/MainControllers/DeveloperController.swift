@@ -29,6 +29,18 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
+    
+    let donationLabel: UILabel = {
+        let label = UILabel()
+//        label.isEditable = false
+        label.numberOfLines = 0
+        label.text = "This book is sponsored by the Ann Harris Smith Foundation. For more information or to donate (we really appreciate that!), please look up \"Ann Smith Foundation\""
+        label.font = UIFont(name: "Morgan_bold", size: 100)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
     //    let nav = UINavigationController()
     
     let transition = TransitionCoordinator()
@@ -48,7 +60,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         [
             "developerName": "SmithFamily",
             "hexBackgroundColor": "d86940",
-            "quickIntro": "The Smith family has given Ann tremendous support and published the book."
+            "quickIntro": "The Smith Family"
         ],
         [
             "developerName": "YuxinLiu",
@@ -147,6 +159,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         super.viewDidAppear(animated)
     }
     
+    
     fileprivate func readDeveloperData() {
         if let url = Bundle.main.url(forResource:"DeveloperData", withExtension: "rtf") {
             do {
@@ -213,6 +226,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         self.collectionView.collectionViewLayout = AnimationCollectionViewLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.allowsMultipleSelection = false
         
         goBackButton.frame = CGRect(x: screenWidth * 0.01953, y: 30, width: screenWidth * 0.12, height: screenWidth * 0.090136)
         goBackButton.setImage(UIImage(named:"home"), for: .normal)
@@ -220,16 +234,19 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
         goBackButton.layer.cornerRadius = 20
         
         view.addSubview(developerLabel)
+        view.addSubview(donationLabel)
         developerLabel.frame = CGRect(x: screenWidth * 0.16, y: 30, width: screenWidth * 0.80, height: screenHeight * 0.15)
-        
+        donationLabel.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.92, width: screenWidth * 0.90, height: screenHeight * 0.06)
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.collectionView.allowsSelection = true
         self.goBackButton.alpha = 1
         self.developerLabel.alpha = 1
+        self.donationLabel.alpha = 1
     }
     
     override func didReceiveMemoryWarning() {
@@ -241,8 +258,10 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
            
         
         UIView.animate(withDuration: 0.5, animations: {
+            collectionView.allowsSelection = false
             self.goBackButton.alpha = 0
             self.developerLabel.alpha = 0
+            self.donationLabel.alpha = 0
             
         }, completion: {_ in
              if (collectionView.cellForItem(at: indexPath) as? CardCell) != nil {
@@ -272,6 +291,7 @@ class DeveloperController: UIViewController,  UINavigationControllerDelegate, UI
           
            
        }
+  
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
            

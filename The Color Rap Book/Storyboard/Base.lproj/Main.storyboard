@@ -227,11 +227,11 @@
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-hj-NUU">
-                                <rect key="frame" x="792" y="936" width="230" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GXu-I9-ppY">
+                                <rect key="frame" x="463" y="367" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -245,6 +245,9 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="3NM-h4-lAb" appends="YES" id="iUq-Uj-Ktc"/>
                             <outletCollection property="gestureRecognizers" destination="MQT-7w-Qsn" appends="YES" id="CCe-lZ-Cpg"/>
+                            <outletCollection property="gestureRecognizers" destination="wu6-Ox-EfV" appends="YES" id="dg5-et-YZy"/>
+                            <outletCollection property="gestureRecognizers" destination="67u-a2-bjP" appends="YES" id="LJh-ux-hqp"/>
+                            <outletCollection property="gestureRecognizers" destination="OkV-88-HDC" appends="YES" id="2FB-wd-sn8"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="45l-ab-FS4"/>
@@ -252,6 +255,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="8Ep-KY-FMy" id="CJ7-D2-aSh"/>
                         <outlet property="canvas" destination="hzu-yg-xPA" id="3i9-h5-1w2"/>
+                        <outlet property="downSwipeGesture" destination="OkV-88-HDC" id="FZf-dW-9CD"/>
                         <outlet property="image1" destination="Giz-MN-OoP" id="zun-ye-wF1"/>
                         <outlet property="image2" destination="LHU-qR-NYI" id="Qmf-e6-QOr"/>
                         <outlet property="image3" destination="7UB-uK-XLm" id="q7d-hT-Ci4"/>
@@ -265,9 +269,11 @@
                         <outlet property="leftSwipeGesture" destination="3NM-h4-lAb" id="wIr-pc-MAV"/>
                         <outlet property="nextButton" destination="SUg-ho-Bcz" id="kHG-Cj-yZf"/>
                         <outlet property="previousButton" destination="hOq-gA-8nN" id="ntV-9U-u8F"/>
+                        <outlet property="rightSwipeGesture" destination="wu6-Ox-EfV" id="svc-w0-eRg"/>
                         <outlet property="showMoreButton" destination="KYE-SS-bCq" id="rNU-yb-7KO"/>
                         <outlet property="singleTap" destination="MQT-7w-Qsn" id="ut9-4z-f2q"/>
-                        <outlet property="testingTextfield" destination="b3i-hj-NUU" id="EmQ-Ze-1FK"/>
+                        <outlet property="testingTextfield" destination="GXu-I9-ppY" id="KuX-Ny-LGf"/>
+                        <outlet property="upSwipeGesture" destination="67u-a2-bjP" id="fO0-uW-G59"/>
                         <segue destination="pyE-cE-vpm" kind="unwind" identifier="BackToSplashScreen" unwindAction="returnFromSegueActionsWithSender:" id="5Pu-Ge-dVi"/>
                     </connections>
                 </viewController>
@@ -281,6 +287,21 @@
                 <swipeGestureRecognizer direction="left" id="3NM-h4-lAb">
                     <connections>
                         <action selector="leftSwipe:" destination="GCB-e3-WIT" id="Qt8-SR-gHE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="wu6-Ox-EfV">
+                    <connections>
+                        <action selector="rightSwipeGesture:" destination="GCB-e3-WIT" id="0q4-P3-jZB"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="67u-a2-bjP">
+                    <connections>
+                        <action selector="upSwipeGesture:" destination="GCB-e3-WIT" id="B9L-de-F8I"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="OkV-88-HDC">
+                    <connections>
+                        <action selector="downSwipeGesture:" destination="GCB-e3-WIT" id="WGg-b3-ejs"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

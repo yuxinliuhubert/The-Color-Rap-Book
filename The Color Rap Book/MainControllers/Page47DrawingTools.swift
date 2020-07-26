@@ -197,6 +197,8 @@ extension DetailPageController: CropViewControllerDelegate {
         self.noPictureButton.addTarget(self, action: #selector(whiteBackgroundButtonTap), for: .touchUpInside)
         self.startButton.isEnabled = true
         self.noPictureButton.isEnabled = true
+        self.startButton.addButtonShadow()
+        self.noPictureButton.addButtonShadow()
         self.startButton.frame = CGRect(x: screenWidth * 0.30, y: screenHeight * 0.805, width: screenWidth * 0.4, height: screenHeight * 0.17)
         view.addSubview(startButton)
         self.noPictureButton.frame = CGRect(x: screenWidth * 0.30, y: screenHeight * 0.635 - 10, width: screenWidth * 0.4, height: screenHeight * 0.17)

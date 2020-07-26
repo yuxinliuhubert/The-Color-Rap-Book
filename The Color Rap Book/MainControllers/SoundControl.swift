@@ -42,7 +42,7 @@ extension DetailPageController {
     
     
     
-    func frogCallSound(stop: Bool) {
+    func frogCallSound() {
         let urlString = Bundle.main.path(forResource: "page20FrogCall", ofType: "m4a")
             do {
                 try AVAudioSession.sharedInstance().setMode(.default)
@@ -58,14 +58,9 @@ extension DetailPageController {
                     return
                 }
                 player.volume = myVariable.allSoundVolume
-                if stop == false {
                 player.numberOfLoops = -1
-                    
                 player.play()
-                } else {
-                    player.numberOfLoops = 0
-                    player.stop()
-                }
+    
                 
             }
             catch {

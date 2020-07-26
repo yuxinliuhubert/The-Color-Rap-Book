@@ -26,6 +26,7 @@ extension (DetailPageController) {
                 self.pageNumberBackgroundDisplay(imageView: imageView, pageNum: state)
             }, completion: { finished in
                 self.loadingViewChange(state: state, label: label)
+//                myVariable.keepReadingLoading = false
                 
             })
         
@@ -51,16 +52,14 @@ extension (DetailPageController) {
         }, completion: { finished in
             
             self.loadingViewChange(state: state, label: label)
+//            myVariable.keepReadingLoading = false
         })
     }
     
     
     
     func loadingViewChange(state: Int, label: UILabel) {
-        //        self.pageNumberBackgroundDisplay(imageView: imageView, pageNum: state)
-        
-        
-        //        self.imageBackInPlace()
+
         switch myVariable.state
         {
             
@@ -68,21 +67,7 @@ extension (DetailPageController) {
             self.pageNumberLabelDisplay(label: label, pageNum: state)
             
         case 5:
-            //                print("Device orientation, ", UIDevice.current.orientation.rawValue)
-            //                self.removeOrientationObserver()
-            self.image1.contentMode = .scaleToFill
-            self.image2.contentMode = .scaleToFill
-            self.image3.contentMode = .scaleToFill
-            self.image6.contentMode = .scaleToFill
-            self.image7.contentMode = .scaleToFill
-            let cloudHeight = self.screenHeight * 0.2
-            let leftCloudWidth = cloudHeight * 1.14
-            let rightCloudWidth = cloudHeight * 1.0952
-            let sunHeight = self.screenHeight * 0.25
-            let sunWidth = sunHeight * 0.9023
-            self.image2.frame = CGRect(x: self.screenWidth * 0.18, y: -cloudHeight * 2, width: leftCloudWidth, height: cloudHeight)
-            self.image3.frame = CGRect(x: self.screenWidth * 0.40, y: -cloudHeight * 2, width: rightCloudWidth, height: cloudHeight)
-            self.image6.frame = CGRect(x: 0, y: -sunHeight * 2, width: sunWidth, height: sunHeight)
+            self.imageSpecialCase5()
             UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
                 self.elementsEnteringStorage(state: state)
                 print("animation processed")
@@ -96,6 +81,7 @@ extension (DetailPageController) {
             
             
         case 7:
+            self.imageBackInPlace()
             UIView.transition(with: self.image4, duration: 1.8, options:[.curveEaseIn], animations: {
                 self.elementsEnteringStorage(state: state)
             }, completion: {(finished) in
@@ -103,6 +89,7 @@ extension (DetailPageController) {
             })
             
         case 11:
+            self.imageSpecialCase12()
             UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
                 self.elementsEnteringStorage(state: state)
             }, completion: {(finished) in
@@ -114,6 +101,7 @@ extension (DetailPageController) {
             
             
         case 12:
+            self.imageSpecialCase12()
             UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
                 print("animation processed")
                 self.elementsEnteringStorage(state: state)
@@ -147,19 +135,21 @@ extension (DetailPageController) {
             })
             
             
-        case 35:
-            UIView.animate(withDuration: 1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
-                self.elementsEnteringStorage(state: state)}, completion: {(finished) in
-                    self.pageNumberLabelDisplay(label: label, pageNum: state)
-                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
-                    self.image1.isUserInteractionEnabled = true
-                    self.image1.addGestureRecognizer(tapGestureRecognizer)
-                    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
-                    self.image1.addGestureRecognizer(longPressRecognizer)
-                    
-            })
+//        case 35:
+//            self.imageBackInPlace()
+//            UIView.animate(withDuration: 1.5, delay: 0, options: [.transitionFlipFromTop], animations: {
+//                self.elementsEnteringStorage(state: state)}, completion: {(finished) in
+//                    self.pageNumberLabelDisplay(label: label, pageNum: state)
+////                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
+//                    self.image1.isUserInteractionEnabled = true
+////                    self.image1.addGestureRecognizer(tapGestureRecognizer)
+////                    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
+////                    self.image1.addGestureRecognizer(longPressRecognizer)
+//                    
+//            })
             
         case 38:
+            self.imageBackInPlace()
             UIView.transition(with: self.image1, duration: 1.5, options:[.transitionFlipFromTop], animations: {
                 self.elementsEnteringStorage(state: state)
             }, completion: {(finished) in
@@ -215,12 +205,15 @@ extension (DetailPageController) {
                 switch self.page47Phase {
                 case 0:
                     self.drawingPageFirstSceneSetup()
+                    self.edgePan.isEnabled = true
                 case 1:
                     self.drawingSceneAfterImageSelected()
+                    self.edgePan.isEnabled = false
                 case 2:
                     self.canvas.alpha = 1
                     self.canvas.isHidden = false
                     self.backgroundImageView.image = self.drawingPageBackgroundImage
+                    self.edgePan.isEnabled = true
                     
                 default:
                     self.drawingPageFirstSceneSetup()
@@ -234,7 +227,7 @@ extension (DetailPageController) {
                     self.pageNumberLabelDisplay(label: label, pageNum: state)
                 }
                 self.grestureRecognizerSwitch(Bool: false)
-                self.edgePan.isEnabled = true
+//                self.edgePan.isEnabled = true
                 
             })
             

@@ -60,13 +60,19 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
+    
     @IBOutlet var leftSwipeGesture: UISwipeGestureRecognizer!
+    @IBOutlet var rightSwipeGesture: UISwipeGestureRecognizer!
+    @IBOutlet var upSwipeGesture: UISwipeGestureRecognizer!
+    @IBOutlet var downSwipeGesture: UISwipeGestureRecognizer!
+    
     @IBOutlet var singleTap: UITapGestureRecognizer!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var showMoreButton: UIButton!
     
     var scene: Page5Scene?
+    
     
     var labelArray = [String]() // do not use NSMutableArray in Swift
     var backgroundAtray = [String]()
@@ -75,6 +81,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     var player: AVAudioPlayer?
     
     var page23Phase = 0
+    
+    var page25LeafFalling = false
   
     let page23LightLayer = CAShapeLayer()
     
@@ -82,7 +90,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
-//    var page30ScratchCard = ScratchUIView(frame: CGRect(x: -UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height * 0.55, width: UIScreen.main.bounds.height * 0.5539, height: UIScreen.main.bounds.height * 0.55), Coupon: "page30BottomBread.png", MaskImage: "page30TopBread.png", ScratchWidth: CGFloat(30))
+
 //    
     
     let edgePan = UIScreenEdgePanGestureRecognizer()
@@ -178,7 +186,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
 //    2 represents when the user hits "complete" button and enters in to the last phase of page 47
 
     var drawingPageBackgroundImage: UIImage?
-    //    Override Functions
+  
     
     var isObserving = Bool()
 
@@ -187,6 +195,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
        
 //    let alert = UIAlertController( title: "Title", message: "Message", preferredStyle: .alert)
     
+//    set up functions
 
     
     fileprivate func setUpDetailPageNotifications() {
@@ -196,6 +205,20 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleEnteringForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
+    
+    fileprivate func setUpTextField() {
+          //
+          testingTextfield.backgroundColor = .white
+          testingTextfield.textAlignment = .center
+          testingTextfield.frame = CGRect(x: screenWidth * 0.63, y: screenHeight * 0.03, width: screenWidth * 0.2, height: 34)
+          testingTextfield.attributedPlaceholder = NSAttributedString(string: "Page \(myVariable.state)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray.withAlphaComponent(0.8)])
+          self.testingTextfield.delegate = self
+          testingTextfield.textColor = .black
+      }
+    
+    
+      //    Override Functions
+  
     
     override func viewDidLoad() {
         
@@ -220,8 +243,6 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
             if success == true {
                 
 
-    
-    
                 edgePan.addTarget(self, action: #selector(screenEdgeSwiped))
                 edgePan.edges = .left
                 view.addGestureRecognizer(edgePan)
@@ -232,12 +253,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
                 startButton.alpha = 0
                 noPictureButton.alpha = 0
                 grestureRecognizerSwitch(Bool: false)
-                testingTextfield.backgroundColor = .white
-                testingTextfield.textAlignment = .center
-                testingTextfield.frame = CGRect(x: screenWidth * 0.63, y: screenHeight * 0.03, width: screenWidth * 0.2, height: 34)
-                testingTextfield.attributedPlaceholder = NSAttributedString(string: "Page \(myVariable.state)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray.withAlphaComponent(0.8)])
-                self.testingTextfield.delegate = self
-                testingTextfield.textColor = .black
+                
+                setUpTextField()
+                
                 self.previousButton.backgroundColor = .clear
                 self.labelTextDisappearing(label: label)
                 
@@ -480,9 +498,40 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     
     
     @IBAction func leftSwipe(_ sender: Any) {
-                print("leftswiperecognize")
-        leftSwipeHandler()
+        print("leftswiperecognize")
         
+        if myVariable.state == 20 {
+            leftSwipeHandler()
+        }
+//        if myVariable.state == 30 {
+//            singleTapHandler(state: myVariable.state)
+//        }
+        
+    }
+    
+    @IBAction func rightSwipeGesture(_ sender: Any) {
+        print("Rightswiperecognize")
+//
+//        if myVariable.state == 30 {
+//            singleTapHandler(state: myVariable.state)
+//        }
+    }
+    
+    
+    @IBAction func upSwipeGesture(_ sender: Any) {
+        print("upSwiperecognize")
+
+        if myVariable.state == 30 {
+            singleTapHandler(state: myVariable.state)
+        }
+    }
+    
+    
+    @IBAction func downSwipeGesture(_ sender: Any) {
+        print("downSwiperecognize")
+        if myVariable.state == 30 {
+            singleTapHandler(state: myVariable.state)
+        }
     }
     
     

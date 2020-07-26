@@ -11,16 +11,20 @@ import UIKit
 class BioInfoTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var lContent: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     
+    @IBOutlet weak var cellTextView: UITextView!
     
-
+    @IBOutlet weak var aspectConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 //        lContent.textAlignment = .left
 //        lContent.backgroundColor = .red
 //        lContent.sizeToFit()
+        if cellImage.image == nil {
+            aspectConstraint.isActive = false
+        }
 
     }
 

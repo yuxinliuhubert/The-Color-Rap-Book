@@ -68,16 +68,16 @@ extension (DetailPageController) {
     func grestureRecognizerSwitch(Bool: Bool) {
         if (Bool == true) {
             leftSwipeGesture.isEnabled = true
-//            rightSwipeGesture.isEnabled = true
-//            upSwipeGesture.isEnabled = true
-//            downSwipeGesture.isEnabled = true
+            rightSwipeGesture.isEnabled = true
+            upSwipeGesture.isEnabled = true
+            downSwipeGesture.isEnabled = true
             singleTap.isEnabled = true
             edgePan.isEnabled = true
         }else if (Bool == false) {
             leftSwipeGesture.isEnabled = false
-//            rightSwipeGesture.isEnabled = false
-//            upSwipeGesture.isEnabled = false
-//            downSwipeGesture.isEnabled = false
+            rightSwipeGesture.isEnabled = false
+            upSwipeGesture.isEnabled = false
+            downSwipeGesture.isEnabled = false
             singleTap.isEnabled = false
             edgePan.isEnabled = false
         }

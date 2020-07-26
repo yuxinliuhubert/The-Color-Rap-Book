@@ -295,7 +295,7 @@ final class MenuController: UIViewController {
             percentageLabel.adjustsFontSizeToFitWidth = true
             shapeLayer1.add(basicAnimation1, forKey: "basic1")
              animateStrokeColor()
-            percentageLabel.text = "Your page looks awesome!"
+            percentageLabel.text = "Time for some creativity!"
             
         case 48:
               view.layer.addSublayer(shapeLayer1)

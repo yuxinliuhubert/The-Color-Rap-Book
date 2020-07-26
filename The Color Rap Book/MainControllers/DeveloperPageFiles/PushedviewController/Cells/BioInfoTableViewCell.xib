@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,30 +17,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-jm-1jM">
-                        <rect key="frame" x="16" y="5" width="288" height="77"/>
+                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-jm-1jM">
+                        <rect key="frame" x="16" y="5" width="288" height="828"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-jt-BxM">
-                                <rect key="frame" x="2" y="0.0" width="284" height="49.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Kq-Xu-j8K">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="677.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">  this is amultiline label blah blah  this is amultiline label blah blah  this is amultiline label blah blah  this is amultiline label blah blah</string>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Morgan_bold-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="24" name="Morgan_bold-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-34-aQb">
-                                <rect key="frame" x="133" y="54.5" width="22" height="22.5"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-34-aQb">
+                                <rect key="frame" x="14.5" y="682.5" width="259" height="145.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="qvL-34-aQb" secondAttribute="height" id="97e-Lq-xFA"/>
+                                    <constraint firstAttribute="width" secondItem="qvL-34-aQb" secondAttribute="height" multiplier="16:9" id="MNp-CZ-r8R"/>
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="qvL-34-aQb" firstAttribute="width" secondItem="1Db-jm-1jM" secondAttribute="width" multiplier="0.9" id="SAY-R2-a10"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -55,11 +59,11 @@
             </accessibility>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="aspectConstraint" destination="MNp-CZ-r8R" id="nQ7-Af-tLF"/>
                 <outlet property="cellImage" destination="qvL-34-aQb" id="cbW-2Q-137"/>
-                <outlet property="imageView" destination="qvL-34-aQb" id="56y-dv-xpJ"/>
-                <outlet property="lContent" destination="hMG-jt-BxM" id="n0R-qg-Vu0"/>
+                <outlet property="cellTextView" destination="8Kq-Xu-j8K" id="Hdd-EJ-ew2"/>
             </connections>
-            <point key="canvasLocation" x="124.6376811594203" y="134.26339285714286"/>
+            <point key="canvasLocation" x="287" y="119"/>
         </tableViewCell>
     </objects>
 </document>

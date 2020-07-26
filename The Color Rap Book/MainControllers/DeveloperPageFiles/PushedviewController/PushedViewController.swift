@@ -41,7 +41,7 @@ class PushedViewController: UIViewController,AVAudioPlayerDelegate {
               label.font = UIFont(name: "Morgan_bold", size: 100)
               label.numberOfLines = 0
               label.textAlignment = .left
-              label.text = "Click anywhere to return!"
+              label.text = "Double tap here to return!"
               label.textColor = .white
               label.adjustsFontSizeToFitWidth = true
               return label
@@ -178,6 +178,7 @@ class PushedViewController: UIViewController,AVAudioPlayerDelegate {
     
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissTap))
+        tap.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(tap)
         
     }
@@ -223,15 +224,15 @@ extension PushedViewController : UITableViewDelegate, UITableViewDataSource  {
     
         switch indexPath.section {
         case 0:
-            cell.lContent.text = specificAuthorDataArray!["basicInfo"]!["text"]
+            cell.cellTextView.text = specificAuthorDataArray!["basicInfo"]!["text"]
             cell.cellImage.image = UIImage(named: specificAuthorDataArray!["basicInfo"]!["image"]!)
             
         case 1:
-            cell.lContent.text = specificAuthorDataArray!["bookCreation"]!["text"]
+            cell.cellTextView.text = specificAuthorDataArray!["bookCreation"]!["text"]
             cell.cellImage.image = UIImage(named: specificAuthorDataArray!["bookCreation"]!["image"]!)
             
         case 2:
-            cell.lContent.text = specificAuthorDataArray!["favoritePage"]!["text"]
+            cell.cellTextView.text = specificAuthorDataArray!["favoritePage"]!["text"]
             cell.cellImage.image = UIImage(named: specificAuthorDataArray!["favoritePage"]!["image"]!)
             
         default:

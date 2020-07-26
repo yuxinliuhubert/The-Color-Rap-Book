@@ -126,8 +126,10 @@ extension(DetailPageController) {
             
             
         case 10:
+            let pieHeight = screenHeight * 0.76
+            let pieWidth = pieHeight * 0.984
             self.image1.image = UIImage(named: "page10Pie")
-            self.image1.frame = CGRect(x: screenHeight * 0.13, y: screenHeight * 0.18, width: screenHeight * 0.74799, height: screenHeight * 0.76)
+            self.image1.frame = CGRect(x: screenWidth * 0.5 - pieWidth * 0.8, y: screenHeight * 0.18, width: pieWidth, height: pieHeight)
             self.image1.addShadow()
             UIView.animate(withDuration: 1.5, delay: 0.4, options: .curveEaseIn, animations: {
                 self.image2.image = UIImage(named: "page10Sticker")
@@ -144,27 +146,41 @@ extension(DetailPageController) {
             
             
         case 12:
+         
+            let cloudWidth = screenWidth * 0.18
+            let leftHeight = cloudWidth * (312.0 / 318.0)
+             let rightWidth = screenWidth * 0.1
+            let cloudDistance = (self.screenWidth - rightWidth - self.screenWidth * 0.05 - cloudWidth * 3) / 3.0
+            
+            
             self.image6.image = UIImage(named: "page12CLoudLeft")
-            self.image6.contentMode = .scaleToFill
-            self.image6.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+            
+//            self.image6.contentMode = .scaleToFill
+            let leftDistance = self.screenWidth * 0.05
+            self.image6.frame = CGRect(x: leftDistance, y: screenHeight * 0.05, width: cloudWidth , height: leftHeight)
             self.image6.addShadow()
             
+            let midLeftDistance = leftDistance + cloudWidth + cloudDistance
+            let midLeftHeight = cloudWidth * (274.0 / 333.0)
             UIView.animate(withDuration: 1.5, delay: 0.4, options: .curveEaseIn, animations: {
                 self.image2.image = UIImage(named: "page12CloudMidLeft")
-                self.image2.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
+                self.image2.frame = CGRect(x: midLeftDistance , y: self.screenHeight * 0.05, width: cloudWidth, height: midLeftHeight)
                 self.image2.addShadow()
             }, completion:nil)
             
+            let midRightHeight = cloudWidth * (249.0 / 337.0)
+            let midRightDistance = midLeftDistance + cloudWidth + cloudDistance
             UIView.animate(withDuration: 1.5, delay: 0.8, options: .curveEaseIn, animations: {
                 self.image3.image = UIImage(named: "page12CLoudMidRight")
-                self.image3.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
+                self.image3.frame = CGRect(x:midRightDistance, y: self.screenHeight * 0.05, width: cloudWidth, height: midRightHeight)
                 self.image3.addShadow()
             }, completion: nil)
-            image7.contentMode = .scaleToFill
-            
+//            image7.contentMode = .scaleToFill
+        
+            let rightHeight = rightWidth * (360.0 / 211.0)
             UIView.animate(withDuration: 1.5, delay: 1.2, options: .curveEaseIn, animations: {
                 self.image7.image = UIImage(named: "page12CLoudRight")
-                self.image7.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
+                self.image7.frame = CGRect(x: self.screenWidth * 0.9, y: self.screenHeight * 0.05, width: rightWidth, height: rightHeight)
                 self.image7.addShadow()
             }, completion: {(finished) in
                 self.imageFloatingEffect(image1: self.image2, image2: self.image6, image3: self.image3, image4: self.image7, image5: nil, state: state)
@@ -256,31 +272,24 @@ extension(DetailPageController) {
                 self.image3.image = UIImage(named: "page17Wing")
                 self.image4.image = UIImage(named: "page17LowerBeak")
                 self.image6.image = UIImage(named: "page17UpperBeak")
-                //                        self.image1.backgroundColor = .red
-                if UIDevice.current.userInterfaceIdiom == .phone {
-                    self.image1.frame = CGRect(x: self.screenWidth * 0.19, y: self.screenHeight * 0.4, width: birdWidth, height: birdHeight)
-                    self.image3.frame = CGRect(x: self.screenWidth * 0.225, y: self.screenHeight * 0.58, width: wingWidth, height: wingHeight)
-                    
-                    if self.screenHeight / self.screenWidth <= 0.47 {
-                        self.image4.frame = CGRect(x: self.screenWidth * 0.289, y: self.screenHeight * 0.51, width: lowerBeakWidth, height: lowerBeakHeight)
-                        self.image6.frame = CGRect(x: self.screenWidth * 0.287, y: self.screenHeight * 0.46, width: upperBeakWidth, height: upperBeakHeight)
-                    } else {
-                        self.image4.frame = CGRect(x: self.screenWidth * 0.309, y: self.screenHeight * 0.51, width: lowerBeakWidth, height: lowerBeakHeight)
-                        self.image6.frame = CGRect(x: self.screenWidth * 0.307, y: self.screenHeight * 0.46, width: upperBeakWidth, height: upperBeakHeight)
-                    }
-                } else {
-                    self.image1.frame = CGRect(x: self.screenWidth * 0.21, y: self.screenHeight * 0.4, width: birdWidth, height: birdHeight)
-                    self.image3.frame = CGRect(x: self.screenWidth * 0.26, y: self.screenHeight * 0.58, width: wingWidth, height: wingHeight)
-                    self.image4.frame = CGRect(x: self.screenWidth * 0.368, y: self.screenHeight * 0.51, width: lowerBeakWidth, height: lowerBeakHeight)
-                    self.image6.frame = CGRect(x: self.screenWidth * 0.366, y: self.screenHeight * 0.46, width: upperBeakWidth, height: upperBeakHeight)
-                }
+                let cageDistance = self.screenWidth * 0.1
+                let birdDistance = cageDistance + cageWidth * 0.30
+                let wingDistance = birdDistance + birdWidth * 0.24
+                let lowerBeakDistance = birdDistance + birdWidth
+                let upperBeakDistance = birdDistance + birdWidth - self.screenWidth * 0.002
+                
+                self.image1.frame = CGRect(x: birdDistance, y: self.screenHeight * 0.4, width: birdWidth, height: birdHeight)
+                self.image3.frame = CGRect(x: wingDistance, y: self.screenHeight * 0.58, width: wingWidth, height: wingHeight)
+                    self.image4.frame = CGRect(x: lowerBeakDistance, y: self.screenHeight * 0.51, width: lowerBeakWidth, height: lowerBeakHeight)
+                    self.image6.frame = CGRect(x: upperBeakDistance, y: self.screenHeight * 0.46, width: upperBeakWidth, height: upperBeakHeight)
+//                }
                 
                 
 //                self.image1.removeShadow()
                 self.image3.removeShadow()
 //                self.image4.removeShadow()
                 self.image6.removeShadow()
-                
+                self.image4.removeShadow()
                 self.image1.addShadow()
 //                self.image3.addShadow()
 //                self.image4.addShadow()
@@ -311,9 +320,7 @@ extension(DetailPageController) {
 //                self.image5.addGestureRecognizer(tapTheFrog)
                 self.image5.addShadow()
             }, completion: {(finished) in
-                self.frogCallSound(stop: false)
-                //            self.view.isUserInteractionEnabled = true
-                //            self.image5.isUserInteractionEnabled = true
+                self.frogCallSound()
                 self.imageFloatingEffect(image1: self.label1, image2: self.image5, image3: nil, image4: self.image3, image5: nil, state: state)
                 
             })
@@ -406,6 +413,7 @@ extension(DetailPageController) {
                 self.image6.frame = CGRect(x: self.screenWidth * 0.21, y: self.screenHeight * 0.40, width: leafWidth, height: leafHeight)
 //                self.image6.addShadow()
             }, completion: {(finished) in
+                self.page25LeafFalling = true
                 self.imageFloatingEffect(image1: self.image6, image2: nil, image3: self.image5, image4: nil, image5: nil, state: state)
                 
             })
@@ -516,8 +524,8 @@ extension(DetailPageController) {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(tapGestureRecognizer:)))
             self.image1.isUserInteractionEnabled = true
             self.image1.addGestureRecognizer(tapGestureRecognizer)
-            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
-            self.image1.addGestureRecognizer(longPressRecognizer)
+//            let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.imagePop(longPress:)))
+//            self.image1.addGestureRecognizer(longPressRecognizer)
             imageFloatingEffect(image1: label1, image2: image2, image3: image3, image4: image4, image5: nil, state: state)
             
         case 37:
@@ -651,11 +659,37 @@ extension(DetailPageController) {
             let ghostHeight = ghostWidth * (842.0/980.0)
 //             image4.image = UIImage(named: "page45Ghost")
             image4.frame = CGRect(x: screenWidth, y: screenHeight * 0.40, width: ghostWidth, height: ghostHeight)
-            
 
-            //            The ghost's translation is in the background section
+            //            The ghost's animation is in the background section
            
             
+        case 46:
+            let stickWidth = screenWidth * 0.6
+            let stickHeight = stickWidth * (477.0/980.0)
+            image4.image = UIImage(named: "page46Stick")
+            image4.frame = CGRect(x:0, y: screenHeight * 0.3, width: stickWidth, height: stickHeight)
+            print("stick frame, ", image4.frame)
+            let marshWidth = screenWidth * 0.12
+            let marshHeight = marshWidth * (838.0/494.0)
+            UIView.animate(withDuration: 1.5, delay: 0.6, options: .transitionFlipFromTop, animations: {
+                self.image6.image = UIImage(named: "page46Marshmallows")
+                self.image6.frame = CGRect(x: self.screenWidth * 0.56, y: self.screenHeight * 0.3 - stickHeight * 0.1913, width: marshWidth, height: marshHeight)
+                self.image7.frame = CGRect(x: self.screenWidth * 0.56, y: self.screenHeight * 0.3 - stickHeight * 0.1913, width: marshWidth, height: marshHeight)
+//                self.image7.image = UIImage(named: "page46BlackCover")
+                self.image7.alpha = 0
+
+            }, completion: {_ in
+                let fireWidth = self.screenWidth * 0.11
+                let fireHeight = fireWidth * (639.0/535.0)
+                UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseOut, animations: {
+                    self.image5.image = UIImage(named: "page46Fire")
+//                    if
+                    self.image5.frame = CGRect(x: self.screenWidth * 0.55, y: self.screenHeight * 0.65, width: fireWidth, height: fireHeight)
+                    
+                }, completion: {_ in
+                    self.imageFloatingEffect(image1: self.image5, image2: nil, image3: nil, image4: nil, image5: nil, state: 46)
+                })
+            })
             
             
         case 48:
@@ -698,8 +732,11 @@ extension(DetailPageController) {
             //                    The grass images needs to be back in place without going to the top of the screen
             
             switch myVariable.state{
-            case 4,6:
+            case 4,5,6:
                 self.imageSpecialCase5()
+                
+            case 11,12,13:
+                self.imageSpecialCase12()
                 
             case 16,17,18,21,22,23:
                 self.imageSpecialCase22()
@@ -777,12 +814,12 @@ extension(DetailPageController) {
     
     func imageBackInPlace() {
         image1.transform = .identity
-             image2.transform = .identity
-             image3.transform = .identity
-             image4.transform = .identity
-             image5.transform = .identity
-             image6.transform = .identity
-             image7.transform = .identity
+        image2.transform = .identity
+        image3.transform = .identity
+        image4.transform = .identity
+        image5.transform = .identity
+        image6.transform = .identity
+        image7.transform = .identity
         
         image1.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image2.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
@@ -791,15 +828,7 @@ extension(DetailPageController) {
         image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image6.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
         image7.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
-//        page30ScratchCard.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
-//        image1.transform = .identity
-//        image2.transform = .identity
-//        image3.transform = .identity
-//        image4.transform = .identity
-//        image5.transform = .identity
-//        image6.transform = .identity
-//        image7.transform = .identity
-//        page30ScratchCard.transform = .identity
+        
         image1.layer.zPosition = 0
         if let recognizers = image1.gestureRecognizers {
             for recognizer in recognizers {
@@ -831,6 +860,7 @@ extension(DetailPageController) {
     
     
     func imageSpecialCase5() {
+        //        self.imageBackInPlace()
         let cloudHeight = self.screenHeight * 0.2
         let leftCloudWidth = cloudHeight * 1.14
         let rightCloudWidth = cloudHeight * 1.0952
@@ -839,10 +869,10 @@ extension(DetailPageController) {
         image1.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image2.frame = CGRect(x: self.screenWidth * 0.18, y: -cloudHeight * 2, width: leftCloudWidth, height: cloudHeight)
         image3.frame = CGRect(x: self.screenWidth * 0.40, y: -cloudHeight * 2, width: rightCloudWidth, height: cloudHeight)
+        image4.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
         image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image6.frame = CGRect(x: 0, y: -sunHeight * 2, width: sunWidth, height: sunHeight)
         image7.frame = CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
-//        page30ScratchCard.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
         image1.transform = .identity
         image2.transform = .identity
         image3.transform = .identity
@@ -850,7 +880,7 @@ extension(DetailPageController) {
         image5.transform = .identity
         image6.transform = .identity
         image7.transform = .identity
-//        page30ScratchCard.transform = .identity
+        //        page30ScratchCard.transform = .identity
         image1.layer.zPosition = 0
         if let recognizers = image1.gestureRecognizers {
             for recognizer in recognizers {
@@ -858,10 +888,71 @@ extension(DetailPageController) {
             }
         }
         if let recognizers = image4.gestureRecognizers {
-                   for recognizer in recognizers {
-                       image4.removeGestureRecognizer(recognizer as UIGestureRecognizer)
-                   }
-               }
+            for recognizer in recognizers {
+                image4.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+            }
+        }
+        if let recognizers = image5.gestureRecognizers {
+            for recognizer in recognizers {
+                image5.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+            }
+        }
+        image1.alpha = 1
+        image2.alpha = 1
+        image3.alpha = 1
+        image4.alpha = 1
+        image5.alpha = 1
+        image6.alpha = 1
+        image7.alpha = 1
+        image2.removeShadow()
+        label1.transform = .identity
+        myVariable.timer.invalidate()
+    }
+    
+    func imageSpecialCase12() {
+        //        imageBackInPlace()
+        image1.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        
+        image4.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
+        image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
+        
+        let cloudWidth = screenWidth * 0.18
+        let leftHeight = cloudWidth * (312.0 / 318.0)
+        let rightWidth = screenWidth * 0.1
+        let cloudDistance = (self.screenWidth - rightWidth - self.screenWidth * 0.05 - cloudWidth * 3) / 3.0
+        
+        let leftDistance = self.screenWidth * 0.05
+        self.image6.frame = CGRect(x: leftDistance, y: -screenHeight * 0.4, width: cloudWidth , height: leftHeight)
+        
+        let midLeftDistance = leftDistance + cloudWidth + cloudDistance
+        let midLeftHeight = cloudWidth * (274.0 / 333.0)
+        self.image2.frame = CGRect(x: midLeftDistance , y: -screenHeight * 0.4, width: cloudWidth, height: midLeftHeight)
+        
+        let midRightHeight = cloudWidth * (249.0 / 337.0)
+        let midRightDistance = midLeftDistance + cloudWidth + cloudDistance
+        self.image3.frame = CGRect(x:midRightDistance, y: -self.screenHeight * 0.4, width: cloudWidth, height: midRightHeight)
+        
+        let rightHeight = rightWidth * (360.0 / 211.0)
+        self.image7.frame = CGRect(x: self.screenWidth * 0.9, y: -self.screenHeight * 0.4, width: rightWidth, height: rightHeight)
+        
+        image1.transform = .identity
+        image2.transform = .identity
+        image3.transform = .identity
+        image4.transform = .identity
+        image5.transform = .identity
+        image6.transform = .identity
+        image7.transform = .identity
+        image1.layer.zPosition = 0
+        if let recognizers = image1.gestureRecognizers {
+            for recognizer in recognizers {
+                image1.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+            }
+        }
+        if let recognizers = image4.gestureRecognizers {
+            for recognizer in recognizers {
+                image4.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+            }
+        }
         if let recognizers = image5.gestureRecognizers {
             for recognizer in recognizers {
                 image5.removeGestureRecognizer(recognizer as UIGestureRecognizer)
@@ -881,6 +972,7 @@ extension(DetailPageController) {
     
     
     func imageSpecialCase22() {
+//        self.imageBackInPlace()
         image1.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image2.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image3.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
@@ -888,7 +980,6 @@ extension(DetailPageController) {
         image5.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image6.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
         image7.frame = CGRect(x: 0, y: screenHeight * 2, width: screenWidth, height: screenHeight)
-//        page30ScratchCard.frame = CGRect(x: -screenWidth, y: 0, width: screenWidth, height: screenHeight)
         image1.transform = .identity
         image2.transform = .identity
         image3.transform = .identity
@@ -921,26 +1012,26 @@ extension(DetailPageController) {
                        image5.removeGestureRecognizer(recognizer as UIGestureRecognizer)
                    }
                }
-  
+
         myVariable.timer.invalidate()
     }
     
-    
-    @objc func imagePop(longPress: UILongPressGestureRecognizer) {
-        if longPress.state == .began {
-            self.image1.frame = CGRect(x: -screenWidth * 0.05, y: -screenHeight * 0.05, width: screenWidth * 1.1, height: screenHeight * 1.1)
-            self.image5.frame = CGRect(x: -screenWidth * 0.05, y: -screenHeight * 0.05, width: screenWidth * 1.1, height: screenHeight * 1.1)
-            self.image1.addImagePopShadow()
-            
-            
-        } else if longPress.state == .ended || longPress.state == .cancelled || longPress.state == .failed {
-            self.image1.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-            self.image1.addShadow()
-            self.image5.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
-            self.image5.addShadow()
-        }
-        
-    }
+//    
+//    @objc func imagePop(longPress: UILongPressGestureRecognizer) {
+//        if longPress.state == .began {
+//            self.image1.frame = CGRect(x: -screenWidth * 0.05, y: -screenHeight * 0.05, width: screenWidth * 1.1, height: screenHeight * 1.1)
+//            self.image5.frame = CGRect(x: -screenWidth * 0.05, y: -screenHeight * 0.05, width: screenWidth * 1.1, height: screenHeight * 1.1)
+//            self.image1.addImagePopShadow()
+//            
+//            
+//        } else if longPress.state == .ended || longPress.state == .cancelled || longPress.state == .failed {
+//            self.image1.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//            self.image1.addShadow()
+//            self.image5.frame = CGRect(x: 0, y: 0, width: self.screenWidth, height: self.screenHeight)
+//            self.image5.addShadow()
+//        }
+//        
+//    }
     
     
     
@@ -978,14 +1069,12 @@ extension(DetailPageController) {
             label1.numberOfLines = 1
 
         case 35:
-//                    let testImage = UIImageView(frame: CGRect(x: screenWidth * 0.07, y: screenHeight * 0.54, width: screenWidth * 0.46, height: screenHeight * 0.29))
-            //        testImage.backgroundColor = .red
-            //        testImage.alpha = 0.3
-            //        self.view.addSubview(testImage)
+
             if ((position.x >= screenWidth * 0.07 && position.x <= screenWidth * 0.53) && (position.y >= screenHeight * 0.54 && position.y <= screenHeight * 0.83)){
                 
                 print("image5shoulddisappear")
                 if self.image5.alpha == 1 {
+                    soundPlay(forResource: "page35ChocolateSound", ofType: "m4a")
                     self.image5.alpha = 0
                 } else if self.image5.alpha == 0 {
                     self.image5.alpha = 1
@@ -1077,8 +1166,8 @@ extension (UIViewController) {
     
    func imageFloatingEffect(image1: UIView?, image2: UIView?, image3: UIView?, image4: UIView?, image5: UIView?, state: Int){
         self.view.isUserInteractionEnabled = true
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
+//    let screenWidth = UIScreen.main.bounds.width
+//    let screenHeight = UIScreen.main.bounds.height
         if myVariable.state == 17 {
             
             let floatingConstant = UIScreen.main.bounds.height * 0.02604

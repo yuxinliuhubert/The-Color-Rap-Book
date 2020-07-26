@@ -13,6 +13,7 @@
 		530414E523FED22C00E268C3 /* backgroundControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530414E423FED22C00E268C3 /* backgroundControl.swift */; };
 		530A76EB24BD19F50064CCB5 /* twangSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 530A76EA24BD19F50064CCB5 /* twangSound.m4a */; };
 		530A76ED24BD39EB0064CCB5 /* backgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 530A76EC24BD39EB0064CCB5 /* backgroundMusic.m4a */; };
+		530B774F24C5F8A3005393BA /* page46FireSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 530B774E24C5F8A3005393BA /* page46FireSound.m4a */; };
 		533CC20323ECC01A00871876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20223ECC01A00871876 /* AppDelegate.swift */; };
 		533CC20523ECC01A00871876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20423ECC01A00871876 /* SceneDelegate.swift */; };
 		533CC20723ECC01A00871876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533CC20623ECC01A00871876 /* ViewController.swift */; };
@@ -66,6 +67,7 @@
 		53B715D624ACF5A20051ABF3 /* page22MowerOperatingSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53B715D324ACF5A20051ABF3 /* page22MowerOperatingSound.m4a */; };
 		53B715D824ACFA670051ABF3 /* page22MowerShutdownSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53B715D724ACFA670051ABF3 /* page22MowerShutdownSound.m4a */; };
 		53B715DA24AD045B0051ABF3 /* buttonSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53B715D924AD045B0051ABF3 /* buttonSound.m4a */; };
+		53B7AD4E24CB31C1005ABC20 /* page35ChocolateSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53B7AD4D24CB31C1005ABC20 /* page35ChocolateSound.m4a */; };
 		53BDBDA224C4B5F700625ABF /* page37Boot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDA124C4B5F700625ABF /* page37Boot.m4a */; };
 		53BDBDA724C4C24B00625ABF /* page42JingleBells.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDA424C4C24B00625ABF /* page42JingleBells.m4a */; };
 		53BDBDA824C4C24B00625ABF /* page42Carol.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 53BDBDA524C4C24B00625ABF /* page42Carol.m4a */; };
@@ -119,6 +121,7 @@
 		530414E423FED22C00E268C3 /* backgroundControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundControl.swift; sourceTree = "<group>"; };
 		530A76EA24BD19F50064CCB5 /* twangSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = twangSound.m4a; sourceTree = "<group>"; };
 		530A76EC24BD39EB0064CCB5 /* backgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundMusic.m4a; sourceTree = "<group>"; };
+		530B774E24C5F8A3005393BA /* page46FireSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page46FireSound.m4a; sourceTree = "<group>"; };
 		533CC1FF23ECC01A00871876 /* Color Rap Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Rap Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		533CC20223ECC01A00871876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		533CC20423ECC01A00871876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		53B715D324ACF5A20051ABF3 /* page22MowerOperatingSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page22MowerOperatingSound.m4a; sourceTree = "<group>"; };
 		53B715D724ACFA670051ABF3 /* page22MowerShutdownSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page22MowerShutdownSound.m4a; sourceTree = "<group>"; };
 		53B715D924AD045B0051ABF3 /* buttonSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttonSound.m4a; sourceTree = "<group>"; };
+		53B7AD4D24CB31C1005ABC20 /* page35ChocolateSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page35ChocolateSound.m4a; sourceTree = "<group>"; };
 		53BDBDA124C4B5F700625ABF /* page37Boot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page37Boot.m4a; sourceTree = "<group>"; };
 		53BDBDA424C4C24B00625ABF /* page42JingleBells.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page42JingleBells.m4a; sourceTree = "<group>"; };
 		53BDBDA524C4C24B00625ABF /* page42Carol.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page42Carol.m4a; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 		530F73A524A7A3A700C7C4A7 /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
+				53B7AD4D24CB31C1005ABC20 /* page35ChocolateSound.m4a */,
+				530B774E24C5F8A3005393BA /* page46FireSound.m4a */,
 				53BDBDAC24C540E100625ABF /* page45GhostSound.m4a */,
 				53BDBDAA24C4EBA800625ABF /* page44Wedding.m4a */,
 				53BDBDA324C4C24B00625ABF /* page42Sounds */,
@@ -672,9 +678,11 @@
 				539D6CD524A5263A0032646F /* PushedViewController.xib in Resources */,
 				535B2A5524C2415A00667A1C /* page39CatSound.m4a in Resources */,
 				535B2A5724C245A300667A1C /* page33Mud.m4a in Resources */,
+				530B774F24C5F8A3005393BA /* page46FireSound.m4a in Resources */,
 				53B715D524ACF5A20051ABF3 /* page22MowerStartSound.m4a in Resources */,
 				53A532E524AFC3EB00DF32BF /* DeveloperData.rtf in Resources */,
 				53BDBDAD24C540E100625ABF /* page45GhostSound.m4a in Resources */,
+				53B7AD4E24CB31C1005ABC20 /* page35ChocolateSound.m4a in Resources */,
 				53BF1B6024A5215D008A1648 /* CardCell.xib in Resources */,
 				530A76ED24BD39EB0064CCB5 /* backgroundMusic.m4a in Resources */,
 				53CA27DE2454A855008A9731 /* Alert.storyboard in Resources */,

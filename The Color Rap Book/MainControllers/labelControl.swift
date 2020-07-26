@@ -20,6 +20,7 @@ extension (DetailPageController) {
         label.layer.shadowOffset = CGSize(width: 3,height: 3)
         label.layer.masksToBounds = false
         label.adjustsFontSizeToFitWidth = true
+        
         label1.layer.shadowColor = UIColor.black.cgColor
         label1.layer.shadowRadius = 2.0
         label1.layer.shadowOpacity = 1.0
@@ -182,7 +183,7 @@ extension (DetailPageController) {
             label.textAlignment = .left
             //                label.backgroundColor = .red
             label.textColor = .yellow
-            label.numberOfLines = 1
+//            label.numberOfLines = 1
             label.frame = CGRect(x: screenWidth *  0.10, y: screenHeight * 0.05, width: screenWidth * 0.80
                 , height: screenHeight * 0.1419644)
             label.font = UIFont(name: "Morgan_bold", size: 100)
@@ -220,8 +221,12 @@ extension (DetailPageController) {
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
                 self.label1.alpha = 1
             }, completion: nil)
-            
-            
+            label2.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.85, width: screenWidth * 0.50, height: screenHeight * 0.10)
+            label2.textAlignment = .left
+            label2.textColor = .white
+            label2.font = UIFont(name: "Morgan_bold", size: 40)
+            label2.adjustsFontSizeToFitWidth = true
+            label2.alpha = 0
             
             
         case 21: 
@@ -422,7 +427,7 @@ extension (DetailPageController) {
             label1.font = UIFont(name: "Morgan_bold", size: 200)
             label1.adjustsFontSizeToFitWidth = true
             //                label1.backgroundColor = .white
-            label1.text = "☟ Click or long press on it!"
+            label1.text = "☟ Click on the chocolate!"
             
             
         case 37:
@@ -487,7 +492,7 @@ extension (DetailPageController) {
             label2.alpha = 1
             label2.textAlignment = .center
             label2.textColor = .black
-            label2.frame = CGRect(x: screenWidth *  0.7, y: screenHeight * 0.10, width: screenWidth * 0.20
+            label2.frame = CGRect(x: screenWidth *  0.675, y: screenHeight * 0.10, width: screenWidth * 0.25
                 , height: screenHeight * 0.1019644)
             label2.font = UIFont(name: "Morgan_bold", size: 100)
             label2.adjustsFontSizeToFitWidth = true
@@ -572,6 +577,25 @@ extension (DetailPageController) {
                 , height: screenHeight * 0.1719644)
             label.font = UIFont(name: "Morgan_bold", size: 200)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            
+        case 46:
+            label.alpha = 1
+            label.textAlignment = .left
+            label.textColor = .white
+            label.frame = CGRect(x: screenWidth *  0.07, y: screenHeight * 0.05, width: screenWidth * 0.86
+                , height: screenHeight * 0.1419644)
+            label.font = UIFont(name: "Morgan_bold", size: 200)
+            label.adjustsFontSizeToFitWidth = true
+            labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
+            label1.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.85, width: screenWidth * 0.50, height: screenHeight * 0.10)
+            label1.textAlignment = .left
+            label1.textColor = .white
+            label1.font = UIFont(name: "Morgan_bold", size: 200)
+            label1.adjustsFontSizeToFitWidth = true
+            label1.text = "Click on the campfire to cook the marshmallows!"
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
+                self.label1.alpha = 1
+            }, completion: nil)
             
         case 47:
             label.alpha = 1

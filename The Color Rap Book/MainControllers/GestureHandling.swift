@@ -88,21 +88,26 @@ extension (DetailPageController) {
             
         case 25:
             if image5.frame.contains(position) {
-      
-                generator.impactOccurred()
-                self.soundPlay(forResource: "page25ShakeSound", ofType: "m4a")
-                self.image5.shake(duration: 0.5, rotationDivision: nil)
-                UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
-                    self.image6.alpha = 1
-                    let leafHeight = self.screenHeight * 0.25
-                    let leafWidth = leafHeight * (273/311)
-                    self.image6.frame = CGRect(x: self.screenWidth * 0.26, y: self.screenHeight * 0.72, width: leafWidth, height: leafHeight)
-                    //                self.image6.addShadow()
-                }, completion: { (finished) in
-                    self.imageFloatingEffect(image1: self.image6, image2: nil, image3: nil, image4: nil, image5: nil, state: state)})
-                
-                label1.text = ""
-                
+                if page25LeafFalling == true {
+                    page25LeafFalling = false
+                    generator.impactOccurred()
+                    self.soundPlay(forResource: "page25ShakeSound", ofType: "m4a")
+                    self.image5.shake(duration: 0.5, rotationDivision: nil)
+                    UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
+                        self.image6.alpha = 1
+                        let leafHeight = self.screenHeight * 0.25
+                        let leafWidth = leafHeight * (273/311)
+                        self.image6.frame = CGRect(x: self.screenWidth * 0.26, y: self.screenHeight * 0.72, width: leafWidth, height: leafHeight)
+                        //                self.image6.addShadow()
+                    }, completion: { (finished) in
+                        self.page25LeafFalling = true
+                        self.imageFloatingEffect(image1: self.image6, image2: nil, image3: nil, image4: nil, image5: nil, state: state)
+                        
+                    })
+                    
+                    label1.text = ""
+                    
+                }
             }
             
             
@@ -260,7 +265,19 @@ extension (DetailPageController) {
                 label1.text = ""
             }
             
-            
+          
+        case 46:
+            if image5.frame.contains(position) {
+                if image7.alpha == 0 {
+                     self.image7.image = UIImage(named: "page46BlackCover")
+                    soundPlay(forResource: "page46FireSound", ofType: "m4a")
+                    label1.text = "One for me, and one for my homies"
+                    
+                    UIView.animate(withDuration: 4, animations: {
+                        self.image7.alpha = 0.8
+                    })
+                }
+            }
             
             
         default:
@@ -287,10 +304,86 @@ extension (DetailPageController) {
             //            self.image5.backgroundColor = .red
             
             
+        
+            
+            
+            
+//             UIView.animateKeyframes(withDuration: 2.65, delay: 0, options: [], animations: {
+//
+//                            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
+//                                self.image5.transform = self.image5.transform.translatedBy(x: self.screenWidth * 0.1, y: 0)
+//
+//                            })
+//
+//                            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.4, animations: {
+//                                self.image5.transform = CGAffineTransform(rotationAngle: .pi/16)
+//                                self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.2, y: -self.screenHeight * 0.2)
+//                            })
+//
+//
+//                            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.2, animations: {
+//                                self.image5.transform = CGAffineTransform(rotationAngle: -.pi/16)
+//                                self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.2, y: 0)
+//
+//                            })
+//
+//
+//                            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 1.8, animations: {
+//                                self.image5.transform = CGAffineTransform(rotationAngle: -.pi/2.3)
+//                                self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.8, y: 0)
+//                            })
+//
+//                            UIView.addKeyframe(withRelativeStartTime: 2.05, relativeDuration: 0.6, animations: {
+//
+//                                self.image1.image = UIImage(named: "page20Splash")
+//                                let universalWidth = self.screenWidth * 0.72991  //cherryImage.size.width / 3.3
+//                                let universalHeight = self.screenHeight * 0.61070 //cherryImage.size.height / 3.3
+//                                //                    self.view.bringSubviewToFront(self.image1)
+//                                self.image1.layer.zPosition = 1
+//                                //            print("width ", cherryImage.size.width)
+//                                //            print("height ",cherryImage.size.height)
+//                                UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut], animations: {
+//
+//                                    self.image1.alpha = 1
+//                                    self.image1.frame = CGRect(x: -self.screenWidth * 0.019, y: self.screenHeight * (1 - 0.5070), width: universalWidth ,height: universalHeight)
+//                                    self.image1.addShadow()
+//                                })
+//
+//                                UIView.animate(withDuration: 0.2, delay: 2.05, options: [.curveEaseOut], animations: {
+//
+//                                    self.label1.frame = CGRect(x: self.screenWidth * 0.08, y: self.screenHeight * 0.24, width: self.screenWidth * 0.6, height: self.screenHeight * 0.27)
+//                                    self.label1.transform = CGAffineTransform(rotationAngle: -.pi/6)
+//                                    self.label1.adjustsFontSizeToFitWidth = true
+//                                    self.label1.text = "Plop!"
+//                                    self.label1.alpha = 1
+//                                })
+//            //                    UIView.animate(withDuration: <#T##TimeInterval#>, animations: <#T##() -> Void#>)
+//
+//                            })
+//
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8, execute: {
+//            //                    print("operated")
+//                                self.frogCallSound(stop: true)
+//                                self.waterSplashSound()
+//                            })
+//                        }, completion: {(completed) in
+//
+//                            UIView.animateKeyframes(withDuration: 0.8, delay: 1.0, options: [], animations: {
+//                                self.image1.alpha = 0
+//                                self.label1.alpha = 0
+//                            },completion: {_ in
+//                                self.grestureRecognizerSwitch(Bool: true)
+//                                self.image1.frame = CGRect(x: 0, y: self.screenHeight * 2, width: self.screenWidth, height: self.screenHeight)
+//                            })
+//
+//                        })
+            
             
             UIView.animateKeyframes(withDuration: 2.65, delay: 0, options: [], animations: {
                 
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
+                    self.frogCallSound()
+                    self.label2.alpha = 0
                     self.image5.transform = self.image5.transform.translatedBy(x: self.screenWidth * 0.1, y: 0)
                     
                 })
@@ -301,25 +394,24 @@ extension (DetailPageController) {
                 })
                 
                 
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.2, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.2, animations: {
                     self.image5.transform = CGAffineTransform(rotationAngle: -.pi/16)
                     self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.2, y: 0)
                     
                 })
                 
                 
-                UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 1.8, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.4, animations: {
                     self.image5.transform = CGAffineTransform(rotationAngle: -.pi/2.3)
                     self.image5.transform = self.image5.transform.translatedBy(x: -self.screenWidth * 0.8, y: 0)
                 })
                 
-                UIView.addKeyframe(withRelativeStartTime: 2.05, relativeDuration: 0.6, animations: {
-                    
+                UIView.addKeyframe(withRelativeStartTime: 0.7734, relativeDuration: 0.2264, animations: {
                     self.image1.image = UIImage(named: "page20Splash")
                     let universalWidth = self.screenWidth * 0.72991  //cherryImage.size.width / 3.3
                     let universalHeight = self.screenHeight * 0.61070 //cherryImage.size.height / 3.3
                     //                    self.view.bringSubviewToFront(self.image1)
-                    self.image1.layer.zPosition = 7
+                    self.image1.layer.zPosition = 1
                     //            print("width ", cherryImage.size.width)
                     //            print("height ",cherryImage.size.height)
                     UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut], animations: {
@@ -330,7 +422,7 @@ extension (DetailPageController) {
                     })
                     
                     UIView.animate(withDuration: 0.2, delay: 2.05, options: [.curveEaseOut], animations: {
-                    
+                        
                         self.label1.frame = CGRect(x: self.screenWidth * 0.08, y: self.screenHeight * 0.24, width: self.screenWidth * 0.6, height: self.screenHeight * 0.27)
                         self.label1.transform = CGAffineTransform(rotationAngle: -.pi/6)
                         self.label1.adjustsFontSizeToFitWidth = true
@@ -338,24 +430,27 @@ extension (DetailPageController) {
                         self.label1.alpha = 1
                     })
                     
+                    
                 })
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.8, execute: {
-//                    print("operated")
-                    self.frogCallSound(stop: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
                     self.waterSplashSound()
                 })
+                
             }, completion: {(completed) in
-                 
-                UIView.animateKeyframes(withDuration: 0.8, delay: 1.0, options: [], animations: {
+                
+                UIView.animate(withDuration: 0.8, delay: 1.0, options: .curveEaseOut, animations: {
                     self.image1.alpha = 0
                     self.label1.alpha = 0
+                    self.label2.text = "Try swiping to the left again!"
+                    self.label2.alpha = 1
                 },completion: {_ in
                     self.grestureRecognizerSwitch(Bool: true)
                     self.image1.frame = CGRect(x: 0, y: self.screenHeight * 2, width: self.screenWidth, height: self.screenHeight)
                 })
                 
             })
+            
+            //
             
         }
     }
