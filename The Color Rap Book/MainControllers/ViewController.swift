@@ -62,11 +62,13 @@ class ViewController: UIViewController {
             print("animation processed")
         }, completion: {(finished) in
             self.imageFloatingEffect(image1: self.introLabel, image2: self.readButton, image3: self.tableOfContentButton, image4: self.treeButton, image5: self.developerButton, state: 0)
+            if myVariable.timer.isValid == false {
             myVariable.timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: true, block: {_ in
                 self.keepReadingButton.transform = self.keepReadingButton.transform.rotated(by: .pi / 12)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.keepReadingButton.transform = self.keepReadingButton.transform.rotated(by: -.pi / 12)
             }})
+            }
 //            self.imageRotate(imageview: self.keepReadingButton, x: 0, y: 0, state: 11)
             self.setupNotificationObservers()
         })

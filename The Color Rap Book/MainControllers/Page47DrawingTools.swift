@@ -32,7 +32,7 @@ extension DetailPageController: CropViewControllerDelegate {
     
     @objc func handleWidthSlider() {
 //        print(widthSlider.value)
-        canvas.setStrokeWidth(width: drawingToolPanel.widthSlider.value)
+//        canvas.setStrokeWidth(width: drawingToolPanel.widthSlider.value)
     }
     
     @objc func handleComplete() {
@@ -52,9 +52,19 @@ extension DetailPageController: CropViewControllerDelegate {
     
     @objc func changedColor(slider: ColorSlider) {
          let color = slider.color
-        print("who sent it, ", slider)
+//        print("who sent it, ", slider)
+        print("what color is it, ", color)
         panGesture.isEnabled = false
          canvas.setStrokeColor(color: color)
+        if color == UIColor(hue: 1.0, saturation: 1.0, brightness: 1.0, alpha: 1.0) {
+            drawingToolPanel.pencilButton.tintColor = .black
+            drawingToolPanel.penButton.tintColor = .black
+            drawingToolPanel.brushButton.tintColor = .black
+        } else {
+            drawingToolPanel.pencilButton.tintColor = color
+            drawingToolPanel.penButton.tintColor = color
+            drawingToolPanel.brushButton.tintColor = color
+        }
           // ...
       }
 
@@ -344,6 +354,39 @@ extension DetailPageController {
     
     
     
+    @objc func pencilButtonClicked()
+    {
+        
+        //        drawingToolPanel.pencilButton.isSelected = true
+        drawingToolPanel.pencilButton.setImage(UIImage(named: "selectedPencil"), for: .normal)
+        drawingToolPanel.brushButton.setImage(UIImage(named: "brushNormal"), for: .normal)
+        drawingToolPanel.penButton.setImage(UIImage(named: "penNormal"), for: .normal)
+        canvas.setStrokeWidth(width: 5)
+        
+ 
+        
+    }
+    
+    @objc func penButtonClicked() {
+        drawingToolPanel.penButton.setImage(UIImage(named: "penSelected"), for: .normal)
+        drawingToolPanel.pencilButton.setImage(UIImage(named: "normalPencil"), for: .normal)
+        drawingToolPanel.brushButton.setImage(UIImage(named: "brushNormal"), for: .normal)
+        canvas.setStrokeWidth(width: 10)
+        
+
+    }
+    
+    
+    @objc func brushButtonClicked() {
+        drawingToolPanel.brushButton.setImage(UIImage(named: "brushSelected"), for: .normal)
+        drawingToolPanel.pencilButton.setImage(UIImage(named: "normalPencil"), for: .normal)
+        drawingToolPanel.penButton.setImage(UIImage(named: "penNormal"), for: .normal)
+        canvas.setStrokeWidth(width: 30)
+    
+    }
+    
+    
+    
     
     
 }
@@ -354,8 +397,9 @@ class DrawingToolPanel: UIView {
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    
 
+    
+    
         lazy var undoButton: UIButton = {
             let button = UIButton(type: .system)
     //        button.setTitle("Undo", for: .normal)
@@ -377,6 +421,7 @@ class DrawingToolPanel: UIView {
             let button = UIButton(type: .system)
             button.setTitle("Clear", for: .normal)
             button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.isExclusiveTouch = true
     //        button.frame.size.width = UIScreen.main.bounds.width * 0.1
             return button
@@ -386,6 +431,7 @@ class DrawingToolPanel: UIView {
             let button = UIButton(type: .custom)
             button.setTitle("Complete", for: .normal)
              button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
             button.setTitleColor(.red, for: .normal)
             button.isExclusiveTouch = true
             return button
@@ -394,9 +440,10 @@ class DrawingToolPanel: UIView {
         lazy var backgroundChangeButton: UIButton = {
                let button = UIButton(type: .system)
                button.setTitle("change\nbackground", for: .normal)
-            button.titleLabel?.numberOfLines = 0
+            button.titleLabel?.numberOfLines = 2
             button.titleLabel?.font = UIFont(name: "Morgan_bold", size: 14)
-            button.titleLabel?.textAlignment = .center
+             button.titleLabel?.textAlignment = .center
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
             return button
            }()
         
@@ -406,27 +453,53 @@ class DrawingToolPanel: UIView {
             slider.isExclusiveTouch = true
             return slider
         }()
+    
+    lazy var pencilButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "normalPencil"), for: .normal)
+        button.tintColor = .red
         
-       
+        return button
+    }()
+    
+    lazy var penButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "penSelected"), for: .normal)
+        button.tintColor = .red
         
-        lazy var widthSlider: UISlider = {
-            let slider = UISlider()
-            slider.minimumValue = 1
-            slider.maximumValue = 20
-            slider.setValue(10, animated: false)
-            slider.isExclusiveTouch = true
-           
-            
-    //        slider.frame.size.width = UIScreen.main.bounds.width * 0.25
-            return slider
-        }()
-        
+        return button
+    }()
+    
+    
+    lazy var brushButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "brushNormal"), for: .normal)
+        button.tintColor = .red
+        return button
+    }()
+    
+    
+    
+    
+    //        lazy var widthSlider: UISlider = {
+    //            let slider = UISlider()
+    //            slider.minimumValue = 1
+    //            slider.maximumValue = 20
+    //            slider.setValue(10, animated: false)
+    //            slider.isExclusiveTouch = true
+    //
+    //
+    //    //        slider.frame.size.width = UIScreen.main.bounds.width * 0.25
+    //            return slider
+    //        }()
+    
     
     let dragPic = UIImageView(image: UIImage(named: "drag"))
-   
+    
     
     override init (frame: CGRect) {
         super.init(frame: frame)
+        
         self.layer.cornerRadius = UIScreen.main.bounds.height * 0.06
         self.backgroundColor = .white
         self.layer.shadowColor = UIColor.black.cgColor
@@ -436,76 +509,100 @@ class DrawingToolPanel: UIView {
         
         self.addSubview(dragPic)
         
+        self.addSubview(undoButton)
+        self.addSubview(redoButton)
+        self.addSubview(clearButton)
+        self.addSubview(colorSlider)
+        //                   self.addSubview(widthSlider)
+        self.addSubview(pencilButton)
+        self.addSubview(penButton)
+        self.addSubview(brushButton)
+        self.addSubview(completeButton)
+        self.addSubview(backgroundChangeButton)
+        
+        redoButton.translatesAutoresizingMaskIntoConstraints = false
+        colorSlider.translatesAutoresizingMaskIntoConstraints = false
+        pencilButton.translatesAutoresizingMaskIntoConstraints = false
+        penButton.translatesAutoresizingMaskIntoConstraints = false
+        brushButton.translatesAutoresizingMaskIntoConstraints = false
+        undoButton.translatesAutoresizingMaskIntoConstraints = false
+        clearButton.translatesAutoresizingMaskIntoConstraints = false
+        completeButton.translatesAutoresizingMaskIntoConstraints = false
+        backgroundChangeButton.translatesAutoresizingMaskIntoConstraints = false
+        
         if UIDevice.current.userInterfaceIdiom == .pad {
-           
-                   
-                   //        add all buttons
-            self.addSubview(undoButton)
-                   self.addSubview(redoButton)
-                   self.addSubview(clearButton)
-                   self.addSubview(colorSlider)
-                   self.addSubview(widthSlider)
-                   self.addSubview(completeButton)
-                   self.addSubview(backgroundChangeButton)
-                   
-                   
-                   
-                   //        from left to right start configuring the location of the buttons and sliders
-                   
-                   redoButton.translatesAutoresizingMaskIntoConstraints = false
-                   colorSlider.translatesAutoresizingMaskIntoConstraints = false
-                   widthSlider.translatesAutoresizingMaskIntoConstraints = false
-                   undoButton.translatesAutoresizingMaskIntoConstraints = false
-                   clearButton.translatesAutoresizingMaskIntoConstraints = false
-                   completeButton.translatesAutoresizingMaskIntoConstraints = false
-                   backgroundChangeButton.translatesAutoresizingMaskIntoConstraints = false
-                   
-                   
-                   
-                   //        undo button dimensions
-                   undoButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 107.52).isActive = true
-                   undoButton.widthAnchor.constraint(equalToConstant: 35.84).isActive = true
-                   undoButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
-                   undoButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
-                   
-                   //        redo button dimensions
-                   redoButton.leadingAnchor.constraint(equalTo: self.undoButton.trailingAnchor, constant: 21.504).isActive = true
-                   redoButton.widthAnchor.constraint(equalTo: undoButton.widthAnchor, multiplier: 1).isActive = true
-                   redoButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
-                   redoButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
-                   
-                   
-                   //        clear button dimensios
-                   clearButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 107.52).isActive = true
-                   clearButton.widthAnchor.constraint(equalToConstant: 93.184).isActive = true
-                   clearButton.topAnchor.constraint(equalTo: self.undoButton.topAnchor, constant: 40).isActive = true
-                   clearButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                   
-                   //        color slider dimensions
-                   colorSlider.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 71.68).isActive = true
-                   colorSlider.widthAnchor.constraint(equalToConstant: 193.536).isActive = true
-                   colorSlider.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
-                   colorSlider.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
-                   
-                   //        width slider dimentions
-                   widthSlider.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 71.68).isActive = true
-                   widthSlider.widthAnchor.constraint(equalToConstant: 193.536).isActive = true
-                   widthSlider.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 50).isActive = true
-                   widthSlider.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
-                   
-                   //        complete button dimensions
-                   completeButton.leadingAnchor.constraint(equalTo: self.colorSlider.trailingAnchor, constant: 71.68).isActive = true
-                   completeButton.widthAnchor.constraint(equalToConstant: 71.68).isActive = true
-                   completeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
-                   completeButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
-                   
-                   //        change background button dimensions
-                   backgroundChangeButton.leadingAnchor.constraint(equalTo: self.colorSlider.trailingAnchor, constant: 71.68).isActive = true
-                   backgroundChangeButton.widthAnchor.constraint(equalToConstant: 71.68).isActive = true
-                   backgroundChangeButton.topAnchor.constraint(equalTo: self.completeButton.topAnchor, constant: 40).isActive = true
-                   backgroundChangeButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
-                   
-                   
+            
+            
+            //        add all buttons
+          
+            
+            
+            
+            //        from left to right start configuring the location of the buttons and sliders
+            
+
+            
+            
+            
+            //        undo button dimensions
+            undoButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 107.52).isActive = true
+            undoButton.widthAnchor.constraint(equalToConstant: 35.84).isActive = true
+            undoButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+            undoButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
+            
+            //        redo button dimensions
+            redoButton.leadingAnchor.constraint(equalTo: self.undoButton.trailingAnchor, constant: 21.504).isActive = true
+            redoButton.widthAnchor.constraint(equalTo: undoButton.widthAnchor, multiplier: 1).isActive = true
+            redoButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+            redoButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
+            
+            
+            //        clear button dimensios
+            clearButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 107.52).isActive = true
+            clearButton.widthAnchor.constraint(equalToConstant: 93.184).isActive = true
+            clearButton.topAnchor.constraint(equalTo: self.undoButton.topAnchor, constant: 40).isActive = true
+            clearButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            
+            //        color slider dimensions
+            colorSlider.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 71.68).isActive = true
+            colorSlider.widthAnchor.constraint(equalToConstant: 193.536).isActive = true
+            colorSlider.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+            colorSlider.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
+            
+            //           penxil button dimensions
+            pencilButton.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 71.68).isActive = true
+            //                   pencilButton.widthAnchor.constraint(equalToConstant: 193.536).isActive = true
+            pencilButton.widthAnchor.constraint(equalToConstant: 26).isActive = true
+            pencilButton.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 55).isActive = true
+            pencilButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            
+            //            pen button dimensions
+            penButton.leadingAnchor.constraint(equalTo: self.pencilButton.trailingAnchor, constant: 57.768).isActive = true
+            //                   pencilButton.widthAnchor.constraint(equalToConstant: 193.536).isActive = true
+            penButton.widthAnchor.constraint(equalToConstant: 26).isActive = true
+            penButton.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 55).isActive = true
+            penButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            
+            //            brush button dimensions
+            brushButton.leadingAnchor.constraint(equalTo: self.penButton.trailingAnchor, constant: 57.768).isActive = true
+            //                   pencilButton.widthAnchor.constraint(equalToConstant: 193.536).isActive = true
+            brushButton.widthAnchor.constraint(equalToConstant: 26).isActive = true
+            brushButton.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 55).isActive = true
+            brushButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            
+            //        complete button dimensions
+            completeButton.leadingAnchor.constraint(equalTo: self.colorSlider.trailingAnchor, constant: 71.68).isActive = true
+            completeButton.widthAnchor.constraint(equalToConstant: 71.68).isActive = true
+            completeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+            completeButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
+            
+            //        change background button dimensions
+            backgroundChangeButton.leadingAnchor.constraint(equalTo: self.colorSlider.trailingAnchor, constant: 71.68).isActive = true
+            backgroundChangeButton.widthAnchor.constraint(equalToConstant: 71.68).isActive = true
+            backgroundChangeButton.topAnchor.constraint(equalTo: self.completeButton.topAnchor, constant: 40).isActive = true
+            backgroundChangeButton.heightAnchor.constraint(equalToConstant: 35.84).isActive = true
+            
+            
               
                    
                    //            stackView.alignment = .center
@@ -533,26 +630,10 @@ class DrawingToolPanel: UIView {
                if UIDevice.current.userInterfaceIdiom == .phone {
                    
                    //        add all buttons
-                   self.addSubview(undoButton)
-                   self.addSubview(redoButton)
-                   self.addSubview(clearButton)
-                   self.addSubview(colorSlider)
-                   self.addSubview(widthSlider)
-                   self.addSubview(completeButton)
-                   self.addSubview(backgroundChangeButton)
-                   
                    
                    
                    //        from left to right start configuring the location of the buttons and sliders
-                   
-                   redoButton.translatesAutoresizingMaskIntoConstraints = false
-                   colorSlider.translatesAutoresizingMaskIntoConstraints = false
-                   widthSlider.translatesAutoresizingMaskIntoConstraints = false
-                   undoButton.translatesAutoresizingMaskIntoConstraints = false
-                   clearButton.translatesAutoresizingMaskIntoConstraints = false
-                   completeButton.translatesAutoresizingMaskIntoConstraints = false
-                   backgroundChangeButton.translatesAutoresizingMaskIntoConstraints = false
-                   
+               
                    
                    
                    //        undo button dimensions
@@ -577,17 +658,36 @@ class DrawingToolPanel: UIView {
                    //        color slider dimensions
                    colorSlider.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 56).isActive = true
                    colorSlider.widthAnchor.constraint(equalToConstant: 151.2).isActive = true
-                   colorSlider.topAnchor.constraint(equalTo: self.topAnchor, constant: 15.625).isActive = true
-                   colorSlider.heightAnchor.constraint(equalToConstant: 28).isActive = true
-                   
-                   //        width slider dimentions
-                   widthSlider.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 56).isActive = true
-                   widthSlider.widthAnchor.constraint(equalToConstant: 151.2).isActive = true
-                   widthSlider.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 39.0625).isActive = true
-                   widthSlider.heightAnchor.constraint(equalToConstant: 28).isActive = true
-                   
-                   //        complete button dimensions
-                   completeButton.leadingAnchor.constraint(equalTo: self.colorSlider.trailingAnchor, constant: 56).isActive = true
+                colorSlider.topAnchor.constraint(equalTo: self.topAnchor, constant: 15.625).isActive = true
+                colorSlider.heightAnchor.constraint(equalToConstant: 28).isActive = true
+                
+                //        width slider dimentions
+                //                   widthSlider.widthAnchor.constraint(equalToConstant: 151.2).isActive = true
+                //
+//                                pencilButton.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 56).isActive = true
+//                                pencilButton.widthAnchor.constraint(equalToConstant: 17.3).isActive = true
+//                                pencilButton.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 39.0625).isActive = true
+//                                pencilButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                //
+                pencilButton.leadingAnchor.constraint(equalTo: self.redoButton.trailingAnchor, constant: 56).isActive = true
+                pencilButton.widthAnchor.constraint(equalToConstant: 20.9).isActive = true
+                pencilButton.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 42).isActive = true
+                pencilButton.heightAnchor.constraint(equalToConstant: 36).isActive = true
+                
+                penButton.leadingAnchor.constraint(equalTo: self.pencilButton.trailingAnchor, constant: 44.25).isActive = true
+                penButton.widthAnchor.constraint(equalToConstant: 20.9).isActive = true
+                penButton.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 42).isActive = true
+                penButton.heightAnchor.constraint(equalToConstant: 36).isActive = true
+                
+                brushButton.leadingAnchor.constraint(equalTo: self.penButton.trailingAnchor, constant: 44.25).isActive = true
+                brushButton.widthAnchor.constraint(equalToConstant: 20.9).isActive = true
+                brushButton.topAnchor.constraint(equalTo: self.colorSlider.topAnchor, constant: 42).isActive = true
+                brushButton.heightAnchor.constraint(equalToConstant: 36).isActive = true
+                
+                
+                
+                //        complete button dimensions
+                completeButton.leadingAnchor.constraint(equalTo: self.colorSlider.trailingAnchor, constant: 56).isActive = true
                    completeButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
                    completeButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 15.625).isActive = true
                    completeButton.heightAnchor.constraint(equalToConstant: 28).isActive = true

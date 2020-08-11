@@ -83,6 +83,8 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     var page23Phase = 0
     
     var page25LeafFalling = false
+    
+
   
     let page23LightLayer = CAShapeLayer()
     
@@ -128,10 +130,9 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
         panel.clearButton.addTarget(self, action: #selector(handleClear), for: .touchUpInside)
         panel.completeButton.addTarget(self, action: #selector(handleComplete), for: .touchUpInside)
         panel.backgroundChangeButton.addTarget(self, action: #selector(handleChangeBackground), for: .touchUpInside)
-//        panel.colorSlider.addTarget(self, action: #selector(changedColor), for: .valueChanged)
-//        panel.colorSlider.addTarget(self, action: #selector(touchUpFinished), for: [.touchUpInside, .touchUpOutside])
-        panel.widthSlider.addTarget(self, action: #selector(handleWidthSlider), for: .valueChanged)
-//        panel.panGesture = CustomPanGestureRecognizer(target: self, action: #selector(drawingToolsDragged))
+        panel.pencilButton.addTarget(self, action: #selector(pencilButtonClicked), for: .touchUpInside)
+        panel.penButton.addTarget(self, action: #selector(penButtonClicked), for: .touchUpInside)
+        panel.brushButton.addTarget(self, action: #selector(brushButtonClicked), for: .touchUpInside)
         return panel
     }()
     

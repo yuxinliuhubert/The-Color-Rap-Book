@@ -28,12 +28,13 @@
 		535B2A5524C2415A00667A1C /* page39CatSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 535B2A5224C2415A00667A1C /* page39CatSound.m4a */; };
 		535B2A5724C245A300667A1C /* page33Mud.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 535B2A5624C245A300667A1C /* page33Mud.m4a */; };
 		5361589224AAA2B5007E3B60 /* pageTurn2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5361589124AAA2B5007E3B60 /* pageTurn2.m4a */; };
-		5367177E24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5367177D24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a */; };
+		5367177E24C11EF100F3974B /* cheersLong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5367177D24C11EF100F3974B /* cheersLong.m4a */; };
 		5368AFB424C219CD00786CDC /* page38WitchSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5368AFB324C219CD00786CDC /* page38WitchSound.m4a */; };
 		536BC2A02412B9DD000AB196 /* DeveloperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC29F2412B9DD000AB196 /* DeveloperController.swift */; };
 		536BC2A224158132000AB196 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */; };
 		536D7B302448E1CD00B9B122 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D7B2F2448E1CD00B9B122 /* MenuController.swift */; };
 		537C6E2624527D39004954DA /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C6E2524527D39004954DA /* Line.swift */; };
+		537CFF5324CDF96B007AA76C /* cheersShort.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 537CFF5224CDF96B007AA76C /* cheersShort.m4a */; };
 		53855A2E2450CA5700EEF64C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53855A2D2450CA5700EEF64C /* CanvasView.swift */; };
 		5388922F24A26E6100CEE536 /* birdChirping.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5388922E24A26E6100CEE536 /* birdChirping.m4a */; };
 		5388923024A26E6100CEE536 /* birdChirping.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5388922E24A26E6100CEE536 /* birdChirping.m4a */; };
@@ -142,12 +143,13 @@
 		535B2A5224C2415A00667A1C /* page39CatSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page39CatSound.m4a; sourceTree = "<group>"; };
 		535B2A5624C245A300667A1C /* page33Mud.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page33Mud.m4a; sourceTree = "<group>"; };
 		5361589124AAA2B5007E3B60 /* pageTurn2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = pageTurn2.m4a; sourceTree = "<group>"; };
-		5367177D24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = yuxinDeveloperPageCheer.m4a; sourceTree = "<group>"; };
+		5367177D24C11EF100F3974B /* cheersLong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = cheersLong.m4a; sourceTree = "<group>"; };
 		5368AFB324C219CD00786CDC /* page38WitchSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = page38WitchSound.m4a; sourceTree = "<group>"; };
 		536BC29F2412B9DD000AB196 /* DeveloperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperController.swift; sourceTree = "<group>"; };
 		536BC2A124158132000AB196 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		536D7B2F2448E1CD00B9B122 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		537C6E2524527D39004954DA /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		537CFF5224CDF96B007AA76C /* cheersShort.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = cheersShort.m4a; sourceTree = "<group>"; };
 		53855A2D2450CA5700EEF64C /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		5388922E24A26E6100CEE536 /* birdChirping.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = birdChirping.m4a; sourceTree = "<group>"; };
 		539044BC24A196B900B5D72A /* SavedData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedData+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -253,6 +255,8 @@
 		530F73A524A7A3A700C7C4A7 /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
+				537CFF5224CDF96B007AA76C /* cheersShort.m4a */,
+				5367177D24C11EF100F3974B /* cheersLong.m4a */,
 				53B7AD4D24CB31C1005ABC20 /* page35ChocolateSound.m4a */,
 				530B774E24C5F8A3005393BA /* page46FireSound.m4a */,
 				53BDBDAC24C540E100625ABF /* page45GhostSound.m4a */,
@@ -262,7 +266,6 @@
 				535B2A5624C245A300667A1C /* page33Mud.m4a */,
 				535B2A4F24C2415A00667A1C /* page39Sounds */,
 				5368AFB324C219CD00786CDC /* page38WitchSound.m4a */,
-				5367177D24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a */,
 				530A76EC24BD39EB0064CCB5 /* backgroundMusic.m4a */,
 				530A76EA24BD19F50064CCB5 /* twangSound.m4a */,
 				53B715D924AD045B0051ABF3 /* buttonSound.m4a */,
@@ -655,7 +658,7 @@
 				53B715CD24ACE90F0051ABF3 /* page20WaterSplashSound.m4a in Resources */,
 				53C7E30E23FB90E100866321 /* Data.rtf in Resources */,
 				5388922F24A26E6100CEE536 /* birdChirping.m4a in Resources */,
-				5367177E24C11EF100F3974B /* yuxinDeveloperPageCheer.m4a in Resources */,
+				5367177E24C11EF100F3974B /* cheersLong.m4a in Resources */,
 				53F4D94624A1607F0018D924 /* Morgan_bold-Regular.otf in Resources */,
 				53A532E024AF855400DF32BF /* page25ShakeSound.m4a in Resources */,
 				53BDBDA924C4C24B00625ABF /* page42Bell.m4a in Resources */,
@@ -681,6 +684,7 @@
 				530B774F24C5F8A3005393BA /* page46FireSound.m4a in Resources */,
 				53B715D524ACF5A20051ABF3 /* page22MowerStartSound.m4a in Resources */,
 				53A532E524AFC3EB00DF32BF /* DeveloperData.rtf in Resources */,
+				537CFF5324CDF96B007AA76C /* cheersShort.m4a in Resources */,
 				53BDBDAD24C540E100625ABF /* page45GhostSound.m4a in Resources */,
 				53B7AD4E24CB31C1005ABC20 /* page35ChocolateSound.m4a in Resources */,
 				53BF1B6024A5215D008A1648 /* CardCell.xib in Resources */,

@@ -90,6 +90,7 @@ public class ColorSlider: UIControl {
 	/// The selected color.
 	public var color: UIColor {
 		get {
+            
 			return UIColor(hsbColor: internalColor)
 		}
 		set {

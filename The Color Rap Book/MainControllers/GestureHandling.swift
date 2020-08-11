@@ -616,10 +616,13 @@ extension (DetailPageController) {
                     gesture.object?.transform = .identity
                     
                     gesture.object!.center = bottomPosition
+                    
 
 
                 
             }
+                
+                
             break;
             
         default:

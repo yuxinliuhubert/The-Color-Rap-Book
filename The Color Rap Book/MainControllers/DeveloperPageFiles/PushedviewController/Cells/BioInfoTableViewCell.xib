@@ -17,11 +17,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-jm-1jM">
-                        <rect key="frame" x="16" y="5" width="288" height="828"/>
+                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-jm-1jM">
+                        <rect key="frame" x="16" y="5" width="288" height="77"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Kq-Xu-j8K">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="677.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="22"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -35,15 +35,25 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-34-aQb">
-                                <rect key="frame" x="14.5" y="682.5" width="259" height="145.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" maximumZoomScale="4" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="RGP-MT-lpQ">
+                                <rect key="frame" x="24" y="27" width="240" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-34-aQb">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="qvL-34-aQb" secondAttribute="height" multiplier="16:9" id="MNp-CZ-r8R"/>
+                                    <constraint firstAttribute="width" secondItem="qvL-34-aQb" secondAttribute="width" id="79z-s7-Dvb"/>
+                                    <constraint firstItem="qvL-34-aQb" firstAttribute="leading" secondItem="RGP-MT-lpQ" secondAttribute="leading" id="JB6-gk-dV7"/>
+                                    <constraint firstAttribute="bottom" secondItem="qvL-34-aQb" secondAttribute="bottom" id="JOj-cf-ovG"/>
+                                    <constraint firstItem="qvL-34-aQb" firstAttribute="top" secondItem="RGP-MT-lpQ" secondAttribute="top" id="PFx-Uc-QL8"/>
+                                    <constraint firstAttribute="height" secondItem="qvL-34-aQb" secondAttribute="height" id="dz9-qq-o9j"/>
+                                    <constraint firstAttribute="trailing" secondItem="qvL-34-aQb" secondAttribute="trailing" id="iI2-jD-2uD"/>
                                 </constraints>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="qvL-34-aQb" firstAttribute="width" secondItem="1Db-jm-1jM" secondAttribute="width" multiplier="0.9" id="SAY-R2-a10"/>
+                            <constraint firstItem="RGP-MT-lpQ" firstAttribute="leading" secondItem="1Db-jm-1jM" secondAttribute="leading" constant="24" id="IZG-7C-72t"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -59,9 +69,9 @@
             </accessibility>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="aspectConstraint" destination="MNp-CZ-r8R" id="nQ7-Af-tLF"/>
                 <outlet property="cellImage" destination="qvL-34-aQb" id="cbW-2Q-137"/>
                 <outlet property="cellTextView" destination="8Kq-Xu-j8K" id="Hdd-EJ-ew2"/>
+                <outlet property="scrollView" destination="RGP-MT-lpQ" id="Fzb-4E-vfG"/>
             </connections>
             <point key="canvasLocation" x="287" y="119"/>
         </tableViewCell>

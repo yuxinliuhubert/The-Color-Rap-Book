@@ -138,35 +138,38 @@ class PushedViewController: UIViewController,AVAudioPlayerDelegate {
         
         print("customized number of section headers", tableView.numberOfSections)
         
+        var urlString = Bundle.main.path(forResource: "cheersShort", ofType: "m4a")
+        
         if nameCheck == "YuxinLiu" {
-            let urlString = Bundle.main.path(forResource: "yuxinDeveloperPageCheer", ofType: "m4a")
-            do {
-                try AVAudioSession.sharedInstance().setMode(.default)
-                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                
-                guard let urlString = urlString else {
-                    return
-                }
-                
-                
-                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-                
-                guard let player = player else {
-                    return
-                }
-                player.numberOfLoops = 0
-                player.volume = 1
-                player.play()
-                
-                player.delegate = self
-                
-                
-            }
-            catch {
-                print("audio player error")
-            }
+            urlString = Bundle.main.path(forResource: "cheersLong", ofType: "m4a")
         }
-    
+        
+        do {
+            try AVAudioSession.sharedInstance().setMode(.default)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            
+            guard let urlString = urlString else {
+                return
+            }
+            
+            
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+            
+            guard let player = player else {
+                return
+            }
+            player.numberOfLoops = 0
+            player.volume = 1
+            player.play()
+            
+            player.delegate = self
+            
+            
+        }
+        catch {
+            print("audio player error")
+        }
+        
         
         if let topColor = topHexColor {
             topBackground.backgroundColor =  topColor.hexColor
@@ -226,21 +229,49 @@ extension PushedViewController : UITableViewDelegate, UITableViewDataSource  {
         case 0:
             cell.cellTextView.text = specificAuthorDataArray!["basicInfo"]!["text"]
             cell.cellImage.image = UIImage(named: specificAuthorDataArray!["basicInfo"]!["image"]!)
+            if cell.cellImage.image != nil {
+                       //            if cell.aspectRatio.isActive != false {
+                       cell.cellImage.heightAnchor.constraint(equalTo: cell.cellImage.widthAnchor, multiplier: 9.0/16.0).isActive = true
+                       //            }
+                   }
+                   else {
+                       cell.cellImage.heightAnchor.constraint(equalTo: cell.cellImage.widthAnchor, multiplier: 9.0/16.0).isActive = false
+                       
+                   }
             
         case 1:
             cell.cellTextView.text = specificAuthorDataArray!["bookCreation"]!["text"]
             cell.cellImage.image = UIImage(named: specificAuthorDataArray!["bookCreation"]!["image"]!)
+            if cell.cellImage.image != nil {
+                       //            if cell.aspectRatio.isActive != false {
+                       cell.cellImage.heightAnchor.constraint(equalTo: cell.cellImage.widthAnchor, multiplier: 9.0/16.0).isActive = true
+                       //            }
+                   }
+                   else {
+                       cell.cellImage.heightAnchor.constraint(equalTo: cell.cellImage.widthAnchor, multiplier: 9.0/16.0).isActive = false
+                       
+                   }
             
         case 2:
             cell.cellTextView.text = specificAuthorDataArray!["favoritePage"]!["text"]
             cell.cellImage.image = UIImage(named: specificAuthorDataArray!["favoritePage"]!["image"]!)
+            if cell.cellImage.image != nil {
+                       //            if cell.aspectRatio.isActive != false {
+                       cell.cellImage.heightAnchor.constraint(equalTo: cell.cellImage.widthAnchor, multiplier: 9.0/16.0).isActive = true
+                       //            }
+                   }
+                   else {
+                       cell.cellImage.heightAnchor.constraint(equalTo: cell.cellImage.widthAnchor, multiplier: 9.0/16.0).isActive = false
+                       
+                   }
+            
             
         default:
             break;
         }
-    
         
-
+       
+        
         
         
         return cell
