@@ -63,7 +63,7 @@ extension (DetailPageController) {
         switch myVariable.state
         {
             
-        case 3,4,8,9,13,18,19,24,28,31,32,36,41:
+        case 3,4,8,9,13,18,19,24,28,31,32,36,40,41:
             self.pageNumberLabelDisplay(label: label, pageNum: state)
             
         case 5:

@@ -573,12 +573,21 @@ extension (DetailPageController) {
          bottomPosition = CGPoint(x: self.screenWidth * 0.5, y: self.screenHeight * 0.84)
         }
         
-        
+    
         
         switch gesture.state {
             
         case .began:
             print("Pan Gesture Began");
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                drawingToolConstraintsIPad[0].isActive = false
+                drawingToolPanConstraintsIPad?[0].isActive = false
+            }
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                drawingToolConstraintsIPhone[0].isActive = false
+                drawingToolPanConstraintsIPhone?[0].isActive = false
+            }
+            
             gesture.finalPoint = gesture.object?.center
             
         case .changed:
@@ -595,8 +604,25 @@ extension (DetailPageController) {
                     print("contains")
                     UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: [.curveEaseOut, .allowUserInteraction], animations: {
                         gesture.object?.transform = .identity
+                        gesture.object?.center = bottomPosition
                         //                    gesture.objectMovingAlong?.transform = .identity
-                        gesture.object!.center = bottomPosition
+                        //                        gesture.object!.center = bottomPosition
+                        
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            gesture.object?.anchorCenterXToSuperview()
+                            self.drawingToolPanConstraintsIPad?[1].isActive = false
+                            self.drawingToolPanConstraintsIPad?[0].isActive = true
+                           
+//                            gesture.object?.widthAnchor.constraint(equalToConstant: 716.8).isActive = true
+//                            gesture.object?.heightAnchor.constraint(equalToConstant: 120).isActive = true
+                        }
+                        if UIDevice.current.userInterfaceIdiom == .phone {
+                            gesture.object?.anchorCenterXToSuperview()
+                            self.drawingToolPanConstraintsIPhone?[1].isActive = false
+                            self.drawingToolPanConstraintsIPhone?[0].isActive = true
+                            
+                         
+                        }
 
                     }, completion: {_ in
                     })
@@ -605,8 +631,24 @@ extension (DetailPageController) {
                 } else if topBox.contains(gesture.finalPoint!) || topBox.intersects(gesture.object!.frame){
                     UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: [.curveEaseOut, .allowUserInteraction], animations: {
                         gesture.object?.transform = .identity
-                        gesture.objectMovingAlong?.transform = .identity
-                        gesture.object!.center = topPosition
+                        gesture.object?.center = topPosition
+                        
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            gesture.object?.anchorCenterXToSuperview()
+                            self.drawingToolPanConstraintsIPad?[0].isActive = false
+                            self.drawingToolPanConstraintsIPad?[1].isActive = true
+                        }
+                        
+                        if UIDevice.current.userInterfaceIdiom == .phone {
+                            gesture.object?.anchorCenterXToSuperview()
+                            self.drawingToolPanConstraintsIPhone?[0].isActive = false
+                            self.drawingToolPanConstraintsIPhone?[1].isActive = true
+                          
+                        }
+                        
+                        
+                    
+                        
                     }, completion: {_ in
                     })
                     
@@ -614,7 +656,7 @@ extension (DetailPageController) {
                     print("The third drawing tool situation (unexpected)")
                     //                            let the object center equal to the final point
                     gesture.object?.transform = .identity
-                    
+
                     gesture.object!.center = bottomPosition
                     
 
@@ -682,5 +724,30 @@ extension UIView {
         shakeGroup.animations = [translation, rotation]
         shakeGroup.duration = duration
         layer.add(shakeGroup, forKey: "shakeIt")
+    }
+}
+
+
+extension UIView {
+    
+    public func removeAllConstraints() {
+        var _superview = self.superview
+        
+        while let superview = _superview {
+            for constraint in superview.constraints {
+                
+                if let first = constraint.firstItem as? UIView, first == self {
+                    superview.removeConstraint(constraint)
+                }
+                
+                if let second = constraint.secondItem as? UIView, second == self {
+                    superview.removeConstraint(constraint)
+                }
+            }
+            
+            _superview = superview.superview
+        }
+        
+        self.removeConstraints(self.constraints)
     }
 }

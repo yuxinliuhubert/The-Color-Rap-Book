@@ -93,7 +93,13 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
     let screenHeight = UIScreen.main.bounds.height
     
 
-//    
+    var drawingToolConstraintsIPhone = [NSLayoutConstraint]()
+    var drawingToolConstraintsIPad = [NSLayoutConstraint]()
+    
+    
+//    bottom position is 0, top potision is 1
+    var drawingToolPanConstraintsIPhone : [NSLayoutConstraint]?
+    var drawingToolPanConstraintsIPad : [NSLayoutConstraint]?
     
     let edgePan = UIScreenEdgePanGestureRecognizer()
     let startButton: UIButton = {
@@ -244,6 +250,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
             if success == true {
                 
 
+                testingTextfield.alpha = 0
                 edgePan.addTarget(self, action: #selector(screenEdgeSwiped))
                 edgePan.edges = .left
                 view.addGestureRecognizer(edgePan)
@@ -253,6 +260,7 @@ class DetailPageController : UIViewController, UITextFieldDelegate, UIGestureRec
                 label.alpha = 0
                 startButton.alpha = 0
                 noPictureButton.alpha = 0
+                
                 grestureRecognizerSwitch(Bool: false)
                 
                 setUpTextField()

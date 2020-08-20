@@ -1026,7 +1026,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mattsmith.The-Color-Rap-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = "mattSmith.The-Color-Rap-Book";
 				PRODUCT_NAME = "Color Rap Book";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1048,7 +1048,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mattsmith.The-Color-Rap-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = "mattSmith.The-Color-Rap-Book";
 				PRODUCT_NAME = "Color Rap Book";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

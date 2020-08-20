@@ -141,7 +141,7 @@ extension (DetailPageController) {
             label.alpha = 1
             label.textAlignment = .left
             label.textColor = .yellow
-            label.frame = CGRect(x: screenWidth * 0.02, y: screenHeight * 0.57, width: screenWidth * 0.45
+            label.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.57, width: screenWidth * 0.45
                 , height: screenHeight * 0.40519644)
             label.font = UIFont(name: "Morgan_bold", size: 150)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)
@@ -151,7 +151,7 @@ extension (DetailPageController) {
             label.alpha = 1
             label.textAlignment = .left
             label.textColor = .yellow
-            label.frame = CGRect(x: screenWidth * 0.02, y: screenHeight * 0.67, width: screenWidth * 0.45
+            label.frame = CGRect(x: screenWidth * 0.05, y: screenHeight * 0.67, width: screenWidth * 0.45
                 , height: screenHeight * 0.1714)
             label.font = UIFont(name: "Morgan_bold", size: 100)
             labelAnimation(label: label, string: labelArray[pageNum-1],check:0)

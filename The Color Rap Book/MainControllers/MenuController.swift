@@ -26,7 +26,8 @@ final class MenuController: UIViewController {
         CustomData(title: "purple", image: #imageLiteral(resourceName: "26_purple is purple not spelled out new"), pageNum: 28),
         CustomData(title: "brown", image: #imageLiteral(resourceName: "30_brown is brown new"), pageNum: 32),
         CustomData(title: "black", image: #imageLiteral(resourceName: "38_back in black new"), pageNum: 36),
-        CustomData(title: "white", image: #imageLiteral(resourceName: "39_white is white new"), pageNum: 41)
+        CustomData(title: "white", image: #imageLiteral(resourceName: "39_white is white new"), pageNum: 41),
+        CustomData(title: "DIY", image: #imageLiteral(resourceName: "my_color_rap"), pageNum: 47)
         
     ]
     
@@ -444,7 +445,7 @@ extension MenuController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

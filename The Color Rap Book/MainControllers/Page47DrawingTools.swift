@@ -160,9 +160,10 @@ extension DetailPageController: CropViewControllerDelegate {
             self.drawingToolPanel.translatesAutoresizingMaskIntoConstraints = false
             self.drawingToolPanel.anchorCenterXToSuperview()
             
-            self.drawingToolPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -self.screenHeight * 0.05).isActive = true
-            self.drawingToolPanel.widthAnchor.constraint(equalToConstant: 716.8).isActive = true
-            self.drawingToolPanel.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            drawingToolConstraintsIPad = [self.drawingToolPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -self.screenHeight * 0.05),self.drawingToolPanel.widthAnchor.constraint(equalToConstant: 716.8),self.drawingToolPanel.heightAnchor.constraint(equalToConstant: 120)]
+            drawingToolConstraintsIPad[0].isActive = true
+            drawingToolConstraintsIPad[1].isActive = true
+            drawingToolConstraintsIPad[2].isActive = true
             
             colorSlider.translatesAutoresizingMaskIntoConstraints = false
             colorSlider.leadingAnchor.constraint(equalTo: self.drawingToolPanel.redoButton.trailingAnchor, constant: 71.68).isActive = true
@@ -174,10 +175,14 @@ extension DetailPageController: CropViewControllerDelegate {
         if UIDevice.current.userInterfaceIdiom == .phone {
             self.drawingToolPanel.translatesAutoresizingMaskIntoConstraints = false
             self.drawingToolPanel.anchorCenterXToSuperview()
-            //        stackViewBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: self.screenWidth * 0.15).isActive = true
-            self.drawingToolPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -self.screenHeight * 0.03).isActive = true
-            self.drawingToolPanel.widthAnchor.constraint(equalToConstant: 560).isActive = true
-            self.drawingToolPanel.heightAnchor.constraint(equalToConstant: 93.75).isActive = true
+            drawingToolConstraintsIPhone = [self.drawingToolPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -self.screenHeight * 0.03),self.drawingToolPanel.widthAnchor.constraint(equalToConstant: 560),self.drawingToolPanel.heightAnchor.constraint(equalToConstant: 93.75)]
+            drawingToolConstraintsIPhone[0].isActive = true
+            drawingToolConstraintsIPhone[1].isActive = true
+            drawingToolConstraintsIPhone[2].isActive = true
+//            self.drawingToolPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -self.screenHeight * 0.03)
+//                .isActive = true
+//            self.drawingToolPanel.widthAnchor.constraint(equalToConstant: 560).isActive = true
+//            self.drawingToolPanel.heightAnchor.constraint(equalToConstant: 93.75).isActive = true
             
             colorSlider.translatesAutoresizingMaskIntoConstraints = false
             colorSlider.leadingAnchor.constraint(equalTo: self.drawingToolPanel.redoButton.trailingAnchor, constant: 56).isActive = true
@@ -188,8 +193,15 @@ extension DetailPageController: CropViewControllerDelegate {
         }
         colorSlider.alpha = 0
         
+        self.drawingToolPanConstraintsIPad = [self.drawingToolPanel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: -self.screenHeight * 0.05), self.drawingToolPanel.topAnchor.constraint(equalTo: self.view.topAnchor,constant: self.screenHeight * 0.050)]
+        
+        self.drawingToolPanConstraintsIPhone = [self.drawingToolPanel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: -self.screenHeight * 0.03), self.drawingToolPanel.topAnchor.constraint(equalTo: self.view.topAnchor,constant: self.screenHeight * 0.03)]
+        
         panGesture.object = self.drawingToolPanel
         self.drawingToolPanel.addGestureRecognizer(panGesture)
+        
+        
+        
 
     }
     
@@ -361,7 +373,7 @@ extension DetailPageController {
         drawingToolPanel.pencilButton.setImage(UIImage(named: "selectedPencil"), for: .normal)
         drawingToolPanel.brushButton.setImage(UIImage(named: "brushNormal"), for: .normal)
         drawingToolPanel.penButton.setImage(UIImage(named: "penNormal"), for: .normal)
-        canvas.setStrokeWidth(width: 5)
+        canvas.setStrokeWidth(width: 2)
         
  
         
